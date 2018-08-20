@@ -58,7 +58,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
         <br>
         <?php include('menu.php');?>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-10">
         <h3 align="center"> ประเภทสินค้า <a href="add_product_type.php" class="btn btn-primary"> เพิ่มประเภท </a> </h3>
         <table id="example" class="display" cellspacing="0" border="1">
 		<thead>

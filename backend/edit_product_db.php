@@ -16,8 +16,8 @@ $p_name = $_POST['p_name'];
 $t_id = $_POST['t_id'];
 $p_detial = $_POST['p_detial'];
 $p_price = $_POST['p_price'];
+
 $p_qty = $_POST['p_qty'];
-$p_size = $_POST['p_size'];
 $p_unit = $_POST['p_unit'];
 $p_img11 = $_POST['p_img11'];
 $p_img22 = $_POST['p_img22'];
@@ -76,7 +76,6 @@ $sql ="UPDATE tbl_product SET
 		p_detial='$p_detial',
 		p_price='$p_price',
 		p_qty='$p_qty',
-		p_size='$p_size',
 		p_unit='$p_unit',
 		p_img1='$newname',
 		p_img2='$newname2'

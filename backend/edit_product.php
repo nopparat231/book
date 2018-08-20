@@ -107,13 +107,11 @@ $totalRows_prd = mysql_num_rows($prd);
       <td colspan="2"><label for="p_qty"></label>
         <input name="p_qty" type="number" required id="p_qty" value="<?php echo $row_eprd['p_qty']; ?>" size="5"/></td>
     </tr>
-    <td align="right" valign="middle">&nbsp;</td>
-      <td colspan="2">&nbsp;</td>
-    </tr>
     <tr>
-      <td width="129" align="right" valign="middle">ไซส์ :</td>
-      <td colspan="2"><label for="p_size"></label>
-        <input name="p_size" type="number" required id="p_size" value="<?php echo $row_eprd['p_size']; ?>" size="5"/></td>
+      <td align="right" valign="middle">ราคาขาย :</td>
+      <td width="190"><label for="p_price"></label>
+         <input name="p_price" type="number" required id="p_price" value="<?php echo $row_eprd['p_price']; ?>"/></td>
+      <td width="281">&nbsp;</td>
     </tr>
     <tr>
       <td align="right" valign="middle">&nbsp;</td>
@@ -159,12 +157,7 @@ do {
       <td align="right" valign="middle">&nbsp;</td>
       <td colspan="2">&nbsp;</td>
     </tr>
-    <tr>
-      <td align="right" valign="middle">ราคาขาย :</td>
-      <td width="190"><label for="p_price"></label>
-         <input name="p_price" type="number" required id="p_price" value="<?php echo $row_eprd['p_price']; ?>"/></td>
-      <td width="281">&nbsp;</td>
-    </tr>
+    
     <tr>
       <td align="right" valign="middle">&nbsp;</td>
       <td colspan="2">&nbsp;</td>
@@ -175,9 +168,8 @@ do {
          :
   <select name="p_unit" id="p_unit" required>
   <option value="<?php echo $row_eprd['p_unit'];?>"><?php echo $row_eprd['p_unit'];?></option>
-    <option value="">เลือกใหม่</option>
-    <option value="ชิ้น">คู่</option>
-    <option value="กล่อง">กล่อง</option>
+    <option value="เล่ม">เล่ม</option>
+    <option value="แผ่น">แผ่น</option>
      
   </select></td>
       </tr>

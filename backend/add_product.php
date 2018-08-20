@@ -97,15 +97,17 @@ $totalRows_prd = mysql_num_rows($prd);
      <td align="right" valign="middle">&nbsp;</td>
       <td colspan="2">&nbsp;</td>
     </tr>
-     <tr>
-      <td width="129" align="right" valign="middle">ไซส์ :</td>
-      <td colspan="2"><label for="p_size"></label>
-        <input name="p_size" type="number" required id="p_size" size="5"/></td>
+    <tr>
+      <td align="right" valign="middle">ราคาขาย :</td>
+      <td width="190"><label for="p_price"></label>
+         <input type="number" name="p_price" id="p_price" required/></td>
+      <td width="281">&nbsp;  </td>
     </tr>
     <tr>
       <td align="right" valign="middle">&nbsp;</td>
       <td colspan="2">&nbsp;</td>
     </tr>
+    
     <tr>
       <td align="right" valign="middle">ประเภทสินค้า :</td>
       <td colspan="2">
@@ -145,23 +147,14 @@ do {
       <td align="right" valign="middle">&nbsp;</td>
       <td colspan="2">&nbsp;</td>
     </tr>
-    <tr>
-      <td align="right" valign="middle">ราคาขาย :</td>
-      <td width="190"><label for="p_price"></label>
-         <input type="number" name="p_price" id="p_price" required/></td>
-      <td width="281">&nbsp;  </td>
-    </tr>
-    <tr>
-      <td align="right" valign="middle">&nbsp;</td>
-      <td colspan="2">&nbsp;</td>
-    </tr>
+    
     <tr>
       <td align="right" valign="middle">หน่วยสินค้า</td>
       <td colspan="2"><label for="pro_qty"></label>
          :
   <select name="p_unit" id="p_unit" required>
-    <option value="คู่">คู่</option>
-    <option value="ข้าง">ข้าง</option>
+    <option value="เล่ม">เล่ม</option>
+    <option value="แผ่น">แผ่น</option>
     
   </select></td>
       </tr>

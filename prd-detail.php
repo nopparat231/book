@@ -64,14 +64,16 @@ $sql= "UPDATE tbl_product SET  p_view=$count WHERE p_id = $p_id";
     	<img src="pimg/<?php echo $row_prdt['p_img1'];?>" class="img img-responsive">
       <br>
       <img src="pimg/<?php echo $row_prdt['p_img2'];?>" class="img img-responsive">
+       <br>
     </div>
+
     <div class="col-md-7">
    <h4>  ชื่อสินค้า :  <?php echo $row_prdt['p_name']; ?> </h4>
     รายละเอียด : <?php echo $row_prdt['p_detial']; ?>  
     <font color="blue">
     <h3> ราคา <?php echo $row_prdt['p_price']; ?>  บาท  </h3> </font> <br />
     จำนวนการเข้าชม <?php echo $row_prdt['p_view']; ?>  ครั้ง  <br />
-    จำนวนสินค้าคงเปลือ <?php echo $row_prdt['p_qty']; ?>  ชิ้น
+    จำนวนสินค้าคงเหลือ <?php echo $row_prdt['p_qty']; ?>  ชิ้น
    
     <br /><br />
     
@@ -89,14 +91,6 @@ if($qty < 0){
 
     <form action="index.php"  method="get">
 
-     Size : <br />
-     6us(38) 24cm | 7us(39) 25cm | 8us(40-41) 26cm | 9us(42) 27cm |<br>
-      10us(43) 28cm 
-<br /><br>
-
-     
-    สินค้ามีไซส์ <?php echo $row_prdt['p_size']; ?> 
-
     <br />
     <input type="text" name="p_id"  hidden value="<?php echo $p_id;?>" />
     <button name="act" class="btn btn-success btn-lg  glyphicon glyphicon-shopping-cart" value="add" >สั่งซื้อ </button>
@@ -104,7 +98,11 @@ if($qty < 0){
     
 
   </form>
-        
+        <br />
+          <br />
+            <br />
+       <br />
+            <br />
     
 <?php } ?>
 

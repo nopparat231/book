@@ -85,14 +85,16 @@ mysql_select_db($database_condb);
   <body>
   <div class="container">
   	<div class="row">
-         <?php include('banner.php');?>
+         <?php //include('banner.php');?>
    </div>
   	<div class="row">
     	<div class="col-md-12">
-        	<?php include('navbar.php');?>
+        	
         </div>
     </div>
+
         </div>
+           <?php include('navbar.php');?>
         <div class="row" style="padding-top:100px">
         <div class="col-md-4"></div>
     	<div class="col-md-4" style="background-color:#f4f4f4">

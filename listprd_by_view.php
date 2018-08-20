@@ -39,8 +39,9 @@ $totalRows_prd = mysql_num_rows($prd);
 <div class="col-sm-2" align="center">
   <img src="pimg/<?php echo $row_prd['p_img1'];?>" width="80%" />
   <p align="center">
-    <b><?php echo $row_prd['p_name']; ?> <font color="red">
-    <?php echo $row_prd['p_price']; ?>  บาท </font> </b>
+    <b><?php echo $row_prd['p_name']; ?> </b>
+<br />
+    <b ><font color="red"><?php echo $row_prd['p_price']; ?>  บาท </font> </b>
     <br />
     
     

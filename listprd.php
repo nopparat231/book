@@ -29,7 +29,7 @@ return $theValue;
 }
 }
 mysql_select_db($database_condb);
-$query_prd = "SELECT * FROM tbl_product ORDER BY p_id";
+$query_prd = "SELECT * FROM tbl_product ORDER BY p_id DESC";
 $prd = mysql_query( $query_prd,$condb) or die(mysql_error());
 $row_prd = mysql_fetch_assoc($prd);
 $totalRows_prd = mysql_num_rows($prd);
@@ -37,11 +37,13 @@ $totalRows_prd = mysql_num_rows($prd);
 <?php if ($totalRows_prd > 0) {?>
 
 <?php do { ?>
-<div class="col-sm-2" align="center">
+<div class="col-sm-2" align="center" >
+  
   <img src="pimg/<?php echo $row_prd['p_img1'];?>" width="80%" />
   <p align="center">
-    <b><?php echo $row_prd['p_name']; ?> <font color="red">
-    <?php echo $row_prd['p_price']; ?>  บาท </font> </b>
+    <b><?php echo $row_prd['p_name']; ?> </b>
+<br />
+    <b ><font color="red"><?php echo $row_prd['p_price']; ?>  บาท </font> </b>
     <br />
     
     
@@ -49,9 +51,12 @@ $totalRows_prd = mysql_num_rows($prd);
      <span class="glyphicon glyphicon-search"></span> รายละเอียด </a>
     <?php include('outstock.php');?>
     
-    <br><br>
+    <br>
+    <br>
   </p>
 </div>
+
+
 <?php } while ($row_prd = mysql_fetch_assoc($prd)); ?>
 <?php }
 mysql_free_result($prd);

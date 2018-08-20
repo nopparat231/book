@@ -83,13 +83,14 @@ mysql_select_db($database_condb);
 	<?php include('h.php');?>
   </head>
   <body>
+          <?php include('navbar.php');?>
   <div class="container">
   	<div class="row">
-         <?php include('banner.php');?>
+         <?php // include('banner.php');?>
    </div>
   	<div class="row">
     	<div class="col-md-12">
-        	<?php include('navbar.php');?>
+    
         </div>
     </div>
         </div>

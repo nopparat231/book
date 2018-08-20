@@ -21,18 +21,7 @@
   <div >
 
 
-  <?php //include('banner.php');?><br />
-  <br />
-  <br />
-  <div class="row-fluid">
-    <div class="span12">
-      <div class="span6">
-        <h1 class="muted">Company Name</h1>
-      </div>
 
-
-    </div>
-  </div>
   <?php include('navbar.php');?>
 </div>
 <div class="container">
@@ -54,7 +43,14 @@
   </div></div> -->
   <!-- end banner --> 
 
-  
+         <div class="col-md-12">
+          <div class="panel panel-danger">
+            <div class="panel-heading"> 
+          รายการสินค้าขายดี
+       </div>
+   </div>
+    <?php include('listprd_by_view.php'); ?>
+    </div>
 
   <!--start show  product-->
     <!-- <div class="container">
@@ -62,10 +58,10 @@
         <!-- categories -->
 
         <!-- product-->
-        <div class="col-md-12">
+        <div class="col-md-12" >
           <div class="panel panel-info">
             <div class="panel-heading"> รายการสินค้า
-              <a href="index.php" class="btn btn-info btn-xs"> ทั้งหมด </a>
+              <a href="index.php" class="btn btn-info btn-xs"> ล่าสุด </a>
             </div>
           </div>
 
@@ -79,6 +75,7 @@
             include('listprd_by_q.php');
           }else{
             include('listprd.php');
+
           }
           ?>
         </div>
@@ -87,6 +84,7 @@
         <!-- cart -->
 
         
+ 
         <!--  </div> -->
       </div>
     </div>
