@@ -43,10 +43,11 @@ if($act == 'update')
 <form id="frmcart" name="frmcart" method="post" action="?act=update">
     <table width="100%" border="0" aligh="center" class="table table-hover">
     <tr>
-    <td height="40" colspan="4" align="center" bgcolor="#33CCFF"><strong><b>ตระกล้าสินค้า</b></strong></td>
+    <td height="40" colspan="4" align="center" bgcolor="#FFE4E1"><strong><b>ตระกล้าสินค้า</b></strong></td>
     </tr>
-    <tr >
-    <td><center>รหัส</center></td>
+    <tr  bgcolor='#FFFFFF'>
+    <td><center></center></td>
+    
     <td><center>ราคา</center></td>
     <td><center>จำนวน</center></td>
     <td><center>รวม</center></td>
@@ -65,27 +66,28 @@ if(!empty($_SESSION['shopping_cart']))
         $row = mysql_fetch_array($query);
         $sum = $row['p_price'] * $p_qty;
         $total += $sum;
-        echo "<tr>";
-        echo "<td width='15%'><img src='pimg/" . $row["p_img1"] . "' width='20%''></img></td>";
+        echo "<tr bgcolor='#FFFFFF' >";
+        echo "<td width='10%' align='center'><img src='pimg/" . $row["p_img1"] . "' width='20%''></img></td>";
+        
         echo "<td width='5%' align='center'>" .number_format($row["p_price"]) . "</td>";
-        echo "<td width='5%' align='center'>";  
-        echo "<input type='number' name='amount[$p_id]' value='$p_qty' size='2'/></td>";
-        echo "<td width='20%' align='left'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' ></span></a></td>";
+        echo "<td width='5%' align='center'><input type='number' name='amount[$p_id]' value='$p_qty' /></td>";  
+        echo "<td width='5%' align='right'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' ></span></a></td>";
       
         echo "</tr>";
     }
     echo "<tr class='success'>";
-    echo "<td colspan='3' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
-    echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total)."</b>"."</td>";
+    echo "<td colspan='3' bgcolor='#9370DB' align='right'><b>ราคารวม</b></td>";
+    echo "<td align='right' bgcolor='#CEE7FF'>"."<b>".number_format($total)."</b>"." .-</td>";
  
     echo "</tr>";
    
 }
 ?>
+
 <tr >
 
-<td colspan="4" align="right" >
-    <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning" />
+<td colspan="4" align="right" bgcolor='#FFFFFF' >
+    <!-- <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning" /> -->
     <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success" onclick="window.location='confirm_order.php?p_id=$p_id';" />
 </td>
 </tr>

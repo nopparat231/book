@@ -28,8 +28,11 @@ break;
 return $theValue;
 }
 }
+
+
+
 mysql_select_db($database_condb);
-$query_prd = "SELECT * FROM tbl_product ORDER BY p_id DESC";
+$query_prd = "SELECT * FROM tbl_product ORDER BY p_id DESC limit 0,6";
 $prd = mysql_query( $query_prd,$condb) or die(mysql_error());
 $row_prd = mysql_fetch_assoc($prd);
 $totalRows_prd = mysql_num_rows($prd);

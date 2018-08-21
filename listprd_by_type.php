@@ -31,6 +31,8 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 $t_id = $_GET['t_id'];
+
+
 mysql_select_db($database_condb);
 $query_prd = "SELECT * FROM tbl_product WHERE t_id=$t_id ORDER BY p_id ASC";
 $prd = mysql_query($query_prd, $condb) or die(mysql_error());

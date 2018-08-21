@@ -1,11 +1,10 @@
 <style type="text/css">
-.product_view .modal-dialog{max-width: 800px; width: 100%;  }
-
-
+.product_view .modal-dialog{position:fixed; bottom:100px; right:100px; left: 100px; top:50px;  max-width: 500px; width: 150%;  }
 
 /*dd*/
 
 </style>
+
 
 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -140,20 +139,23 @@ $totalRows_mlogin = mysql_num_rows($mlogin);
         </ul>
 </ul>
 
-<div class="modal fade product_view" id="product_view">
-    <div class="modal-dialog ">
+
+
+  
+
+</div>
+    <!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="modal fade product_view" id="product_view" data-toggle="popover" >
+    <div class="modal-dialog " >
       
         
         <?php include('cart.php');?>
 
 </div>
 </div>
-
-
-</div>
-    <!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 <?php
 mysql_free_result($mlogin);
 ?>
