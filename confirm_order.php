@@ -18,24 +18,13 @@
     
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <?php include('banner.php');?>
-      </div>
-      <div class="row">
-        <div class="col-md-12" id="hp">
-          <?php include('navbar.php');?>
-        </div>
-      </div>
-    </div>
+    
+  
     <!--start show  product-->
     <div class="container">
       <div class="row">
         <!-- categories-->
-        <div class="col-md-2" id="hp">
-          <?php include('category.php');?>
-        </div>
-
+       
 
           <div class="col-md-10">
           <?php

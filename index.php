@@ -21,108 +21,84 @@
   <div >
 
 
-
-    <?php include('navbar.php');?>
+    <?php  include('test2navbar.php'); 
+    // include('navbar.php');?>
   </div>
-  <div >
-    <?php include('test1.php');?></div>
-    <div class="container">
-      <div class="row">
 
-        <!-- banner -->
-
-         <!-- 
-           <a href="http://track.thailandpost.co.th/tracking/default.aspx" target="bank_"><img src="img/ems.png" class="rounded float-left" width="100%" /></a>
-           <br />
-            <a href="https://facebook.com" target="bank_"><img src="img/logof.png" class="rounded float-left" width="100%" /></a>
-          -->
-
- <!-- <div class="col-md-2">
-        <div class="row">
-
-    <?php // include('category2.php'); ?>
-    <br />
-  </div></div>  -->
-  <!-- end banner -->  
+  <div class="container">
+    <div class="row">
 
 
-  <!--start show  product-->
-    <!-- <div class="container">
-      <div class="row"> -->
-        <!-- categories -->
 
-        <!-- product-->
-        
+      <?php
 
-          <?php
+      $t_id = $_GET['t_id'];
+      $q = $_GET['q'];
+      if($t_id !=''){ ?>
 
-          $t_id = $_GET['t_id'];
-          $q = $_GET['q'];
-          if($t_id !=''){ ?>
-
-            <div class="col-md-12" >
+        <div class="col-md-12" >
           <div class="panel panel-info">
             <div class="panel-heading"> รายการสินค้า 
               <a href="index.php" class="btn btn-info btn-xs"> <?php echo $t_id;?> </a>
             </div>
           </div>
-         <?php  include('listprd_by_type.php'); ?>
-     </div>
-            
-          <?php }elseif($q!=''){ ?>
+          <?php  include('listprd_by_type.php'); ?>
+        </div>
 
-           <div class="col-md-12">
-            <div class="panel panel-danger">
-              <div class="panel-heading"> 
-                รายการสินค้า
-                <a href="listprd_by_view.php?view" class="btn btn-danger btn-xs"><?php echo $q;?> </a>
-              </div>
-            </div>
-            <?php include('listprd_by_q.php'); ?>
+      <?php }elseif($q!=''){ ?>
+
+       <div class="col-md-12">
+        <div class="panel panel-danger">
+          <div class="panel-heading"> 
+            รายการสินค้า
+            <a href="listprd_by_view.php?view" class="btn btn-danger btn-xs"><?php echo $q;?> </a>
           </div>
-         
+        </div>
+        <?php include('listprd_by_q.php'); ?>
+      </div>
 
-        <?php }else{?>
 
-          <div class="col-md-12" >
-          <div class="panel panel-info">
-            <div class="panel-heading"> รายการสินค้า
-              <a href="index.php" class="btn btn-info btn-xs"> ล่าสุด </a>
-            </div>
+    <?php }else{?>
+
+      <div class="col-md-12" >
+        <div class="panel panel-info">
+          <div class="panel-heading"> รายการสินค้า
+            <a href="index.php" class="btn btn-info btn-xs"> ล่าสุด </a>
           </div>
-         <?php  include('listprd.php'); ?>
-     </div>
-
-         <?php
-        }
-        ?>
-      <div class="col-md-12">
-    <div class="panel panel-danger">
-      <div class="panel-heading"> 
-        รายการสินค้า
-        <a href="listprd_by_view.php?view" class="btn btn-danger btn-xs">ขายดี </a>
+        </div>
+        <?php  include('listprd.php'); ?>
       </div>
-    </div>
-    <?php include('listprd_by_view.php'); ?>
-  </div>
 
- <div class="col-md-12">
-    <div class="panel panel-light">
-      <div class="panel-heading"> 
-        รายการสินค้า
-        <a href="listprd_by_view.php?view" class="btn btn-warning btn-xs">ทังหมด </a>
+      <?php
+    }
+    ?>
+    <div class="col-md-12">
+      <div class="panel panel-danger">
+        <div class="panel-heading"> 
+          รายการสินค้า
+          <a href="listprd_by_view.php?view" class="btn btn-danger btn-xs">ขายดี </a>
+        </div>
       </div>
+      <?php include('listprd_by_view.php'); ?>
     </div>
-    <?php include('listprdall.php'); ?>
-  </div>
 
-
-
-      <!--  </div> -->
+    <div class="col-md-12">
+      <div class="panel panel-light">
+        <div class="panel-heading"> 
+          รายการสินค้า
+          <a href="listprd_by_view.php?view" class="btn btn-warning btn-xs">ทังหมด </a>
+        </div>
+      </div>
+      <?php include('listprdall.php'); ?>
     </div>
+
+
+
+    <!--  </div> -->
   </div>
-  <!-- </div> -->
-  <!--end show  product-->
+</div>
+<!-- </div> -->
+<!--end show  product-->
 </body>
 
 <div class="col-md-12">
@@ -130,19 +106,3 @@
   <?php  include('f.php');?>
 </div>
 </html>
-
-<script>
-  window.onscroll = function() {myFunction()};
-
-  var navbar = document.getElementById("navbar");
-  var sticky = navbar.offsetTop;
-
-  function myFunction() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky")
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
-</script>
-

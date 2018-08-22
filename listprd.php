@@ -40,6 +40,7 @@ $totalRows_prd = mysql_num_rows($prd);
 <?php if ($totalRows_prd > 0) {?>
 
 <?php do { ?>
+
 <div class="col-sm-2" align="center" >
   
   <img src="pimg/<?php echo $row_prd['p_img1'];?>" width="80%" />

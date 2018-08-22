@@ -83,20 +83,10 @@ mysql_select_db($database_condb);
 	<?php include('h.php');?>
   </head>
   <body>
-  <div class="container">
-  	<div class="row">
-         <?php //include('banner.php');?>
-   </div>
-  	<div class="row">
-    	<div class="col-md-12">
-        	
-        </div>
-    </div>
-
-        </div>
-           <?php include('navbar.php');?>
+  
+          
         <div class="row" style="padding-top:100px">
-        <div class="col-md-4"></div>
+       
     	<div class="col-md-4" style="background-color:#f4f4f4">
                   <h3 align="center">
                   <span class="glyphicon glyphicon-lock"> </span>
@@ -122,16 +112,6 @@ mysql_select_db($database_condb);
                   </form>
                 </div>
               </div>
-            </div>
-        </div>
-    </div>
- </div>
-
  
- 
- 
- 
-   
   </body>
 </html>
-<?php include('f.php');?>

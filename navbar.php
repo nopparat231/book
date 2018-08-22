@@ -1,6 +1,8 @@
 <style type="text/css">
-.product_view .modal-dialog{position:fixed; bottom:100px; right:100px; left: 100px; top:50px;  max-width: 500px; width: 150%;  }
-
+/*.product_view .modal-dialog{
+  position:fixed; bottom:100px; right:100px; left: 100px; top:50px;  max-width: 500px; width: 150%;  
+}
+*/
 /*dd*/
 
 </style>
@@ -66,7 +68,7 @@ $totalRows_mlogin = mysql_num_rows($mlogin);
   </div>
 </div>
 
-<nav class="navbar navbar-default " id="navbar">
+<nav class="navbar navbar-inverse" id="navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">

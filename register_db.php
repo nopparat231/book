@@ -34,7 +34,7 @@ mysql_close();
 if($result1){
 	echo"<script>";
 	echo"alert('สมัครสมาชิกเรียบร้อยแล้ว');";
-	echo"window.location = 'login.php';";
+	echo"window.location = 'index.php';";
 	echo"</script>";	
 }else{
 	echo"<script>";
