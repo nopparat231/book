@@ -20,8 +20,7 @@
 <body>
   <div >
 
-
-    <?php  include('test2navbar.php'); 
+    <?php   include('test2navbar.php'); 
     // include('navbar.php');?>
   </div>
 
@@ -31,7 +30,7 @@
 
 
       <?php
-
+      $type_name = $_GET['type_name'];
       $t_id = $_GET['t_id'];
       $q = $_GET['q'];
       if($t_id !=''){ ?>
@@ -39,7 +38,7 @@
         <div class="col-md-12" >
           <div class="panel panel-info">
             <div class="panel-heading"> รายการสินค้า 
-              <a href="index.php" class="btn btn-info btn-xs"> <?php echo $t_id;?> </a>
+              <a href="index.php" class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
             </div>
           </div>
           <?php  include('listprd_by_type.php'); ?>
@@ -48,10 +47,10 @@
       <?php }elseif($q!=''){ ?>
 
        <div class="col-md-12">
-        <div class="panel panel-danger">
+        <div class="panel panel-default">
           <div class="panel-heading"> 
             รายการสินค้า
-            <a href="listprd_by_view.php?view" class="btn btn-danger btn-xs"><?php echo $q;?> </a>
+            <a href="listprd_by_view.php?view" class="btn btn-primary btn-xs"><?php echo $q;?> </a>
           </div>
         </div>
         <?php include('listprd_by_q.php'); ?>
@@ -99,10 +98,11 @@
 </div>
 <!-- </div> -->
 <!--end show  product-->
+  <?php // include('f.php');?>
 </body>
 
-<div class="col-md-12">
+<div>
 
-  <?php  include('f.php');?>
+  
 </div>
 </html>

@@ -243,7 +243,7 @@
 
 </style>
 
-<!-- โมเดล ปอปอัพตระกล้า -->
+<!--รวม โมเดล ปอปอัพ - ตระกล้า -->
 
 <div class="modal fade product_view" id="product_view" data-toggle="popover" >
 	<div class="modal-dialog" >
@@ -253,6 +253,7 @@
 
 	</div>
 </div>
+<!-- หน้า Login -->
 <div class="modal fade product_view" id="login_user" data-toggle="popover" >
 	<div class="modal-dialog" >
 
@@ -261,6 +262,7 @@
 
 	</div>
 </div>
+<!-- หน้า Login admin-->
 <div class="modal fade product_view" id="login_admin" data-toggle="popover" >
 	<div class="modal-dialog" >
 
@@ -269,6 +271,7 @@
 
 	</div>
 </div>
+<!-- หน้า Register -->
 <div class="modal fade product_view" id="regis_view" data-toggle="popover" >
 	<div class="modal-dialog" >
 
@@ -277,6 +280,7 @@
 
 	</div>
 </div>
+<!-- หน้า แสดงบัญชีธนาคาร -->
 
 
 <!-- โมเดล ปอปอัพตระกล้า -->
@@ -325,6 +329,22 @@ $row_mlogin = mysql_fetch_assoc($mlogin);
 $totalRows_mlogin = mysql_num_rows($mlogin);
 ?>
 
+<?php
+
+
+if (isset($_SESSION['shopping_cart'])) {
+	$meQty = 0;
+	foreach ($_SESSION['shopping_cart'] as $meItem) {
+		$meQty = $meQty + $meItem;
+	}
+} else {
+	$meQty = 0;
+}
+
+
+
+ ?>
+
 
 <!-- เมนูบาร์ -->
 
@@ -357,30 +377,19 @@ $totalRows_mlogin = mysql_num_rows($mlogin);
 						</div>
 					</form>
 				</li>
-				<li><a href="#" class="[ animate ]" data-target="#product_view" data-toggle="modal" >ตระกล้า <span class="[ pull-right glyphicon glyphicon-shopping-cart ]">0</span></a></li>
+				<li><a href="#" class="[ animate pull-right glyphicon glyphicon-shopping-cart ]" data-target="#product_view" data-toggle="modal" ><span class="badge"> <?php echo $meQty; ?></span></a></li>
 				<li>
-					<a href="#" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">Resources <span class="[ caret ]"></span></a>
+					<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">หมวดหมู่ <span class="[ caret ]"></span></a>
 					<ul class="[ dropdown-menu ]" role="menu">
-						<li><a href="#" class="[ animate ]">Blog <span class="[ pull-right glyphicon glyphicon-pencil ]"></span></a></li>
-						<li><a href="#" class="[ animate ]">List of resources <span class="[ pull-right glyphicon glyphicon-align-justify ]"></span></a></li>
-						<li><a href="#" class="[ animate ]">Download Bootstrap <span class="[ pull-right glyphicon glyphicon-cloud-download ]"></span></a></li>
-						<li class="[ dropdown-header ]">Bootstrap Templates</li>
-
-						<li class="[ dropdown-header ]">Builders</li>
-						<li><a href="#" class="[ animate ]">Form Builder <span class="[ pull-right glyphicon glyphicon-tasks ]"></span></a></li>
-						<li><a href="#" class="[ animate ]">Button Builder <span class="[ pull-right glyphicon glyphicon-edit ]"></span></a></li>
+						<li><?php include('category.php'); ?></li>
 					</ul>
 				</li>
-				
+				<li><a href="how-to-buy.php" class="[ animate pull-right glyphicon glyphicon-bitcoin ]" > แจ้งชำระเงิน</a></li>
 
 				<?php
 				$mm = ($_SESSION['MM_Username']);
 
 				if($mm != ''){
-
-
-
-
 
 					echo "<li>";
 					echo"<a href='profile.php'>";
@@ -405,7 +414,7 @@ $totalRows_mlogin = mysql_num_rows($mlogin);
 	</div>
 	<div class="[ bootsnipp-search animate ]">
 		<div class="[ container ]">
-			<form action="http://bootsnipp.com/search" method="GET" role="search">
+			<form action="index.php" method="GET" role="search">
 				<div class="[ input-group ]">
 					<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets and hit enter">
 					<span class="[ input-group-btn ]">

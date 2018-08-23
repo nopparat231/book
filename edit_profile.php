@@ -59,15 +59,13 @@ $totalRows_editmem = mysql_num_rows($editmem);
     
   </head>
   <body>
+     <div >
+
+    <?php  include('test2navbar.php'); 
+    // include('navbar.php');?>
+  </div>
   <div class="container">
-  <div class="row">
-         <?php include('banner.php');?>
-   </div>
-   <div class="row">
-        <div class="col-md-12">
-          <?php include('navbar.php');?>
-        </div>
-      </div>
+  
     <div class="row">
       <div class="col-md-3">
         <br />

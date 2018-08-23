@@ -19,17 +19,14 @@
 
 
   </head>
+  <div >
+
+    <?php  include('test2navbar.php'); 
+    // include('navbar.php');?>
+  </div>
+
   <body class="col-md-12">
-    <div class="container">
-      <div class="row">
-        <?php include('banner.php');?>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <?php include('navbar.php');?>
-        </div>
-      </div>
-    </div>
+    
     <!--start show  product-->
     <div class="container">
       <div class="row">
@@ -74,9 +71,12 @@
 
     
 
-      <?php  include('f.php');?>
+      
  </div>
     </body>
+<div class="col-md-12">
 
+  <?php  include('f.php');?>
+</div>
   </html>
-   
+  

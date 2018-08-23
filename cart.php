@@ -71,7 +71,7 @@ if(!empty($_SESSION['shopping_cart']))
         
         echo "<td width='5%' align='center'>" .number_format($row["p_price"]) . "</td>";
         echo "<td width='5%' align='center'><input type='number' name='amount[$p_id]' value='$p_qty' /></td>";  
-        echo "<td width='5%' align='right'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' ></span></a></td>";
+        echo "<td width='5%' align='right'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-trash' ></span></a></td>";
       
         echo "</tr>";
     }

@@ -38,15 +38,16 @@ $row_typeprd = mysql_fetch_assoc($typeprd);
 $totalRows_typeprd = mysql_num_rows($typeprd);
 ?>
 
-<div class="list-group" id="list-tab" >
+<!-- <div class="list-group" id="list-tab" >
               <a href="index.php" class="list-group-item list-group-item-action active" id="list-home-list">หมวดสินค้า</a>
-              
+               -->
 <?php do { ?>
-                <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type-name=<?php echo $row_typeprd['t_name'];?>" class="list-group-item list-group-item-action" id="list-profile-list""> <?php echo $row_typeprd['t_name']; ?></a>
+                <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" class="[ animate ]"> <?php echo $row_typeprd['t_name']; ?><span class="[ pull-right 
+glyphicon glyphicon-chevron-right ]"></span></a>
 <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
 
                    
-</div>
+
 <?php
 mysql_free_result($typeprd);
 ?>

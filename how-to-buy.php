@@ -47,19 +47,7 @@ $totalRows_rb = mysql_num_rows($rb);
 	
   </head>
   <body>
-  <div class="container">
-  <div class="row">
-         <?php include('banner.php');?>
-   </div>
-  	<div class="row">
-    	<div class="col-md-12">
-    	  <?php include('navbar.php');?>
-    	</div>
-      <div class="row">
-      
-    </div>
- </div> 
- 
+   <?php include('test2navbar.php'); ?>
  <div class="container">
  	<div class="row">
    <div class="col-md-3">
@@ -70,7 +58,7 @@ $totalRows_rb = mysql_num_rows($rb);
       if($mm != ''){
          include('m_menu.php'); 
          }elseif ($mm == '') {
-           include('category.php'); 
+           
          }
          
           ?>
@@ -99,10 +87,8 @@ $totalRows_rb = mysql_num_rows($rb);
                     <?php } while ($row_rb = mysql_fetch_assoc($rb)); ?>
                 </table>
         </div>
-    </div>
-</div>
+ 
   </body>
 </html><?php
 mysql_free_result($rb);
 ?>
-<?php include('f.php');?>

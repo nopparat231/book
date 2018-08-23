@@ -1,11 +1,22 @@
 
 <style>
 .bg-4 { 
+
+position: absolute;
+    border: 0px solid blue;
+    width: 100%;
+    height: 20%;
+    top: 800px;
+    right: 0px;
+	background-color: #778899;
+	color: #ffffff;
+	
+	/*position: absolute;
     width: 100%;
     height: 20%;
     background-color: #778899;
     color: #ffffff;
-}
+}*/
 </style>
 
 <footer class="container-fluid bg-4 text-center">
