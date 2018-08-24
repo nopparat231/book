@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,22 +9,24 @@
 	
   </head>
   <body>
-  
+  <br>
  <?php include('test2navbar.php');?>
  <!--start show  product-->
  <div class="container">
  	<div class="row">
     	<!-- categories-->
     	<div class="col-md-3">
-        	<?php include('category.php');?>
+        	<?php include('category2.php'); ?>
         </div>
-        <!-- product-->
-        <div class="col-md-9">
-         	<?php  include('prd-detail.php');?>
+      <div class="col-md-9">
+           <?php  include('prd-detail.php');?>
         </div>
+       
         
     </div>
 </div>
+ <!-- product-->
+        
  <!--end show  product-->
  
  

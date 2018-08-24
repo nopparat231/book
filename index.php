@@ -20,7 +20,7 @@
 <body>
   <div >
 
-    <?php   include('test2navbar.php'); 
+    <?php  include('test2navbar.php'); 
     // include('navbar.php');?>
   </div>
 
@@ -60,7 +60,7 @@
     <?php }else{?>
 
       <div class="col-md-12" >
-        <div class="panel panel-info">
+        <div class="panel " style="background-color: #F0F8FF">
           <div class="panel-heading"> รายการสินค้า
             <a href="index.php" class="btn btn-info btn-xs"> ล่าสุด </a>
           </div>
@@ -72,7 +72,7 @@
     }
     ?>
     <div class="col-md-12">
-      <div class="panel panel-danger">
+      <div class="panel " style="background-color: #FFF5EE">
         <div class="panel-heading"> 
           รายการสินค้า
           <a href="listprd_by_view.php?view" class="btn btn-danger btn-xs">ขายดี </a>
@@ -82,7 +82,7 @@
     </div>
 
     <div class="col-md-12">
-      <div class="panel panel-light">
+      <div class="panel " style="background-color: #F5F5DC">
         <div class="panel-heading"> 
           รายการสินค้า
           <a href="listprd_by_view.php?view" class="btn btn-warning btn-xs">ทังหมด </a>
@@ -98,7 +98,7 @@
 </div>
 <!-- </div> -->
 <!--end show  product-->
-  <?php // include('f.php');?>
+  <?php  include('f.php');?>
 </body>
 
 <div>

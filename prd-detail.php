@@ -51,9 +51,9 @@ $sql= "UPDATE tbl_product SET  p_view=$count WHERE p_id = $p_id";
 	mysql_query($sql , $condb);
 //
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<?php include('h.php');?>
+<!DOCTYPE html >
+<html >
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
@@ -61,16 +61,21 @@ $sql= "UPDATE tbl_product SET  p_view=$count WHERE p_id = $p_id";
 
 <body>
 	<div class="col-sm-5">
-    	<img src="pimg/<?php echo $row_prdt['p_img1'];?>" class="img img-responsive">
+      <img src="pimg/<?php echo $row_prdt['p_img1'];?>" class="img img-responsive">
       <br>
+    <?php if ($row_prdt['p_img2'] != "") {
+      ?>
       <img src="pimg/<?php echo $row_prdt['p_img2'];?>" class="img img-responsive">
        <br>
+    <?php } ?>
+    	
+      
     </div>
 
     <div class="col-md-7">
    <h4>  ชื่อสินค้า :  <?php echo $row_prdt['p_name']; ?> </h4>
     รายละเอียด : <?php echo $row_prdt['p_detial']; ?>  
-    <font color="blue">
+    <font color="#FF9966">
     <h3> ราคา <?php echo $row_prdt['p_price']; ?>  บาท  </h3> </font> <br />
     จำนวนการเข้าชม <?php echo $row_prdt['p_view']; ?>  ครั้ง  <br />
     จำนวนสินค้าคงเหลือ <?php echo $row_prdt['p_qty']; ?>  ชิ้น
@@ -82,7 +87,7 @@ $qty = $row_prdt['p_qty'];
 if($qty < 0){
 
     echo "<font color='red'>";
-    echo "<button class='btn btn-danger btn-lg glyphicon glyphicon-shopping-cart' disabled='disable'>หมด!</button>";
+    echo "<button class='button btn-danger btn-lg glyphicon glyphicon-shopping-cart' disabled='disable'>หมด!</button>";
     echo "</font>";
     }else{ 
 
@@ -93,7 +98,7 @@ if($qty < 0){
 
     <br />
     <input type="text" name="p_id"  hidden value="<?php echo $p_id;?>" />
-    <button name="act" class="btn btn-success btn-lg  glyphicon glyphicon-shopping-cart" value="add" >สั่งซื้อ </button>
+    <button name="act" class="button btn-lg  glyphicon glyphicon-shopping-cart" value="add" style="background-color: #3c3c3c" >สั่งซื้อ</button>
 
     
 
@@ -112,3 +117,29 @@ if($qty < 0){
 <?php
 mysql_free_result($prdt);
 ?>
+<style type="text/css">
+  
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center; 
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+  
+</style>

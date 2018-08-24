@@ -1,43 +1,52 @@
 
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
 
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
 
-<!------ Include the above in your HEAD tag ---------->
-<link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-<link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
-<script src="jquery.min.js"></script>
-<script src="owlcarousel/owl.carousel.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-<script type="text/javascript">
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
-autoplay:false
-autoplayTimeout:5000
-autoplayHoverPause:false
-  });
-});
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
 
-</script>
+mysql_select_db($database_condb);
+$query_typeprd = "SELECT * FROM tbl_type ORDER BY t_id ASC";
+$typeprd = mysql_query($query_typeprd, $condb) or die(mysql_error());
+$row_typeprd = mysql_fetch_assoc($typeprd);
+$totalRows_typeprd = mysql_num_rows($typeprd);
+?>
 
-<style type="text/css">
-    
-    .item{
-        width: 20px;
-        height: 20px;
-
-    }
-</style>
-
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<!-- Set up your HTML -->
-<div class="owl-carousel">
-<div class="item" ><img src="img/b2.png" ></div>
-<div class="item" ><img src="img/b1.png"></div>
-<div class="item" ><img src="img/b2.png"></div>
-<div class="item" ><img src="img/b1.png"></div>
-<div class="item" ><img src="img/b2.png"></div>
+<div class="list-group" id="list-tab" >
+              <a href="index.php" class="list-group-item list-group-item-action active" id="list-home-list" style="background-color: #3c3c3c">หมวดสินค้า</a>
+              
+<?php do { ?>
+                <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" class="list-group-item"> <?php echo $row_typeprd['t_name']; ?><span class="list-group-item-action"></span></a>
+<?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
 </div>
-</div>
-</div>
-</div>
+                   
+
+<?php
+mysql_free_result($typeprd);
+?>

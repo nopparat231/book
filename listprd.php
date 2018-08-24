@@ -47,13 +47,13 @@ $totalRows_prd = mysql_num_rows($prd);
   <p align="center">
     <b><?php echo $row_prd['p_name']; ?> </b>
 <br />
-    <b ><font color="red"><?php echo $row_prd['p_price']; ?>  บาท </font> </b>
+    <b ><font color="#FF9966"><?php echo $row_prd['p_price']; ?>  บาท </font> </b>
     <br />
-    
-    
-    <a href="product-detail.php?p_id=<?php echo $row_prd['p_id'];?>&act=product-detail" class="btn btn-info btn-xs" >
-     <span class="glyphicon glyphicon-search"></span> รายละเอียด </a>
+     
     <?php include('outstock.php');?>
+    <br />
+    <a href="product-detail.php?p_id=<?php echo $row_prd['p_id'];?>&act=product-detail" class="button btn2" style="background-color: #FFFFFF"><font color="#000000" ><span class="glyphicon glyphicon-search"></span>detail</font></a>
+
     
     <br>
     <br>

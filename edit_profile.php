@@ -59,18 +59,8 @@ $totalRows_editmem = mysql_num_rows($editmem);
     
   </head>
   <body>
-     <div >
-
-    <?php  include('test2navbar.php'); 
-    // include('navbar.php');?>
-  </div>
-  <div class="container">
-  
-    <div class="row">
-      <div class="col-md-3">
-        <br />
-        <?php include('m_menu.php');?>           
-      </div>
+    
+ 
         <div class="col-md-9">
         <h3 align="center">  แก้ไข ข้อมูลส่วนตัว  <?php include('edit_ok.php');?> </h3>
    
@@ -132,10 +122,10 @@ $totalRows_editmem = mysql_num_rows($editmem);
            
       </div>
       </form>
-</div>
-    </div>
-     <?php  include('f.php');?>
- </div> 
+
+    
+    
+
   </body>
 </html>
 <?php

@@ -2,14 +2,7 @@
 <style>
 .bg-4 { 
 
-position: absolute;
-    border: 0px solid blue;
-    width: 100%;
-    height: 20%;
-    top: 800px;
-    right: 0px;
-	background-color: #778899;
-	color: #ffffff;
+
 	
 	/*position: absolute;
     width: 100%;

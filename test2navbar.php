@@ -243,7 +243,7 @@
 
 </style>
 
-<!--รวม โมเดล ปอปอัพ - ตระกล้า -->
+<!-- โมเดล ปอปอัพตระกล้า -->
 
 <div class="modal fade product_view" id="product_view" data-toggle="popover" >
 	<div class="modal-dialog" >
@@ -253,7 +253,6 @@
 
 	</div>
 </div>
-<!-- หน้า Login -->
 <div class="modal fade product_view" id="login_user" data-toggle="popover" >
 	<div class="modal-dialog" >
 
@@ -262,7 +261,6 @@
 
 	</div>
 </div>
-<!-- หน้า Login admin-->
 <div class="modal fade product_view" id="login_admin" data-toggle="popover" >
 	<div class="modal-dialog" >
 
@@ -271,7 +269,6 @@
 
 	</div>
 </div>
-<!-- หน้า Register -->
 <div class="modal fade product_view" id="regis_view" data-toggle="popover" >
 	<div class="modal-dialog" >
 
@@ -280,7 +277,33 @@
 
 	</div>
 </div>
-<!-- หน้า แสดงบัญชีธนาคาร -->
+
+<div class="modal fade product_view" id="howto_view" data-toggle="popover" >
+	<div class="modal-dialog" >
+
+
+		<?php include('how_to_buy.php');?>
+
+	</div>
+</div>
+
+<div class="modal fade product_view" id="order_view" data-toggle="popover" >
+	<div class="modal-dialog" >
+
+
+		<?php include('my_order.php');?>
+
+	</div>
+</div>
+
+<div class="modal fade product_view" id="edit_view" data-toggle="popover" >
+	<div class="modal-dialog" >
+
+
+		<?php //include('edit_profile.php');?>
+
+	</div>
+</div>
 
 
 <!-- โมเดล ปอปอัพตระกล้า -->
@@ -384,30 +407,35 @@ if (isset($_SESSION['shopping_cart'])) {
 						<li><?php include('category.php'); ?></li>
 					</ul>
 				</li>
-				<li><a href="how-to-buy.php" class="[ animate pull-right glyphicon glyphicon-bitcoin ]" > แจ้งชำระเงิน</a></li>
-
+				
 				<?php
+
 				$mm = ($_SESSION['MM_Username']);
 
-				if($mm != ''){
+				if($mm != ''){?>
 
-					echo "<li>";
-					echo"<a href='profile.php'>";
-					echo"<span class='glyphicon glyphicon-user
-					'>คุณ".$row_mlogin['mem_name'];
-					echo"</span></a>";
-					echo"</li>";
+					
+  	<li>
+  	<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown"><?php echo $row_mlogin['mem_name'];  ?><span class="[ caret ]"></span></a>
+	<ul class="[ dropdown-menu ]" role="menu">
+	<li>
 
-					echo"<li><a href='logout.php' class='animate'><span class='glyphicon glyphicon-log-out'> ออกจากระบบ</span></a></li>";
+  <a href="my_order.php?page=mycart" class="[ animate ]">รายการสั่งซื้อ<span class="[ pull-right 
+glyphicon glyphicon-th-list ]" data-target="#order_view" data-toggle="modal"></span></a>
+  <a href="edit_profile.php?mem_id=<?php echo $row_mlogin['mem_id']; ?>" class="[ animate ]">แก้ไขข้อมูลส่วนตัว<span class="[ pull-right glyphicon glyphicon-wrench ]" data-target="#edit_view" data-toggle="modal"></span></a>
+  <a href="logout.php" class="list-group-item list-group-item-danger">ออกจากระบบ<span class="[ pull-right 
+glyphicon glyphicon-log-out ]"></span></a>
+</li>
+</ul>
+	</li>
+				<?php }else{
+					echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
 
-				}else{
-					echo"<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
-
-				}
+			 }?>
 
 
-				?>
-	
+				<li><a href="#" class="[ animate pull-right glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >แจ้งชำระเงิน</a></li>
+					
 				<li class="[ hidden-xs ]"><a href="#toggle-search" class="[ animate ]"><span class="[ glyphicon glyphicon-search ]"></span></a></li>
 			</ul>
 		</div>
@@ -429,6 +457,4 @@ if (isset($_SESSION['shopping_cart'])) {
 <br>
 <br>
 <!-- เมนูบาร์ -->
-
-
-
+	
