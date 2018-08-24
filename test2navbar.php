@@ -261,14 +261,7 @@
 
 	</div>
 </div>
-<div class="modal fade product_view" id="login_admin" data-toggle="popover" >
-	<div class="modal-dialog" >
-
-
-		<?php include('login_admin.php');?>
-
-	</div>
-</div>
+<!-- register -->
 <div class="modal fade product_view" id="regis_view" data-toggle="popover" >
 	<div class="modal-dialog" >
 
@@ -287,23 +280,6 @@
 	</div>
 </div>
 
-<div class="modal fade product_view" id="order_view" data-toggle="popover" >
-	<div class="modal-dialog" >
-
-
-		<?php include('my_order.php');?>
-
-	</div>
-</div>
-
-<div class="modal fade product_view" id="edit_view" data-toggle="popover" >
-	<div class="modal-dialog" >
-
-
-		<?php //include('edit_profile.php');?>
-
-	</div>
-</div>
 
 
 <!-- โมเดล ปอปอัพตระกล้า -->
@@ -390,7 +366,7 @@ if (isset($_SESSION['shopping_cart'])) {
 		<div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
 			<ul class="[ nav navbar-nav navbar-right ]">
 				<li class="[ visible-xs ]">
-					<form action="http://bootsnipp.com/search" method="GET" role="search">
+					<form action="" method="GET" role="search">
 						<div class="[ input-group ]">
 							<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets">
 							<span class="[ input-group-btn ]">
@@ -420,9 +396,10 @@ if (isset($_SESSION['shopping_cart'])) {
 	<ul class="[ dropdown-menu ]" role="menu">
 	<li>
 
-  <a href="my_order.php?page=mycart" class="[ animate ]">รายการสั่งซื้อ<span class="[ pull-right 
-glyphicon glyphicon-th-list ]" data-target="#order_view" data-toggle="modal"></span></a>
-  <a href="edit_profile.php?mem_id=<?php echo $row_mlogin['mem_id']; ?>" class="[ animate ]">แก้ไขข้อมูลส่วนตัว<span class="[ pull-right glyphicon glyphicon-wrench ]" data-target="#edit_view" data-toggle="modal"></span></a>
+  <a href="my_order.php?page=mycart" class="[ animate ]" >รายการสั่งซื้อ<span class="[ pull-right glyphicon glyphicon-th-list ]" ></span></a>
+
+  <a href="my_order.php?mem_id=<?php echo $row_mlogin['mem_id']; ?>" class="[ animate ]" >แก้ไขข้อมูลส่วนตัว<span class="[ pull-right glyphicon glyphicon-wrench ]" ></span></a>
+
   <a href="logout.php" class="list-group-item list-group-item-danger">ออกจากระบบ<span class="[ pull-right 
 glyphicon glyphicon-log-out ]"></span></a>
 </li>

@@ -61,7 +61,7 @@ $totalRows_editmem = mysql_num_rows($editmem);
   <body>
     
  
-        <div class="col-md-9">
+        <div class="col-md-12" style="background: #FFFFFF;">
         <h3 align="center">  แก้ไข ข้อมูลส่วนตัว  <?php include('edit_ok.php');?> </h3>
    
     <form  name="editmem" action="edit_profile_db.php" method="POST" id="editmem" class="form-horizontal">
@@ -122,7 +122,7 @@ $totalRows_editmem = mysql_num_rows($editmem);
            
       </div>
       </form>
-
+</div>
     
     
 

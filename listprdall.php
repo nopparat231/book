@@ -44,7 +44,7 @@ $totalRows_prd = mysql_num_rows($prd);
   <p align="center">
     <b><?php echo $row_prd['p_name']; ?> </b>
 <br />
-    <b ><font color="red"><?php echo $row_prd['p_price']; ?>  บาท </font> </b>
+    <b ><font color="#FF8C00"><?php echo $row_prd['p_price']; ?>  บาท </font> </b>
     <br />
     
     

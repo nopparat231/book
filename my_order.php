@@ -54,24 +54,36 @@ $totalRows_pf = mysql_num_rows($pf);
     <title></title>
   </head>
   <body>
+    <div>
+      
+      <?php include('test2navbar.php') ?>
+    </div>
 <div class="container">
   <div class="row">
     
 
 <!-- start show prd -->
-  
+  <div class="col-md-3">
+    
+    <?php include('category2.php') ?>
+  </div>
     <!-- content -->
     
-    <div class="col-md-8">
+    <div class="col-md-7">
     <?php
     $page = $_GET['page'];
+    $mem_id = $_GET['mem_id'];
+
     if ($page == 'mycart') {
       include('mycart.php');
-      
-    }else {
+    }elseif ($mem_id != '') {
+      include('edit_profile.php');
+    } else  {
       include('detail_order_afer_cartdone.php');
+    } 
+      
 
-    }
+ 
 
      ?>
      </div>
@@ -84,6 +96,9 @@ $totalRows_pf = mysql_num_rows($pf);
 
   </body>
 </html>
+<?php
 
+include('f.php');
+ ?>
 
  

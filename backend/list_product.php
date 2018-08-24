@@ -52,11 +52,12 @@ $totalRows_prd = mysql_num_rows($prd);
 
   </head>
   <body>
+    <?php include('navbar.php');?>
   <div class="container">
-  <div class="row">
-         <?php include('banner.php');?>
-   </div>
-  	<div class="row">
+  
+         
+  
+    <div class="row">
     	<div class="col-md-2">
         <b>  ADMIN : <?php include('mm.php');?> </b>
         <br>

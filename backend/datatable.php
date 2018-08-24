@@ -1,7 +1,13 @@
 <link rel="stylesheet" type="text/css" href="../dt/jquery.dataTables.min.css">
 <script type="text/javascript" language="javascript" src="../dt/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" language="javascript" src="../dt/jquery.dataTables.min.js"></script>
-<script>		
+
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script>	
+
+
 $(document).ready(function() {
 
     $('#example').DataTable( {

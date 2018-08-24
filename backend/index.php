@@ -10,12 +10,11 @@
 
   </head>
   <body>
+    <?php include('navbar.php');?>
   <div class="container">
-  <div class="row">
-  <span id="hp">
-         <?php include('banner.php');?>
-  </span>
-   </div>
+  
+         
+  
   	<div class="row">
     	<div class="col-md-2">
         <b>  ADMIN : <?php include('mm.php');?> </b>

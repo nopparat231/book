@@ -48,11 +48,12 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
     <?php include('datatable.php');?>
   </head>
   <body>
+   <?php include('navbar.php');?>
   <div class="container">
-  <div class="row">
-         <?php include('banner.php');?>
-   </div>
-  	<div class="row">
+  
+         
+  
+    <div class="row">
     	<div class="col-md-2">
         <b>  ADMIN : <?php include('mm.php');?> </b>
         <br>
