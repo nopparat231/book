@@ -1,36 +1,36 @@
 <?php require_once('Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
+	function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+	{
+		if (PHP_VERSION < 6) {
+			$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+		}
+		$theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+		switch ($theType) {
+			case "text":
+			$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+			break;
+			case "long":
+			case "int":
+			$theValue = ($theValue != "") ? intval($theValue) : "NULL";
+			break;
+			case "double":
+			$theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+			break;
+			case "date":
+			$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+			break;
+			case "defined":
+			$theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+			break;
+		}
+		return $theValue;
+	}
 }
 $colname_mm = "-1";
 if (isset($_SESSION['MM_Username'])) {
-  $colname_mm = $_SESSION['MM_Username'];
+	$colname_mm = $_SESSION['MM_Username'];
 }
 mysql_select_db($database_condb);
 $query_mm = sprintf("SELECT * FROM tbl_member WHERE mem_username = %s", GetSQLValueString($colname_mm, "text"));
@@ -46,50 +46,73 @@ $totalRows_mycart = mysql_num_rows($mycart);
 ?>
 
 
-<p align="center"><button class="btn btn-primary btn-sm" onclick="window.print()">พิมพ์</button></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php include('h.php');?>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<p align="center"><button class="btn btn-primary btn-sm" onclick="window.print()">พิมพ์</button></p>
 
-<table id="example" class="display" cellspacing="0" border="1">
-	<thead>
-		<tr>
-		<th>รหัสสั่งซื้อ</th>
-		<th>จำนวนรายการ</th>
-		<th>ราคารวม</th>
-		<th>สถานะ</th>
-		<th>วันที่ทำรายการ</th>
-	</tr>
-	</thead>
-	<?php if ($totalRows_mycart > 0) {?>
-		
+				<table id="example" class="display" cellspacing="0" border="1">
+					<thead>
+						<tr>
+							<th>รหัสสั่งซื้อ</th>
+							<th>จำนวนรายการ</th>
+							<th>ราคารวม</th>
+							<th>สถานะ</th>
+							<th>วันที่ทำรายการ</th>
+						</tr>
+					</thead>
+					<?php if ($totalRows_mycart > 0) {?>
+						
 
-<?php do { ?>
-	<tr>
-		<td>
-			<?php echo $row_mycart['oid'];?>
-			<span id="hp">
-				<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>act=show-order">
-					<span class="glyphicon glyphicon-zoom-in"></span>
-				</a>
-			</span>
-		</td>
-		<td align="center">
-			<?php echo $row_mycart['coid'];?>
-		</td>
-		<td align="center">
-			<?php echo number_format($row_mycart['ctotal'],2);?>
-		</td>
-		<td align="center">
-			<font color="red">
-			<?php $status = $row_mycart['order_status'];
-			include('backend/status.php');
-			?>
-			</font>
-		</td>
-		<td> <?php echo $row_mycart['order_date'];?></td>
-		</tr>
-	<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
-	</table>
+						<?php do { ?>
+							<tr>
+								<td>
+									<?php echo $row_mycart['oid'];?>
+									<span id="hp">
+										<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>act=show-order">
+											<span class="glyphicon glyphicon-zoom-in"></span>
+										</a>
+									</span>
+								</td>
+								<td align="center">
+									<?php echo $row_mycart['coid'];?>
+								</td>
+								<td align="center">
+									<?php echo number_format($row_mycart['ctotal'],2);?>
+								</td>
+								<td align="center">
+									<font color="red">
+										<?php $status = $row_mycart['order_status'];
+										include('backend/status.php');
+										?>
+									</font>
+								</td>
+								<td> <?php echo $row_mycart['order_date'];?></td>
+							</tr>
+						<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
 <?php } ?>
-	<?php
-	mysql_free_result($mycart);
-	mysql_free_result($mm);
-	?>
+<?php
+mysql_free_result($mycart);
+mysql_free_result($mm);
+?>
+
+<?php
+
+include ('f.php');
+ ?>

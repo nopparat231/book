@@ -43,11 +43,11 @@ $totalRows_prdt = mysql_num_rows($prdt);
 
 
 //update product view
-$p_id = $row_prdt['p_id'];
+$pp_id = $row_prdt['p_id'];
 $p_view = $row_prdt['p_view'];
 $count = $p_view + 1;
 
-$sql= "UPDATE tbl_product SET  p_view=$count WHERE p_id = $p_id";
+$sql= "UPDATE tbl_product SET  p_view=$count WHERE p_id = $pp_id";
 	mysql_query($sql , $condb);
 //
 ?>
@@ -97,7 +97,7 @@ if($qty < 0){
     <form action="index.php"  method="get">
 
     <br />
-    <input type="text" name="p_id"  hidden value="<?php echo $p_id;?>" />
+    <input type="text" name="p_id"  hidden value="<?php echo $row_prdt['$p_id'];?>" />
     <button name="act" class="button btn-lg  glyphicon glyphicon-shopping-cart" value="add" style="background-color: #3c3c3c" >สั่งซื้อ</button>
 
     

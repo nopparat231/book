@@ -69,24 +69,31 @@ $totalRows_pf = mysql_num_rows($pf);
   </div>
     <!-- content -->
     
-    <div class="col-md-7">
+   <!--  <div class="col-md-8" > -->
     <?php
     $page = $_GET['page'];
     $mem_id = $_GET['mem_id'];
+    $p_id = $_GET['p_id'];
 
     if ($page == 'mycart') {
-      include('mycart.php');
+       echo "<div class='col-md-8' >";
+     include('mycart.php');
+      echo "</div>";
     }elseif ($mem_id != '') {
-      include('edit_profile.php');
+    echo "<div class='col-md-8' >";
+     include('edit_profile.php');
+      echo "</div>";
     } else  {
+      echo "<div class='col-md-8' >";
       include('detail_order_afer_cartdone.php');
+      echo "</div>";
     } 
       
 
  
 
      ?>
-     </div>
+    <!--  </div> -->
    
 </div>
 
@@ -98,7 +105,7 @@ $totalRows_pf = mysql_num_rows($pf);
 </html>
 <?php
 
-include('f.php');
+include ('f.php');
  ?>
 
  

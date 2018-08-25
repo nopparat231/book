@@ -47,7 +47,7 @@ if (isset($_POST['admin_user'])) {
   $password=$_POST['admin_pass'];
   $MM_fldUserAuthorization = "";
   $MM_redirectLoginSuccess = "backend/index.php";
-  $MM_redirectLoginFailed = "login_admin.php";
+  $MM_redirectLoginFailed = "login_alert.php";
   $MM_redirecttoReferrer = false;
 mysql_select_db($database_condb);
   
@@ -67,13 +67,16 @@ mysql_select_db($database_condb);
     if (isset($_SESSION['PrevUrl']) && false) {
       $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
     }
-    header("Location: " . $MM_redirectLoginSuccess );
+    header("Location: " . $MM_redirectLoginSuccess);//. $MM_redirectLoginSuccess );
   }
   else {
-    header("Location: ". $MM_redirectLoginFailed );
+    header("Location: index.php " . $MM_redirectLoginFailed); //. $MM_redirectLoginFailed
   }
 }
 ?>
+
+<a href=""></a>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

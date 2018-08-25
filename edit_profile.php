@@ -60,10 +60,10 @@ $totalRows_editmem = mysql_num_rows($editmem);
   </head>
   <body>
     
- 
+
         <div class="col-md-12" style="background: #FFFFFF;">
         <h3 align="center">  แก้ไข ข้อมูลส่วนตัว  <?php include('edit_ok.php');?> </h3>
-   
+    <div class="col-md-4"></div>
     <form  name="editmem" action="edit_profile_db.php" method="POST" id="editmem" class="form-horizontal">
        <div class="form-group">
        <div class="col-sm-2">  </div>

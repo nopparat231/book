@@ -253,6 +253,7 @@
 
 	</div>
 </div>
+
 <div class="modal fade product_view" id="login_user" data-toggle="popover" >
 	<div class="modal-dialog" >
 
@@ -280,6 +281,14 @@
 	</div>
 </div>
 
+<div class="modal fade product_view" id="login_admin" data-toggle="popover" >
+	<div class="modal-dialog" >
+
+
+		<?php include('login_admin.php');?>
+
+	</div>
+</div>
 
 
 <!-- โมเดล ปอปอัพตระกล้า -->
@@ -392,7 +401,7 @@ if (isset($_SESSION['shopping_cart'])) {
 
 					
   	<li>
-  	<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown"><?php echo $row_mlogin['mem_name'];  ?><span class="[ caret ]"></span></a>
+  	<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown"><?php echo $row_mlogin['mem_name'],$mm;  ?><span class="[ caret ]"></span></a>
 	<ul class="[ dropdown-menu ]" role="menu">
 	<li>
 
@@ -407,6 +416,7 @@ glyphicon glyphicon-log-out ]"></span></a>
 	</li>
 				<?php }else{
 					echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
+					echo "<li><a href='register.php' class='animate' data-target='#regis_view'' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>สมัครสมาชิก</span></a></li>";
 
 			 }?>
 

@@ -18,15 +18,21 @@
     
   </head>
   <body>
-    
-  
+   
+  <div>
+      
+      <?php include('test2navbar.php') ?>
+    </div>
     <!--start show  product-->
     <div class="container">
       <div class="row">
         <!-- categories-->
-       
+        <div class="col-md-3">
+    
+    <?php include('category2.php') ?>
+  </div>
 
-          <div class="col-md-10">
+          <div class="col-md-8">
           <?php
             include('order.php');
           ?>
@@ -35,9 +41,9 @@
       
     </div>
 
-        <?php  include('f.php');?>
+        <?php // include('f.php');?>
     </div>
       <!--end show  product-->
     </body>
   </html>
-  
+  <?php include('f.php');?>

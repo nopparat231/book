@@ -1,4 +1,7 @@
-<?php include('h.php');?>
+<?php 
+ob_start();
+include('h.php');?>
+<?php include('datatable.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

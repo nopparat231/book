@@ -1,3 +1,4 @@
+
 <?php require_once('Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
@@ -35,6 +36,7 @@ if (!function_exists("GetSQLValueString")) {
 // *** Validate request to login to this site.
 if (!isset($_SESSION)) {
   session_start();
+
 }
 
 $loginFormAction = $_SERVER['PHP_SELF'];
@@ -47,7 +49,7 @@ if (isset($_POST['mem_username'])) {
   $password=$_POST['mem_password'];
   $MM_fldUserAuthorization = "";
   $MM_redirectLoginSuccess = "index.php";
-  $MM_redirectLoginFailed = "login.php";
+  $MM_redirectLoginFailed = "login_alert.php";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_condb);
   
@@ -67,10 +69,10 @@ if (isset($_POST['mem_username'])) {
    if (isset($_SESSION['PrevUrl']) && false) {
     $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
   }
-  header("Location: " . $MM_redirectLoginSuccess );
+  header("Location: " . $MM_redirectLoginSuccess ); //. $MM_redirectLoginSuccess
 }
 else {
-  header("Location: ". $MM_redirectLoginFailed );
+  header("Location: " . $MM_redirectLoginFailed ); //. $MM_redirectLoginFailed 
 }
 }
 ?>
