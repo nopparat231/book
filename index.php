@@ -39,6 +39,9 @@ height: 5px;
 
 
       <?php
+
+
+      
       $type_name = $_GET['type_name'];
       $t_id = $_GET['t_id'];
       $q = $_GET['q'];
