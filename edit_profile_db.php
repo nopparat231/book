@@ -29,13 +29,13 @@ $sql ="UPDATE tbl_member SET
 		
 		if($result){
 			echo "<script>";
-			echo "window.location ='edit_profile.php?mem_id=$mem_id&act=edit-ok'; ";
+			echo "window.location ='my_order.php?mem_id=$mem_id&act=edit-ok'; ";
 			echo "</script>";
 		} else {
 			
 			echo "<script>";
-			echo "alert('ERROR!');";
-			echo "window.location ='list_mem.php'; ";
+			echo "alert('แก้ไขไม่สำเร็จ!');";
+			echo "window.location ='my_order.php?mem_id=$mem_id'; ";
 			echo "</script>";
 		}
 		
