@@ -54,7 +54,7 @@ $totalRows_editmem = mysql_num_rows($editmem);
   <body>
   <div class="container">
   <div class="row">
-         <?php include('banner.php');?>
+         <?php include('navbar.php');?>
    </div>
     <div class="row">
       <div class="col-md-2">

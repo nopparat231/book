@@ -73,7 +73,7 @@ $totalRows_pf = mysql_num_rows($pf);
     <?php
     $page = $_GET['page'];
     $mem_id = $_GET['mem_id'];
-    $p_id = $_GET['p_id'];
+  
 
     if ($page == 'mycart') {
        echo "<div class='col-md-8' >";

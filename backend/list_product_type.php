@@ -55,8 +55,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
   
     <div class="row">
     	<div class="col-md-2">
-        <b>  ADMIN : <?php include('mm.php');?> </b>
-        <br>
+       
         <?php include('menu.php');?>
       </div>
       <div class="col-md-10">

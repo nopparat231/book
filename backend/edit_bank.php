@@ -54,12 +54,11 @@ $totalRows_editbank = mysql_num_rows($editbank);
   <body>
   <div class="container">
   <div class="row">
-         <?php include('banner.php');?>
+         <?php include('navbar.php');?>
    </div>
   	<div class="row">
     	<div class="col-md-2">
-        <b>  ADMIN : <?php include('mm.php');?> </b>
-        <br>
+      
         <?php include('menu.php');?>
       </div>
         <div class="col-md-10">

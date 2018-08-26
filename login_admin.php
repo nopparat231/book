@@ -70,7 +70,7 @@ mysql_select_db($database_condb);
     header("Location: " . $MM_redirectLoginSuccess);//. $MM_redirectLoginSuccess );
   }
   else {
-    header("Location: index.php " . $MM_redirectLoginFailed); //. $MM_redirectLoginFailed
+    header("Location: " . $MM_redirectLoginFailed); //. $MM_redirectLoginFailed
   }
 }
 ?>

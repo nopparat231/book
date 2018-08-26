@@ -10,7 +10,7 @@
   <body>
   <div class="container">
   <div class="row">
-         <?php include('banner.php');?>
+         <?php include('navbar.php');?>
    </div>
   	<div class="row">
     	<div class="col-md-12">

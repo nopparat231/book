@@ -5,7 +5,9 @@
 $(document).ready(function() {
 
   if ( $.fn.dataTable.isDataTable( '#example' ) ) {
+
     table = $('#example').DataTable();
+
 }
 else {
     table = $('#example').DataTable( {

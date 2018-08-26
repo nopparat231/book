@@ -11,13 +11,10 @@
   </head>
   <body>
   <div class="container">
-  <div class="row">
-         <?php include('banner.php');?>
-   </div>
+ <?php include('navbar.php');?>
   	<div class="row">
     	<div class="col-md-2">
-        <b>  ADMIN : <?php include('mm.php');?> </b>
-        <br>
+       
         <?php include('menu.php');?>        	 
       </div>
       <div class="col-md-10">

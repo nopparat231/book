@@ -55,8 +55,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
   
     <div class="row">
     	<div class="col-md-2">
-        <b>  ADMIN : <?php include('mm.php');?> </b>
-        <br>
+        
         <?php include('menu.php');?>
       </div>
         <div class="col-md-10">
@@ -64,21 +63,23 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
           <table id="example" class="display" cellspacing="0" border="1">
 		<thead>
             <tr align="center">
-              <th width="5%">admin_id</th>
-              <th width="10%">admin_user</th>
-              <th width="10%">admin_pass</th>
-              <th width="10%">admin_name</th>
-              <th width="15%">date_save</th>
+              <th width="5%">ลำดับ</th>
+              <th width="10%">ชื่อผู้ใช้</th>
+              <th width="10%">รหัสผ่าน</th>
+              <th width="10%">ชื่อ</th>
+               <th width="10%">สถานะ</th>
+              <th width="15%">วันที่ลงทะเบียน</th>
               <th width="5%">แก้ไข </th>
               <th width="5%">ลบ</th>
             </tr>
         </thead>
             <?php do { ?>
-              <tr>
+              <tr align="center">
                 <td align="center"><?php echo $row_listadmin['admin_id']; ?></td>
                 <td><?php echo $row_listadmin['admin_user']; ?></td>
                 <td><?php echo $row_listadmin['admin_pass']; ?></td>
                 <td><?php echo $row_listadmin['admin_name']; ?></td>
+                <td><?php echo $row_listadmin['status']; ?></td>
                 <td><?php echo $row_listadmin['date_save']; ?></td>
                 <td><center> <a href="edit_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
                 <td><center> <a href="del_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>

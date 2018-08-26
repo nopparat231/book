@@ -13,6 +13,13 @@ $(document).ready(function() {
     $('#example').DataTable( {
 
       "aaSorting" :[[0,'desc']],
+      "language": {
+            "lengthMenu": "แสดง _MENU_ หน้า",
+            "zeroRecords": "ค้นหาไม่พบ",
+            "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
+            "infoEmpty": "ไม่พบข้อมูลในตาราง",
+            "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
+        }
 
 	  //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
 

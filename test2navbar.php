@@ -245,7 +245,7 @@
 
 <!-- โมเดล ปอปอัพตระกล้า -->
 
-<div class="modal fade product_view" id="product_view" data-toggle="popover" >
+<div class="modal fade product_view" hidden id="product_view" data-toggle="popover" >
 	<div class="modal-dialog" >
 
 
@@ -254,7 +254,7 @@
 	</div>
 </div>
 
-<div class="modal fade product_view" id="login_user" data-toggle="popover" >
+<div class="modal fade product_view" hidden id="login_user" data-toggle="popover" >
 	<div class="modal-dialog" >
 
 
@@ -286,6 +286,15 @@
 
 
 		<?php include('login_admin.php');?>
+
+	</div>
+</div>
+
+<div class="modal fade product_view" id="reset_view" data-toggle="popover" >
+	<div class="modal-dialog" >
+
+
+		<?php include('reset_password.php');?>
 
 	</div>
 </div>
