@@ -56,13 +56,13 @@ if (isset($_POST['mem_username'])) {
 
     echo "<script>";
     echo "alert('Username หรือ Email ไม่ถูกต้อง !');";
-    echo "window.location ='reset_password.php';";
+    echo "window.location ='index.php';";
     echo "</script>";
   }else {
 
    echo "<script>";
    echo "alert('Password ถูกส่งไปแล้ว กรุณาตรวจสอบ E-mail !');";
-   echo "window.location ='login.php'; ";
+   echo "window.location ='index.php'; ";
    echo "</script>";
 
    $strTo = $email;
@@ -98,7 +98,7 @@ if (isset($_POST['mem_username'])) {
       <h3 align="center">
         <span class="glyphicon glyphicon-lock"> </span>
       กรุณากรอก Username และ E-mail ! </h3>
-      <form  name="formlogin" action="<?php echo $loginFormAction; ?>" method="POST" id="login" class="form-horizontal">
+      <form  name="formlogin" action="reset_password.php" method="POST" id="login" class="form-horizontal">
         <div class="form-group">
           <div class="col-sm-12">
             <input  name="mem_username" type="text" required class="form-control" id="mem_username" placeholder="Username" />

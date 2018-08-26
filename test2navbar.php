@@ -290,6 +290,14 @@
 	</div>
 </div>
 
+<div class="modal fade product_view" id="reset_view" data-toggle="popover" >
+	<div class="modal-dialog" >
+
+
+		<?php include('reset_password.php');?>
+
+	</div>
+</div>
 
 <!-- โมเดล ปอปอัพตระกล้า -->
 
