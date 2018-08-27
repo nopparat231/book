@@ -54,7 +54,7 @@ $result1 = mysql_query($sql,$condb) or die ("Error in query : $sql" .mysql_error
 mysql_close();
 if($result1){
 	echo"<script>";
-	echo"alert('สมัครสมาชิกเรียบร้อยแล้ว กรุณายืนยังที่ E-mail !');";
+	echo"alert('สมัครสมาชิกเรียบร้อยแล้ว กรุณายืนยันที่ E-mail !');";
 	echo"window.location = 'index.php';";
 	echo"</script>";	
 }else{

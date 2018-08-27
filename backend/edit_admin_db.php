@@ -9,7 +9,7 @@ $admin_name = $_POST['admin_name'];
 $admin_email = $_POST['admin_email'];
 $admin_tel = $_POST['admin_tel'];
 $admin_address = $_POST['admin_address'];
-
+$status = $_POST['status'];
 
 
 $sql ="UPDATE tbl_admin SET
@@ -17,7 +17,8 @@ $sql ="UPDATE tbl_admin SET
 		  	admin_pass='$admin_pass',
 		  	admin_email='$admin_email',
 		  	admin_tel='$admin_tel',
-		  	admin_address='$admin_address'
+		  	admin_address='$admin_address',
+		  	status='$status'
 			WHERE admin_id=$admin_id
 			";
 

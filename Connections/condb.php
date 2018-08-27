@@ -3,7 +3,7 @@
 # Type="MYSQL"
 # HTTP="true"
 $hostname_condb = "localhost";
-$database_condb = "test_book";
+$database_condb = "book-shop";
 $username_condb = "root";
 $password_condb = "";
 $condb = mysql_pconnect($hostname_condb, $username_condb, $password_condb) or trigger_error(mysql_error(),E_USER_ERROR); 

@@ -394,7 +394,7 @@ if (isset($_SESSION['shopping_cart'])) {
 						</div>
 					</form>
 				</li>
-				<li><a href="#" class="[ animate pull-right glyphicon glyphicon-shopping-cart ]" data-target="#product_view" data-toggle="modal" ><span class="badge"> <?php echo $meQty; ?></span></a></li>
+				<li><a href="" class="[ animate glyphicon glyphicon-shopping-cart ]" data-target="#product_view" data-toggle="modal" ><span class="badge"> <?php echo $meQty; ?></span></a></li>
 				<li>
 					<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">หมวดหมู่ <span class="[ caret ]"></span></a>
 					<ul class="[ dropdown-menu ]" role="menu">
@@ -410,7 +410,7 @@ if (isset($_SESSION['shopping_cart'])) {
 
 					
   	<li>
-  	<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown"><?php echo $row_mlogin['mem_name'],$mm;  ?><span class="[ caret ]"></span></a>
+  	<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown"><?php echo $row_mlogin['mem_name'];?><span class="[ caret ]"></span></a>
 	<ul class="[ dropdown-menu ]" role="menu">
 	<li>
 
@@ -430,7 +430,7 @@ glyphicon glyphicon-log-out ]"></span></a>
 			 }?>
 
 
-				<li><a href="#" class="[ animate pull-right glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >แจ้งชำระเงิน</a></li>
+				<li><a href="#" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >แจ้งชำระเงิน</a></li>
 					
 				<li class="[ hidden-xs ]"><a href="#toggle-search" class="[ animate ]"><span class="[ glyphicon glyphicon-search ]"></span></a></li>
 			</ul>

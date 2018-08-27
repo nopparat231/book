@@ -42,7 +42,7 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
               <a href="index.php" class="list-group-item list-group-item-action active" id="list-home-list" style="background-color: #3c3c3c">หมวดสินค้า</a>
               
 <?php do { ?>
-                <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" class="list-group-item"> <?php echo $row_typeprd['t_name']; ?><span class="list-group-item-action"></span></a>
+                <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" class="list-group-item"><?php echo $row_typeprd['t_name']; ?><span class="list-group-item-action"></span></a>
 <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
 </div>
                    

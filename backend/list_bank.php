@@ -60,6 +60,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
       </div>
         <div class="col-md-10">
         <h3 align="center"> รายการ Bank  <a href="add_bank.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+        <div class="table-responsive">
           <table id="example" class="display" cellspacing="0" border="1">
     <thead>
             <tr align="center">
@@ -90,6 +91,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
               </tr>
               <?php } while ($row_lbk = mysql_fetch_assoc($lbk)); ?>
           </table>
+        </div>
         </div>
     </div>
  </div>

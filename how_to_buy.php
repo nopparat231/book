@@ -45,8 +45,11 @@ $totalRows_rb = mysql_num_rows($rb);
     	<div class="col-md-8" style="background-color: #FFFFFF">
         		<h3 align="center" > เลขบัญชีสำหรับชำระเงิน </h3><br>
                 <!-- <font color="red"> *กรุณา Login เพื่อชำระเงิน </font> </h3> -->
+               
+                  <div class="table-responsive">
                 <table border="0" align="center" class="table table-hover">
-                  <tr class="success" bgcolor="#F5FFFA">
+            
+                  <tr class="success">
                     <td></td>
                     <td>ธนาคาร</td>
                     <td>ประเภท</td>
@@ -66,6 +69,7 @@ $totalRows_rb = mysql_num_rows($rb);
                     <?php } while ($row_rb = mysql_fetch_assoc($rb)); ?>
                 </table>
         </div>
+      </div>
       </div>
     </div>
 <?php

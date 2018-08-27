@@ -71,7 +71,7 @@ $totalRows_prd = mysql_num_rows($prd);
       </div>
       <div class="col-md-10">
         <h3 align="center"> เพิ่มรายการสินค้า </h3>
-
+<div class="table-responsive">
         		<form action="add_product_db.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
 
@@ -189,7 +189,7 @@ do {
     </tr>
   </table>
 </form>
-
+</div>
       </div>
     </div>
  </div>

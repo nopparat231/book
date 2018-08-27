@@ -60,6 +60,7 @@ $totalRows_mem = mysql_num_rows($mem);
       </div>
         <div class="col-md-10">
         <h3 align="center"> รายการ member  <a href="add_mem.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+        <div class="table-responsive">
           <table id="example" class="display" cellspacing="0" border="1">
 		<thead>
             <tr align="center">
@@ -87,6 +88,7 @@ $totalRows_mem = mysql_num_rows($mem);
               </tr>
               <?php } while ($row_mem = mysql_fetch_assoc($mem)); ?>
           </table>
+        </div>
         </div>
     </div>
  </div>

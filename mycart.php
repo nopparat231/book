@@ -58,12 +58,13 @@ $totalRows_mycart = mysql_num_rows($mycart);
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-8 ">
 				<p align="center"><button class="btn btn-primary btn-sm" onclick="window.print()">พิมพ์</button></p>
-
-				<table id="example" class="display" cellspacing="0" border="1">
-					<thead>
-						<tr>
+			<div class="table-responsive">
+				<table id="example" class="display table table-hover" cellspacing="0" border="1">
+		
+					<thead >
+						<tr >
 							<th>รหัสสั่งซื้อ</th>
 							<th>จำนวนรายการ</th>
 							<th>ราคารวม</th>
@@ -101,6 +102,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 							</tr>
 						<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
 					</table>
+				</div>
 				</div>
 			</div>
 		</div>

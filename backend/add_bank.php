@@ -19,7 +19,7 @@
       </div>
       <div class="col-md-10">
         <h3 align="center"> เพิ่มรายการธนาคาร</h3>
-        
+        <div class="table-responsive">
         		<form action="add_bank_db.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
   
@@ -85,7 +85,7 @@
     </tr>
   </table> 
 </form>
-            
+            </div>
       </div>
     </div>
  </div> 

@@ -79,6 +79,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
       </div>
       <div class="col-md-6">
         <h3 align="center"> เพิ่มประเภทสินค้า </h3>
+        <div class="table-responsive">
         <form action="<?php echo $editFormAction; ?>" method="POST" name="ptype" id="ptype" class="form-horizontal">
         	<div class="form-group">
             	<div class="col-sm-3" align="right"> ประเภทสินค้า </div>
@@ -95,6 +96,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
             <input type="hidden" name="MM_insert" value="ptype">
 
         </form>
+      </div>
       </div>
     </div>
  </div>

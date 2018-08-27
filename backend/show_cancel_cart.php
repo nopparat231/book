@@ -55,6 +55,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 ?>
 
 <h3 align="center">รายการยกเลิก</h3>
+<div class="table-responsive">
 <table id="example" class="display" cellspacing="0" border="0">
 	<thead>
 		<tr>
@@ -105,7 +106,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 		</tr>
 	<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
 	</table>
-
+</div>
 	<?php
 }
 	mysql_free_result($mycart);

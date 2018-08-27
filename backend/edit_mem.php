@@ -58,13 +58,13 @@ $totalRows_editmem = mysql_num_rows($editmem);
    </div>
     <div class="row">
       <div class="col-md-2">
-        <b>  mem : <?php include('mm.php');?> </b>
+     
         <br>
         <?php include('menu.php');?>
       </div>
         <div class="col-md-10">
         <h3 align="center">  แก้ไข  MEMBER  <?php include('edit-ok.php');?> </h3>
-
+<div class="table-responsive">
     <form  name="register" action="edit_mem_db.php" method="POST" id="register" class="form-horizontal">
        <div class="form-group">
        <div class="col-sm-2">  </div>
@@ -124,6 +124,7 @@ $totalRows_editmem = mysql_num_rows($editmem);
 
       </div>
       </form>
+    </div>
 </div>
 </div>
 </div>

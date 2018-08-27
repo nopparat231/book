@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-10">
       <h3 align="center">  เพิ่ม  Member </h3>
-
+<div class="table-responsive">
       <form  name="register" action="add_mem_db.php" method="POST" id="register" class="form-horizontal">
        <div class="form-group">
          <div class="col-sm-2">  </div>
@@ -86,7 +86,7 @@
   </div>
 </div>
 </div>
-
+</div>
 </div>
 </div>
 </div> 

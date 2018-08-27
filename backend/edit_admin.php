@@ -63,7 +63,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
       </div>
         <div class="col-md-10">
         <h3 align="center">  แก้ไข  Admin  <?php include('edit-ok.php');?> </h3>
-
+<div class="table-responsive">
     <form  name="register" action="edit_admin_db.php" method="POST" id="register" class="form-horizontal">
        <div class="form-group">
        <div class="col-sm-2">  </div>
@@ -118,7 +118,9 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
           <div class="col-sm-7" align="left">
 
             <select name="status">
-             <option value="<?php echo $row_editadmin['status']; ?>"><?php echo $row_editadmin['status']; ?></option>
+             <option value="<?php echo $row_editadmin['status']; ?> "><?php echo $row_editadmin['status']; ?></option>
+             
+             <option value="staff">staff</option>
              <option value="admin">admin</option>
 
            </select>
@@ -136,6 +138,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
 
       </div>
       </form>
+    </div>
 </div>
 </div>
 </div>

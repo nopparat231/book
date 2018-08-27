@@ -60,6 +60,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
       </div>
         <div class="col-md-10">
         <h3 align="center"> รายการ Admin  <a href="add_admin.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+        <div class="table-responsive">
           <table id="example" class="display" cellspacing="0" border="1">
 		<thead>
             <tr align="center">
@@ -86,6 +87,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
               </tr>
               <?php } while ($row_listadmin = mysql_fetch_assoc($listadmin)); ?>
           </table>
+        </div>
         </div>
     </div>
  </div>

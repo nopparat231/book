@@ -55,7 +55,8 @@ $totalRows_mycart = mysql_num_rows($mycart);
 ?>
 
 <h3 align="center">ส่งของแล้ว</h3>
-<table id="example" class="display" cellspacing="0" border="1">
+<div class="table-responsive">
+<table id="example" class="display table table-hover" cellspacing="0" border="1">
 	<thead>
 		<tr>
 		<th>รหัสสั่งซื้อ</th>
@@ -98,7 +99,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 		</tr>
 	<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
 	</table>
-
+</div>
 	<?php
 }
 	mysql_free_result($mycart);

@@ -113,8 +113,7 @@ else {
             <a href="index.php" type="button"  data-target='#reset_view' data-toggle='modal'> 
               <span class="glyphicon glyphicon-new-window" >สืมรหัสผ่าน</a>
 
-            <a href="test2navbar.php" type="button"  data-target='#reset_view' data-toggle='modal'> 
-              <span class="glyphicon glyphicon-new-window" >ลืมรหัสผ่าน</a>
+            
 
               </div>
             </div>

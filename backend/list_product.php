@@ -64,6 +64,7 @@ $totalRows_prd = mysql_num_rows($prd);
       </div>
       <div class="col-md-10">
         <h3 align="center"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> เพิ่มสินค้า </a> </h3>
+        <div class="table-responsive">
            <table width="100%" border="1" cellspacing="0" class="display" id="example">
 		<thead>
           <tr>
@@ -85,7 +86,7 @@ $totalRows_prd = mysql_num_rows($prd);
               <td valign="top"><?php echo $row_prd['t_name']; ?></td>
               <td valign="top"><b> <?php echo $row_prd['p_name']; ?>
 
-              <a href="product_detail.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-info btn-xs" target="_blank"> รายละเอียด </a>
+              <a href="product_detail.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-info btn-xs"> รายละเอียด </a>
               </b>
               <br>
               <?php // echo $row_prd['p_detial']; ?>
@@ -107,6 +108,7 @@ $totalRows_prd = mysql_num_rows($prd);
             <?php } while ($row_prd = mysql_fetch_assoc($prd)); ?>
             <?php } ?>
         </table>
+      </div>
       </div>
     </div>
  </div>
