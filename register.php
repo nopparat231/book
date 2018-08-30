@@ -65,14 +65,16 @@
         <input  name="mem_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="mem_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" minlength="2"/>
       </div>
     </div>
-
+<div class="modal-footer">
     <div class="form-group">
       <div class="col-sm-2"> </div>
       <div class="col-sm-6">
         <button type="submit" class="btn btn-primary" id="btn"> สมัครสามชิก  </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
       </div>
 
     </div>
+  </div>
   </form>
 </div>
 </div>

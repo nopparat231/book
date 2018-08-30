@@ -13,7 +13,7 @@
 }
 </style>
 
-<footer class="footer navbar-bottom">
+<footer class="footer navbar-bottom" id="hp">
   <br />
   <font color="#7B68EE"><p>@ร้านขายหนังสือ กรณีศึกษา </p> </font>
 

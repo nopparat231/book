@@ -104,6 +104,7 @@ else {
             <input name="mem_password" type="password" required class="form-control" id="mem_password" placeholder="Password" />
           </div>
         </div>
+         <div class="modal-footer">
         <div class="form-group">
           <div class="col-sm-12">
             <button type="submit" class="btn btn-success" id="btn">
@@ -111,8 +112,8 @@ else {
             Login </button>&nbsp;&nbsp;
 
             <a href="index.php" type="button"  data-target='#reset_view' data-toggle='modal'> 
-              <span class="glyphicon glyphicon-new-window" >สืมรหัสผ่าน</a>
-
+              <span class="glyphicon glyphicon-new-window" >ลืมรหัสผ่าน</a></span>&nbsp;&nbsp;
+<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
             
 
               </div>
@@ -120,7 +121,7 @@ else {
           </form>
         </div>
       </div>
-      
+      </div>
 
     </body>
     </html>

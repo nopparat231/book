@@ -35,7 +35,7 @@ $sql ="UPDATE tbl_admin SET
 
 			echo "<script>";
 			echo "alert('ERROR!');";
-			echo "window.location ='list_admin'; ";
+			echo "window.location ='list_admin.php'; ";
 			echo "</script>";
 		}
 

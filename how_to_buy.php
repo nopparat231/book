@@ -69,6 +69,12 @@ $totalRows_rb = mysql_num_rows($rb);
                     <?php } while ($row_rb = mysql_fetch_assoc($rb)); ?>
                 </table>
         </div>
+
+        <p align="right" >
+<button type="button" class="btn btn-default" data-dismiss="modal"  >ปิด</button>
+                <br>
+             
+</p>
       </div>
       </div>
     </div>

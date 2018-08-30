@@ -38,7 +38,7 @@ $row_typeprd = mysql_fetch_assoc($typeprd);
 $totalRows_typeprd = mysql_num_rows($typeprd);
 ?>
 
-<div class="list-group" id="list-tab" >
+<div class="list-group" id="hp" >
               <a href="index.php" class="list-group-item list-group-item-action active" id="list-home-list" style="background-color: #3c3c3c">หมวดสินค้า</a>
               
 <?php do { ?>

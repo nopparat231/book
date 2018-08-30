@@ -100,18 +100,22 @@ mysql_select_db($database_condb);
                         <input  name="admin_user" type="text" required class="form-control" id="admin_user" placeholder="Username" />
                       </div>
                     </div>
+                    
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input name="admin_pass" type="password" required class="form-control" id="admin_pass" placeholder="Password" />
                       </div>
                     </div>
+                     <div class="modal-footer">
                     <div class="form-group">
                       <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary" id="btn">
                         <span class="glyphicon glyphicon-log-in"> </span>
-                         Login </button>
+                         Login </button>&nbsp;&nbsp;
+                         <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
                       </div>
                     </div>
+                  </div>
                   </form>
                 </div>
               </div>

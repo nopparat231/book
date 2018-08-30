@@ -59,7 +59,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 ">
-				<p align="center"><button class="btn btn-primary btn-sm" onclick="window.print()">พิมพ์</button></p>
+			
 			<div class="table-responsive">
 				<table id="example" class="display table table-hover" cellspacing="0" border="1">
 		

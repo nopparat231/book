@@ -79,7 +79,7 @@ $totalRows_cartdone = mysql_num_rows($cartdone);
       <td width="1558" colspan="5" align="center">
 
 
-<strong>รายการสั่งซื้อ คุณ<?php echo $row_cartdone['mem_name'];?> <br />
+<strong>รายการสั่งซื้อ คุณ <?php echo $row_cartdone['mem_name'];?> <br />
 เบอร์โทร :  <?php echo $row_cartdone['phone']; ?> <br />
 ที่อยู่ :  <?php echo $row_cartdone['address'];?><br />
 วันที่ทำรายการ : <?php echo date('d/m/Y',strtotime($row_cartdone['order_date']));?><br />
@@ -109,6 +109,8 @@ if ($row_cartdone['postcode'] == 0 && $row_cartdone['order_status'] != 3  ) {?>
 
 <form action="add_postcode.php" method="get" >
 <input type="number" hidden name="order_id" value="<?php echo $row_cartdone['order_id'];?>" />
+<input type="text" hidden name="mem_name" value="<?php echo $row_cartdone['mem_name'];?>" />
+<input type="text" hidden name="mem_email" value="<?php echo $row_cartdone['mem_email'];?>" />
 <input type="text" name="postcode" />
 <input type="number" name="status" value="3" hidden />
 <button type="submit" name="submit" value="เพิ่มเลขพัสดุ" class="glyphicon glyphicon-floppy-saved btn-lm "  />
@@ -141,7 +143,7 @@ if ($row_cartdone['postcode'] == 0 && $row_cartdone['order_status'] != 3  ) {?>
     <td width="99" align="center">รหัส</td>
       <td width="238" align="center">สินค้า</td>
       <td width="118" align="center">ราคา</td>
-      <td width="120" align="center">ไซส์</td>
+ 
       <td width="120" align="center">จำนวน</td>
       
       <td width="100" align="center">รวม</td>
@@ -151,7 +153,7 @@ if ($row_cartdone['postcode'] == 0 && $row_cartdone['order_status'] != 3  ) {?>
       <td align="center"><?php echo $row_cartdone['d_id'];?></td>
       <td><?php echo $row_cartdone['p_name'];?></td>
       <td align="center"><?php echo $row_cartdone['p_price'];?></td>
-      <td align="center"><?php echo $row_cartdone['p_size'];?></td>
+    
       <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
       
       <td align="center"><?php echo number_format($row_cartdone['total']);?></td>
@@ -163,7 +165,7 @@ if ($row_cartdone['postcode'] == 0 && $row_cartdone['order_status'] != 3  ) {?>
         ?>
 	<?php } while ($row_cartdone = mysql_fetch_assoc($cartdone)); ?>
     <tr>
-      <td colspan="5" align="center">รวม</td>
+      <td colspan="4" align="center">รวม</td>
       <td align="center"><b> <?php echo number_format($total,2);?></b></td>
     </tr>
 

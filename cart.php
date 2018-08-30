@@ -88,7 +88,7 @@ if(!empty($_SESSION['shopping_cart']))
 
 <td colspan="4" align="right" bgcolor='#FFFFFF' >
     <!-- <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning" /> -->
-    <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success" onclick="window.location='confirm_order.php?p_id=$p_id';" />
+    <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success" onclick="window.location='confirm_order.php?p_id=$p_id';" />&nbsp;&nbsp;<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
 </td>
 </tr>
 </table>

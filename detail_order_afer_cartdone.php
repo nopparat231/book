@@ -99,7 +99,7 @@ input[type='radio']:checked:before {
 }
  
 </style>
- <p align="center"> <a class="btn btn-danger btn-sm" href="my_order.php?page=mycart"> ชำระเงินภายหลัง </a>  </p>
+ <p align="center"> <a class="btn btn-danger btn-sm" href="my_order.php?page=mycart"> รายการสั่งซื้อทั้งหมด </a>  </p>
 <form action="add_payslip_db.php" method="post" enctype="multipart/form-data" name="formpay" id="formpay">
 
 
@@ -144,7 +144,7 @@ input[type='radio']:checked:before {
     <tr class="success">
     <td width="99" align="center">รหัส</td>
       <td width="200" align="center">สินค้า</td>
-      <td width="120" align="center">ไซส์</td>
+      
       <td width="118" align="center">ราคา</td>
       <td width="120" align="center">จำนวน</td>
       <td width="100" align="center">รวม</td>
@@ -153,7 +153,6 @@ input[type='radio']:checked:before {
     <tr>
       <td align="center"><?php echo $row_cartdone['d_id'];?></td>
       <td><?php echo $row_cartdone['p_name'];?></td>
-      <td align="center"><?php echo $row_cartdone['p_size'];?></td>
       <td align="center"><?php echo $row_cartdone['p_price'];?></td>
       <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
       <td align="center"><?php echo number_format($row_cartdone['total'],2);?></td>

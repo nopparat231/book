@@ -255,7 +255,7 @@
 </div>
 
 <div class="modal fade product_view" hidden id="login_user" data-toggle="popover" >
-	<div class="modal-dialog" >
+	<div class="modal-dialog modal-lg" >
 
 
 		<?php include('login.php');?>
@@ -282,7 +282,7 @@
 </div>
 
 <div class="modal fade product_view" id="login_admin" data-toggle="popover" >
-	<div class="modal-dialog" >
+	<div class="modal-dialog modal-lg" >
 
 
 		<?php include('login_admin.php');?>
