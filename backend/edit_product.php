@@ -104,7 +104,11 @@ $totalRows_prd = mysql_num_rows($prd);
     <tr>
       <td width="129" align="right" valign="middle">จำนวนสินค้า :</td>
       <td colspan="2"><label for="p_qty"></label>
-        <input name="p_qty" type="number" required id="p_qty" value="<?php echo $row_eprd['p_qty']; ?>" size="5"/></td>
+        <input name="p_qty" type="number" required id="p_qty" value="<?php echo $row_eprd['p_qty']; ?>" size="5"/>&nbsp;</td>
+    </tr>
+      <tr>
+      <td align="right" valign="middle">&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
       <td align="right" valign="middle">ราคาขาย :</td>

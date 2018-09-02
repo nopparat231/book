@@ -164,7 +164,7 @@ input[type='radio']:checked:before {
         ?>
 	<?php } while ($row_cartdone = mysql_fetch_assoc($cartdone)); ?>
     <tr>
-      <td colspan="5" align="center">รวม</td>
+      <td colspan="4" align="center">รวม</td>
       <td align="center"><b> <?php echo number_format($total,2);?></b></td>
     </tr>
      
