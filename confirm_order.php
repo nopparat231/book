@@ -34,8 +34,12 @@
 
           <div class="col-md-8">
           <?php
-            include('order.php');
-          ?>
+        $oct = $_GET['oct'];
+        if ($oct == 'after') {
+          include('after_order.php');
+        }elseif ($oct == 'order') {
+          include('order.php');
+        }?>
           </div>
         
       
@@ -46,4 +50,11 @@
       <!--end show  product-->
     </body>
   </html>
+  <br>
+    <br>
+      <br>
+        <br>
+          <br>
+           
+
   <?php include('f.php');?>

@@ -15,14 +15,14 @@ $user = "user";
 $session_id = session_id();
 $no = "no";
 
-$check = "SELECT * FROM tbl_member WHERE mem_username = '$mem_username'";
+$check = "SELECT * FROM tbl_member WHERE mem_email , mem_username = '$mem_email','$mem_username'";
 $result = mysql_query($check,$condb);
 $num = mysql_num_rows($result);
 
 
 if ($num > 0 ){
 	echo"<script>";
-	echo"alert('User นี้มีผู้ใช้แล้ว กรุณาลองใหม่อีกครั้ง');";
+	echo"alert('Username หรือ E-mail นี้มีผู้ใช้แล้ว กรุณาลองใหม่อีกครั้ง');";
 	echo"window.location = 'index.php';";
 	echo"</script>";	
 	

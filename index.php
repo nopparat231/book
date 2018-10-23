@@ -30,7 +30,7 @@ height: 5px;
   <div >
 
     <?php  include('test2navbar.php'); 
-    // include('navbar.php');?>
+   include('carousel.php');?>
   </div>
 
   <div class="container">

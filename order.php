@@ -4,34 +4,34 @@
 session_start(); 
 // print_r($_SESSION);
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  {
+    if (PHP_VERSION < 6) {
+      $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+    }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+    $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
 
-  switch ($theType) {
-    case "text":
+    switch ($theType) {
+      case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
       break;    
-    case "long":
-    case "int":
+      case "long":
+      case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
       break;
-    case "double":
+      case "double":
       $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
       break;
-    case "date":
+      case "date":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
       break;
-    case "defined":
+      case "defined":
       $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
       break;
+    }
+    return $theValue;
   }
-  return $theValue;
-}
 }
 
 
@@ -48,75 +48,101 @@ $totalRows_buyer = mysql_num_rows($buyer);
 
 	//echo 'ss'.$row_buyer;
 
-	if($_SESSION['MM_Username']!=''){  
-?>
+if($_SESSION['MM_Username']!=''){  
+  ?>
 
+  <p id="hp"><button class="btn btn-info" ><a href="index.php">เลือกสินค้าเพิ่ม</a>  </button></p>
+  <table width="700" border="0" align="center" class="table"  >
 
-
-  <table width="700" border="0" align="center" class="table" "  >
- 
     <tr>
-      <td width="1000" colspan="5" align="center">
-      <strong>สั่งซื้อสินค้า</strong></td>
-    </tr>
-    <tr style="background-color:#87CEEB;">
-    <td align="center"  >ลำดับ</td>
-      <td align="center">สินค้า</td>
-    
-      <td align="center">ราคา</td>
-      <td align="center">จำนวน</td>
-      <td align="center">รวม/รายการ</td>
-    </tr>
-  <form  name="formlogin" action="saveorder.php" method="POST" id="login" class="form-horizontal">
-<?php
-	require_once('Connections/condb.php');
-$total = 0;
+      <td width="1558" colspan="7" align="center">
+        <strong>สั่งซื้อสินค้า</strong></td>
+      </tr>
+      <tr class="success">
+        <td align="center">ลำดับ</td>
+        <td align="center">สินค้า</td>
+        <td align="center">ไซร์</td>
+        <td align="center">ราคา</td>
+        <td align="center">จำนวน</td>
+        <td align="center">ค่าจัดส่ง</td>
+        <td align="center">รวม/รายการ</td>
+      </tr>
+      <form  name="formlogin" action="saveorder.php" method="POST" id="login" class="form-horizontal">
+        <?php
+        require_once('Connections/condb.php');
+        $total = 0;
+
+        if ($totalRows_buyer > 0) {
+
+      
+          foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
+          {
+            $sql = "select * from tbl_product where p_id=$p_id";
+            $query = mysql_query($sql,$condb);
+            $row	= mysql_fetch_array($query);
+            $sum	= $row['p_price']*$p_qty;
+
+            $total	+= $sum;
 
 
- 	foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
-	{
-		$sql = "select * from tbl_product where p_id=$p_id";
-		$query = mysql_query($sql,$condb);
-		$row	= mysql_fetch_array($query);
-		$sum	= $row['p_price']*$p_qty;
-    $total	+= $sum;
-    echo "<tr >";
-    echo "<tr style='background-color:#E0FFFF;'>";
-	  echo "<td align='center'>";
-	  echo  $i += 1;
-	  echo "</td>";
-    echo "<td>" . $row["p_name"] . "</td>";
-    
-    echo "<td align='center'>" .number_format($row['p_price']) ."</td>";
-    echo "<td align='center'>$p_qty</td>";
-    echo "<td align='right'>".number_format($sum)."</td>";
-    echo "</tr>";
-  
-?>
+            $ems = $row['p_ems'] * $p_qty;
+            $total += $ems;
 
-<input type="hidden"  name="p_name[]" value="<?php echo $row['p_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
+            $sumems +=$ems;
+            
+            echo "<tr class='success' align='center'> ";
+            echo "<td align='center'>";
+            echo  $i += 1;
+            echo "</td>";
+            echo "<td>" . $row["p_name"] . "</td>";
+            echo "<td align='center'>" . $row["p_size"] . "</td>";
+            echo "<td align='center'>" .number_format($row['p_price']) ."</td>";
+            echo "<td align='center'>$p_qty</td>";
+            echo "<td width='10%' align='center'>".number_format($ems). "</td>";
+            echo "<td align='center'>".number_format($sum)."</td>";
+            echo "</tr>";
+            
+            ?>
+
+            <input type="hidden"  name="p_name[]" value="<?php echo $row['p_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
 
 
 
-    <?php 
-	}
-	echo "<tr>";
-    echo "<td  align='right' colspan='4'><b>รวม</b></td>";
-    echo "<td align='right'>"."<b>".number_format($total)."</b>"." .-</td>";
-    echo "</tr>";
-?>
-</table>
-		</div>
-	</div>
-</div>
+            <?php 
+          }
+          
+          $tax = $total*0.07;
+          $total += $tax;
 
-<div class="container">
-  <div class="row" >
-  <div class="col-md-4"></div>
-    <div class="col-md-4" style="background-color:#FFF5EE; " >
-      <h3 align="center" style="color:green;">
-      <span class="glyphicon glyphicon-shopping-cart"> </span>
-         ที่อยู่ในการจัดส่งสินค้า  </h3>
+
+          echo "<tr class='success'>";
+          echo "<td  align='left' colspan='6'><b>จัดส่ง</b></td>";
+          echo "<td align='center'>"."<b>".number_format($sumems)."</b>"."</td>";
+          echo "</tr>";
+
+          echo "<tr class='success'>";
+          echo "<td  align='left' colspan='6'><b>ภาษี 7%</b></td>";
+          echo "<td align='center'>"."<b>".number_format($tax,2)."</b>"."</td>";
+          echo "</tr>";
+
+          echo "<tr class='success'>";
+          echo "<td colspan='6' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
+          echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".$total."</b>"."</td>";
+
+          echo "</tr>";
+
+          ?>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-5" style="background-color:#f4f4f4">
+        <h3 align="center" style="color:green">
+          <span class="glyphicon glyphicon-shopping-cart"> </span>
+        ที่อยู่ในการจัดส่งสินค้า  </h3>
 
         <div class="form-group">
           <div class="col-sm-12">
@@ -127,7 +153,7 @@ $total = 0;
           <div class="col-sm-12">
             <textarea name="address" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea> 
           </div>
- 
+          
         </div>
         <div class="form-group">
           <div class="col-sm-12">
@@ -143,20 +169,27 @@ $total = 0;
           <div class="col-sm-12" align="center">
             <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_buyer['mem_id']; ?>">
 
-            <button type="submit" class="btn btn-primary" id="btn">
-             ยืนยันสั่งซื้อ </button>
+            
+<a href="confirm_order.php?p_id=$p_id&oct=after" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
+            
+            <button type="submit" class="btn btn-success" id="btn">
+            ยืนยันสั่งซื้อ </button>
+
+<a href="crear_shoping.php" type="submit" class="btn btn-danger" >ยกเลิกการสั่งซื้อ</a>
+            
           </div>
         </div>
       </form>
     </div>
   </div>
 </div>
-<br>
-<br>
 <?php
- } else{  
+}
+} else{  
   include('logout3.php'); 
  }//seseion
  
-mysql_free_result($buyer);
-?>
+ mysql_free_result($buyer);
+ ?>
+ <br>
+ <br>
