@@ -1,7 +1,7 @@
 <style type="text/css">
 	
 .button {
-    background-color: #3c3c3c;
+    background-color: #2C3E50;
     border: none;
     color: white;
     padding: 3px 30px;

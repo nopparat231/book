@@ -1,6 +1,6 @@
 <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
 <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
-
+<?php include 'config_page.php'; ?>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
  <script src="js/bootstrap.min.js"></script>
 
@@ -365,7 +365,7 @@ if (isset($_SESSION['shopping_cart'])) {
 
 <!-- เมนูบาร์ -->
 
-<nav class="[ navbar navbar-inverse navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+<nav class="[ navbar navbar-inverse navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation" style="background-color: #2C3E50">
 	<div class="[ container ]">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="[ navbar-header ]">
@@ -376,7 +376,7 @@ if (isset($_SESSION['shopping_cart'])) {
 				<span class="[ icon-bar ]"></span>
 			</button>
 			<div class="[ animbrand ]">
-				<a class="[ navbar-brand ][ animate ]" href="index.php">BookStore</a>
+				<a class="[ navbar-brand ][ animate ]" href="index.php"><img alt="Brand" src="pimg/<?php echo $row_cf['logo']; ?>" width="40%"></a>
 			</div>
 		</div>
 
@@ -398,7 +398,7 @@ if (isset($_SESSION['shopping_cart'])) {
 				<li>
 					<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">หมวดหมู่ <span class="[ caret ]"></span></a>
 					<ul class="[ dropdown-menu ]" role="menu">
-						<li><?php include('category.php'); ?></li>
+						<?php include('category.php'); ?>
 					</ul>
 				</li>
 				
@@ -410,7 +410,7 @@ if (isset($_SESSION['shopping_cart'])) {
 
 					
   	<li>
-  	<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown"><?php echo $row_mlogin['mem_name'];?><span class="[ caret ]"></span></a>
+  	<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">โปรไฟล์ <?php echo $row_mlogin['mem_name'];?><span class="[ caret ]"></span></a>
 	<ul class="[ dropdown-menu ]" role="menu">
 	<li>
 
@@ -449,6 +449,7 @@ glyphicon glyphicon-log-out ]"></span></a>
 		</div>
 	</div>
 </nav>
+<br>
 <br>
 <br>
 <br>

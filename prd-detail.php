@@ -98,7 +98,7 @@ if($qty < 0){
 
     <br />
     <input type="text" name="p_id"  hidden value="<?php echo $p_id;?>" />
-    <button name="act" class="button btn-lg  glyphicon glyphicon-shopping-cart" value="add" style="background-color: #3c3c3c" >สั่งซื้อ</button>
+    <button name="act" class="button btn-lg  glyphicon glyphicon-shopping-cart" value="add" style="background-color: #2C3E50" >สั่งซื้อ</button>
 
     
 

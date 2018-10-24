@@ -1,7 +1,6 @@
-<?php //include 'config_page.php'; ?>
+<?php include 'config_page.php'; ?>
 
-<div class="container">
-	<div class="row">
+
 		<!-- Carousel -->
     	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -38,5 +37,3 @@
 		    	<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 		</div><!-- /carousel -->
-	</div>
-</div>
