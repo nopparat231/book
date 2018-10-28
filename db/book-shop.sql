@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2018 at 06:02 PM
+-- Generation Time: Oct 28, 2018 at 05:25 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -276,8 +276,8 @@ CREATE TABLE `tbl_type1` (
 --
 
 INSERT INTO `tbl_type1` (`t1_id`, `t_id`, `t1_name`) VALUES
-(1, 6, 'วรรณกรรม'),
-(2, 6, 'การศึกษา');
+(1, 3, 'วรรณกรรม'),
+(2, 3, 'การศึกษา');
 
 --
 -- Indexes for dumped tables
@@ -387,7 +387,7 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT for table `tbl_type`
 --
 ALTER TABLE `tbl_type`
-  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_type1`

@@ -1,52 +1,52 @@
 <style type="text/css">
-  
+
 
 .dropdown-submenu {
-    position: relative;
+  position: relative;
 }
 
 .dropdown-submenu>.dropdown-menu {
-    top: 5;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
+  top: 5;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  -webkit-border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px;
+  border-radius: 0 6px 6px 6px;
 }
 
 .dropdown-submenu:hover>.dropdown-menu {
-    display: block;
+  display: block;
 }
 
 .dropdown-submenu>a:after {
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #ccc;
+  margin-top: 5px;
+  margin-right: -10px;
 }
 
 .dropdown-submenu:hover>a:after {
-    border-left-color: #fff;
+  border-left-color: #fff;
 }
 
 .dropdown-submenu.pull-left {
-    float: none;
+  float: none;
 }
 
 .dropdown-submenu.pull-left>.dropdown-menu {
-    left: -100%;
-    margin-left: 10px;
-    -webkit-border-radius: 6px 0 6px 6px;
-    -moz-border-radius: 6px 0 6px 6px;
-    border-radius: 6px 0 6px 6px;
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
 }
 
 </style>
@@ -54,38 +54,38 @@
 
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  {
+    if (PHP_VERSION < 6) {
+      $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+    }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+    $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
 
-  switch ($theType) {
-    case "text":
+    switch ($theType) {
+      case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
       break;    
-    case "long":
-    case "int":
+      case "long":
+      case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
       break;
-    case "double":
+      case "double":
       $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
       break;
-    case "date":
+      case "date":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
       break;
-    case "defined":
+      case "defined":
       $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
       break;
+    }
+    return $theValue;
   }
-  return $theValue;
-}
 }
 
 mysql_select_db($database_condb);
-$query_typeprd = "SELECT * FROM tbl_type ORDER BY t_id ASC";
+$query_typeprd = "SELECT * FROM tbl_type ";
 $typeprd = mysql_query($query_typeprd, $condb) or die(mysql_error());
 $row_typeprd = mysql_fetch_assoc($typeprd);
 $totalRows_typeprd = mysql_num_rows($typeprd);
@@ -101,29 +101,35 @@ $totalRows_typeprd1 = mysql_num_rows($typeprd1);
 
 <!-- <div class="list-group" id="list-tab" >
               <a href="index.php" class="list-group-item list-group-item-action active" id="list-home-list">หมวดสินค้า</a>
-               -->
-<?php do { ?>
-<li class="dropdown-submenu">
-                <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" class="[ animate ]"> <?php echo $row_typeprd['t_name']; ?></a>
-<?php do { ?>
- 
-<?php if ($row_typeprd['t_id'] == $row_typeprd1['t_id']): ?>
-   <ul class="[ dropdown-menu ]" role="menu">
-  <li>
+            -->
+            <?php do { ?>
+              <li class="dropdown-submenu">
+                <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" > <?php echo $row_typeprd['t_name']; ?></a>
 
-  <a href="index.php?t_id=<?php echo $row_typeprd1['t1_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
+                <?php if ($row_typeprd['t_id'] == $row_typeprd1['t_id']) { ?>
 
-</li>
-</ul>
-<?php endif?>
+                  <ul class="[ dropdown-menu ]" role="menu"> 
+                    <?php do { ?>
 
-<?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
 
-</li>
-<?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
 
-                   
+                        <li>
 
-<?php
-mysql_free_result($typeprd);
-?>
+                          <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
+
+                        </li>
+
+
+
+                        <?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
+                      </ul>
+                    <?php } ?>
+
+                  </li>
+                <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
+
+
+
+                <?php
+                mysql_free_result($typeprd);
+                ?>
