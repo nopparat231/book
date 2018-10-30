@@ -84,7 +84,7 @@ $totalRows_edittype = mysql_num_rows($edittype);
       </div>
       <div class="col-md-6">
         <h3 align="center"> เพิ่มประเภทสินค้า </h3>
-        <div class="table-responsive">
+        <div class="table">
         <form action="<?php echo $editFormAction; ?>" method="POST" name="ptype" id="ptype" class="form-horizontal">
         	<div class="form-group">
             	<div class="col-sm-3" align="right"> ประเภทสินค้า </div>
@@ -96,6 +96,7 @@ $totalRows_edittype = mysql_num_rows($edittype);
             	<div class="col-sm-3"></div>
                 <div class="col-sm-7">
                 	<button type="submit" name="save" class="btn btn-primary"> บันทึก </button>
+                  <a href="list_product_type.php?t" type="btn" class="btn btn-danger">ยกเลิก</a>
                 	<input name="t_id" type="hidden" id="t_id" value="<?php echo $row_edittype['t_id']; ?>">
                 </div>
              </div>

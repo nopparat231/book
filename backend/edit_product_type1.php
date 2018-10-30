@@ -37,27 +37,28 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "ptype")) {
-  $updateSQL = sprintf("UPDATE tbl_type SET t_name=%s WHERE t_id=%s",
-                       GetSQLValueString($_POST['t_name'], "text"),
-                       GetSQLValueString($_POST['t_id'], "int"));
+  $updateSQL = sprintf("UPDATE tbl_type1 SET t1_name=%s , t_id=%s WHERE t1_id=%s",
+                       GetSQLValueString($_POST['t1_name'], "text"),
+                       GetSQLValueString($_POST['t_id'], "text"),
+                       GetSQLValueString($_POST['t1_id'], "int"));
 
   mysql_select_db($condb, $condb);
   $Result1 = mysql_query($updateSQL, $condb) or die(mysql_error());
 
-  $updateGoTo = "edit_product_type.php?t_id=" . $row_edittype['t_id'] . "";
+  $updateGoTo = "list_product_type1.php?t1";
   if (isset($_SERVER['QUERY_STRING'])) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
     $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header(sprintf("Location: %s", $updateGoTo));
+  header(sprintf("Location: list_product_type1.php?t1"));
 }
 
 $colname_edittype = "-1";
-if (isset($_GET['t_id'])) {
-  $colname_edittype = $_GET['t_id'];
+if (isset($_GET['t1_id'])) {
+  $colname_edittype = $_GET['t1_id'];
 }
 mysql_select_db($database_condb);
-$query_edittype = sprintf("SELECT * FROM tbl_type WHERE t_id = %s", GetSQLValueString($colname_edittype, "int"));
+$query_edittype = sprintf("SELECT * FROM tbl_type1 WHERE t1_id = %s", GetSQLValueString($colname_edittype, "int"));
 $edittype = mysql_query($query_edittype, $condb) or die(mysql_error());
 $row_edittype = mysql_fetch_assoc($edittype);
 $totalRows_edittype = mysql_num_rows($edittype);
@@ -83,20 +84,25 @@ $totalRows_edittype = mysql_num_rows($edittype);
         <?php include('menu.php');?>
       </div>
       <div class="col-md-6">
-        <h3 align="center"> เพิ่มประเภทสินค้า </h3>
-        <div class="table-responsive">
+        <h3 align="center"> แก้ไขประเภทย่อย </h3>
+        <div class="table">
         <form action="<?php echo $editFormAction; ?>" method="POST" name="ptype" id="ptype" class="form-horizontal">
         	<div class="form-group">
-            	<div class="col-sm-3" align="right"> ประเภทสินค้า </div>
+            	<div class="col-sm-3" > ประเภทสินค้า </div>
                 <div class="col-sm-7">
-                	<input name="t_name" type="text" required class="form-control" value="<?php echo $row_edittype['t_name']; ?>">
+                     <?php include 'tbl_type.php'; ?>
+                   </div>
+                     <div class="col-sm-3"> ประเภทย่อย</div>
+          <div class="col-sm-7">
+                	<input name="t1_name" type="text" required class="form-control" value="<?php echo $row_edittype['t1_name']; ?>">
                 </div>
             </div>
             <div class="form-group">
             	<div class="col-sm-3"></div>
                 <div class="col-sm-7">
                 	<button type="submit" name="save" class="btn btn-primary"> บันทึก </button>
-                	<input name="t_id" type="hidden" id="t_id" value="<?php echo $row_edittype['t_id']; ?>">
+                  <a href="list_product_type1.php?t1" type="btn" class="btn btn-danger">ยกเลิก</a>
+                	<input name="t1_id" type="hidden" id="t1_id" value="<?php echo $row_edittype['t1_id']; ?>">
                 </div>
              </div>
             <input type="hidden" name="MM_update" value="ptype">

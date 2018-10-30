@@ -106,30 +106,33 @@ $totalRows_typeprd1 = mysql_num_rows($typeprd1);
               <li class="dropdown-submenu">
                 <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" > <?php echo $row_typeprd['t_name']; ?></a>
 
-                <?php if ($row_typeprd['t_id'] == $row_typeprd1['t_id']) { ?>
 
+
+
+                <?php do { ?>
+                 
+                 <?php if ($row_typeprd['t_id'] == $row_typeprd1['t_id']) { ?>
+                   
                   <ul class="[ dropdown-menu ]" role="menu"> 
-                    <?php do { ?>
+
+                    <li>
+
+                      <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
+
+                    </li>
+
+                  </ul>
+                <?php } ?>
+
+              <?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
 
 
 
-                        <li>
-
-                          <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
-
-                        </li>
+            </li>
+          <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
 
 
 
-                        <?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
-                      </ul>
-                    <?php } ?>
-
-                  </li>
-                <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
-
-
-
-                <?php
-                mysql_free_result($typeprd);
-                ?>
+          <?php
+          mysql_free_result($typeprd);
+          ?>
