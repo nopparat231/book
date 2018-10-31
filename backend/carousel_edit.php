@@ -135,7 +135,7 @@ mysql_close();
 if($result){
 	echo "<script>";
 	echo "alert('เพิ่มเรียบร้อยแล้ว');";
-	echo "window.location ='carousel.php'; ";
+	echo "window.location ='carousel.php?act=edit-ok'; ";
 	echo "</script>";
 } else {
 

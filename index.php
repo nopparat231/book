@@ -41,11 +41,14 @@ include('h.php');?>
   <div class="container">
     <div class="row">
 
+ 
+        
 
 
       <?php
 include('carousel.php');
 
+     
       
       $type_name = $_GET['type_name'];
       $t_id = $_GET['t_id'];

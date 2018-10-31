@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2018 at 05:25 PM
+-- Generation Time: Oct 31, 2018 at 05:48 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -86,15 +86,18 @@ CREATE TABLE `tbl_carousel` (
   `carousel_img_1` varchar(200) NOT NULL,
   `carousel_img_2` varchar(200) NOT NULL,
   `carousel_img_3` varchar(200) NOT NULL,
-  `logo` varchar(200) NOT NULL
+  `logo` varchar(200) NOT NULL,
+  `about` varchar(500) NOT NULL,
+  `location` varchar(500) NOT NULL,
+  `contact` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_carousel`
 --
 
-INSERT INTO `tbl_carousel` (`carousel_id`, `carousel_img_1`, `carousel_img_2`, `carousel_img_3`, `logo`) VALUES
-(4, 'img1208529301620181024_211053.jpg', 'img274505706220181024_203338.jpg', 'img3158578410020181024_210205.jpg', 'logo75100763620181024_210734');
+INSERT INTO `tbl_carousel` (`carousel_id`, `carousel_img_1`, `carousel_img_2`, `carousel_img_3`, `logo`, `about`, `location`, `contact`) VALUES
+(4, 'img1208529301620181024_211053.jpg', 'img274505706220181024_203338.jpg', 'img3158578410020181024_210205.jpg', 'logo75100763620181024_210734', '<blockquote>\r\n<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s</p>\r\n\r\n<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since</p>\r\n</blockquote>\r\n', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d433868.0837064906!2d35.66744174160663!3d31.836036762053016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b5fb85d7981af%3A0x631c30c0f8dc65e8!2sAmman!5e0!3m2!1sen!2sjo!4v1499168051085\" sytle=\"\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>', '<ol>\r\n	<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s</li>\r\n	<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s</li>\r\n</ol>\r\n');
 
 -- --------------------------------------------------------
 
@@ -277,7 +280,9 @@ CREATE TABLE `tbl_type1` (
 
 INSERT INTO `tbl_type1` (`t1_id`, `t_id`, `t1_name`) VALUES
 (1, 3, 'วรรณกรรม'),
-(2, 3, 'การศึกษา');
+(2, 3, 'การศึกษา'),
+(3, 6, 'ยอดนิยม'),
+(13, 5, 'รวมเล่ม');
 
 --
 -- Indexes for dumped tables
@@ -393,7 +398,7 @@ ALTER TABLE `tbl_type`
 -- AUTO_INCREMENT for table `tbl_type1`
 --
 ALTER TABLE `tbl_type1`
-  MODIFY `t1_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `t1_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

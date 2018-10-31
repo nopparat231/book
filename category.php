@@ -99,6 +99,24 @@ $totalRows_typeprd1 = mysql_num_rows($typeprd1);
 
 ?>
 
+<?php function submenu($pt_id = 5 , $sub_mark ='')
+{
+  include('Connections/condb.php');
+  mysql_select_db($database_condb);
+  $query = "SELECT * FROM tbl_type1 WHERE t_id = $pt_id ORDER BY t1_name ASC";
+  $row = mysql_query($query , $condb) or die(mysql_error());
+
+  
+  
+
+  if($query->num_rows > 0){
+    while($row = $query->fetch_assoc()){
+      echo '<option value="'.$row['t_id'].'">'.$sub_mark.$row['t1_name'].'</option>';
+      submenu($row['t_id'], $sub_mark.'---');
+    }
+  }
+} ?>
+
 <!-- <div class="list-group" id="list-tab" >
               <a href="index.php" class="list-group-item list-group-item-action active" id="list-home-list">หมวดสินค้า</a>
             -->
@@ -106,33 +124,32 @@ $totalRows_typeprd1 = mysql_num_rows($typeprd1);
               <li class="dropdown-submenu">
                 <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" > <?php echo $row_typeprd['t_name']; ?></a>
 
+                <?php if ($row_typeprd['t_id'] ==  $row_typeprd1['t_id']) { ?>
+             <ul class="[ dropdown-menu ]" role="menu">
+                    <?php   while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)){ ?>
+
+                      <li>
+
+                        <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
+
+                      </li>
 
 
-
-                <?php do { ?>
-                 
-                 <?php if ($row_typeprd['t_id'] == $row_typeprd1['t_id']) { ?>
-                   
-                  <ul class="[ dropdown-menu ]" role="menu"> 
-
-                    <li>
-
-                      <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
-
-                    </li>
-
+                    <?php } ?>
                   </ul>
-                <?php } ?>
-
-              <?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
-
-
-
-            </li>
-          <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
+                
+                <?php  } ?>
+                 
 
 
 
-          <?php
-          mysql_free_result($typeprd);
-          ?>
+
+
+              </li>
+            <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
+
+
+
+            <?php
+            mysql_free_result($typeprd);
+            ?>
