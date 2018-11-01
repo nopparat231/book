@@ -1,7 +1,9 @@
 <?php 
 ob_start();
 include('h.php');?>
-<?php include('datatable.php'); ?>
+<?php include('datatable.php');
+include 'check_order_date.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

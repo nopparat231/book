@@ -91,31 +91,9 @@ $row_typeprd = mysql_fetch_assoc($typeprd);
 $totalRows_typeprd = mysql_num_rows($typeprd);
 
 
-$query_typeprd1 = "SELECT * FROM tbl_type1 ";
-$typeprd1 = mysql_query($query_typeprd1, $condb) or die(mysql_error());
-$row_typeprd1 = mysql_fetch_assoc($typeprd1);
-$totalRows_typeprd1 = mysql_num_rows($typeprd1);
-
 
 ?>
 
-<?php function submenu($pt_id = 5 , $sub_mark ='')
-{
-  include('Connections/condb.php');
-  mysql_select_db($database_condb);
-  $query = "SELECT * FROM tbl_type1 WHERE t_id = $pt_id ORDER BY t1_name ASC";
-  $row = mysql_query($query , $condb) or die(mysql_error());
-
-  
-  
-
-  if($query->num_rows > 0){
-    while($row = $query->fetch_assoc()){
-      echo '<option value="'.$row['t_id'].'">'.$sub_mark.$row['t1_name'].'</option>';
-      submenu($row['t_id'], $sub_mark.'---');
-    }
-  }
-} ?>
 
 <!-- <div class="list-group" id="list-tab" >
               <a href="index.php" class="list-group-item list-group-item-action active" id="list-home-list">หมวดสินค้า</a>
@@ -123,27 +101,30 @@ $totalRows_typeprd1 = mysql_num_rows($typeprd1);
             <?php do { ?>
               <li class="dropdown-submenu">
                 <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" > <?php echo $row_typeprd['t_name']; ?></a>
+                <?php 
 
-                <?php if ($row_typeprd['t_id'] ==  $row_typeprd1['t_id']) { ?>
-             <ul class="[ dropdown-menu ]" role="menu">
-                    <?php   while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)){ ?>
+                $query_typeprd1 = "SELECT * FROM tbl_type1 where t_id =  ".$row_typeprd['t_id'];
+                $typeprd1 = mysql_query($query_typeprd1, $condb) or die(mysql_error());
+                $row_typeprd1 = mysql_fetch_assoc($typeprd1);
+                $totalRows_typeprd1 = mysql_num_rows($typeprd1);
 
-                      <li>
+                ?>
+                <?php do{ ?>
+                  <?php if ($totalRows_typeprd1 > 0) { ?>
+                <ul class="[ dropdown-menu ]" role="menu">
+                  <?php do{?>
 
-                        <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
+                    <li>
 
-                      </li>
+                      <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
 
-
-                    <?php } ?>
-                  </ul>
-                
-                <?php  } ?>
-                 
-
-
+                    </li>
 
 
+                  <?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
+                </ul>
+                  <?php }
+              } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
 
               </li>
             <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
