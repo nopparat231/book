@@ -47,14 +47,14 @@ $totalRows_mm = mysql_num_rows($mm);
 $mem_id = $row_mm['mem_id'];
 
 mysql_select_db($database_condb);
-$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id AND o.order_status = 4 GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
+$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id AND o.order_status = 5 GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
 $mycart = mysql_query($query_mycart , $condb) or die(mysql_error());
 $row_mycart = mysql_fetch_assoc($mycart);
 $totalRows_mycart = mysql_num_rows($mycart);
 
 ?>
 
-<h3 align="center">ยกเลิกคำสั่งซื้อ</h3>
+<h3 align="center">ส่งของแล้ว</h3>
 <table id="example" class="display" cellspacing="0" border="1">
 	<thead>
 		<tr>
@@ -64,7 +64,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 			<th>ราคารวม</th>
 			<th>สถานะ</th>
 			<th>วันที่ทำรายการ</th>
-			
+			<th> <center> ลบ </center></th>
 		</tr>
 	</thead>
 	<?php if ($totalRows_mycart > 0) { ?>
@@ -96,7 +96,10 @@ $totalRows_mycart = mysql_num_rows($mycart);
 					</font>
 				</td>
 				<td> <?php echo $row_mycart['order_date'];?></td>
-				
+				<td><center>
+					<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>&order_status=5" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');">
+					ลบ </a></center>
+				</td>
 			</tr>
 		<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
 	</table>

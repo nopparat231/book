@@ -71,7 +71,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 <?php do { ?>
 	<tr>
 		<td>
-			<?php echo $row_mycart['oid'];?>
+			BK<?php echo $row_mycart['oid'];?>
 			<span id="hp">
 				<a href="index.php?order_id=<?php echo $row_mycart['oid'];?>&act=show-order">
 					<span class="glyphicon glyphicon-zoom-in"></span>

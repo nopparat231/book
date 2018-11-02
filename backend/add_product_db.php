@@ -13,6 +13,7 @@ $numrand = (mt_rand());
 
 $p_name = $_POST['p_name'];
 $t_id = $_POST['t_id'];
+$t1_id = $_POST['t1_id'];
 $p_detial = $_POST['p_detial'];
 $p_price = $_POST['p_price'];
 $promo = $_POST['promo'];
@@ -22,9 +23,7 @@ $p_ems = $_POST['p_ems'];
 $p_unit = $_POST['p_unit'];
 $p_img1 = (isset($_POST['p_img1']) ? $_POST['p_img1'] : '');
 $p_img2 = (isset($_POST['p_img2']) ? $_POST['p_img2'] : '');
-$p_img3 = (isset($_POST['p_img3']) ? $_POST['p_img3'] : '');
-$p_img4 = (isset($_POST['p_img4']) ? $_POST['p_img4'] : '');
-$p_img5 = (isset($_POST['p_img5']) ? $_POST['p_img5'] : '');
+
 
 
 
@@ -139,18 +138,16 @@ $sql ="INSERT INTO tbl_product
 (
 	p_name,
 	t_id,
+	t1_id,
 	p_detial,
 	p_price,
 	promo,
 	p_qty,
-	p_size,
+	
 	p_ems,
 	p_unit,
 	p_img1,
-	p_img2,
-	p_img3,
-	p_img4,
-	p_img5
+	p_img2
 	)
 
 	VALUES
@@ -158,18 +155,16 @@ $sql ="INSERT INTO tbl_product
 	(
 	'$p_name',
 	'$t_id',
+	'$t1_id',
 	'$p_detial',
 	'$p_price',
 	'$promo',
 	'$p_qty',
-	'$p_size',
+	
 	'$p_ems',
 	'$p_unit',
 	'$newname',
-	'$newname2',
-	'$newname3',
-	'$newname4',
-	'$newname5'
+	'$newname2'
 	
 )";
 

@@ -59,50 +59,55 @@ $totalRows_mycart = mysql_num_rows($mycart);
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 ">
-			
-			<div class="table-responsive">
-				<table id="example" class="display table table-hover" cellspacing="0" border="1">
-		
-					<thead >
-						<tr >
-							<th>รหัสสั่งซื้อ</th>
-							<th>จำนวนรายการ</th>
-							<th>ราคารวม</th>
-							<th>สถานะ</th>
-							<th>วันที่ทำรายการ</th>
-						</tr>
-					</thead>
-					<?php if ($totalRows_mycart > 0) {?>
-						
 
-						<?php do { ?>
-							<tr>
-								<td>
-									<?php echo $row_mycart['oid'];?>
-									<span id="hp">
-										<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>act=show-order">
-											<span class="glyphicon glyphicon-zoom-in"></span>
-										</a>
-									</span>
-								</td>
-								<td align="center">
-									<?php echo $row_mycart['coid'];?>
-								</td>
-								<td align="center">
-									<?php echo number_format($row_mycart['ctotal'],2);?>
-								</td>
-								<td align="center">
-									<font color="red">
-										<?php $status = $row_mycart['order_status'];
-										include('backend/status.php');
-										?>
-									</font>
-								</td>
-								<td> <?php echo $row_mycart['order_date'];?></td>
+				<div class="table-responsive">
+					<table id="example" class="display table table-hover" cellspacing="0" border="1">
+
+						<thead >
+							<tr >
+								<th>รหัสสั่งซื้อ</th>
+								<th>จำนวนรายการ</th>
+								<th>ราคารวม</th>
+								<th>สถานะ</th>
+								<th>วันที่ทำรายการ</th>
+								<th></th>
 							</tr>
-						<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
-					</table>
-				</div>
+						</thead>
+						<?php if ($totalRows_mycart > 0) {?>
+
+
+							<?php do { ?>
+								<tr>
+									<td>
+										<?php echo $row_mycart['oid'];?>
+										<span id="hp">
+											<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>act=show-order">
+												<span class="glyphicon glyphicon-zoom-in"></span>
+											</a>
+										</span>
+									</td>
+									<td align="center">
+										<?php echo $row_mycart['coid'];?>
+									</td>
+									<td align="center">
+										<?php echo number_format($row_mycart['ctotal'],2);?>
+									</td>
+									<td align="center">
+										<font color="red">
+											<?php $status = $row_mycart['order_status'];
+											include('backend/status.php');
+											?>
+										</font>
+									</td>
+									<td> <?php echo $row_mycart['order_date'];?></td>
+									<td><center>
+										<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>&order_status=4" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิกคำสั่งซื้อ');">
+										ยกเลิก </a></center>
+									</td>
+								</tr>
+							<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

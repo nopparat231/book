@@ -15,5 +15,10 @@ if ($status == 1) {
 	echo "<font color='black'>";
 	echo "ยกเลิกคำสั่งซื้อ";
 	echo "</font>";
+
+}elseif ($status == 5) {
+	echo "<font color= #b36b00>";
+	echo "ยืนยันการชำระแล้ว";
+	echo "</font>";
 }
 ?>

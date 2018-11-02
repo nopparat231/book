@@ -17,7 +17,7 @@
 date_default_timezone_set('Asia/Bangkok');
 
 ?>
-
+<?php include 'config_page.php'; ?>
 <center>
   <br>
   <br>
@@ -30,7 +30,7 @@ date_default_timezone_set('Asia/Bangkok');
     <table width="1081" height="499" border="0">
       <tr>
         <th width="21" height="298" scope="row" >&nbsp;</th>
-        <th width="493" scope="row" ><img src="img/LOGO-CHATA.png" width="150" height="150" /></th>
+        <th width="493" scope="row" ><img src="pimg/<?php echo $row_cf['logo']; ?>" width="150" height="150" /></th>
 
         <th width="553" align="center" nowrap="nowrap">
           <h3><strong>บริษัท CHATA จํากัด</strong></h3>
@@ -40,8 +40,8 @@ date_default_timezone_set('Asia/Bangkok');
           <p>&nbsp;</p>
           <table width="416" border="1" cellpadding="0" cellspacing="0">
             <tr>
-              <th width="406" align="left" scope="row"><h4><strong>ใบเสร็จรับเงิน / ใบกํากับภาษี</strong></h4>
-                <h4>ORIGINAL RECEIPT / TAX INVOICE </h4></th>
+              <th width="406" align="left" scope="row"><h4 align="center"><strong>ใบเสร็จรับเงิน / ใบกํากับภาษี</strong></h4>
+                <h4 align="center">ORIGINAL RECEIPT / TAX INVOICE </h4></th>
               </tr>
             </table>
             <h4>&nbsp;</h4></th>
@@ -63,13 +63,13 @@ date_default_timezone_set('Asia/Bangkok');
               </tr>
               <tr>
                 <th style="text-align: left;"scope="row"><p>&nbsp; &nbsp; เลขประจำตัวผู้เสียภาษี</p></th>
-                <td align="left" valign="bottom"> <p>12321321213</p></td>
+                <td align="left" valign="bottom"> <p>.............................</p></td>
               </tr>
             </table>        <h3>&nbsp;</h3></th>
             <td><table width="224" border="0" align="right">
               <tr>
                 <th scope="row">เลขที่</th>
-                <td>CH<?php echo  $row_cartdone['order_id'];?></td>
+                <td>BK<?php echo  str_pad($row_cartdone['order_id'], 6, "0", STR_PAD_LEFT);?></td>
               </tr>
               <tr>
                 <th scope="row">วันที่</th>
@@ -133,9 +133,9 @@ date_default_timezone_set('Asia/Bangkok');
             $sumems +=$ems;
             ?>
 
-            <tr>
+            
               <td align="center" scope="row"><?php echo $i; ?></td>
-              <td align="center"><?php echo $row_typeprd['t_type'];?><?php echo $row_cartdone['p_id'];?></td>
+              <td align="center"><?php echo $row_typeprd['t_type'];?><?php echo str_pad($row_cartdone['p_id'], 6, "0", STR_PAD_LEFT);?></td>
               <td align="center"><?php echo $row_cartdone['p_name'];?></td>
               <td align="center"><?php echo $row_cartdone['p_size'];?></td>
               <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>

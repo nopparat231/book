@@ -66,13 +66,14 @@ $totalRows_mycart = mysql_num_rows($mycart);
 		<th>สถานะ</th>
 		<!-- <th width="10%">แก้ไขสถานะ</th> -->
 		<th>วันที่ทำรายการ</th>
+		<th></th>
 	</tr>
 	</thead>
 <?php if ($totalRows_mycart > 0) { ?>
 <?php do { ?>
 	<tr>
 		<td>
-			<?php echo $row_mycart['oid'];?>
+			BK<?php echo $row_mycart['oid'];?>
 			<span id="hp">
 				<a href="index.php?order_id=<?php echo $row_mycart['oid'];?>&act=show-order">
 					<span class="glyphicon glyphicon-zoom-in"></span>
@@ -98,6 +99,10 @@ $totalRows_mycart = mysql_num_rows($mycart);
 		</td>
 		
 		<td > <?php echo $row_mycart['order_date'];?></td>
+		<td><center>
+					<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>&order_status=4" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิกคำสั่งซื้อ');">
+					ยกเลิก </a></center>
+				</td>
 		</tr>
 	<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
 	</table>

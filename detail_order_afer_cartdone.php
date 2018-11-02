@@ -177,7 +177,7 @@ input[type='radio']:checked:before {
       </tr> 
 
     <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone)); 
-    $tax = $total*0.09;
+    $tax = $total*0.07;
     $total += $tax;
     echo "<tr>";
     echo "<td  align='left' colspan='6'><b>จัดส่ง</b></td>";

@@ -96,10 +96,10 @@ if($_SESSION['MM_Username']!=''){
             echo "</td>";
             echo "<td>" . $row["p_name"] . "</td>";
             echo "<td align='center'>" . $row["p_size"] . "</td>";
-            echo "<td align='center'>" .number_format($row['p_price']) ."</td>";
+            echo "<td align='center'>" .number_format($row['p_price'],2) ."</td>";
             echo "<td align='center'>$p_qty</td>";
             echo "<td width='10%' align='center'>".number_format($ems). "</td>";
-            echo "<td align='center'>".number_format($sum)."</td>";
+            echo "<td align='center'>".number_format($sum,2)."</td>";
             echo "</tr>";
             
             ?>
@@ -127,7 +127,7 @@ if($_SESSION['MM_Username']!=''){
 
           echo "<tr class='success'>";
           echo "<td colspan='6' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
-          echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".$total."</b>"."</td>";
+          echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
 
           echo "</tr>";
 

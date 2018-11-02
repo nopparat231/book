@@ -158,15 +158,10 @@ p_detial='$p_detial',
 p_price='$p_price',
 promo='$promo',
 p_qty='$p_qty',
-p_size='$p_size',
 p_ems='$p_ems',
 p_unit='$p_unit',
 p_img1='$newname',
-p_img2='$newname2',
-p_img3='$newname3',
-p_img4='$newname4',
-p_img5='$newname5'
-
+p_img2='$newname2'
 WHERE p_id=$p_id
 ";
 
@@ -179,7 +174,7 @@ mysql_close();
 
 if($result){
 	echo "<script>";
-	echo "window.location ='edit_product.php?p_id=$p_id&t_id=$t_id&act=edit-ok'; ";
+	echo "window.location ='edit_product.php?p_id=$p_id&t_id=$t_id&t1_id=$t1_id&act=edit-ok'; ";
 	echo "</script>";
 } else {
 

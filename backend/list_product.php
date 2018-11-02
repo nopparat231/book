@@ -33,7 +33,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 mysql_select_db($database_condb);
 $query_prd = "
-SELECT * FROM tbl_product as p, tbl_type as t
+SELECT * FROM tbl_product as p, tbl_type as t 
 WHERE p.t_id = t.t_id
 ORDER BY p.p_id ASC";
 $prd = mysql_query($query_prd, $condb) or die(mysql_error());
@@ -100,8 +100,9 @@ $totalRows_prd = mysql_num_rows($prd);
               
               <td><img src="../pimg/<?php echo $row_prd['p_img1'];?>" width="100px"></td>
               <td><center>
-              <a href="edit_product.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-warning btn-xs">
-              แก้ไข </a>
+               
+              <a href="edit_product.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&t1_id=<?php echo $row_prd['t1_id'];?>&act=edit" class="btn btn-warning btn-xs">
+              แก้ไข  </a>
               </center></td>
               <td><center> <a href="del_product.php?p_id=<?php echo $row_prd['p_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');"> ลบ </a> </center></td>
             </tr>

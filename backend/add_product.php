@@ -101,60 +101,92 @@ $totalRows_prd = mysql_num_rows($prd);
                 <td align="right" valign="middle">ราคาก่อนลด :</td>
                 <td width="2"><label for="promo"></label>
                   <input name="promo" type="number" required id="promo" value="0" size="5"/></td>
-               </tr>
+                </tr>
 
-               <tr>
-                <td align="right" valign="middle">&nbsp;</td>
-                <td colspan="2">&nbsp;</td>
-              </tr>
-              <tr>
-                <td align="right" valign="middle">ราคาหลังลด :</td>
-                <td width="2"><label for="p_price"></label>
-                 <input name="p_price" type="number" required id="p_price" value="" size="5"/></td>
-               </tr>
-               <tr>
-                <td align="right" valign="middle">&nbsp;</td>
-                <td colspan="2">&nbsp;</td>
-              </tr>
-              <tr>
-                <td width="129" align="right" valign="middle">ไซส์ :</td>
-                <td colspan="2"><label for="p_size"></label>
-                  <input name="p_size" type="text" required id="p_size" size="5"/></td>
-                </tr>
-                <tr>
-                  <td align="right" valign="middle">&nbsp;</td>
-                  <td colspan="2">&nbsp;</td>
-                </tr>
-              <tr>
-                <td width="129" align="right" valign="middle">ค่าจัดส่ง</td>
-                <td colspan="2"><label for="p_ems"></label>
-                  <input name="p_ems" type="number" required id="p_ems" size="5"/></td>
-                </tr>
                 <tr>
                   <td align="right" valign="middle">&nbsp;</td>
                   <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td align="right" valign="middle">ประเภทสินค้า :</td>
-                  <td colspan="2">
-                    <label for=""></label>
-                    <select name="t_id" id="t_id" required="required">
-                      <option value="">กรุณาเลือกประเภท</option>
-                      <?php
-                      do {
-                        ?>
-                        <option value="<?php echo $row_ptype['t_id']?>"><?php echo $row_ptype['t_name']?></option>
+                  <td align="right" valign="middle">ราคาหลังลด :</td>
+                  <td width="2"><label for="p_price"></label>
+                   <input name="p_price" type="number" required id="p_price" value="" size="5"/></td>
+                 </tr>
+                 <tr>
+                  <td align="right" valign="middle">&nbsp;</td>
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+
+                <tr>
+                  <td width="129" align="right" valign="middle">ค่าจัดส่ง</td>
+                  <td colspan="2"><label for="p_ems"></label>
+                    <input name="p_ems" type="number" required id="p_ems" size="5"/></td>
+                  </tr>
+                  <tr>
+                    <td align="right" valign="middle">&nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="right" valign="middle">ประเภทสินค้า :</td>
+                    <td colspan="2">
+                      <label for=""></label>
+                      <select name="t_id" id="t_id" required="required">
+                        <option value="">กรุณาเลือกประเภท</option>
                         <?php
-                      } while ($row_ptype = mysql_fetch_assoc($ptype));
-                      $rows = mysql_num_rows($ptype);
-                      if($rows > 0) {
-                        mysql_data_seek($ptype, 0);
-                        $row_ptype = mysql_fetch_assoc($ptype);
+                        do {
+                          ?>
+                          <option value="<?php echo $row_ptype['t_id']?>"><?php echo $row_ptype['t_name']?></option>
+                          <?php
+                        } while ($row_ptype = mysql_fetch_assoc($ptype));
+                        $rows = mysql_num_rows($ptype);
+                        if($rows > 0) {
+                          mysql_data_seek($ptype, 0);
+                          $row_ptype = mysql_fetch_assoc($ptype);
+                        }
+                        ?>
+                      </select>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td align="right" valign="middle">&nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="right" valign="middle">ประเภทย่อยสินค้า :</td>
+                    <td colspan="2">
+
+                     <?php 
+
+                     $query_typeprd1 = "SELECT * FROM tbl_type1 ";
+                     $typeprd1 = mysql_query($query_typeprd1, $condb) or die(mysql_error());
+                     $row_typeprd1 = mysql_fetch_assoc($typeprd1);
+                     $totalRows_typeprd1 = mysql_num_rows($typeprd1);
+
+                     ?>
+
+                     <label for=""></label>
+                     <select name="t1_id" required="required">
+                       <option value="">กรุณาเลือกประเภท</option>
+
+
+                       <?php
+                       do {
+                        ?>
+                        <option value="<?php echo $row_typeprd1['t1_id']?>"><?php echo $row_typeprd1['t1_name']?></option>
+                        <?php
+                      } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1));
+                      $rows1 = mysql_num_rows($typeprd1);
+                      if($rows1 > 0) {
+                        mysql_data_seek($typeprd1, 0);
+                        $row_typeprd1 = mysql_fetch_assoc($typeprd1);
                       }
                       ?>
                     </select>
                   </td>
                 </tr>
+                
                 <tr>
                   <td align="right" valign="middle">&nbsp;</td>
                   <td colspan="2">&nbsp;</td>
@@ -169,6 +201,10 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td align="right" valign="middle">&nbsp;</td>
                   <td colspan="2">&nbsp;</td>
                 </tr>
+
+
+
+
                 <tr>
                   <td align="right" valign="middle">&nbsp;</td>
                   <td colspan="2">&nbsp;</td>
@@ -179,8 +215,8 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td colspan="2"><label for="pro_qty"></label>
                    :
                    <select name="p_unit" id="p_unit" required>
-                    <option value="ชิ้น">ชิ้น</option>
-                    <option value="ใบ">ใบ</option>
+                    <option value="เล่ม">เล่ม</option>
+                    <option value="แผ่น">แผ่น</option>
                     <option value="คู่">คู่</option>
                     <option value="ตัว">ตัว</option>
 

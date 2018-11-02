@@ -48,6 +48,7 @@ $row_eprd = mysql_fetch_assoc($eprd);
 $totalRows_eprd = mysql_num_rows($eprd);
 
 $t_id=$_GET['t_id'];
+$t1_id=$_GET['t1_id'];
 
 mysql_select_db($database_condb);
 $query_prd = "
@@ -56,6 +57,14 @@ WHERE t.t_id=$t_id";
 $prd = mysql_query($query_prd, $condb) or die(mysql_error());
 $row_prd = mysql_fetch_assoc($prd);
 $totalRows_prd = mysql_num_rows($prd);
+
+$query_prd1 = "
+SELECT * FROM  tbl_type1 as t1
+WHERE t1.t1_id=$t1_id";
+$prd1 = mysql_query($query_prd1, $condb) or die(mysql_error());
+$row_prd1 = mysql_fetch_assoc($prd1);
+$totalRows_prd1 = mysql_num_rows($prd1);
+
 ?>
 <?php include('access.php');?>
 <!DOCTYPE html>
@@ -146,6 +155,7 @@ $totalRows_prd = mysql_num_rows($prd);
                     <label for=""></label>
                     <select name="t_id" id="t_id" required="required">
                      <option value="<?php echo $row_prd['t_id'];?>"><?php echo $row_prd['t_name'];?></option>
+
                      <option value="">--------</option>
                      <?php
                      do {
@@ -174,7 +184,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
                  <?php 
 
-                 $query_typeprd1 = "SELECT * FROM tbl_type1 WHERE t1_id =".$row_eprd['t1_id'];
+                 $query_typeprd1 = "SELECT * FROM tbl_type1 ";
                  $typeprd1 = mysql_query($query_typeprd1, $condb) or die(mysql_error());
                  $row_typeprd1 = mysql_fetch_assoc($typeprd1);
                  $totalRows_typeprd1 = mysql_num_rows($typeprd1);
@@ -182,17 +192,17 @@ $totalRows_prd = mysql_num_rows($prd);
                  ?>
 
                  <label for=""></label>
-                 <select name="t1_id" id="t_id" required="required">
-                
+                 <select name="t1_id" required="required">
+                  
 
-  <option value="<?php echo $row_typeprd1['t1_id'];?>"><?php echo $row_typeprd1['t1_name'];?></option>
+                  <option value="<?php echo $row_prd1['t1_id'];?>"><?php echo $row_prd1['t1_name'];?></option>
 
-                   
-                   <option value="">---------</option>
-                   <?php
-                   do {
+                  
+                  <option value="">---------</option>
+                  <?php
+                  do {
                     ?>
-                    <option value="<?php echo $row_typeprd1['t_id']?>"><?php echo $row_typeprd1['t1_name']?></option>
+                    <option value="<?php echo $row_typeprd1['t1_id']?>"><?php echo $row_typeprd1['t1_name']?></option>
                     <?php
                   } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1));
                   $rows1 = mysql_num_rows($typeprd1);
@@ -234,8 +244,8 @@ $totalRows_prd = mysql_num_rows($prd);
                :
                <select name="p_unit" id="p_unit" required>
                 <option value="<?php echo $row_eprd['p_unit'];?>"><?php echo $row_eprd['p_unit'];?></option>
-                <option value="ชิ้น">ชิ้น</option>
-                <option value="ใบ">ใบ</option>
+                <option value="เล่ม">เล่ม</option>
+                <option value="แผ่น">แผ่น</option>
                 <option value="คู่">คู่</option>
                 <option value="ตัว">ตัว</option>
 

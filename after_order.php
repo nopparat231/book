@@ -82,7 +82,7 @@ $q = $p_qty;
                 echo "<tr>";
                 echo "<td width='30%' align='center'>". $row["p_name"] ."<br><img src='pimg/" . $row["p_img1"] . "' width='50%''></img></td>";
                 echo "<td align='center' width='5%'>" .$row["p_size"]. "</td>";
-                echo "<td width='15%' align='center'>" .number_format($row["p_price"]) . "</td>";
+                echo "<td width='15%' align='center'>" .number_format($row["p_price"],2) . "</td>";
 
 
                 echo "<td width='15%' align='center'>"; 
@@ -92,7 +92,7 @@ $q = $p_qty;
 
                 echo "<td width='10%' align='center'>".number_format($ems). "</td>";
                 //echo "<input type='number' name='amount[$p_id]' value='$p_qty' size='2'/></td>";
-                echo "<td width='10%' align='right'>".number_format($sum). "</td>";
+                echo "<td width='10%' align='right'>".number_format($sum,2). "</td>";
                 echo "<td width='2%'align='right'><a href='confirm_order.php?p_id=$p_id&act=remove&oct=after' ><span class='glyphicon glyphicon-remove'  style='color: red'></span></a></td>";
 
                 echo "</tr>";
@@ -109,7 +109,7 @@ $q = $p_qty;
 
             echo "<tr>";
             echo "<td  align='left' colspan='6'><b>ราคาสินค้ารวม</b></td>";
-            echo "<td align='center'>"."<b>".number_format($total)."</b>"."</td>";
+            echo "<td align='center'>"."<b>".number_format($total,2)."</b>"."</td>";
             echo "</tr>";
 
             
@@ -124,12 +124,12 @@ $q = $p_qty;
 
             echo "<tr>";
             echo "<td  align='left' colspan='6'><b>ภาษี 7%</b></td>";
-            echo "<td align='center'>"."<b>".number_format($tax)."</b>"."</td>";
+            echo "<td align='center'>"."<b>".number_format($tax,2)."</b>"."</td>";
             echo "</tr>";
 
             echo "<tr class='success'>";
             echo "<td colspan='6' bgcolor='#CEE7FF' align='center'><b>จำนวนเงินรวม</b></td>";
-            echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total)."</b>"."</td>";
+            echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
 
             echo "</tr>";
 
