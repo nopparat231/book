@@ -28,4 +28,25 @@ do{
 
 
 
+mysql_select_db($database_condb);
+$query_promo = "SELECT promo_start , promo_done FROM tbl_product ";
+$promo = mysql_query($query_promo, $condb) or die(mysql_error());
+$row_promo = mysql_fetch_assoc($promo);
+$totalRows_promo = mysql_num_rows($promo);
+
+$da = date('0000-00-00');
+$de = date('Y-m-d');
+do{
+
+	if ($row_promo['promo_start'] && $row_promo['promo_done'] != $da && $row_promo['promo_start'] == $de ){
+
+
+		$promo_status = $da;
+		$sql ="UPDATE tbl_product SET promo_start='$promo_status' , promo_done='$promo_status', promo = 0 where promo_done <= '$de'";
+
+		$resultp = mysql_query($sql, $condb) or die("Error in query : $sql" .mysql_error());
+	}
+}while ($row_promo = mysql_fetch_assoc($promo)); 
+
+
 ?>

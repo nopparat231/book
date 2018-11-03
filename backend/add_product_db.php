@@ -17,6 +17,8 @@ $t1_id = $_POST['t1_id'];
 $p_detial = $_POST['p_detial'];
 $p_price = $_POST['p_price'];
 $promo = $_POST['promo'];
+$promo_start = $_POST['promo_start'];
+$promo_done = $_POST['promo_done'];
 $p_qty = $_POST['p_qty'];
 $p_size = $_POST['p_size'];
 $p_ems = $_POST['p_ems'];
@@ -142,6 +144,8 @@ $sql ="INSERT INTO tbl_product
 	p_detial,
 	p_price,
 	promo,
+	promo_start,
+	promo_done,
 	p_qty,
 	
 	p_ems,
@@ -159,6 +163,8 @@ $sql ="INSERT INTO tbl_product
 	'$p_detial',
 	'$p_price',
 	'$promo',
+	'$promo_start',
+	'$promo_done',
 	'$p_qty',
 	
 	'$p_ems',

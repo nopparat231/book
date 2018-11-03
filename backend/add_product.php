@@ -71,7 +71,9 @@ $totalRows_prd = mysql_num_rows($prd);
     </div>
     <div class="col-md-10">
       <h3 align="center"> เพิ่มรายการสินค้า </h3>
-      <div class="table-responsive">
+      <h5><font color="red">*กรณีไม่ต้องการให้แสดงส่วนลด ไม่ต้องกรอกราคาก่อนลด และวันที่</font></h5>
+
+        <div class="table-responsive">
         <form action="add_product_db.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
 
@@ -80,7 +82,7 @@ $totalRows_prd = mysql_num_rows($prd);
               <td colspan="3" align="center">&nbsp;</td>
             </tr>
             <tr>
-              <td width="129" align="right" valign="middle">ชื่อสินค้า :</td>
+              <td width="129" align="right" valign="middle">*ชื่อสินค้า :</td>
               <td colspan="2"><label for="pro_name2"></label>
                 <input name="p_name" type="text" required id="pro_name2" size="50"/></td>
               </tr>
@@ -89,18 +91,41 @@ $totalRows_prd = mysql_num_rows($prd);
                 <td colspan="2">&nbsp;</td>
               </tr>
               <tr>
-                <td width="129" align="right" valign="middle">จำนวนสินค้า :</td>
+                <td width="129" align="right" valign="middle">*จำนวนสินค้า :</td>
                 <td colspan="2"><label for="p_qty"></label>
                   <input name="p_qty" type="number" required id="p_qty" size="5"/></td>
                 </tr>
-                <tr>
-                 <td align="right" valign="middle">&nbsp;</td>
-                 <td colspan="2">&nbsp;</td>
-               </tr>
-               <tr>
+
+                <td align="right" valign="middle">&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>
+              <tr >
                 <td align="right" valign="middle">ราคาก่อนลด :</td>
                 <td width="2"><label for="promo"></label>
                   <input name="promo" type="number" required id="promo" value="0" size="5"/></td>
+                </tr>
+
+
+                <?php $dd = date('Y-m-d'); ?>
+                <tr>
+                  <td align="right" valign="middle">&nbsp;</td>
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right" valign="middle">เริ่มลดราคา :</td>
+                  <td width="2"><label for="promo_start"></label>
+                    <input type="date" name="promo_start" min="<?php echo $dd; ?>" ">
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right" valign="middle">&nbsp;</td>
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right" valign="middle">สิ้นสุดการลดราคา :</td>
+                  <td width="2"><label for="promo_done"></label>
+                    <input type="date" name="promo_done" min="<?php echo $dd; ?>" ">
+                  </td>
                 </tr>
 
                 <tr>
@@ -108,7 +133,7 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td align="right" valign="middle">ราคาหลังลด :</td>
+                  <td align="right" valign="middle">*ราคาสินค้า :</td>
                   <td width="2"><label for="p_price"></label>
                    <input name="p_price" type="number" required id="p_price" value="" size="5"/></td>
                  </tr>
@@ -118,7 +143,7 @@ $totalRows_prd = mysql_num_rows($prd);
                 </tr>
 
                 <tr>
-                  <td width="129" align="right" valign="middle">ค่าจัดส่ง</td>
+                  <td width="129" align="right" valign="middle">*ค่าจัดส่ง</td>
                   <td colspan="2"><label for="p_ems"></label>
                     <input name="p_ems" type="number" required id="p_ems" size="5"/></td>
                   </tr>
@@ -127,7 +152,7 @@ $totalRows_prd = mysql_num_rows($prd);
                     <td colspan="2">&nbsp;</td>
                   </tr>
                   <tr>
-                    <td align="right" valign="middle">ประเภทสินค้า :</td>
+                    <td align="right" valign="middle">*ประเภทสินค้า :</td>
                     <td colspan="2">
                       <label for=""></label>
                       <select name="t_id" id="t_id" required="required">
@@ -154,7 +179,7 @@ $totalRows_prd = mysql_num_rows($prd);
                     <td colspan="2">&nbsp;</td>
                   </tr>
                   <tr>
-                    <td align="right" valign="middle">ประเภทย่อยสินค้า :</td>
+                    <td align="right" valign="middle">*ประเภทย่อยสินค้า :</td>
                     <td colspan="2">
 
                      <?php 
@@ -186,13 +211,13 @@ $totalRows_prd = mysql_num_rows($prd);
                     </select>
                   </td>
                 </tr>
-                
+
                 <tr>
                   <td align="right" valign="middle">&nbsp;</td>
                   <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td align="right" valign="top">รายละเอียดสินค้า :</td>
+                  <td align="right" valign="top">*รายละเอียดสินค้า :</td>
                   <td colspan="2">
                     <textarea name="p_detial" id="p_detial" class="ckeditor" cols="80" rows="5"></textarea>
                   </td>
@@ -211,7 +236,7 @@ $totalRows_prd = mysql_num_rows($prd);
                 </tr>
 
                 <tr>
-                  <td align="right" valign="middle">หน่วยสินค้า</td>
+                  <td align="right" valign="middle">*หน่วยสินค้า</td>
                   <td colspan="2"><label for="pro_qty"></label>
                    :
                    <select name="p_unit" id="p_unit" required>
@@ -227,7 +252,7 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td align="right" valign="middle">รูปภาพสินค้า1 :</td>
+                  <td align="right" valign="middle">*รูปภาพสินค้า1 :</td>
                   <td colspan="2"><label for="p_img1"></label>
                     <input name="p_img1" type="file" required class="bg-warning" id="p_img1" size="40" /></td>
                   </tr>

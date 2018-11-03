@@ -124,8 +124,31 @@ $totalRows_prd1 = mysql_num_rows($prd1);
                 <td width="2"><label for="promo"></label>
                  <input name="promo" type="number" required id="promo" value="<?php echo $row_eprd['promo']; ?>" size="5"/></td>
                </tr>
-
+               <?php $dd = date('Y-m-d'); ?>
                <tr>
+                <td align="right" valign="middle">&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="right" valign="middle">เริ่มลดราคา :</td>
+                <td width="2"><label for="promo_start"></label>
+                  <input type="date" name="promo_start" min="<?php echo $dd; ?>" value="<?php echo $row_eprd['promo_start']; ?>">
+                </td>
+              </tr>
+
+              <tr>
+                <td align="right" valign="middle">&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="right" valign="middle">สิ้นสุดการลดราคา :</td>
+                <td width="2"><label for="promo_done"></label>
+                  <input type="date" name="promo_done" min="<?php echo $dd; ?>" value="<?php echo $row_eprd['promo_done']; ?>">
+                </td>
+              </tr>
+
+
+              <tr>
                 <td align="right" valign="middle">&nbsp;</td>
                 <td colspan="2">&nbsp;</td>
               </tr>
@@ -193,7 +216,7 @@ $totalRows_prd1 = mysql_num_rows($prd1);
 
                  <label for=""></label>
                  <select name="t1_id" required="required">
-                  
+
 
                   <option value="<?php echo $row_prd1['t1_id'];?>"><?php echo $row_prd1['t1_name'];?></option>
 

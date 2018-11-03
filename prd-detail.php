@@ -75,10 +75,10 @@ $sql= "UPDATE tbl_product SET  p_view=$count WHERE p_id = $p_id";
     <div class="col-md-7">
    <h4>  ชื่อสินค้า :  <?php echo $row_prdt['p_name']; ?> </h4>
     รายละเอียด : <?php echo $row_prdt['p_detial']; ?>  
-    <font color="#FF9966">
+    <font color="#8B0000">
     <h3> 
-<?php if ($row_prdt['promo'] != 0) {
-        echo " <font color='#8B0000'><strike>".number_format($row_prdt['promo'],2)."</strike></font>";
+<?php if ($row_prdt['promo'] != 0  && date('Y-m-d') >= date($row_prd['promo_start'])) {
+        echo " <font color='#FF9966'><strike>".number_format($row_prdt['promo'],2)."</strike></font>";
       } ?>
       ราคา <?php echo $row_prdt['p_price']; ?>  บาท  </h3> </font> <br />
     จำนวนการเข้าชม <?php echo $row_prdt['p_view']; ?>  ครั้ง  <br />
