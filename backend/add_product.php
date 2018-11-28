@@ -228,6 +228,22 @@ $totalRows_prd = mysql_num_rows($prd);
                 </tr>
 
 
+                   <tr>
+                  <td align="right" valign="middle">&nbsp;</td>
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right" valign="top">รายละเอียดค้นหา :</td>
+                  <td colspan="2">
+                    <textarea name="p_s" id="p_s" class="ckeditor" cols="80" rows="5"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="right" valign="middle">&nbsp;</td>
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+
+
 
 
                 <tr>

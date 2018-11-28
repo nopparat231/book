@@ -4,6 +4,7 @@ include('h.php');?>
 <?php include('datatable.php');
 include 'check_order_date.php';
  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,39 @@ include 'check_order_date.php';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="img/Li.png" />
+
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+  // hide #back-top first
+  $("#back-top").hide();
+  
+  // fade in #back-top
+  $(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('#back-top').fadeIn();
+      } else {
+        $('#back-top').fadeOut();
+      }
+    });
+
+    // scroll body to 0px on click
+    $('#back-top a').click(function () {
+      $('body,html').animate({
+        scrollTop: 0
+      }, 800);
+      return false;
+    });
+  });
+
+});
+</script> 
+
+
   <style type="text/css">
   .hr{
     color: #f00;
@@ -28,7 +62,7 @@ include 'check_order_date.php';
 
 
 </head>
-<body>
+<body id="top">
   <div >
 
     <?php  
@@ -61,9 +95,9 @@ include('carousel.php');
          รายการสินค้า 
          <a href="index.php" class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
          <hr size="10" style="background-color: #0099CC; height: 5px;">
-         
+         </div>
          <?php  include('listprd_by_type.php'); ?>
-       </div>
+       
 
      <?php }elseif($q!=''){ ?>
 
@@ -72,10 +106,10 @@ include('carousel.php');
          รายการสินค้า
          <a href="listprd_by_view.php?view" class="btn btn-primary btn-xs"><?php echo $q;?> </a>
          <hr size="10" style="background-color: #D3D3D3; height: 5px;">
-         
-         <?php include('listprd_by_q.php'); ?>
-       </div>
+          </div>
 
+         <?php include('listprd_by_q.php'); ?>
+      
 
      <?php }else{?>
 
@@ -90,6 +124,12 @@ include('carousel.php');
      <?php
    }
    ?>
+
+   <?php if ($q != '' or $type_name != ''){
+
+   }else{ ?>
+     
+   
    <div class="col-md-12">
     
     รายการสินค้า
@@ -109,18 +149,18 @@ include('carousel.php');
     <?php include('listprdall.php'); ?>
   </div>
 
-
+<?php } ?>
 
   
 </div>
 </div>
+ <p id="back-top">
+    <a href="#top"><font size="30"><span class="glyphicon glyphicon-arrow-up"></span></font> ขึ้นด้านบน</a>
+  </p>
 
 <!--end show  product-->
 <?php  include('f.php');?>
 </body>
 
-<div>
-
-  
-</div>
+ 
 </html>

@@ -1,4 +1,3 @@
-<?php include 'config_page.php'; ?>
 
 <style type="text/css">
   
@@ -51,28 +50,12 @@ footer iframe {
 <footer>
     <div class="footerHeader" ></div>
     <div class="container">
-    <div class="col-md-4" >
-        <h3>เกี่ยวกับ</h3>
+    <div class="col-md-12" >
+        <h3>หมวดหมู่</h3>
        
-           <?php echo $row_cf['about']; ?>
+           <h3><?php include 'sub_f.php'; ?></h3>
        
     </div>
-    
-    <div class="col-md-4">
-        <h3>สถานที่ตั้ง </h3>
-        <p>
-           <?php echo $row_cf['location']; ?> 
-
-        </p>
    
-    </div>
-    <div class="col-md-4" >
-        <h3>ติดต่อ</h3>
-        
-       
-            <?php echo $row_cf['contact']; ?>
-      
-      
-    </div>
     </div>
 </footer>

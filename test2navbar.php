@@ -2,7 +2,7 @@
 <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
 <?php include 'config_page.php'; ?>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
- <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 <!------ Include the above in your HEAD tag ---------->
 
@@ -360,7 +360,7 @@ if (isset($_SESSION['shopping_cart'])) {
 
 
 
- ?>
+?>
 
 
 <!-- เมนูบาร์ -->
@@ -409,49 +409,51 @@ if (isset($_SESSION['shopping_cart'])) {
 				if($mm != ''){?>
 
 					
-  	<li>
-  	<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">โปรไฟล์ <?php echo $row_mlogin['mem_name'];?><span class="[ caret ]"></span></a>
-	<ul class="[ dropdown-menu ]" role="menu">
-	<li>
+					<li>
+						<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">โปรไฟล์ <?php echo $row_mlogin['mem_name'];?><span class="[ caret ]"></span></a>
+						<ul class="[ dropdown-menu ]" role="menu">
+							<li>
 
-  <a href="my_order.php?page=mycart" class="[ animate ]" >รายการสั่งซื้อ<span class="[ pull-right glyphicon glyphicon-th-list ]" ></span></a>
+								<a href="my_order.php?page=mycart" class="[ animate ]" >รายการสั่งซื้อ<span class="[ pull-right glyphicon glyphicon-th-list ]" ></span></a>
 
-  <a href="my_order.php?mem_id=<?php echo $row_mlogin['mem_id']; ?>" class="[ animate ]" >แก้ไขข้อมูลส่วนตัว<span class="[ pull-right glyphicon glyphicon-wrench ]" ></span></a>
+								<a href="my_order.php?mem_id=<?php echo $row_mlogin['mem_id']; ?>" class="[ animate ]" >แก้ไขข้อมูลส่วนตัว<span class="[ pull-right glyphicon glyphicon-wrench ]" ></span></a>
 
-  <a href="logout.php" class="list-group-item list-group-item-danger">ออกจากระบบ<span class="[ pull-right 
-glyphicon glyphicon-log-out ]"></span></a>
-</li>
-</ul>
-	</li>
-				<?php }else{
-					echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
-					echo "<li><a href='register.php' class='animate' data-target='#regis_view'' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>สมัครสมาชิก</span></a></li>";
+								<a href="logout.php" class="list-group-item list-group-item-danger">ออกจากระบบ<span class="[ pull-right 
+									glyphicon glyphicon-log-out ]"></span></a>
+								</li>
+							</ul>
+						</li>
+					<?php }else{
+						echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
+						echo "<li><a href='register.php' class='animate' data-target='#regis_view'' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>สมัครสมาชิก</span></a></li>";
 
-			 }?>
+					}?>
 
 
-				<li><a href="#" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >แจ้งชำระเงิน</a></li>
+					<li><a href="#" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >แจ้งชำระเงิน</a></li>
 					
-				<li class="[ hidden-xs ]"><a href="#toggle-search" class="[ animate ]"><span class="[ glyphicon glyphicon-search ]"></span></a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="[ bootsnipp-search animate ]">
-		<div class="[ container ]">
-			<form action="index.php" method="GET" role="search">
-				<div class="[ input-group ]">
-					<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets and hit enter">
-					<span class="[ input-group-btn ]">
-						<button class="[ btn btn-danger ]" type="reset"><span class="[ glyphicon glyphicon-remove ]"></span></button>
-					</span>
+					<li class="[ hidden-xs ]">
+						<form action="index.php" method="GET" role="search" class="navbar-form navbar-left">
+							<div class="form-group">
+								<input type="text" name="q" class="form-control" required="required" placeholder="ค้นหา" />
+								<select class="form-control" name="type" required="required">
+									<option value="all">ทั้งหมด</option>
+									<?php include 'sub_q.php'; ?>
+								</select>
+							</div>
+							<button type="submit" class="btn btn-default">ค้นหา</button>
+						</form></a></li>
+					</ul>
 				</div>
-			</form>
-		</div>
-	</div>
-</nav>
-<br>
-<br>
-<br>
-<br>
-<!-- เมนูบาร์ -->
-	
+			</div>
+
+
+
+
+
+		</nav>
+		<br>
+		<br>
+		<br>
+		<br>
+		<!-- เมนูบาร์ -->

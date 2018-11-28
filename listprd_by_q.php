@@ -52,13 +52,16 @@ $totalRows_prd = mysql_num_rows($prd);
       <br />
        <?php include('outstock.php');?>
     <br />
-    <a href="product-detail.php?p_id=<?php echo $row_prd['p_id'];?>&act=product-detail" class="button btn2" style="background-color: #FFFFFF"><font color="#000000" ><span class="glyphicon glyphicon-search"></span>detail</font></a>
+    <a href="product-detail.php?p_id=<?php echo $row_prd['p_id'];?>&act=product-detail" class="button btn2" style="background-color: #FFFFFF"><font color="#000000" ><span class="glyphicon glyphicon-search"></span>รายละเอียด</font></a>
       <br><br>
       </p>
     </div>
   <?php } while ($row_prd = mysql_fetch_assoc($prd)); 
 }
   ?>
+  <div class="col-sm-2" align="center">
+    <br><br>  <br><br>  <br><br>  <br><br><br><br>  <br><br><br><br>  <br><br>
+      </div>
 <?php
 mysql_free_result($prd);
 ?>
