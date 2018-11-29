@@ -91,13 +91,12 @@ $row_typeprd = mysql_fetch_assoc($typeprd);
 $totalRows_typeprd = mysql_num_rows($typeprd);
 
 
-
 ?>
 
 
 <?php do { ?>
   <option value="<?php echo $row_typeprd['t_id'];?>"><?php echo $row_typeprd['t_name']; ?></option>
-  
+    
 <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
 
 

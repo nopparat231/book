@@ -15,6 +15,9 @@ $p_name = $_POST['p_name'];
 $t_id = $_POST['t_id'];
 $t1_id = $_POST['t1_id'];
 $p_detial = $_POST['p_detial'];
+$p_at = $_POST['p_at'];
+$p_pu = $_POST['p_pu'];
+$p_br = $_POST['p_br'];
 $p_price = $_POST['p_price'];
 $promo = $_POST['promo'];
 $promo_start = $_POST['promo_start'];
@@ -142,6 +145,9 @@ $sql ="INSERT INTO tbl_product
 	t_id,
 	t1_id,
 	p_detial,
+	p_at,
+	p_pu,
+	p_br,
 	p_price,
 	promo,
 	promo_start,
@@ -161,6 +167,9 @@ $sql ="INSERT INTO tbl_product
 	'$t_id',
 	'$t1_id',
 	'$p_detial',
+	'$p_at',
+	'$p_pu',
+	'$p_br',
 	'$p_price',
 	'$promo',
 	'$promo_start',
@@ -189,7 +198,7 @@ if($result){
 } else {
 
 	echo "<script>";
-	echo "alert('ERROR!');";
+	echo "alert('เพิ่มสินค้า ไม่สำเร็จ!');";
 	echo "window.location ='list_product.php'; ";
 	echo "</script>";
 }

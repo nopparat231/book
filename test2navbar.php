@@ -438,7 +438,10 @@ if (isset($_SESSION['shopping_cart'])) {
 								<input type="text" name="q" class="form-control" required="required" placeholder="ค้นหา" />
 								<select class="form-control" name="type" required="required">
 									<option value="all">ทั้งหมด</option>
-									<?php include 'sub_q.php'; ?>
+									<?php// include 'sub_q.php'; ?>
+									<option value="p_at">ผู้เขียน</option>
+									<option value="p_pu">สำนักพิมพ์</option>
+									<option value="p_br">บาร์โค้ด </option>
 								</select>
 							</div>
 							<button type="submit" class="btn btn-default">ค้นหา</button>
