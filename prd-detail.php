@@ -97,7 +97,12 @@ mysql_query($sql , $condb);
       <?php if ($row_prdt['promo'] != 0  && date('Y-m-d') >= date($row_prd['promo_start'])) {
         echo " <font color='#FF9966'><strike>".number_format($row_prdt['promo'],2)."</strike></font>";
       } ?>
-      ราคา <?php echo $row_prdt['p_price']; ?>  บาท  </h3> </font> <br />
+      ราคา <?php echo $row_prdt['p_price']; ?>  บาท </h3> </font> 
+      <?php  if ($row_prdt['promo'] != 0 && date('Y-m-d') >= date($row_prd['promo_start'])) {
+
+        echo  "<font color='#FF8C00'>ประหยัด" .number_format($row_prdt['promo']-$row_prdt['p_price'],2). "บาท </font>";
+      }?>
+      <br />
       จำนวนการเข้าชม <?php echo $row_prdt['p_view']; ?>  ครั้ง  <br />
       จำนวนสินค้าคงเหลือ <?php echo $row_prdt['p_qty']; ?>  ชิ้น
 

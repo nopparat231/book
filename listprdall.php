@@ -40,7 +40,7 @@ $totalRows_prd = mysql_num_rows($prd);
 <?php do { ?>
   <div class="col-sm-2" align="center" >
   
-  <img src="pimg/<?php echo $row_prd['p_img1'];?>" width="80%" />
+  <img src="pimg/<?php echo $row_prd['p_img1'];?>" width="80%" style="height: 200px"/>
   <p align="center">
     <b><?php echo $row_prd['p_name'];?> </b>
 <br /><?php if ($row_prd['promo'] != 0 && date('Y-m-d') >= date($row_prd['promo_start']) ) {
@@ -48,7 +48,10 @@ $totalRows_prd = mysql_num_rows($prd);
       } ?>
     <b ><font color="#FF8C00"><?php echo $row_prd['p_price']; ?>  บาท </font> </b>
     <br />
-    
+    <?php  if ($row_prd['promo'] != 0 && date('Y-m-d') >= $row_prd['promo_start']) {
+
+          echo  "<font color='#FF8C00'>ประหยัด" .number_format($row_prd['promo']-$row_prd['p_price'],2). "บาท </font>";
+        }?>
     
      <?php include('outstock.php');?>
     <br />

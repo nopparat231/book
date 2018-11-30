@@ -85,8 +85,8 @@ else {
   
 </head>
 <body>
-  
- 
+
+
   <div class="row" style="padding-top:100px">
     <div class="col-md-4"></div>
     <div class="col-md-4" style="background-color:#f4f4f4">
@@ -104,24 +104,27 @@ else {
             <input name="mem_password" type="password" required class="form-control" id="mem_password" placeholder="Password" />
           </div>
         </div>
-         <div class="modal-footer">
-        <div class="form-group">
-          <div class="col-sm-12">
-            <button type="submit" class="btn btn-success" id="btn">
-              <span class="glyphicon glyphicon-log-in"> </span>
-            Login </button>&nbsp;&nbsp;
+        <div class="modal-footer">
+          <div class="form-group">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-success" id="btn">
+                <span class="glyphicon glyphicon-log-in"> </span>
+              เข้าสู่ระบบ </button>&nbsp;&nbsp;
 
-            <a href="index.php" type="button"  data-target='#reset_view' data-toggle='modal'> 
-              <span class="glyphicon glyphicon-new-window" >ลืมรหัสผ่าน</a></span>&nbsp;&nbsp;
-<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-            
+              <a href="index.php" type="button"  data-target='#reset_view' data-toggle='modal'> 
+                <span class="glyphicon glyphicon-new-window" >ลืมรหัสผ่าน</a></span>&nbsp;&nbsp;
+
+                <br><br>
+                <a href='register.php' class='animate' data-target='#regis_view'' data-toggle='modal'><span class='glyphicon glyphicon-user'> สมัครสมาชิก</span></a> &nbsp;&nbsp;
+                <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+
 
               </div>
             </div>
           </form>
         </div>
       </div>
-      </div>
+    </div>
 
-    </body>
-    </html>
+  </body>
+  </html>

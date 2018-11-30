@@ -176,7 +176,7 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
             </div>
             <!-- ------------------------------------------------------------------------------------- -->
             <div class="col-md-5">
-              <h3 align="center"> แก้ไขส่วนท้าย </h3>
+              <h3 align="center"> แก้ไขเกี่ยวกับ </h3>
 
               <div class="table">
                 <form action="carousel_edit_foot.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
@@ -230,7 +230,7 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
                     <td align="right" valign="middle">&nbsp;</td>
                     <tr>
                       <td>&nbsp;</td>
-                      <td colspan="2" align="center"><button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">แก้ไขรูปภาพ</button></td>
+                      <td colspan="2" align="center"><button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">แก้ไข</button></td>
                     </tr>
                   </table>
                 </form>

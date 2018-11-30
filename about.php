@@ -61,48 +61,6 @@ input[type=number]{
 </style>
 
 
-<?php require_once('Connections/condb.php'); ?>
-<?php
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
-
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
-
-
-mysql_select_db($database_condb);
-$query_prd = "SELECT * FROM tbl_new";
-$prd = mysql_query( $query_prd,$condb) or die(mysql_error());
-$row_prd = mysql_fetch_assoc($prd);
-$totalRows_prd = mysql_num_rows($prd);
-?>
-
-
 </head>
 <body id="top">
   <div >
@@ -126,22 +84,15 @@ $totalRows_prd = mysql_num_rows($prd);
 
       ?>
       <br><br> 
-      <div class="col-md-12">
-        <h3><b>ข่าวสาร</b></h3>
-  <?php do { 
-
-  echo "<hr>";
-  echo $row_prd['new_time'];
-  echo "<h4>";
-  echo $row_prd['new_v'];
-  echo "</h4>";
-  echo "<br>";
-
- } while ($row_prd = mysql_fetch_assoc($prd)); ?>
-    
+      <div class="col-md-6">
+        <?php echo $row_cf['about']; ?>
 
       </div>
-      
+      <div class="col-md-6">
+        <?php echo $row_cf['location']; ?>
+        
+        <?php echo $row_cf['contact']; ?>
+      </div>
 
 
 
@@ -157,7 +108,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
 </body>
 
-<?php mysql_free_result($cf); ?>
+
 
 </html>
 

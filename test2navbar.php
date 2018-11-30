@@ -394,6 +394,9 @@ if (isset($_SESSION['shopping_cart'])) {
 						</div>
 					</form>
 				</li>
+				<li><a href="news.php" class="[ animate ]" >ข่าว</span></a></li>
+				<li><a href="about.php" class="[ animate ]" >เกี่ยวกับ</span></a></li>
+
 				<li><a href="" class="[ animate glyphicon glyphicon-shopping-cart ]" data-target="#product_view" data-toggle="modal" ><span class="badge"> <?php echo $meQty; ?></span></a></li>
 				<li>
 					<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">หมวดหมู่ <span class="[ caret ]"></span></a>
@@ -425,7 +428,7 @@ if (isset($_SESSION['shopping_cart'])) {
 						</li>
 					<?php }else{
 						echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
-						echo "<li><a href='register.php' class='animate' data-target='#regis_view'' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>สมัครสมาชิก</span></a></li>";
+						
 
 					}?>
 
