@@ -1,45 +1,3 @@
-<?php require_once('../Connections/condb.php'); ?>
-
-
-<?php
-if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
-  {
-    if (PHP_VERSION < 6) {
-      $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-    }
-
-    $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-    switch ($theType) {
-      case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-      case "long":
-      case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-      case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-      case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-      case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-    }
-    return $theValue;
-  }
-}
-
-mysql_select_db($database_condb);
-$query_row_eprd = "SELECT * FROM tbl_carousel";
-$row_eprdt = mysql_query($query_row_eprd, $condb) or die(mysql_error());
-$row_eprd = mysql_fetch_assoc($row_eprdt);
-
-
-?>
 <?php include('access.php');?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,93 +5,53 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
   <?php include('h.php');?>
   <?php include('datatable.php');?>
-  <!-- ckeditor-->
-  <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
-
-  <?php include('navbar.php');?>
 </head>
 <body>
   <div class="container">
-
+    <div class="row">
+     <?php include('navbar.php');?>
+   </div>
    <div class="row">
-     <?php include 'edit-ok.php'; ?>
      <div class="col-md-2">
-      <?php include('menu.php');?> 
+
+      <?php include('menu.php');?>           
     </div>
+    <div class="col-md-10">
+      <h3 align="center">  เพิ่ม ข่าว </h3>
+      <div class="table">
+        <form  name="register" action="add_news_db.php" method="POST" id="register" class="form-horizontal">
+         <div class="form-group">
+           <div class="col-sm-2">  </div>
+          
+         </div>
+         <tr>
+          
+          <td colspan="2">
 
+            <textarea name="add_new" cols="100" class="ckeditor" rows="5"></textarea>
 
-            <!-- ------------------------------------------------------------------------------------- -->
-            <div class="col-md-5">
-              <h3 align="center"> แก้ไขข่าสาร </h3>
-
-              <div class="table">
-                <form action="add_new.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
-
-
-                  <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-
-                    <tr>
-                      <td align="right" valign="middle">&nbsp;</td>
-
-                    </tr>
-                    <tr>
-                      <td align="right">เกี่ยวกับ :</td>
-                      <td colspan="2">
-
-                        <textarea name="about" cols="70" class="ckeditor" rows="5"><?php echo $row_eprd['about']; ?></textarea>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="right" valign="middle">&nbsp;</td>
-
-                    </tr>
-                    <tr>
-                      <td align="right">สถานที่ :</td>
-                      <td colspan="2">
-
-                        <textarea name="location" cols="70"  rows="5"><?php echo $row_eprd['location']; ?></textarea>
-
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td align="right" valign="middle">&nbsp;</td>
-
-                      <input name="carousel_id" type="hidden" id="p_id" value="<?php echo $row_eprd['carousel_id']; ?>">
-                    </tr>
-                    <tr>
-                      <td align="right">ติดต่อ :</td>
-                      <td colspan="2">
-
-                        <textarea name="contact" cols="70" class="ckeditor" rows="5"><?php echo $row_eprd['contact']; ?></textarea>
-
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td colspan="2">&nbsp;</td>
-                    </tr>
-                    <td align="right" valign="middle">&nbsp;</td>
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td colspan="2" align="center"><button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">แก้ไข</button></td>
-                    </tr>
-                  </table>
-                </form>
-              </div>
-
-
-            </div>
-
-
-
+          </td>
+        </tr>
+<br>
+        <div class="form-group">
+          <div class="col-sm-2"> </div>
+          <div class="col-sm-6">
+            <button type="submit" class="btn btn-primary" id="btn"> บันทึก  </button>
+           <a href="list_news.php" class="btn btn-danger" >ยกเลิก</a>
           </div>
-        </div>
-      </body>
-      </html>
 
-      <?php include('f.php');?>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div> 
+</body>
+</html>
+<?php  include('f.php');?>

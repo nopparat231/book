@@ -16,7 +16,7 @@
    <div class="row">
      <div class="col-md-2">
       
-      <?php include('menu.php');?>        	 
+      <?php include('menu.php');?>           
     </div>
     <div class="col-md-10">
       <h3 align="center">  เพิ่ม  Member </h3>
@@ -29,7 +29,7 @@
          </div>
        </div>
        <div class="form-group">
-       	<div class="col-sm-2" align="right"> Username : </div>
+        <div class="col-sm-2" align="right"> Username : </div>
         <div class="col-sm-5" align="left">
           <input  name="mem_username" type="text" required class="form-control" id="mem_username" placeholder="username" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
         </div>

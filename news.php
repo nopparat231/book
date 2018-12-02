@@ -64,39 +64,39 @@ input[type=number]{
 <?php require_once('Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+  {
+    if (PHP_VERSION < 6) {
+      $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+    }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+    $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
 
-  switch ($theType) {
-    case "text":
+    switch ($theType) {
+      case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
       break;
-    case "long":
-    case "int":
+      case "long":
+      case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
       break;
-    case "double":
+      case "double":
       $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
       break;
-    case "date":
+      case "date":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
       break;
-    case "defined":
+      case "defined":
       $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
       break;
+    }
+    return $theValue;
   }
-  return $theValue;
-}
 }
 
 
 mysql_select_db($database_condb);
-$query_prd = "SELECT * FROM tbl_new";
+$query_prd = "SELECT * FROM tbl_new order by new_id desc";
 $prd = mysql_query( $query_prd,$condb) or die(mysql_error());
 $row_prd = mysql_fetch_assoc($prd);
 $totalRows_prd = mysql_num_rows($prd);
@@ -115,30 +115,47 @@ $totalRows_prd = mysql_num_rows($prd);
 
     ?>
   </div>
+  <script type="text/javascript">
 
+    <?php
+    function DateThai($strDate)
+    {
+      $strYear = date("Y",strtotime($strDate))+543;
+      $strMonth= date("n",strtotime($strDate));
+      $strDay= date("j",strtotime($strDate));
+      $strHour= date("H",strtotime($strDate));
+      $strMinute= date("i",strtotime($strDate));
+      $strSeconds= date("s",strtotime($strDate));
+      $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+      $strMonthThai=$strMonthCut[$strMonth];
+      return "$strDay $strMonthThai $strYear, $strHour:$strMinute";
+    }
+
+  
+    ?>
+  </script>
   <div class="container">
     <div class="row">
 
       <?php
       include('carousel.php');
 
-      
 
       ?>
       <br><br> 
       <div class="col-md-12">
         <h3><b>ข่าวสาร</b></h3>
-  <?php do { 
+        <?php do { 
 
-  echo "<hr>";
-  echo $row_prd['new_time'];
-  echo "<h4>";
-  echo $row_prd['new_v'];
-  echo "</h4>";
-  echo "<br>";
+          echo "<hr>";
+          echo DateThai($row_prd['new_time']);
+          echo "<h4>";
+          echo $row_prd['new_v'];
+          echo "</h4>";
+          echo "<br>";
 
- } while ($row_prd = mysql_fetch_assoc($prd)); ?>
-    
+        } while ($row_prd = mysql_fetch_assoc($prd)); ?>
+
 
       </div>
       

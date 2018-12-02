@@ -12,6 +12,7 @@
 		<a href="list_product.php" class="list-group-item">-จัดการสินค้า</a>
 		<a href="list_bank.php" class="list-group-item">-จัดการข้อมูลธนาคาร</a>
 		<a href="carousel.php" class="list-group-item">-จัดการภาพสไลด์</a>
+		<a href="list_news.php" class="list-group-item">-จัดการข่าวสาร</a>
 		<a href="../logout_admin.php" class="list-group-item list-group-item-danger">-ออกจากระบบ</a>
 
 	<?php } else { ?>
@@ -19,7 +20,7 @@
 		<a href="list_product.php" class="list-group-item">-จัดการสินค้า</a>
 		<a href="list_bank.php" class="list-group-item">-จัดการข้อมูลธนาคาร</a>
 		<a href="carousel.php" class="list-group-item">-จัดการภาพสไลด์</a>
-		<a href="add_news.php" class="list-group-item">-จัดการข่าวสาร</a>
+		<a href="list_news.php" class="list-group-item">-จัดการข่าวสาร</a>
 		<a href="../logout_admin.php" class="list-group-item list-group-item-danger">-ออกจากระบบ</a>
 	<?php } ?>
 
