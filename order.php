@@ -74,7 +74,7 @@ if($_SESSION['MM_Username']!=''){
 
         if ($totalRows_buyer > 0) {
 
-      
+
           foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
           {
             $sql = "select * from tbl_product where p_id=$p_id";
@@ -84,11 +84,58 @@ if($_SESSION['MM_Username']!=''){
 
             $total	+= $sum;
 
+if ($ttems == 'ems') {
+                    if ($row['p_ems'] <= 20 ) {
+                      $tems = 32;
+                  }elseif ($row['p_ems'] > 20 && $row['p_ems'] <= 100  ) {
+                      $tems = 37;
+                  }elseif ($row['p_ems'] > 100 && $row['p_ems'] <= 250  ) {
+                      $tems = 42;
+                  }elseif ($row['p_ems'] > 250 && $row['p_ems'] <= 500  ) {
+                      $tems = 52;
+                  }elseif ($row['p_ems'] > 500 && $row['p_ems'] <= 1000  ) {
+                      $tems = 67;
+                  }elseif ($row['p_ems'] > 1000 && $row['p_ems'] <= 1500  ) {
+                      $tems = 82;
+                  }elseif ($row['p_ems'] > 1500 && $row['p_ems'] <= 2500  ) {
+                      $tems = 97;
+                  }elseif ($row['p_ems'] > 2500 && $row['p_ems'] <= 3000  ) {
+                      $tems = 122;
+                  }elseif ($row['p_ems'] > 3000 && $row['p_ems'] <= 3500  ) {
+                      $tems = 137;
+                  }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
+                      $tems = 157;
+                  }
 
-            $ems = $row['p_ems'] * $p_qty;
-            $total += $ems;
+              }elseif($ttems == 'kerry') {
+                    if ($row['p_ems'] <= 20 ) {
+                      $tems = 25;
+                  }elseif ($row['p_ems'] > 20 && $row['p_ems'] <= 100  ) {
+                      $tems = 30;
+                  }elseif ($row['p_ems'] > 100 && $row['p_ems'] <= 250  ) {
+                      $tems = 35;
+                  }elseif ($row['p_ems'] > 250 && $row['p_ems'] <= 500  ) {
+                      $tems = 40;
+                  }elseif ($row['p_ems'] > 500 && $row['p_ems'] <= 1000  ) {
+                      $tems = 45;
+                  }elseif ($row['p_ems'] > 1000 && $row['p_ems'] <= 1500  ) {
+                      $tems = 82;
+                  }elseif ($row['p_ems'] > 1500 && $row['p_ems'] <= 2500  ) {
+                      $tems = 97;
+                  }elseif ($row['p_ems'] > 2500 && $row['p_ems'] <= 3000  ) {
+                      $tems = 122;
+                  }elseif ($row['p_ems'] > 3000 && $row['p_ems'] <= 3500  ) {
+                      $tems = 137;
+                  }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
+                      $tems = 157;
+                  }
+              }
+              
+              $ems = $tems * $p_qty;
+              $total += $ems;
 
-            $sumems +=$ems;
+              $sumems +=$ems;
+              $sumqyt += $p_qty;
             
             echo "<tr class='success' align='center'> ";
             echo "<td align='center'>";
@@ -170,12 +217,12 @@ if($_SESSION['MM_Username']!=''){
             <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_buyer['mem_id']; ?>">
 
             
-<a href="confirm_order.php?p_id=$p_id&oct=after" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
+            <a href="confirm_order.php?act=up&oct=after" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
             
             <button type="submit" class="btn btn-success" id="btn">
             ยืนยันสั่งซื้อ </button>
 
-<a href="crear_shoping.php" type="submit" class="btn btn-danger" >ยกเลิกการสั่งซื้อ</a>
+            <a href="crear_shoping.php" type="submit" class="btn btn-danger" >ยกเลิกการสั่งซื้อ</a>
             
           </div>
         </div>

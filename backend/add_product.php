@@ -161,7 +161,7 @@ $totalRows_prd = mysql_num_rows($prd);
                 </tr>
 
                 <tr>
-                  <td width="129" align="right" valign="middle">*ค่าจัดส่ง</td>
+                  <td width="129" align="right" valign="middle">*น้ำหนัก</td>
                   <td colspan="2"><label for="p_ems"></label>
                     <input name="p_ems" type="number" required id="p_ems" size="5"/></td>
                   </tr>

@@ -413,7 +413,7 @@ if (isset($_SESSION['shopping_cart'])) {
 
 					
 					<li>
-						<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">โปรไฟล์ <?php echo $row_mlogin['mem_name'];?><span class="[ caret ]"></span></a>
+						<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">โปรไฟล์</a>
 						<ul class="[ dropdown-menu ]" role="menu">
 							<li>
 
