@@ -79,9 +79,11 @@ if($act == 'update')
         <tr >
 
             <td colspan="5" align="right"  bgcolor='#FFFFFF' >
-                <?php if ($_SESSION['shopping_cart'] != '') { ?>
+                <?php if (!empty($_SESSION['shopping_cart'])) { ?>
                   <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success" onclick="window.location='confirm_order.php?p_id=$p_id&oct=after&tems=ems';" />
-             <?php   } ?>
+             <?php   }else{
+                echo "<center> ไม่มีสินค้าในตระกล้า </center>";
+             } ?>
                 
             </td>
         </tr>

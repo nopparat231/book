@@ -5,45 +5,6 @@ $p_id = $_GET['p_id'];
 $act = $_GET['act'];
 error_reporting(E_ALL & ~E_NOTICE);
 
-if($act == 'add' && !empty($p_id))
-{
-    if(!isset($_SESSION['shopping_cart']))
-    {
-        $_SESSION['shopping_cart'] = array();
-    }else{
-
-    }
-    if(isset($_SESSION['shopping_cart'][$p_id]))
-    {
-
-        $_SESSION['shopping_cart'][$p_id]++;
-
-    }else{
-        $_SESSION['shopping_cart'][$p_id]=1;
-    }
-    
-}
-
-
-if($act == 'remove' && !empty($p_id))
-{
-    unset($_SESSION['shopping_cart'][$p_id]);
-}
-
-
-
-if($act == 'update')
-{
-    $amount_array = $_POST['amount'];
-    foreach($amount_array as $p_id => $amount)
-    {
-        $_SESSION['shopping_cart'][$p_id] = $amount;
-
-    }
-
-
-}
-
 $q = $p_qty;
 ?>
 
@@ -116,6 +77,8 @@ $q = $p_qty;
                       $tems = 137;
                   }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
                       $tems = 157;
+                  }else{
+                     $tems = 200;
                   }
 
               }elseif($ttems == 'kerry') {
@@ -139,6 +102,8 @@ $q = $p_qty;
                   $tems = 137;
               }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
                   $tems = 157;
+              }else {
+                $tems = 200;
               }
           }
 
@@ -156,7 +121,7 @@ $q = $p_qty;
 
           echo "<td width='15%' align='center'>"; 
           ?>
-          <input type='number' value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>"
+          <input type='number' value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>
           <?php
 
           echo "<td width='10%' align='center'>".number_format($ems). "</td>";
@@ -199,7 +164,7 @@ $q = $p_qty;
 
         </td>
 
-    </td>;
+    </td>
     <input type="number" name="sumems" hidden="hidden" value="<?php echo $sumems ?>"/>
     <?php
     echo "<td align='center'>"."<b>".number_format($sumems)."</b>"."</td>";

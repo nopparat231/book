@@ -41,14 +41,14 @@ $totalRows_rb = mysql_num_rows($rb);
 
  <div class="container">
  	<div class="row">
-  
+  <?php include 'how_to_order.php'; ?>
     	<div class="col-md-8" style="background-color: #FFFFFF">
         		<h3 align="center" > เลขบัญชีสำหรับชำระเงิน </h3><br>
                 <!-- <font color="red"> *กรุณา Login เพื่อชำระเงิน </font> </h3> -->
-               
+              
                   <div class="table-responsive">
                 <table border="0" align="center" class="table table-hover">
-            
+             
                   <tr class="success">
                     <td></td>
                     <td>ธนาคาร</td>

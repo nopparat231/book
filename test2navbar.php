@@ -433,7 +433,7 @@ if (isset($_SESSION['shopping_cart'])) {
 					}?>
 
 
-					<li><a href="#" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >แจ้งชำระเงิน</a></li>
+					<li><a href="#" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
 					
 					<li class="[ hidden-xs ]">
 						<form action="index.php" method="GET" role="search" class="navbar-form navbar-left">
