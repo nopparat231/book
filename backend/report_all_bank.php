@@ -32,10 +32,10 @@ if (!function_exists("GetSQLValueString")) {
 }
 
 mysql_select_db($database_condb);
-$query_mem = "SELECT * FROM tbl_new ORDER BY new_id desc";
-$mem = mysql_query($query_mem, $condb) or die(mysql_error());
-$row_mem = mysql_fetch_assoc($mem);
-$totalRows_mem = mysql_num_rows($mem);
+$query_lbk = "SELECT * FROM tbl_bank ";
+$lbk = mysql_query($query_lbk, $condb) or die(mysql_error());
+$row_lbk = mysql_fetch_assoc($lbk);
+$totalRows_lbk = mysql_num_rows($lbk);
 ?>
 <?php include('access.php');?>
 <!DOCTYPE html>
@@ -46,53 +46,57 @@ $totalRows_mem = mysql_num_rows($mem);
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
   <?php include('datatable.php');?>
-</head>
-<body>
- <?php include('navbar.php');?>
- <div class="container">
+
+</head>  <?php include('navbar.php');?>
+<body> <?php //include('menu.php');?>
+  <div class="container">
 
 
-
-  <div class="row">
-   <div class="col-md-2">
-
-    <?php include('menu.php');?>
-  </div>
-  <div class="col-md-10">
-    <h3 align="center"> รายการข่าว  <a href="add_news.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
-    <div class="table ">
-      <table id="example" class="display" cellspacing="0" border="1">
+  <div class="col-md-3">
+  <?php include('menu.php');?>
+</div>
+    <div class="col-md-9">
+      <h3 align="center"> รายการ ธนาคาร   </h3>
+      <table id="example4" class="display" cellspacing="0" border="1">
         <thead>
           <tr align="center">
-            <th >ลำดับ</th>
-            <th >ข้อมูล</th>
-            <th >เวลา</th>
+            <th>ลำดับที่</th>
+            <th>ชื่ิอธนาคาร</th>
+            <th>เลขบัญชี</th>
+            <th>ประเภท</th>
+
+            <th>สาขา</th>
             
-            <th >แก้ไข </th>
-            <th >ลบ</th>
+            <th>ชื่อบัญชี</th>
+
+
           </tr>
         </thead>
-        <?php 
+        <?php
         $i = 1;
         do { ?>
           <tr>
-            <td align="center"><?php echo $i; ?></td>
-            <td><?php echo mb_substr($row_mem['new_v'], 0,150,'utf-8'); ?>...</td>
-            <td><?php echo $row_mem['new_time']; ?></td>
-            <td><center> <a href="edit_news.php?new_id=<?php echo $row_mem['new_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
-            <td><center> <a href="del_new.php?new_id=<?php echo $row_mem['new_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
+            <td align="center" valign="top"><?php echo $i; ?></td>
+
+            <td align="center" valign="top"><?php echo $row_lbk['b_name']; ?></td>
+            <td align="center" valign="top"><?php echo $row_lbk['b_number']; ?></td>
+            <td align="center" valign="top"><?php echo $row_lbk['b_type']; ?></td>
+            <td align="center" valign="top"><?php echo $row_lbk['bn_name']; ?></td>
+            <td align="center" valign="top"><?php echo $row_lbk['b_owner']; ?></td>
+
+
+
           </tr>
           <?php
           $i += 1;
-        } while ($row_mem = mysql_fetch_assoc($mem)); ?>
+        } while ($row_lbk = mysql_fetch_assoc($lbk)); ?>
       </table>
     </div>
   </div>
 </div>
-</div>
 </body>
 </html>
 <?php
-mysql_free_result($mem);
+mysql_free_result($lbk);
 ?>
-<?php // include('f.php');?>
+<?php  include('f.php');?>

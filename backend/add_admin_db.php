@@ -8,7 +8,7 @@ $admin_user = $_POST['admin_user'];
 $admin_pass = $_POST['admin_pass'];
 $admin_name = $_POST['admin_name'];
 $admin_tel = $_POST['admin_tel'];
-$admin_address = $_POST['admin_address'];
+$admin_address = $_POST['a']." ตำบล ".$_POST['t']." อำเภอ ".$_POST['o']." จังหวัด ".$_POST['j']." รหัสไปรษณีย์ ".$_POST['p'];
 $admin_email = $_POST['admin_email'];
 $status = $_POST['status'];
 

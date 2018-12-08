@@ -63,7 +63,7 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
       <?php include('menu.php');?> 
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-9">
       <h3 align="center"> แก้ไขสไลด์รูปภาพ </h3>
       <div class="table">
         <form action="carousel_edit.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
@@ -175,71 +175,7 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
               </div>
             </div>
             <!-- ------------------------------------------------------------------------------------- -->
-            <div class="col-md-5">
-              <h3 align="center"> แก้ไขเกี่ยวกับ </h3>
-
-              <div class="table">
-                <form action="carousel_edit_foot.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
-
-
-                  <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-
-                    <tr>
-                      <td align="right" valign="middle">&nbsp;</td>
-
-                    </tr>
-                    <tr>
-                      <td align="right">เกี่ยวกับ :</td>
-                      <td colspan="2">
-
-                        <textarea name="about" cols="70" class="ckeditor" rows="5"><?php echo $row_eprd['about']; ?></textarea>
-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="right" valign="middle">&nbsp;</td>
-
-                    </tr>
-                    <tr>
-                      <td align="right">สถานที่ :</td>
-                      <td colspan="2">
-
-                        <textarea name="location" cols="70"  rows="5"><?php echo $row_eprd['location']; ?></textarea>
-
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td align="right" valign="middle">&nbsp;</td>
-
-                      <input name="carousel_id" type="hidden" id="p_id" value="<?php echo $row_eprd['carousel_id']; ?>">
-                    </tr>
-                    <tr>
-                      <td align="right">ติดต่อ :</td>
-                      <td colspan="2">
-
-                        <textarea name="contact" cols="70" class="ckeditor" rows="5"><?php echo $row_eprd['contact']; ?></textarea>
-
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td colspan="2">&nbsp;</td>
-                    </tr>
-                    <td align="right" valign="middle">&nbsp;</td>
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td colspan="2" align="center"><button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">แก้ไข</button></td>
-                    </tr>
-                  </table>
-                </form>
-              </div>
-
-
-            </div>
-
-
+           
 
           </div>
         </div>

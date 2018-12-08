@@ -8,28 +8,35 @@
   <?php include('h.php');?>
   <?php include('datatable.php');?>
 
-</head>
-<body>
-  <?php include('navbar.php');?>
-  <div class="container">
+  </head> <?php include('navbar.php'); ?>
+  <body>
+    <?php // include('menu.php');  ?>
+    <div class="container">
 
 
 
-  	<div class="row">
-     <div class="col-md-2">
+     <div class="row">
+       <div class="col-md-3">
 
-      <span id="hp">
-        <?php include('menu.php');?>
-      </span>
+       <?php include('menu.php');?>
 
-    </div>
-    <div class="col-md-10 " >
-      <br />
-      <a href="index.php" class="btn btn-danger" id="hp">รอชำระเงิน</a>
-      <a href="index.php?act=show-payed" class="btn btn-success" id="hp">ชำระเงินแล้ว</a>
-      <a href="index.php?act=show-check" class="btn btn-warning" id="hp">จรวจสอบแล้ว</a>
-      <a href="index.php?act=show-post" class="btn btn-info" id="hp">ส่งของแล้ว</a>
-      <a href="index.php?act=show-cancel" class="btn btn-danger" id="hp">ยกเลิกคำสั่งซื้อ</a>
+      </div>
+      <div class="col-md-9" >
+        <br />
+        <p><h4> ยินดีต้อนรับ</h4></p>
+        <?php 
+        if ($row_mm['status'] == 'staff') 
+       { ?>
+        <a href="index.php?act=show-new" class="btn btn-danger" id="hp">รอชำระเงิน <span class="badge"><?php echo $totalRows_ptype1; ?></span></a>
+        <a href="index.php?act=show-payed" class="btn btn-success" id="hp">ชำระเงินแล้ว <span class="badge"><?php echo $totalRows_ptype2; ?></span></a>
+        <a href="index.php?act=show-check" class="btn btn-warning" id="hp">จรวจสอบแล้ว</a>
+        <a href="index.php?act=show-post" class="btn btn-info" id="hp">ส่งของแล้ว <span class="badge"><?php echo $totalRows_ptype3; ?></span></a>
+        <a href="index.php?act=show-cancel" class="btn btn-danger" id="hp">ยกเลิกคำสั่งซื้อ <span class="badge"><?php echo $totalRows_ptype4; ?></span></a>
+      <?php }
+
+      ?>
+
+
       <br />
       <br />
       <?php
@@ -44,9 +51,12 @@
         include('show_cancel_cart.php');
       }elseif ($act == 'show-check'){
         include('show_check_cart.php');
-      }else{
+      }elseif ($act == 'show-new'){
         include('show_new_cart.php');
       }
+      
+
+
 
 
       ?>
@@ -55,4 +65,4 @@
 </div>
 </body>
 </html>
-<?php include('f.php');?>
+

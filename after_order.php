@@ -15,7 +15,7 @@ $q = $p_qty;
         </tr>
         <tr >
             <td><center>สินค้า</center></td>
-            <td><center>ไซร์</center></td>
+            <td><center></center></td>
             <td><center>ราคา</center></td>
             <td><center>จำนวน</center></td>
             <td><center>ค่าจัดส่ง</center></td>

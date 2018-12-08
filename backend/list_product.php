@@ -64,7 +64,7 @@ $totalRows_prd = mysql_num_rows($prd);
       </div>
       <div class="col-md-10">
         <h3 align="center"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> เพิ่มสินค้า </a> </h3>
-        <div class="table-responsive">
+        <div class="table">
            <table width="100%" border="1" cellspacing="0" class="display" id="example">
 		<thead>
           <tr>

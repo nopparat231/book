@@ -20,27 +20,27 @@
       <form  name="register" action="register_db.php" method="POST" id="register" class="form-horizontal">
        <div class="form-group">
          <div class="col-sm-2">  </div>
-         <div class="col-sm-10" align="left">
+         <div class="col-sm-5" align="left">
            <font color="red"> *กรุณากรอกข้อมูลให้ครบทุกช่อง </font>
          </div>
        </div>
        <div class="form-group">
         <div class="col-sm-2" align="right"> ชื่อผู้ใช้ </div>
-        <div class="col-sm-10" align="left">
+        <div class="col-sm-5" align="left">
           <input  name="mem_username" type="text" required class="form-control" id="mem_username" placeholder="username" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-2" align="right"> รหัสผ่าน </div>
-        <div class="col-sm-10" align="left">
+        <div class="col-sm-5" align="left">
           <input  name="mem_password" type="password" required class="form-control" id="mem_password" placeholder="password" pattern="^[a-zA-Z0-9]+$" minlength="2" />
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-2" align="right"> ชื่อ-สกุล </div>
-        <div class="col-sm-10" align="left">
+        <div class="col-sm-5" align="left">
           <input  name="mem_name" type="text" required class="form-control" id="mem_name" placeholder="ชื่อ-สกุล" />
         </div>
       </div>
@@ -49,14 +49,14 @@
 
       <div class="form-group">
         <div class="col-sm-2" align="right"> เบอร์โทร </div>
-        <div class="col-sm-10" align="left">
+        <div class="col-sm-5" align="left">
           <input  name="mem_tel" type="text" required class="form-control" id="mem_tel" placeholder="0912345678" pattern="[0-9]{10}" minlength="2" title="เบอร์โทร 0-9" minlength="2"/>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-2" align="right"> E-mail </div>
-        <div class="col-sm-10" align="left">
+        <div class="col-sm-5" align="left">
           <input  name="mem_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="mem_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" minlength="2"/>
         </div>
       </div>

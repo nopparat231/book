@@ -55,7 +55,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 ?>
 
 <h3 align="center">ชำระเงินแล้ว</h3>
-<div class="table-responsive">
+<div class="table">
 <table id="example" class="display table table-hover" cellspacing="0" border="1">
 	<thead>
 		<tr>
