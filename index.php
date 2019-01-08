@@ -143,7 +143,7 @@ include('carousel.php');
     
     รายการสินค้า
 
-    <a href="listprd_by_view.php?view" class="btn btn-warning btn-xs">ทังหมด </a>
+    <a href="#" class="btn btn-warning btn-xs">ทังหมด </a>
     <hr size="10" style="background-color: #FF9933; height: 5px;">
     
     <?php include('listprdall.php'); ?>

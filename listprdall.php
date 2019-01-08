@@ -42,9 +42,11 @@ $totalRows_prd = mysql_num_rows($prd);
   
   <img src="pimg/<?php echo $row_prd['p_img1'];?>" width="80%" style="height: 200px"/>
   <p align="center">
-    <b><?php echo $row_prd['p_name'];?> </b>
-<br /><?php if ($row_prd['promo'] != 0 && date('Y-m-d') >= date($row_prd['promo_start']) ) {
+    <b><?php echo iconv_substr($row_prd['p_name'],0,20,'utf-8'); ?>... </b>
+<br /><?php if ($row_prd['promo'] != 0 && date('Y-m-d') >= date($row_prd['promo_start'])) {
         echo " <font color='#8B0000'><strike>".number_format($row_prd['promo'],2)."</strike></font>";
+      }else {
+        echo "<br />";
       } ?>
     <b ><font color="#FF8C00"><?php echo $row_prd['p_price']; ?>  บาท </font> </b>
     <br />

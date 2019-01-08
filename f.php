@@ -47,13 +47,15 @@ footer iframe {
 
 </style>
 
-<footer>
+<footer class="page-footer>
     <div class="footerHeader" ></div>
     <div class="container">
         <div class="col-md-12" >
             <h3>หมวดหมู่</h3>
             
-            <h3><?php include 'sub_f.php'; ?><div class="pull-right"><a href="./admin">ผู้ดูแลระบบ</a></div></h3>
+            <h3><?php include 'sub_f.php'; ?>
+
+            <div class="pull-right"><a href="./admin">ผู้ดูแลระบบ</a></div></h3>
             
         </div>
         

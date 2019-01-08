@@ -91,13 +91,28 @@ $row_typeprd = mysql_fetch_assoc($typeprd);
 $totalRows_typeprd = mysql_num_rows($typeprd);
 
 
+mysql_select_db($database_condb);
+$query_typeprd1 = "SELECT * FROM tbl_type1 ";
+$typeprd1 = mysql_query($query_typeprd1, $condb) or die(mysql_error());
+$row_typeprd1 = mysql_fetch_assoc($typeprd1);
+$totalRows_typeprd1 = mysql_num_rows($typeprd1);
+
 
 
 ?>
 
 
 <?php do { ?>
-   <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" ><font color="#fff" > <?php echo $row_typeprd['t_name']; ?></font></a>
+ <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" ><font color="#fff" > <?php echo $row_typeprd['t_name']; ?></font></a>
+ <?php if ($row_typeprd['t_id'] == $row_typeprd1['t_id']) { ?>
+
+<?php do { ?><li>
+  <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type1_name=<?php echo $row_typeprd1['t1_name'];?>" ><font color="#fff" > <?php echo $row_typeprd1['t1_name']; ?></font></a></li>
+<?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
+
+ <?php } ?>
+
+
 <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
 
 

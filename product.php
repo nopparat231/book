@@ -33,7 +33,7 @@
         <div class="col-md-7">
         <div class="panel panel-info">
             <div class="panel-heading"> รายการสินค้า 
-              <a href="product.php" class="btn btn-info btn-xs"> ทั้งหมด </a>  </div>
+              <a href="#" class="btn btn-info btn-xs"> ทั้งหมด </a>  </div>
           </div>
          	
           <?php 
