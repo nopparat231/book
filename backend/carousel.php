@@ -58,13 +58,13 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
   <div class="container">
 
    <div class="row">
-     <?php include 'edit-ok.php'; ?>
+   
      <div class="col-md-2">
       <?php include('menu.php');?> 
     </div>
 
     <div class="col-md-9">
-      <h3 align="center"> แก้ไขสไลด์รูปภาพ </h3>
+      <h3 align="center"> แก้ไขรูปภาพ   <?php include 'edit-ok.php'; ?> </h3>
       <div class="table">
         <form action="carousel_edit.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
@@ -87,7 +87,7 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
               <td colspan="2"><img src="../pimg/<?php echo $row_eprd['carousel_img_1']; ?>" width="100"></td>
             </tr>
             <tr>
-              <td align="right" valign="middle">แก้รูปที่1 :</td>
+              <td align="right" valign="middle">แก้รูปหน้าปก :</td>
               <td colspan="2"><label for="p_img1"></label>
                 <input name="p_img1" type="file"  class="bg-warning" id="p_img1" size="40" />
                 <input name="p_img11" type="hidden" id="p_img11" value="<?php echo $row_eprd['carousel_img_1']; ?>">
@@ -107,52 +107,9 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
               </tr>
               <tr>
                 <td align="right" valign="middle">&nbsp;</td>
-                <td colspan="2"><img src="../pimg/<?php echo $row_eprd['carousel_img_2']; ?>" width="100"></td>
+                <td colspan="2"><img src="../pimg/<?php echo $row_eprd['logo']; ?>" width="100"></td>
               </tr>
-              <tr>
-                <td align="right" valign="middle">แก้รูปที่2 :</td>
-                <td colspan="2"><label for="p_img2"></label>
-                  <input name="p_img2" type="file"  class="bg-warning" id="p_img2" size="40" />
-                  <input name="p_img21" type="hidden" id="p_img21" value="<?php echo $row_eprd['carousel_img_2']; ?>">
-
-                </tr>
-                <tr>
-                  <td align="right" valign="middle">&nbsp;</td>
-                  <td colspan="2">&nbsp;</td>
-                </tr>
-                <tr>
-                  <td align="right" valign="middle">&nbsp;</td>
-                  <td colspan="2">&nbsp;</td>
-                </tr>
-                <tr>
-                  <td align="right" valign="middle">&nbsp;</td>
-
-                </tr>
-                <tr>
-                  <td align="right" valign="middle">&nbsp;</td>
-                  <td colspan="2"><img src="../pimg/<?php echo $row_eprd['carousel_img_3']; ?>" width="100"></td>
-                </tr>
-                <tr>
-                  <td align="right" valign="middle">แก้รูปที่3 :</td>
-                  <td colspan="2"><label for="p_img3"></label>
-                    <input name="p_img3" type="file"  class="bg-warning" id="p_img3" size="40" />
-                    <input name="p_img31" type="hidden" id="p_img31" value="<?php echo $row_eprd['carousel_img_3']; ?>">
-                    
-                  </tr>
-                  <tr>
-                    <td align="right" valign="middle">&nbsp;</td>
-                    <td colspan="2">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td align="right" valign="middle">&nbsp;</td>
-                    <td colspan="2">&nbsp;</td>
-                  </tr>
-
-                  <td align="right" valign="middle">&nbsp;</td>
-                  <tr>
-                    <td align="right" valign="middle">&nbsp;</td>
-                    <td colspan="2"><img src="../pimg/<?php echo $row_eprd['logo']; ?>" width="100"></td>
-                  </tr>
+             
                   <tr>
                     <td align="right" valign="middle">แก้โลโก้ :</td>
                     <td colspan="2"><label for="p_logo"></label>

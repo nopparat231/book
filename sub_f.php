@@ -101,22 +101,28 @@ $totalRows_typeprd1 = mysql_num_rows($typeprd1);
 
 ?>
 
+<?php do{ ?>
 
-<?php do { ?>
- <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" ><font color="#fff" > <?php echo $row_typeprd['t_name']; ?></font></a>
- <?php if ($row_typeprd['t_id'] == $row_typeprd1['t_id']) { ?>
+  <div class="col-sm-2" align="left" >
+   <li> <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>"><font color="white" size="5"><?php echo $row_typeprd['t_name']; ?></font></a></li>
 
-<?php do { ?><li>
-  <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type1_name=<?php echo $row_typeprd1['t1_name'];?>" ><font color="#fff" > <?php echo $row_typeprd1['t1_name']; ?></font></a></li>
-<?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
 
- <?php } ?>
-
+ </div>
 
 <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
+<?php do{ ?>
+  <div class="col-sm-2" align="left" >
+
+   <li> <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type1_name=<?php echo $row_typeprd1['t1_name'];?>"><font color="white" size="5"><?php echo $row_typeprd1['t1_name']; ?></font></a></li>
+ </div>
+
+<?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
 
 
 
 <?php
 mysql_free_result($typeprd);
+?>
+<?php
+mysql_free_result($typeprd1);
 ?>

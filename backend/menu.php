@@ -27,7 +27,7 @@
 		<a href="list_product_type.php?list" class="list-group-item">-จัดการประเภทสินค้า</a>
 		
 		<a href="list_bank.php" class="list-group-item">-จัดการข้อมูลธนาคาร</a>
-		<a href="carousel.php" class="list-group-item">-จัดการภาพสไลด์</a>
+		<a href="carousel.php" class="list-group-item">-จัดการภาพหน้าปก</a>
 		<a href="list_news.php" class="list-group-item">-จัดการข่าวสาร</a>
 		<a href="add_about.php" class="list-group-item">-จัดการเกี่ยวกับ</a>
 		<a href="../logout_admin.php" class="list-group-item list-group-item-danger">-ออกจากระบบ</a>
