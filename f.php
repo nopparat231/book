@@ -5,7 +5,7 @@ footer {
     background-color: rgba(44, 62, 80, 1.0);
 
     width: 100%;
-    bottom: 0;
+    bottom: 1;
     font-weight: lighter;
     color: white;
 }
