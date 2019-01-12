@@ -37,7 +37,7 @@ if($qty < 0){
 
         ?>
 
-        <a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="button btn1" >
+        <a href="index.php?p_id=<?php echo $row_prd['p_id'];?>&act=add" class="button btn1" >
         <font color="#FFFFE0" > <span class="glyphicon glyphicon-shopping-cart" ></span>สั่งซื้อ</font></a>
 
     

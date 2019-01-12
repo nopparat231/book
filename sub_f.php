@@ -62,6 +62,7 @@ $totalRows_typeprd1 = mysql_num_rows($typeprd1);
   <div class="col-sm-2" align="left" >
 
    <li> <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type1_name=<?php echo $row_typeprd1['t1_name'];?>"><font color="white" size="5"><?php echo $row_typeprd1['t1_name']; ?></font></a></li>
+   <br>
  </div>
 
 <?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>

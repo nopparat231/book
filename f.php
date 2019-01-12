@@ -47,7 +47,7 @@ footer iframe {
 
 </style>
 
-<footer class="page-footer>
+<footer class="page-footer">
     <div class="footerHeader" ></div>
     <div class="container">
         <div class="col-md-12" >
@@ -56,8 +56,9 @@ footer iframe {
             <h3><?php include 'sub_f.php'; ?>
             <div class="col-sm-2" align="left" >
              <div class="pull-left"><li><a href="./admin">ผู้ดูแลระบบ</a></li></div> </h3>
+            </div>
          </div>
      </div>
      
- </div><br>
+ </div>
 </footer>

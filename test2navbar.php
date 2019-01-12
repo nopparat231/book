@@ -397,7 +397,7 @@ if (isset($_SESSION['shopping_cart'])) {
 				<li><a href="news.php" class="[ animate ]" >ข่าว</span></a></li>
 				<li><a href="about.php" class="[ animate ]" >เกี่ยวกับ</span></a></li>
 
-				<li><a href="" class="[ animate glyphicon glyphicon-shopping-cart ]" data-target="#product_view" data-toggle="modal" ><span class="badge"> <?php echo $meQty; ?></span></a></li>
+				<li><a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate glyphicon glyphicon-shopping-cart ]" ><span class="badge"> <?php echo $meQty; ?></span></a></li>
 				<li>
 					<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">หมวดหมู่ <span class="[ caret ]"></span></a>
 					<ul class="[ dropdown-menu ]" role="menu">
