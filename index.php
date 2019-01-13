@@ -93,7 +93,7 @@ include('carousel.php');
 
         <div class="col-md-12" ><br>
          รายการสินค้า 
-         <a href="index.php" class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
+         <a class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
          <hr size="10" style="background-color: #0099CC; height: 5px;">
          </div>
          <?php  include('listprd_by_type.php'); ?>
@@ -104,7 +104,7 @@ include('carousel.php');
        <div class="col-md-12">
          <br>
          รายการสินค้า
-         <a href="listprd_by_view.php?view" class="btn btn-primary btn-xs"><?php echo $q;?> </a>
+         <a class="btn btn-primary btn-xs"><?php echo $q;?> </a>
          <hr size="10" style="background-color: #D3D3D3; height: 5px;">
           </div>
 
@@ -115,7 +115,7 @@ include('carousel.php');
 
       <div class="col-md-12" ><br>
        รายการสินค้า
-       <a href="index.php" class="btn btn-xs" style="background-color: #7FFFD4"> ล่าสุด </a>
+       <a class="btn btn-xs" style="background-color: #7FFFD4"> ล่าสุด </a>
        <hr size="10" style="background-color: #0099CC; height: 5px;">
        
        <?php  include('listprd.php'); ?>
@@ -133,7 +133,7 @@ include('carousel.php');
    <div class="col-md-12">
     
     รายการสินค้า
-    <a href="listprd_by_view.php?view" class="btn btn-danger btn-xs">ขายดี </a>
+    <a class="btn btn-danger btn-xs">ขายดี </a>
     <hr size="10" style="background-color: #FF6666; height: 5px;">
     
     <?php include('listprd_by_view.php'); ?>
@@ -143,7 +143,7 @@ include('carousel.php');
     
     รายการสินค้า
 
-    <a href="#" class="btn btn-warning btn-xs">ทังหมด </a>
+    <a class="btn btn-warning btn-xs">ทังหมด </a>
     <hr size="10" style="background-color: #FF9933; height: 5px;">
     
     <?php include('listprdall.php'); ?>

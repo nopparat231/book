@@ -444,7 +444,7 @@ if (isset($_SESSION['shopping_cart'])) {
 									<?php// include 'sub_q.php'; ?>
 									<option value="p_at">ผู้เขียน</option>
 									<option value="p_pu">สำนักพิมพ์</option>
-									<option value="p_br">บาร์โค้ด </option>
+									<option value="p_br">ISBN </option>
 								</select>
 							</div>
 							<button type="submit" class="btn btn-default">ค้นหา</button>
