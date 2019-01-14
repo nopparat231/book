@@ -47,7 +47,7 @@ $result1 = mysql_query($sql,$condb) or die ("Error in query : $sql" .mysql_error
 
 		$strTo = $mem_email;
 		$strSubject = "Activate Member Account";
-		$strHeader = "Content-type: text/html; charset=windows-874\n"; // or UTF-8 //
+		$strHeader = "Content-type: text/html; charset=UTF-8\n"; // or UTF-8 //
 		
 		$strMessage = "";
 		$strMessage .= "Welcome : ".$mem_name."<br>";

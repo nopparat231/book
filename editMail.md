@@ -32,3 +32,5 @@ Also remember to restart the server using the XAMMP control panel so the changes
 #ตัวอย่างเว็บ
 
 http://www.okdstore.com/
+ตั้งค่า Gmail
+https://myaccount.google.com/lesssecureapps

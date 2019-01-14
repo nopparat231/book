@@ -92,6 +92,10 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
 
 
 
+
+
+
+
 ?>
 
 
@@ -102,29 +106,28 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
               <li class="dropdown-submenu">
                 <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>" > <?php echo $row_typeprd['t_name']; ?></a>
                 <?php 
-
-                $query_typeprd1 = "SELECT * FROM tbl_type1 where t_id =  ".$row_typeprd['t_id'];
-                $typeprd1 = mysql_query($query_typeprd1, $condb) or die(mysql_error());
+                $sql = "SELECT * FROM tbl_type1 inner join tbl_type on tbl_type1.t_id = tbl_type.t_id where tbl_type1.t_id =".$row_typeprd['t_id'];
+                $typeprd1 = mysql_query($sql, $condb) or die(mysql_error());
                 $row_typeprd1 = mysql_fetch_assoc($typeprd1);
                 $totalRows_typeprd1 = mysql_num_rows($typeprd1);
 
-                ?>
+                 ?>
                 <?php do{ ?>
                   <?php if ($totalRows_typeprd1 > 0) { ?>
-                <ul class="[ dropdown-menu ]" role="menu">
-                  <?php do{?>
+                    <ul class="[ dropdown-menu ]" role="menu">
+                      <?php do{?>
 
-                    <li>
+                        <li>
 
-                      <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
+                          <a href="index.php?t1_id=<?php echo $row_typeprd1['t1_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="[ animate ]"> <?php echo $row_typeprd1['t1_name']; ?></a>
 
-                    </li>
+                        </li>
 
 
-                  <?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
-                </ul>
+                      <?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
+                    </ul>
                   <?php }
-              } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
+                } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
 
               </li>
             <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
