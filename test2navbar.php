@@ -263,6 +263,14 @@
 	</div>
 </div>
 <!-- register -->
+<div class="modal fade product_view" id="ggg" data-toggle="popover" >
+	<div class="modal-dialog" >
+
+
+		<?php include('ggg.php');?>
+
+	</div>
+</div>
 <div class="modal fade product_view" id="regis_view" data-toggle="popover" >
 	<div class="modal-dialog" >
 
@@ -433,7 +441,7 @@ if (isset($_SESSION['shopping_cart'])) {
 					}?>
 
 
-					<li><a href="#" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
+					<li><a href="?howto_view" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
 					
 					<li class="[ hidden-xs ]">
 						<form action="index.php" method="GET" role="search" class="navbar-form navbar-left">

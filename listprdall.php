@@ -39,8 +39,9 @@ $totalRows_prd = mysql_num_rows($prd);
 ?>
 <?php do { ?>
   <div class="col-sm-2" align="center" >
-  
+  <a href="product-detail.php?p_id=<?php echo $row_prd['p_id'];?>&act=product-detail">
   <img src="pimg/<?php echo $row_prd['p_img1'];?>" width="80%" style="height: 200px"/>
+</a>
   <p align="center">
     <b><?php echo iconv_substr($row_prd['p_name'],0,20,'utf-8'); ?>... </b>
 <br /><?php if ($row_prd['promo'] != 0 && date('Y-m-d') >= date($row_prd['promo_start'])) {

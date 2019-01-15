@@ -16,7 +16,7 @@
  	<div class="row">
     	<!-- categories-->
     	<div class="col-md-3">
-        	<?php include('category2.php'); ?>
+        	<?php// include('category2.php'); ?>
         </div>
       <div class="col-md-9">
            <?php  include('prd-detail.php');?>
