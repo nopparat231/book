@@ -11,7 +11,7 @@
   }
   @charset "UTF-8";
 </style>
-<?php include 'detail_order_afer_cartdone_DB.php'; 
+<?php include 'detail_order_afer_cartdone_DB.php';
 
 
 date_default_timezone_set('Asia/Bangkok');
@@ -21,7 +21,7 @@ date_default_timezone_set('Asia/Bangkok');
 <center>
   <br>
   <br>
-  <a href="" class="btn btn-primary btn-lg" target="_blank" id="hp" onclick="window.print();" >  <span class="glyphicon glyphicon-print"></span> พิมพ์ใบเสร็จ </a> 
+  <a href="" class="btn btn-primary btn-lg" target="_blank" id="hp" onclick="window.print();" >  <span class="glyphicon glyphicon-print"></span> พิมพ์ใบเสร็จ </a>
 
   <br>
   <br>
@@ -33,10 +33,10 @@ date_default_timezone_set('Asia/Bangkok');
         <th width="493" scope="row" ><img src="pimg/<?php echo $row_cf['logo']; ?>" width="150" height="150" /></th>
 
         <th width="553" align="center" nowrap="nowrap">
-          <h3><strong>บริษัท CHATA จํากัด</strong></h3>
-          <p> 414 ซอย สลีม36 ถนนสลีม แขวงสุรยิวงศ์เขตบางรกั กรุงเทพ 10500 </p>
-          <p>  414 Silom36 silomRd. Suriyawong Bangrak Bangkok (Thailand) 10500</p>
-          <p> โทร. 081-493-3899 เลขประจําตวัผูเสียภาษอีากร 110200836647 </p>
+          <h3><strong>บริษัท BOOKSHOP จํากัด</strong></h3>
+          <p> 435/124 ซอยประชาอุทิศ 90 ถนนประชาอุทิศ ตำบลบ้านคลองสวน อำเภอพระสมุทรเจดีย์ จังหวัดสมุทรปราการ กรุงเทพ 10290 </p>
+          <p>  414 Pachautid90 PachautidRd. Bankhongsuan Phasamutjdee SamutPrakran (Thailand) 10290</p>
+          <p> โทร. 091-423-2511 เลขประจําตัวผู้เสียภาษอีากร 1234567890123 </p>
           <p>&nbsp;</p>
 
           <table width="416" border="1" cellpadding="0" cellspacing="0">
@@ -126,13 +126,13 @@ date_default_timezone_set('Asia/Bangkok');
         </tr>
 
 
-        <?php 
+        <?php
         $i = 1;
 
 
         do { ?>
 
-          <?php 
+          <?php
           $t_id = $row_cartdone['t_id'];
           include 't_id.php';
           $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
@@ -155,7 +155,7 @@ date_default_timezone_set('Asia/Bangkok');
         </tr>
 
 
-        <?php 
+        <?php
         $i += 1;
       } while ($row_cartdone = mysql_fetch_assoc($cartdone));
 
@@ -244,11 +244,11 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="center">&nbsp;</td>
       </tr>
     </table>
-    <?php include 'detail_order_afer_cartdone_DB.php'; 
+    <?php include 'detail_order_afer_cartdone_DB.php';
     include 'number_to_thai.php';
 
     ?>
-    <?php 
+    <?php
     $tax = $total*0.07;
     $total += $tax;
 
@@ -270,8 +270,8 @@ date_default_timezone_set('Asia/Bangkok');
         <th align="left" valign="bottom" scope="row"> &nbsp; &nbsp;
           <input type="checkbox" name="checkbox2" id="checkbox2" <?php echo $checked; ?> />
           <label for="checkbox2"></label>
-          เงินโอน .......<?php echo number_format($row_cartdone['pay_amount'],2);?>...... บาท ..... ธนาคาร <?php 
-          echo $row_cartdone['b_name'];?> ..... เลขที่บัญชี <?php 
+          เงินโอน .......<?php echo number_format($row_cartdone['pay_amount'],2);?>...... บาท ..... ธนาคาร <?php
+          echo $row_cartdone['b_name'];?> ..... เลขที่บัญชี <?php
           echo $row_cartdone['b_number'];?></th>
           <td>&nbsp;ค่าจัดส่ง<br />
           &nbsp;SHIPPING CHARGE</td>

@@ -34,7 +34,7 @@
 
       <div class="col-md-8">
         <?php
-        
+
         $oct = $_GET['oct'];
         if ($oct == 'after') {
           include('after_order.php');
@@ -43,7 +43,7 @@
         }?>
       </div>
 
-      
+
     </div>
 
     <?php // include('f.php');?>

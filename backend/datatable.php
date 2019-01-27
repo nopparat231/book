@@ -24,7 +24,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
-<script>    
+<script>
   $(document).ready(function() {
 
            $('.input-daterange').datepicker({
@@ -49,7 +49,7 @@
           [ 10, 25, 50, -1 ],
           [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ],
           ],
-   
+
 
           "aaSorting" :[[0,'asc']],
 
@@ -84,7 +84,7 @@
 
   });
 
-           <?php $m = '<h3 align="center">รายการ ข้อมูลสมาชิค</h3>' ?>
+           <?php $m = '<h3 align="center">รายการ ข้อมูลสมาชิก</h3>' ?>
            $('#example5').DataTable( {
 
 
@@ -101,7 +101,7 @@
           [ 10, 25, 50, -1 ],
           [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ],
           ],
-   
+
 
           "aaSorting" :[[0,'asc']],
 
@@ -153,7 +153,7 @@
           [ 10, 25, 50, -1 ],
           [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ],
           ],
-   
+
 
           "aaSorting" :[[0,'asc']],
 
@@ -242,7 +242,7 @@
 
       },
 
-      
+
       "aaSorting" :[[0,'asc']],
 
       "language": {
@@ -293,7 +293,7 @@
           [ 10, 25, 50, -1 ],
           [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ],
           ],
-   
+
       "footerCallback": function ( row, data, start, end, display ) {
                   var api = this.api(), data;
 
@@ -417,7 +417,7 @@
 
       },
 
-      
+
       "aaSorting" :[[0,'asc']],
 
       "language": {
@@ -503,7 +503,7 @@
 
       },
 
-      
+
       "aaSorting" :[[0,'asc']],
 
       "language": {
@@ -589,7 +589,7 @@
 
       },
 
-      
+
       "aaSorting" :[[0,'asc']],
 
       "language": {
@@ -623,7 +623,7 @@
   });
 
 
-           
+
      } );
 
 </script>

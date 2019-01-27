@@ -72,22 +72,22 @@ $totalRows_mem = mysql_num_rows($mem);
         <?php include('menu.php');?>
       </div>
       <div class="col-md-9">
-        <h3 align="center"> รายการ ข้อมูลสมาชิค </h3>
+        <h3 align="center"> รายการ ข้อมูลสมาชิก </h3>
         <form action="list_member.php" method="post">
          <div class="row">
 
            <div class="col-md-1">
-            <label><font size="2">จากวัน</font></label> 
+            <label><font size="2">จากวัน</font></label>
           </div>
           <div class="col-md-4">
             <input id="inputdatepicker" class="datepicker" name="start_date" type="text"  autocomplete="off"  />
           </div>
           <div class="col-md-1">
-            <label><font size="2">ถึงวันที่</font></label>  
+            <label><font size="2">ถึงวันที่</font></label>
           </div>
           <div class="col-md-4">
            <input  id="inputdatepicker" class="datepicker" name="end_date" type="text"  autocomplete="off"  />
-         </div>      
+         </div>
 
          <div class="col-md-2">
           <input type="submit" name="search" id="search" value="ค้นหา" class="btn btn-info" />
@@ -111,7 +111,7 @@ $totalRows_mem = mysql_num_rows($mem);
           <?php  } ?>
         </tr>
       </thead>
-      <?php 
+      <?php
       $i = 1;
       do { ?>
         <tr>
@@ -126,14 +126,14 @@ $totalRows_mem = mysql_num_rows($mem);
           </td>
           <td align="center">
 
-            <?php 
+            <?php
 
 
-            if ($row_mem['status'] == 'user'){ 
+            if ($row_mem['status'] == 'user'){
               $ida = 'สมาชิก';
             }elseif ($row_mem['status'] == 'ex') {
              $ida = "<font color='red'>ยกเลิกบัญชี</font>";
-             
+
            } ?>
            <?php echo $ida; ?></td>
            <td><?php echo date("d-m-Y",strtotime($row_mem['dateinsert'])); ?></td>
@@ -148,7 +148,7 @@ $totalRows_mem = mysql_num_rows($mem);
 
 
          </tr>
-         <?php 
+         <?php
          $i += 1;
        } while ($row_mem = mysql_fetch_assoc($mem)); ?>
      </table>

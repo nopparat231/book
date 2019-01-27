@@ -59,7 +59,7 @@ $totalRows_mem = mysql_num_rows($mem);
     <?php include('menu.php');?>
   </div>
   <div class="col-md-10">
-    <h3 align="center"> รายการข่าว  <a href="add_news.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+    <h3 align="center"> รายการข่าวสาร  <a href="add_news.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
     <div class="table ">
       <table id="example" class="display" cellspacing="0" border="1">
         <thead>
@@ -67,12 +67,12 @@ $totalRows_mem = mysql_num_rows($mem);
             <th >ลำดับ</th>
             <th >ข้อมูล</th>
             <th >เวลา</th>
-            
+
             <th >แก้ไข </th>
             <th >ลบ</th>
           </tr>
         </thead>
-        <?php 
+        <?php
         $i = 1;
         do { ?>
           <tr>

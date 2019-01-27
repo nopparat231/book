@@ -1,7 +1,7 @@
 <?php // require_once('Connections/condb.php'); ?>
 <?php include('h.php');
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -12,7 +12,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -86,21 +86,21 @@ mysql_query($sql , $condb);
    <h4>  ชื่อสินค้า :  <?php echo $row_prdt['p_name']; ?> </h4>
    <ul>
      <li>ผู้เขียน : <?php echo $row_prdt['p_at']; ?> </li>
-     <li>สำนักพิมพ์ : <?php echo $row_prdt['p_pu']; ?> </li> 
-     <li>หมวดหมู่ : <?php echo $row_prdtt['t_name']; ?> </li> 
-     <li>ประเภทของสินค้า : <?php echo $row_prdttt['t1_name']; ?> </li> 
-     <li>บาร์โค้ด : <?php echo $row_prdt['p_br']; ?> </li> 
+     <li>สำนักพิมพ์ : <?php echo $row_prdt['p_pu']; ?> </li>
+     <li>หมวดหมู่ : <?php echo $row_prdtt['t_name']; ?> </li>
+     <li>ประเภทของสินค้า : <?php echo $row_prdttt['t1_name']; ?> </li>
+     <li>บาร์โค้ด : <?php echo $row_prdt['p_br']; ?> </li>
    </ul>
-   รายละเอียด : <?php echo $row_prdt['p_detial']; ?>  
+   รายละเอียด : <?php echo $row_prdt['p_detial']; ?>
    <font color="#8B0000">
-    <h3> 
+    <h3>
       <?php if ($row_prdt['promo'] != 0  && date('Y-m-d') >= date($row_prd['promo_start'])) {
         echo " <font color='#FF9966'><strike>".number_format($row_prdt['promo'],2)."</strike></font>";
       } ?>
-      ราคา <?php echo $row_prdt['p_price']; ?>  บาท </h3> </font> 
+      ราคา <?php echo $row_prdt['p_price']; ?>  บาท </h3> </font>
       <?php  if ($row_prdt['promo'] != 0 && date('Y-m-d') >= date($row_prd['promo_start'])) {
 
-        echo  "<font color='#FF8C00'>ประหยัด" .number_format($row_prdt['promo']-$row_prdt['p_price'],2). "บาท </font>";
+        echo  "<font color='#FF8C00'>ประหยัด " .number_format($row_prdt['promo']-$row_prdt['p_price'],2). " บาท </font>";
       }?>
       <br />
       จำนวนการเข้าชม <?php echo $row_prdt['p_view']; ?>  ครั้ง  <br />
@@ -108,14 +108,14 @@ mysql_query($sql , $condb);
 
       <br /><br />
 
-      <?php 
+      <?php
       $qty = $row_prdt['p_qty'];
       if($qty < 0){
 
         echo "<font color='red'>";
         echo "<button class='button btn-danger btn-lg glyphicon glyphicon-shopping-cart' disabled='disable'>หมด!</button>";
         echo "</font>";
-      }else{ 
+      }else{
 
         ?>
 
@@ -144,13 +144,13 @@ mysql_query($sql , $condb);
   mysql_free_result($prdt);
   ?>
   <style type="text/css">
-  
+
   .button {
     display: inline-block;
     padding: 15px 25px;
     font-size: 24px;
     cursor: pointer;
-    text-align: center; 
+    text-align: center;
     text-decoration: none;
     outline: none;
     color: #fff;
@@ -167,5 +167,5 @@ mysql_query($sql , $condb);
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
-  
+
 </style>

@@ -111,7 +111,7 @@ input[type='radio']:checked:before {
         </font></strong></td>
       </tr>
       <tr>
-        <td colspan="7" align="center">
+        <td colspan="6" align="center">
           <strong><font color="red">
           </font></strong>
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -151,7 +151,7 @@ input[type='radio']:checked:before {
      <tr class="success">
       <td width="99" align="center">รหัส</td>
       <td width="200" align="center">สินค้า</td>
-      <td width="50" align="center">ไซส์</td>
+     <!--  <td width="50" align="center">ไซส์</td> -->
       <td width="118" align="center">ราคา</td>
       <td width="50" align="center">จำนวน</td>
       <td width="70" align="center">ค่าจัดส่ง</td>
@@ -162,14 +162,14 @@ input[type='radio']:checked:before {
       <?php 
       $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
       $total  += $sum;
-      $ems = $row_cartdone['p_ems'] * $row_cartdone['p_c_qty'];
+      $ems = 42;
       $total += $ems;
       $sumems +=$ems;
       ?>
       <tr>
-        <td align="center">JN<?php echo  str_pad($row_cartdone['order_id'], 6, "0", STR_PAD_LEFT);?></td>
+        <td align="center">BK<?php echo  str_pad($row_cartdone['order_id'], 6, "0", STR_PAD_LEFT);?></td>
         <td><?php echo $row_cartdone['p_name'];?></td>
-        <td align="center"><?php echo $row_cartdone['p_size'];?></td>
+        
         <td align="center"><?php echo number_format($row_cartdone['p_price'],2);?></td>
         <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
         <td align='center'><?php echo number_format($ems,2); ?></td>
@@ -180,15 +180,15 @@ input[type='radio']:checked:before {
     $tax = $total*0.07;
     $total += $tax;
     echo "<tr>";
-    echo "<td  align='left' colspan='6'><b>จัดส่ง</b></td>";
+    echo "<td  align='left' colspan='5'><b>จัดส่ง</b></td>";
     echo "<td align='center'>"."<b>".number_format($sumems,2)."</b>"."</td>";
     echo "</tr>";
     echo "<tr>";
-    echo "<td  align='left' colspan='6'><b>ภาษี 7%</b></td>";
+    echo "<td  align='left' colspan='5'><b>ภาษี 7%</b></td>";
     echo "<td align='center'>"."<b>".number_format($tax,2)."</b>"."</td>";
     echo "</tr>";
     echo "<tr class='success'>";
-    echo "<td colspan='6' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
+    echo "<td colspan='5' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
     echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
     echo "</tr>";
     ?>
@@ -200,7 +200,7 @@ input[type='radio']:checked:before {
     <br /><br />
     <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="40" colspan="6" align="left" bgcolor="#FFFFFF">
+        <td height="40" colspan="5" align="left" bgcolor="#FFFFFF">
           <h4>รายละเอียดการโอนเงิน
             <br />   <br />
             <font color="red">

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 $p_id = $_GET['p_id'];
@@ -11,7 +11,7 @@ $q = $p_qty;
 <form id="frmcart" name="frmcart" method="post" action="?act=update&oct=after" >
     <table width="100%" border="0" aligh="center" class="table table-striped">
         <tr>
-            <td height="40" colspan="7" align="center" bgcolor="#33CCFF"><strong><b>ตระกล้าสินค้า</b></strong></td>
+            <td height="40" colspan="7" align="center" bgcolor="#33CCFF"><strong><b>ตระกร้าสินค้า</b></strong></td>
         </tr>
         <tr >
             <td><center>สินค้า</center></td>
@@ -39,7 +39,7 @@ $q = $p_qty;
         </script>
         <?php
         $total=0;
-        
+
         if ($_GET['tems']) {
             $ttems = $_GET['tems'];
         }else{
@@ -47,7 +47,7 @@ $q = $p_qty;
         }
         if(!empty($_SESSION['shopping_cart']))
         {
-            require_once('Connections/condb.php'); 
+            require_once('Connections/condb.php');
             foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
             {
                 $sql = "select * from tbl_product where p_id=$p_id";
@@ -119,8 +119,10 @@ $q = $p_qty;
           echo "<td width='15%' align='center'>" .number_format($row["p_price"],2) . "</td>";
 
 
-          echo "<td width='15%' align='center'>"; 
+          echo "<td width='15%' align='center'>";
           ?>
+          
+          <input type="hidden" name="ttems" value="<?php echo $ems; ?>">
           <input type='number' value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>
           <?php
 
@@ -156,7 +158,7 @@ $q = $p_qty;
         <td align='left'>
 
             <select class="form-control" name="tems"  id="foo" onchange="this.form.submit()" required="required" style="width: 150px">
-                
+
                 <option value="ems" selected="select">EMS</option>
                 <option value="kerry" >Kerry</option>
 

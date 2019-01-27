@@ -1,7 +1,7 @@
 <?php //require_once('Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -12,7 +12,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -36,7 +36,7 @@ $type = $_GET['type'];
 mysql_select_db($database_condb);
 
 if ($type == 'all') {
- 
+
   $query_prd = "SELECT * FROM tbl_product WHERE p_name LIKE '%$q%' OR  p_detial LIKE '%$q%' OR  p_at LIKE '%$q%' OR  p_pu LIKE '%$q%' OR  p_br LIKE '%$q%'   ORDER BY p_id ASC";
   $prd = mysql_query($query_prd, $condb) or die(mysql_error());
   $row_prd = mysql_fetch_assoc($prd);
@@ -81,7 +81,7 @@ if ($type == 'all') {
         <br />
         <?php  if ($row_prd['promo'] != 0 && date('Y-m-d') >= $row_prd['promo_start']) {
 
-          echo  "<font color='#FF8C00'>ประหยัด" .number_format($row_prd['promo']-$row_prd['p_price'],2). "บาท </font>";
+          echo  "<font color='#FF8C00'>ประหยัด " .number_format($row_prd['promo']-$row_prd['p_price'],2). " บาท </font>";
         }?>
         <?php include('outstock.php');?>
         <br />
@@ -89,7 +89,7 @@ if ($type == 'all') {
         <br><br>
       </p>
     </div>
-  <?php } while ($row_prd = mysql_fetch_assoc($prd)); 
+  <?php } while ($row_prd = mysql_fetch_assoc($prd));
 }
 ?>
 <div class="col-sm-2" align="center">

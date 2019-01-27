@@ -7,16 +7,16 @@
 
 <div class="form-group">
 	<div class="col-sm-2" align="right" >ที่อยู่ </div>
-	<div class="col-sm-5" align="left">
+	<div class="col-sm-10" align="left">
 
-		<input type="text" name="a" class="form-control" required autocomplete="off">
+		<input type="text" name="a" class="form-control" placeholder="บ้านเลขที่, หมู่, หมู่บ้าน, ซอย" required autocomplete="off">
 
 	</div>
 </div>
 
 	<div class="form-group">
 	<div class="col-sm-2" align="right" >ตำบล </div>
-	<div class="col-sm-5" align="left">
+	<div class="col-sm-10" align="left">
 
 		<input type="text" id="district" name="t" class="form-control" required autocomplete="off">
 
@@ -26,7 +26,7 @@
 
 	<div class="form-group">
 	<div class="col-sm-2" align="right">อำเภอ </div>
-	<div class="col-sm-5" align="left">
+	<div class="col-sm-10" align="left">
 
 		<input type="text" id="amphoe" name="o" class="form-control" required autocomplete="off">
 
@@ -36,7 +36,7 @@
 
 	<div class="form-group">
 	<div class="col-sm-2" align="right">จังหวัด </div>
-	<div class="col-sm-5" align="left">
+	<div class="col-sm-10" align="left">
 
 		<input type="text" id="province" name="j" class="form-control" required autocomplete="off">
 
@@ -46,21 +46,21 @@
 
 	<div class="form-group">
 	<div class="col-sm-2" align="right">ไปรษณีย์ </div>
-	<div class="col-sm-5" align="left">
+	<div class="col-sm-10" align="left">
 
 
 		<input type="text" id="zipcode" name="p" class="form-control" required autocomplete="off">
 
 	</div>
 </div>
-<!-- 
+<!--
 $mem_address = $_POST['a']." ตำบล ".$_POST['t']." อำเภอ ".$_POST['o']." จังหวัด ".$_POST['j']." รหัสไปรษณีย์ ".$_POST['p']; -->
 
 
 
 <script type="text/javascript">
-	
-	$.Thailand({ 
+
+	$.Thailand({
     database: './jquery.Thailand.js/database/db.json', // path หรือ url ไปยัง database
     $district: $('#district'), // input ของตำบล
     $amphoe: $('#amphoe'), // input ของอำเภอ

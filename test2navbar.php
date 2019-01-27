@@ -8,8 +8,8 @@
 
 <?php // Include('h.php'); ?>
 <script type="text/javascript">
-	
-	$(function() { 
+
+	$(function() {
 
 		$('a[href="#toggle-search"], .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn[type="reset"]').on('click', function(event) {
 			event.preventDefault();
@@ -19,10 +19,10 @@
 
 			if ($('.navbar-bootsnipp .bootsnipp-search').hasClass('open')) {
 				/* I think .focus dosen't like css animations, set timeout to make sure input gets focus */
-				setTimeout(function() { 
+				setTimeout(function() {
 					$('.navbar-bootsnipp .bootsnipp-search .form-control').focus();
 				}, 100);
-			}			
+			}
 		});
 
 		$(document).on('keyup', function(event) {
@@ -90,7 +90,7 @@
 
 .navbar-bootsnipp .navbar-nav > li:not(.disabled).open > a,
 .navbar-bootsnipp .navbar-nav > li:not(.disabled).active > a,
-.navbar-bootsnipp .navbar-nav > li:not(.disabled) > a:hover, 
+.navbar-bootsnipp .navbar-nav > li:not(.disabled) > a:hover,
 .navbar-bootsnipp .navbar-nav > li:not(.disabled) > a:focus {
 	border-left-width: 5px;
 	color: rgb(95, 176, 228);
@@ -119,8 +119,8 @@
 	padding: 10px 20px;
 	white-space: nowrap;
 }
-.navbar-bootsnipp .navbar-nav > li > .dropdown-menu > li.active > a, 
-.navbar-bootsnipp .navbar-nav > li > .dropdown-menu > li > a:hover, 
+.navbar-bootsnipp .navbar-nav > li > .dropdown-menu > li.active > a,
+.navbar-bootsnipp .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-bootsnipp .navbar-nav > li > .dropdown-menu > li > a:focus {
 	background-color: rgb(245, 245, 245);
 	border-left-width: 5px;
@@ -128,8 +128,8 @@
 }
 
 .navbar .bootsnipp-profile > a {
-	padding-bottom: 9px; 
-	padding-top: 9px; 
+	padding-bottom: 9px;
+	padding-top: 9px;
 }
 .navbar .bootsnipp-profile > a > img {
 	border-radius: 50%;
@@ -196,7 +196,7 @@
 	}
 	.navbar-bootsnipp .navbar-nav > li:not(.disabled).open > a,
 	.navbar-bootsnipp .navbar-nav > li:not(.disabled).active > a,
-	.navbar-bootsnipp .navbar-nav > li:not(.disabled) > a:hover, 
+	.navbar-bootsnipp .navbar-nav > li:not(.disabled) > a:hover,
 	.navbar-bootsnipp .navbar-nav > li:not(.disabled) > a:focus {
 		border-bottom-width: 5px;
 		border-left-width: 0px;
@@ -234,11 +234,11 @@
 		-o-transform: rotateX(0deg);
 		-ms-transform: rotateX(0deg);
 		transform: rotateX(0deg);
-		visibility: visible;	
+		visibility: visible;
 	}
 	.navbar-bootsnipp .bootsnipp-search > .container {
 		padding: 0px;
-	}    
+	}
 }
 
 </style>
@@ -313,7 +313,7 @@
 <?php require_once('Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-	function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+	function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 	{
 		if (PHP_VERSION < 6) {
 			$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -324,7 +324,7 @@ if (!function_exists("GetSQLValueString")) {
 		switch ($theType) {
 			case "text":
 			$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-			break;    
+			break;
 			case "long":
 			case "int":
 			$theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -377,14 +377,10 @@ if (isset($_SESSION['shopping_cart'])) {
 	<div class="[ container ]">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="[ navbar-header ]">
-			<button type="button" class="[ navbar-toggle ]" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="[ sr-only ]">Toggle navigation</span>
-				<span class="[ icon-bar ]"></span>
-				<span class="[ icon-bar ]"></span>
-				<span class="[ icon-bar ]"></span>
-			</button>
-			<div class="[ animbrand ]">
-				<a class="[ navbar-brand ][ animate ]" href="index.php"><img alt="Brand" src="pimg/<?php echo $row_cf['logo']; ?>" width="40%"></a>
+			
+			<div class="[ animbrand ]" >
+				<a class="[ navbar-brand ][ animate ]" href="index.php">
+					<img alt="Brand" src="pimg/<?php echo $row_cf['logo']; ?>" width="70" ></a>
 			</div>
 		</div>
 
@@ -402,7 +398,8 @@ if (isset($_SESSION['shopping_cart'])) {
 						</div>
 					</form>
 				</li>
-				<li><a href="news.php" class="[ animate ]" >ข่าว</span></a></li>
+				<li><a href="index.php" class="[ animate ]" >หน้าหลัก</span></a></li>
+				<li><a href="news.php" class="[ animate ]" >ข่าวสาร</span></a></li>
 				<li><a href="about.php" class="[ animate ]" >เกี่ยวกับ</span></a></li>
 
 				<li><a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate glyphicon glyphicon-shopping-cart ]" ><span class="badge"> <?php echo $meQty; ?></span></a></li>
@@ -412,14 +409,14 @@ if (isset($_SESSION['shopping_cart'])) {
 						<?php include('category.php'); ?>
 					</ul>
 				</li>
-				
+
 				<?php
 
 				$mm = ($_SESSION['MM_Username']);
 
 				if($mm != ''){?>
 
-					
+
 					<li>
 						<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">โปรไฟล์</a>
 						<ul class="[ dropdown-menu ]" role="menu">
@@ -429,20 +426,20 @@ if (isset($_SESSION['shopping_cart'])) {
 
 								<a href="my_order.php?mem_id=<?php echo $row_mlogin['mem_id']; ?>" class="[ animate ]" >แก้ไขข้อมูลส่วนตัว<span class="[ pull-right glyphicon glyphicon-wrench ]" ></span></a>
 
-								<a href="logout.php" class="list-group-item list-group-item-danger">ออกจากระบบ<span class="[ pull-right 
+								<a href="logout.php" class="list-group-item list-group-item-danger">ออกจากระบบ<span class="[ pull-right
 									glyphicon glyphicon-log-out ]"></span></a>
 								</li>
 							</ul>
 						</li>
 					<?php }else{
 						echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
-						
+
 
 					}?>
 
 
 					<li><a href="?howto_view" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
-					
+
 					<li class="[ hidden-xs ]">
 						<form action="index.php" method="GET" role="search" class="navbar-form navbar-left">
 							<div class="form-group">

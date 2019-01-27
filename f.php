@@ -40,7 +40,7 @@ footer iframe {
     display: inline;
     padding:5px;
     float:left;
-} 
+}
 .sm li a img {
     width:32px;
 }
@@ -52,13 +52,13 @@ footer iframe {
     <div class="container">
         <div class="col-md-12" >
             <h3>หมวดหมู่ทั้งหมด</h3>
-            
+
             <h3><?php include 'sub_f.php'; ?>
             <div class="col-sm-2" align="left" >
              <div class="pull-left"><li><a href="./admin">ผู้ดูแลระบบ</a></li></div> </h3>
             </div>
          </div>
      </div>
-     
+
  </div>
 </footer>

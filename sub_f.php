@@ -2,7 +2,7 @@
 
 <?php
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -13,7 +13,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -51,21 +51,14 @@ $totalRows_typeprd1 = mysql_num_rows($typeprd1);
 
 <?php do{ ?>
 
-  <div class="col-sm-2" align="left" >
+  <div class="col-sm-3" align="left" >
    <li> <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>"><font color="white" size="5"><?php echo $row_typeprd['t_name']; ?></font></a></li>
 
 
  </div>
 
 <?php } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
-<?php do{ ?>
-  <div class="col-sm-2" align="left" >
 
-   <li> <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type1_name=<?php echo $row_typeprd1['t1_name'];?>"><font color="white" size="5"><?php echo $row_typeprd1['t1_name']; ?></font></a></li>
-   <br>
- </div>
-
-<?php } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
 
 
 

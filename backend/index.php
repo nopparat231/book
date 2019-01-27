@@ -24,12 +24,12 @@
       <div class="col-md-9" >
         <br />
         <p><h4> ยินดีต้อนรับ</h4></p>
-        <?php 
-        if ($row_mm['status'] == 'staff') 
+        <?php
+        if ($row_mm['status'] == 'staff')
        { ?>
         <a href="index.php?act=show-new" class="btn btn-danger" id="hp">รอชำระเงิน <span class="badge"><?php echo $totalRows_ptype1; ?></span></a>
         <a href="index.php?act=show-payed" class="btn btn-success" id="hp">ชำระเงินแล้ว <span class="badge"><?php echo $totalRows_ptype2; ?></span></a>
-        <a href="index.php?act=show-check" class="btn btn-warning" id="hp">จรวจสอบแล้ว</a>
+        <a href="index.php?act=show-check" class="btn btn-warning" id="hp">ตรวจสอบแล้ว</a>
         <a href="index.php?act=show-post" class="btn btn-info" id="hp">ส่งของแล้ว <span class="badge"><?php echo $totalRows_ptype3; ?></span></a>
         <a href="index.php?act=show-cancel" class="btn btn-danger" id="hp">ยกเลิกคำสั่งซื้อ <span class="badge"><?php echo $totalRows_ptype4; ?></span></a>
       <?php }
@@ -54,7 +54,7 @@
       }elseif ($act == 'show-new'){
         include('show_new_cart.php');
       }
-      
+
 
 
 
@@ -65,4 +65,3 @@
 </div>
 </body>
 </html>
-

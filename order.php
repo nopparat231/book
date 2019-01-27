@@ -1,10 +1,10 @@
 <?php require_once('Connections/condb.php'); ?>
 <?php
 //error_reporting( error_reporting() & ~E_NOTICE );
-session_start(); 
+session_start();
 // print_r($_SESSION);
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -15,7 +15,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -48,7 +48,7 @@ $totalRows_buyer = mysql_num_rows($buyer);
 
 	//echo 'ss'.$row_buyer;
 
-if($_SESSION['MM_Username']!=''){  
+if($_SESSION['MM_Username']!=''){
   ?>
 
   <p id="hp"><button class="btn btn-info" ><a href="index.php">เลือกสินค้าเพิ่ม</a>  </button></p>
@@ -61,7 +61,7 @@ if($_SESSION['MM_Username']!=''){
       <tr class="success">
         <td align="center">ลำดับ</td>
         <td align="center">สินค้า</td>
-        <td align="center">ไซร์</td>
+        <td align="center"></td>
         <td align="center">ราคา</td>
         <td align="center">จำนวน</td>
         <td align="center">ค่าจัดส่ง</td>
@@ -74,7 +74,7 @@ if($_SESSION['MM_Username']!=''){
 
         if ($totalRows_buyer > 0) {
 
-
+          $i = 1;
           foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
           {
             $sql = "select * from tbl_product where p_id=$p_id";
@@ -84,62 +84,62 @@ if($_SESSION['MM_Username']!=''){
 
             $total	+= $sum;
 
-if ($ttems == 'ems') {
-                    if ($row['p_ems'] <= 20 ) {
-                      $tems = 32;
-                  }elseif ($row['p_ems'] > 20 && $row['p_ems'] <= 100  ) {
-                      $tems = 37;
-                  }elseif ($row['p_ems'] > 100 && $row['p_ems'] <= 250  ) {
-                      $tems = 42;
-                  }elseif ($row['p_ems'] > 250 && $row['p_ems'] <= 500  ) {
-                      $tems = 52;
-                  }elseif ($row['p_ems'] > 500 && $row['p_ems'] <= 1000  ) {
-                      $tems = 67;
-                  }elseif ($row['p_ems'] > 1000 && $row['p_ems'] <= 1500  ) {
-                      $tems = 82;
-                  }elseif ($row['p_ems'] > 1500 && $row['p_ems'] <= 2500  ) {
-                      $tems = 97;
-                  }elseif ($row['p_ems'] > 2500 && $row['p_ems'] <= 3000  ) {
-                      $tems = 122;
-                  }elseif ($row['p_ems'] > 3000 && $row['p_ems'] <= 3500  ) {
-                      $tems = 137;
-                  }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
-                      $tems = 157;
-                  }
-
-              }elseif($ttems == 'kerry') {
-                    if ($row['p_ems'] <= 20 ) {
-                      $tems = 25;
-                  }elseif ($row['p_ems'] > 20 && $row['p_ems'] <= 100  ) {
-                      $tems = 30;
-                  }elseif ($row['p_ems'] > 100 && $row['p_ems'] <= 250  ) {
-                      $tems = 35;
-                  }elseif ($row['p_ems'] > 250 && $row['p_ems'] <= 500  ) {
-                      $tems = 40;
-                  }elseif ($row['p_ems'] > 500 && $row['p_ems'] <= 1000  ) {
-                      $tems = 45;
-                  }elseif ($row['p_ems'] > 1000 && $row['p_ems'] <= 1500  ) {
-                      $tems = 82;
-                  }elseif ($row['p_ems'] > 1500 && $row['p_ems'] <= 2500  ) {
-                      $tems = 97;
-                  }elseif ($row['p_ems'] > 2500 && $row['p_ems'] <= 3000  ) {
-                      $tems = 122;
-                  }elseif ($row['p_ems'] > 3000 && $row['p_ems'] <= 3500  ) {
-                      $tems = 137;
-                  }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
-                      $tems = 157;
-                  }
+            if ($ttems == $_POST['ems']) {
+              if ($row['p_ems'] <= 20 ) {
+                $tems = 32;
+              }elseif ($row['p_ems'] > 20 && $row['p_ems'] <= 100  ) {
+                $tems = 37;
+              }elseif ($row['p_ems'] > 100 && $row['p_ems'] <= 250  ) {
+                $tems = 42;
+              }elseif ($row['p_ems'] > 250 && $row['p_ems'] <= 500  ) {
+                $tems = 52;
+              }elseif ($row['p_ems'] > 500 && $row['p_ems'] <= 1000  ) {
+                $tems = 67;
+              }elseif ($row['p_ems'] > 1000 && $row['p_ems'] <= 1500  ) {
+                $tems = 82;
+              }elseif ($row['p_ems'] > 1500 && $row['p_ems'] <= 2500  ) {
+                $tems = 97;
+              }elseif ($row['p_ems'] > 2500 && $row['p_ems'] <= 3000  ) {
+                $tems = 122;
+              }elseif ($row['p_ems'] > 3000 && $row['p_ems'] <= 3500  ) {
+                $tems = 137;
+              }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
+                $tems = 157;
               }
-              
-              $ems = $tems * $p_qty;
-              $total += $ems;
 
-              $sumems +=$ems;
-              $sumqyt += $p_qty;
-            
+            }elseif($ttems == 'kerry') {
+              if ($row['p_ems'] <= 20 ) {
+                $tems = 25;
+              }elseif ($row['p_ems'] > 20 && $row['p_ems'] <= 100  ) {
+                $tems = 30;
+              }elseif ($row['p_ems'] > 100 && $row['p_ems'] <= 250  ) {
+                $tems = 35;
+              }elseif ($row['p_ems'] > 250 && $row['p_ems'] <= 500  ) {
+                $tems = 40;
+              }elseif ($row['p_ems'] > 500 && $row['p_ems'] <= 1000  ) {
+                $tems = 45;
+              }elseif ($row['p_ems'] > 1000 && $row['p_ems'] <= 1500  ) {
+                $tems = 82;
+              }elseif ($row['p_ems'] > 1500 && $row['p_ems'] <= 2500  ) {
+                $tems = 97;
+              }elseif ($row['p_ems'] > 2500 && $row['p_ems'] <= 3000  ) {
+                $tems = 122;
+              }elseif ($row['p_ems'] > 3000 && $row['p_ems'] <= 3500  ) {
+                $tems = 137;
+              }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
+                $tems = 157;
+              }
+            }
+
+            $ems = $tems * $p_qty;
+            $total += $ems;
+
+            $sumems +=$ems;
+            $sumqyt += $p_qty;
+
             echo "<tr class='success' align='center'> ";
             echo "<td align='center'>";
-            echo  $i += 1;
+            echo  $i;
             echo "</td>";
             echo "<td>" . $row["p_name"] . "</td>";
             echo "<td align='center'>" . $row["p_size"] . "</td>";
@@ -148,16 +148,16 @@ if ($ttems == 'ems') {
             echo "<td width='10%' align='center'>".number_format($ems). "</td>";
             echo "<td align='center'>".number_format($sum,2)."</td>";
             echo "</tr>";
-            
+            $i += 1;
             ?>
-
+            <input type="hidden" name="ttems" value="<?php echo $ems; ?>">
             <input type="hidden"  name="p_name[]" value="<?php echo $row['p_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
 
 
 
-            <?php 
+            <?php
           }
-          
+
           $tax = $total*0.07;
           $total += $tax;
 
@@ -180,14 +180,11 @@ if ($ttems == 'ems') {
 
           ?>
         </table>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-5" style="background-color:#f4f4f4">
-        <h3 align="center" style="color:green">
+
+
+        <div class="col-md-4"></div>
+
+        <h3 align="left" style="color:green">
           <span class="glyphicon glyphicon-shopping-cart"> </span>
         ที่อยู่ในการจัดส่งสินค้า  </h3>
 
@@ -198,9 +195,9 @@ if ($ttems == 'ems') {
         </div>
         <div class="form-group">
           <div class="col-sm-12">
-            <textarea name="address" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea> 
+            <textarea name="address" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea>
           </div>
-          
+
         </div>
         <div class="form-group">
           <div class="col-sm-12">
@@ -216,26 +213,25 @@ if ($ttems == 'ems') {
           <div class="col-sm-12" align="center">
             <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_buyer['mem_id']; ?>">
 
-            
+
             <a href="confirm_order.php?act=up&oct=after" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
-            
+
             <button type="submit" class="btn btn-success" id="btn">
             ยืนยันสั่งซื้อ </button>
 
             <a href="crear_shoping.php" type="submit" class="btn btn-danger" >ยกเลิกการสั่งซื้อ</a>
-            
+
           </div>
         </div>
       </form>
-    </div>
-  </div>
-</div>
-<?php
-}
-} else{  
-  include('logout3.php'); 
+
+
+      <?php
+    }
+  } else{
+    include('logout3.php');
  }//seseion
- 
+
  mysql_free_result($buyer);
  ?>
  <br>

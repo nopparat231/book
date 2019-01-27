@@ -56,7 +56,7 @@ $totalRows_prd = mysql_num_rows($prd);
         <br />
         <?php  if ($row_prd['promo'] != 0 && date('Y-m-d') >= $row_prd['promo_start']) {
 
-          echo  "<font color='#FF8C00'>ประหยัด" .number_format($row_prd['promo']-$row_prd['p_price'],2). "บาท </font>";
+          echo  "<font color='#FF8C00'>ประหยัด " .number_format($row_prd['promo']-$row_prd['p_price'],2). " บาท </font>";
         }?>
         <?php include('outstock.php');?>
         <br />

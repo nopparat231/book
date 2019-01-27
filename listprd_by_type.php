@@ -1,7 +1,7 @@
 <?php //require_once('Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -12,7 +12,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -57,7 +57,7 @@ if($totalRows_prd > 0) { ?>
       <br />
       <?php  if ($row_prd['promo'] != 0 && date('Y-m-d') >= $row_prd['promo_start']) {
 
-          echo  "<font color='#FF8C00'>ประหยัด" .number_format($row_prd['promo']-$row_prd['p_price'],2). "บาท </font>";
+          echo  "<font color='#FF8C00'>ประหยัด " .number_format($row_prd['promo']-$row_prd['p_price'],2). " บาท </font>";
         }?>
       <?php include('outstock.php');?>
     <br />
