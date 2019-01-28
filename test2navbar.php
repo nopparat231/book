@@ -6,7 +6,7 @@
 
 <!------ Include the above in your HEAD tag ---------->
 
-<?php // Include('h.php'); ?>
+<?php @session_start(); ?>
 <script type="text/javascript">
 
 	$(function() {
@@ -381,90 +381,96 @@ if (isset($_SESSION['shopping_cart'])) {
 			<div class="[ animbrand ]" >
 				<a class="[ navbar-brand ][ animate ]" href="index.php">
 					<img alt="Brand" src="pimg/<?php echo $row_cf['logo']; ?>" width="70" ></a>
-			</div>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
-			<ul class="[ nav navbar-nav navbar-right ]">
-				<li class="[ visible-xs ]">
-					<form action="" method="GET" role="search">
-						<div class="[ input-group ]">
-							<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets">
-							<span class="[ input-group-btn ]">
-								<button class="[ btn btn-primary ]" type="submit"><span class="[ glyphicon glyphicon-search ]"></span></button>
-								<button class="[ btn btn-danger ]" type="reset"><span class="[ glyphicon glyphicon-remove ]"></span></button>
-							</span>
-						</div>
-					</form>
-				</li>
-				<li><a href="index.php" class="[ animate ]" >หน้าหลัก</span></a></li>
-				<li><a href="news.php" class="[ animate ]" >ข่าวสาร</span></a></li>
-				<li><a href="about.php" class="[ animate ]" >เกี่ยวกับ</span></a></li>
-
-				<li><a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate glyphicon glyphicon-shopping-cart ]" ><span class="badge"> <?php echo $meQty; ?></span></a></li>
-				<li>
-					<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">หมวดหมู่ <span class="[ caret ]"></span></a>
-					<ul class="[ dropdown-menu ]" role="menu">
-						<?php include('category.php'); ?>
-					</ul>
-				</li>
-
-				<?php
-
-				$mm = ($_SESSION['MM_Username']);
-
-				if($mm != ''){?>
-
-
-					<li>
-						<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">โปรไฟล์</a>
-						<ul class="[ dropdown-menu ]" role="menu">
-							<li>
-
-								<a href="my_order.php?page=mycart" class="[ animate ]" >รายการสั่งซื้อ<span class="[ pull-right glyphicon glyphicon-th-list ]" ></span></a>
-
-								<a href="my_order.php?mem_id=<?php echo $row_mlogin['mem_id']; ?>" class="[ animate ]" >แก้ไขข้อมูลส่วนตัว<span class="[ pull-right glyphicon glyphicon-wrench ]" ></span></a>
-
-								<a href="logout.php" class="list-group-item list-group-item-danger">ออกจากระบบ<span class="[ pull-right
-									glyphicon glyphicon-log-out ]"></span></a>
-								</li>
-							</ul>
-						</li>
-					<?php }else{
-						echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
-
-
-					}?>
-
-
-					<li><a href="?howto_view" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
-
-					<li class="[ hidden-xs ]">
-						<form action="index.php" method="GET" role="search" class="navbar-form navbar-left">
-							<div class="form-group">
-								<input type="text" name="q" class="form-control" required="required" placeholder="ค้นหา" />
-								<select class="form-control" name="type" required="required">
-									<option value="all">ทั้งหมด</option>
-									<?php// include 'sub_q.php'; ?>
-									<option value="p_at">ผู้เขียน</option>
-									<option value="p_pu">สำนักพิมพ์</option>
-									<option value="p_br">ISBN </option>
-								</select>
-							</div>
-							<button type="submit" class="btn btn-default">ค้นหา</button>
-						</form></a></li>
-					</ul>
 				</div>
 			</div>
 
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
+				<ul class="[ nav navbar-nav navbar-right ]">
+					<li class="[ visible-xs ]">
+						<form action="" method="GET" role="search">
+							<div class="[ input-group ]">
+								<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets">
+								<span class="[ input-group-btn ]">
+									<button class="[ btn btn-primary ]" type="submit"><span class="[ glyphicon glyphicon-search ]"></span></button>
+									<button class="[ btn btn-danger ]" type="reset"><span class="[ glyphicon glyphicon-remove ]"></span></button>
+								</span>
+							</div>
+						</form>
+					</li>
+					<li><a href="index.php" class="[ animate ]" >หน้าหลัก</span></a></li>
+					<li><a href="news.php" class="[ animate ]" >ข่าวสาร</span></a></li>
+					<li><a href="about.php" class="[ animate ]" >เกี่ยวกับ</span></a></li>
+
+					<li>
+						
+
+						<a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate glyphicon glyphicon-shopping-cart ]" ><span class="badge"> <?php echo $meQty; ?></span></a>
+
+						
+					</li>
+					<li>
+						<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">หมวดหมู่ <span class="[ caret ]"></span></a>
+						<ul class="[ dropdown-menu ]" role="menu">
+							<?php include('category.php'); ?>
+						</ul>
+					</li>
+
+					<?php
+
+					$mm = ($_SESSION['MM_Username']);
+
+					if($mm != ''){?>
+
+
+						<li>
+							<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">โปรไฟล์</a>
+							<ul class="[ dropdown-menu ]" role="menu">
+								<li>
+
+									<a href="my_order.php?page=mycart" class="[ animate ]" >รายการสั่งซื้อ<span class="[ pull-right glyphicon glyphicon-th-list ]" ></span></a>
+
+									<a href="my_order.php?mem_id=<?php echo $row_mlogin['mem_id']; ?>" class="[ animate ]" >แก้ไขข้อมูลส่วนตัว<span class="[ pull-right glyphicon glyphicon-wrench ]" ></span></a>
+
+									<a href="logout.php" class="list-group-item list-group-item-danger">ออกจากระบบ<span class="[ pull-right
+										glyphicon glyphicon-log-out ]"></span></a>
+									</li>
+								</ul>
+							</li>
+						<?php }else{
+							echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
+
+
+						}?>
+
+
+						<li><a href="?howto_view" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
+
+						<li class="[ hidden-xs ]">
+							<form action="index.php" method="GET" role="search" class="navbar-form navbar-left">
+								<div class="form-group">
+									<input type="text" name="q" class="form-control" required="required" placeholder="ค้นหา" />
+									<select class="form-control" name="type" required="required">
+										<option value="all">ทั้งหมด</option>
+										<?php// include 'sub_q.php'; ?>
+										<option value="p_at">ผู้เขียน</option>
+										<option value="p_pu">สำนักพิมพ์</option>
+										<option value="p_br">ISBN </option>
+									</select>
+								</div>
+								<button type="submit" class="btn btn-default">ค้นหา</button>
+							</form></a></li>
+						</ul>
+					</div>
+				</div>
 
 
 
 
-		</nav>
-		<br>
-		<br>
-		<br>
-		<br>
-		<!-- เมนูบาร์ -->
+
+			</nav>
+			<br>
+			<br>
+			<br>
+			<br>
+			<!-- เมนูบาร์ -->
