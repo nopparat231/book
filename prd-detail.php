@@ -110,10 +110,10 @@ mysql_query($sql , $condb);
 
       <?php
       $qty = $row_prdt['p_qty'];
-      if($qty < 0){
+      if($qty <= 0){
 
         echo "<font color='red'>";
-        echo "<button class='button btn-danger btn-lg glyphicon glyphicon-shopping-cart' disabled='disable'>หมด!</button>";
+        echo "<button class='btn btn-danger' dissable>สินค้าหมด!</button>";
         echo "</font>";
       }else{
 
