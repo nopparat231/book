@@ -73,7 +73,11 @@ if($_SESSION['MM_Username']!=''){
         $total = 0;
 
         if ($totalRows_buyer > 0) {
-
+          if ($_GET['sumems']) {
+            $ems = $_GET['sumems'];
+          }else{
+            $ems = $_POST['sumems'];
+          }
           $i = 1;
           foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
           {
@@ -84,54 +88,9 @@ if($_SESSION['MM_Username']!=''){
 
             $total	+= $sum;
 
-            if ($ttems == $_POST['ems']) {
-              if ($row['p_ems'] <= 20 ) {
-                $tems = 32;
-              }elseif ($row['p_ems'] > 20 && $row['p_ems'] <= 100  ) {
-                $tems = 37;
-              }elseif ($row['p_ems'] > 100 && $row['p_ems'] <= 250  ) {
-                $tems = 42;
-              }elseif ($row['p_ems'] > 250 && $row['p_ems'] <= 500  ) {
-                $tems = 52;
-              }elseif ($row['p_ems'] > 500 && $row['p_ems'] <= 1000  ) {
-                $tems = 67;
-              }elseif ($row['p_ems'] > 1000 && $row['p_ems'] <= 1500  ) {
-                $tems = 82;
-              }elseif ($row['p_ems'] > 1500 && $row['p_ems'] <= 2500  ) {
-                $tems = 97;
-              }elseif ($row['p_ems'] > 2500 && $row['p_ems'] <= 3000  ) {
-                $tems = 122;
-              }elseif ($row['p_ems'] > 3000 && $row['p_ems'] <= 3500  ) {
-                $tems = 137;
-              }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
-                $tems = 157;
-              }
 
-            }elseif($ttems == 'kerry') {
-              if ($row['p_ems'] <= 20 ) {
-                $tems = 25;
-              }elseif ($row['p_ems'] > 20 && $row['p_ems'] <= 100  ) {
-                $tems = 30;
-              }elseif ($row['p_ems'] > 100 && $row['p_ems'] <= 250  ) {
-                $tems = 35;
-              }elseif ($row['p_ems'] > 250 && $row['p_ems'] <= 500  ) {
-                $tems = 40;
-              }elseif ($row['p_ems'] > 500 && $row['p_ems'] <= 1000  ) {
-                $tems = 45;
-              }elseif ($row['p_ems'] > 1000 && $row['p_ems'] <= 1500  ) {
-                $tems = 82;
-              }elseif ($row['p_ems'] > 1500 && $row['p_ems'] <= 2500  ) {
-                $tems = 97;
-              }elseif ($row['p_ems'] > 2500 && $row['p_ems'] <= 3000  ) {
-                $tems = 122;
-              }elseif ($row['p_ems'] > 3000 && $row['p_ems'] <= 3500  ) {
-                $tems = 137;
-              }elseif ($row['p_ems'] > 4000 && $row['p_ems'] <= 4500  ) {
-                $tems = 157;
-              }
-            }
-
-            $ems = $tems * $p_qty;
+            
+            
             $total += $ems;
 
             $sumems +=$ems;
@@ -149,6 +108,7 @@ if($_SESSION['MM_Username']!=''){
             echo "<td align='center'>".number_format($sum,2)."</td>";
             echo "</tr>";
             $i += 1;
+
             ?>
             <input type="hidden" name="ttems" value="<?php echo $ems; ?>">
             <input type="hidden"  name="p_name[]" value="<?php echo $row['p_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
@@ -161,7 +121,11 @@ if($_SESSION['MM_Username']!=''){
           $tax = $total*0.07;
           $total += $tax;
 
-
+          if ($_GET['sumems']) {
+            $sumems = $_GET['sumems'];
+          }else{
+            $sumems = $_POST['sumems'];
+          }
           echo "<tr class='success'>";
           echo "<td  align='left' colspan='6'><b>จัดส่ง</b></td>";
           echo "<td align='center'>"."<b>".number_format($sumems)."</b>"."</td>";
@@ -214,7 +178,7 @@ if($_SESSION['MM_Username']!=''){
             <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_buyer['mem_id']; ?>">
 
 
-            <a href="confirm_order.php?act=up&oct=after" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
+            <a href="confirm_order.php?act=up&oct=after&tems=ems" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
 
             <button type="submit" class="btn btn-success" id="btn">
             ยืนยันสั่งซื้อ </button>

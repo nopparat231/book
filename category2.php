@@ -53,13 +53,8 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
   $a = 1;
   do {
 
-    if ($a==1) {
-      $cc = "#demo1";
-    }elseif ($a==2) {
-      $cc = "#demo2";
-    }
+      $cc = "#demo".$a;
 
-    //echo $cc;
     ?>
 
     <a  href="<?php echo $cc; ?>" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><?php echo $row_typeprd['t_name']; ?></a>
@@ -76,42 +71,40 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
 
     do{ ?>
       <?php if ($totalRows_typeprd1 > 0) {
-        if ($cc == "#demo1") {
-          $cf = "demo1";
-        }elseif ($cc == "#demo2") {
-          $cf = "demo2";
-        }
 
-        ?>
+     
+        $cf = "demo".$a;
+     
+      ?>
 
-        <div class="collapse" id="<?php echo $cf; ?>">
-          <ul class="list-group">
-            <?php
-
-            do{
-
-              ?>
-
-
-              <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="list-group-item"">    <?php echo $row_typeprd1['t1_name']; ?><span class="list-group-item-action"></a>
-
-
-
-                <?php
-
-              } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
-            </ul>
-          </div>
+      <div class="collapse" id="<?php echo $cf; ?>">
+        <ul class="list-group">
           <?php
 
-        }
-      } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
+          do{
+
+            ?>
 
 
-      <?php  $a += 1; } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
-    </div>
+            <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="list-group-item"">    <?php echo $row_typeprd1['t1_name']; ?><span class="list-group-item-action"></a>
 
 
-    <?php
-    mysql_free_result($typeprd);
-    ?>
+
+              <?php
+
+            } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
+          </ul>
+        </div>
+        <?php
+
+      }
+    } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
+
+
+    <?php  $a += 1; } while ($row_typeprd = mysql_fetch_assoc($typeprd)); ?>
+  </div>
+
+
+  <?php
+  mysql_free_result($typeprd);
+  ?>
