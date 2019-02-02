@@ -78,7 +78,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
       <?php include('menu.php');?>
     </div>
     <div class="col-md-6">
-      <h3 align="center"> เพิ่มประเภทย่อยสินค้า </h3>
+      <h3 align="center"> เพิ่มประเภทย่อยสินค้า </h3><p>
       <div class="table">
         <form action="<?php echo $editFormAction; ?>" method="POST" name="ptype" id="ptype" class="form-horizontal">
         	<div class="form-group">

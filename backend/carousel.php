@@ -58,13 +58,13 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
   <div class="container">
 
    <div class="row">
-   
+
      <div class="col-md-2">
-      <?php include('menu.php');?> 
+      <?php include('menu.php');?>
     </div>
 
     <div class="col-md-9">
-      <h3 align="center"> แก้ไขรูปภาพ   <?php include 'edit-ok.php'; ?> </h3>
+      <h3 align="center"> แก้ไขรูปภาพโลโก้ หน้าปก<?php include 'edit-ok.php'; ?> </h3>
       <div class="table">
         <form action="carousel_edit.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
@@ -87,7 +87,7 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
               <td colspan="2"><img src="../pimg/<?php echo $row_eprd['carousel_img_1']; ?>" width="100"></td>
             </tr>
             <tr>
-              <td align="right" valign="middle">แก้รูปหน้าปก :</td>
+              <td align="right" valign="middle">แก้รูปหน้าปก :&nbsp;&nbsp;&nbsp;</td>
               <td colspan="2"><label for="p_img1"></label>
                 <input name="p_img1" type="file"  class="bg-warning" id="p_img1" size="40" />
                 <input name="p_img11" type="hidden" id="p_img11" value="<?php echo $row_eprd['carousel_img_1']; ?>">
@@ -109,9 +109,9 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
                 <td align="right" valign="middle">&nbsp;</td>
                 <td colspan="2"><img src="../pimg/<?php echo $row_eprd['logo']; ?>" width="100"></td>
               </tr>
-             
+
                   <tr>
-                    <td align="right" valign="middle">แก้โลโก้ :</td>
+                    <td align="right" valign="middle">แก้โลโก้ :&nbsp;&nbsp;&nbsp;</td>
                     <td colspan="2"><label for="p_logo"></label>
                       <input name="p_logo" type="file"  class="bg-warning" id="p_logo" size="40" />
                       <input name="p_logo11" type="hidden" id="p_logo11" value="<?php echo $row_eprd['logo']; ?>">
@@ -132,7 +132,7 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
               </div>
             </div>
             <!-- ------------------------------------------------------------------------------------- -->
-           
+
 
           </div>
         </div>

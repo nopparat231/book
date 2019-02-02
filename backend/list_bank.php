@@ -66,7 +66,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
             <tr align="center">
 
               <th width="15%">ข้อมูล</th>
-              <th width="10%">Logo</th>
+              <th width="10%">โลโก้</th>
 
               <th width="5%">แก้ไข </th>
               <th width="5%">ลบ</th>

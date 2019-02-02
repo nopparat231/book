@@ -58,7 +58,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
    </div>
   	<div class="row">
     	<div class="col-md-2">
-      
+
         <?php include('menu.php');?>
       </div>
         <div class="col-md-10">
@@ -72,14 +72,14 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
        </div>
        </div>
        <div class="form-group">
-       	<div class="col-sm-2" align="right"> Username : </div>
+       	<div class="col-sm-2" align="right"> ชื่อผู้ใช้ : </div>
           <div class="col-sm-5" align="left">
             <input  name="admin_user" type="text" disabled   class="form-control" id="admin_user" placeholder="username" value="<?php echo $row_editadmin['admin_user']; ?>" minlength="2"  />
           </div>
       </div>
 
         <div class="form-group">
-        <div class="col-sm-2" align="right"> Password : </div>
+        <div class="col-sm-2" align="right"> รหัสผ่าน : </div>
           <div class="col-sm-5" align="left">
             <input  name="admin_pass" type="password" required class="form-control" id="admin_pass" placeholder="password" pattern="^[a-zA-Z0-9]+$" value="<?php echo $row_editadmin['admin_pass']; ?>" minlength="2" />
           </div>
@@ -119,7 +119,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
 
             <select name="status">
              <option value="<?php echo $row_editadmin['status']; ?> "><?php echo $row_editadmin['status']; ?></option>
-             
+
              <option value="staff">staff</option>
              <option value="admin">admin</option>
 

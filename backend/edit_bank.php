@@ -58,7 +58,7 @@ $totalRows_editbank = mysql_num_rows($editbank);
    </div>
   	<div class="row">
     	<div class="col-md-2">
-      
+
         <?php include('menu.php');?>
       </div>
         <div class="col-md-10">
@@ -66,7 +66,7 @@ $totalRows_editbank = mysql_num_rows($editbank);
 <div class="table-responsive">
    <form action="edit_bank_db.php?bank_id=<?php echo $row_editbank['b_id']; ?> "  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
-  
+
   <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td colspan="3" align="center">&nbsp;</td>
@@ -114,10 +114,10 @@ $totalRows_editbank = mysql_num_rows($editbank);
     </tr>
 
     <tr>
-      <td align="left" valign="middle">Logo</td>
-     
+      <td align="left" valign="middle">โลโก้</td>
+
         <td align="left"  colspan="2"><img src="../bimg/<?php echo $row_editbank['b_logo']; ?>" width="100">
-        
+
         <input type="file" name="b_logo" id="b_logo" required value="<?php echo $row_editbank['b_logo']; ?>"></td>
     </tr>
     <tr>
@@ -129,7 +129,7 @@ $totalRows_editbank = mysql_num_rows($editbank);
       <td colspan="2">
       <button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">เพิ่มข้อมูล</button></td>
     </tr>
-  </table> 
+  </table>
 </form>
 </div>
 </div>

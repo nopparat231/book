@@ -7,7 +7,7 @@
 </style>
 <?php
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -18,7 +18,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -49,9 +49,9 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
 <div class="list-group" id="hp" >
   <a  href="index.php" class="list-group-item list-group-item-action active" id="list-home-list" style="background-color: #2C3E50">หน้าหลัก</a>
 
-  <?php 
+  <?php
   $a = 1;
-  do { 
+  do {
 
     if ($a==1) {
       $cc = "#demo1";
@@ -64,7 +64,7 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
 
     <a  href="<?php echo $cc; ?>" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><?php echo $row_typeprd['t_name']; ?></a>
 
-    <?php 
+    <?php
 
     $query_typeprd1 = "SELECT * FROM tbl_type1 where t_id =  ".$row_typeprd['t_id'];
     $typeprd1 = mysql_query($query_typeprd1, $condb) or die(mysql_error());
@@ -75,7 +75,7 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
     <?php
 
     do{ ?>
-      <?php if ($totalRows_typeprd1 > 0) { 
+      <?php if ($totalRows_typeprd1 > 0) {
         if ($cc == "#demo1") {
           $cf = "demo1";
         }elseif ($cc == "#demo2") {
@@ -86,7 +86,7 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
 
         <div class="collapse" id="<?php echo $cf; ?>">
           <ul class="list-group">
-            <?php 
+            <?php
 
             do{
 
@@ -104,7 +104,7 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
           </div>
           <?php
 
-        } 
+        }
       } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1)); ?>
 
 

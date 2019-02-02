@@ -96,12 +96,12 @@ else {
       <form  name="formlogin" action="<?php echo $loginFormAction; ?>" method="POST" id="login" class="form-horizontal">
         <div class="form-group">
           <div class="col-sm-12">
-            <input  name="mem_username" type="text" required class="form-control" id="mem_username" placeholder="ยูสเซอร์เนม" />
+            <input  name="mem_username" type="text" required class="form-control" id="mem_username" placeholder="ชื่อผู้ใช้" />
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-12">
-            <input name="mem_password" type="password" required class="form-control" id="mem_password" placeholder="พาสเวิร์ด" />
+            <input name="mem_password" type="password" required class="form-control" id="mem_password" placeholder="รหัสผ่าน" />
           </div>
         </div>
 
@@ -113,7 +113,7 @@ else {
 
               <button type="submit" class="btn btn-success" id="btn">
                 <span class="glyphicon glyphicon-log-in"> </span>
-              เข้าสู่ระบบ </button>&nbsp;&nbsp;
+              เข้าสู่ระบบ </button>
 
 
 

@@ -2,7 +2,7 @@
 <?php
 
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -13,7 +13,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -37,7 +37,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 $colname_editmem = "-1";
 if (isset($_GET['mem_id'])) {
   $colname_editmem = $_GET['mem_id'];
- 
+
 }
 mysql_select_db($database_condb);
 $query_editmem = sprintf("SELECT * FROM tbl_member WHERE mem_id = %s", GetSQLValueString($colname_editmem, "int"));
@@ -56,10 +56,10 @@ $totalRows_editmem = mysql_num_rows($editmem);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-    
+
   </head>
   <body>
-    
+
 
         <div class="col-md-12" style="background: #FFFFFF;">
         <h3 align="center">  แก้ไข ข้อมูลส่วนตัว  <?php include('edit_ok.php');?> </h3>
@@ -72,13 +72,13 @@ $totalRows_editmem = mysql_num_rows($editmem);
        </div>
        </div>
        <div class="form-group">
-       	<div class="col-sm-2" align="right"> Username :</div> <div class="col-sm-5" align="left"><?php echo $row_mlogin['mem_username'];?></div>
-         
+       	<div class="col-sm-2" align="right"> ชื่อผู้ใช้ :</div> <div class="col-sm-5" align="left"><?php echo $row_mlogin['mem_username'];?></div>
+<br><p>
       </div>
-        
-        
+
+
         <div class="form-group">
-        <div class="col-sm-2" align="right"> Password : </div>
+        <div class="col-sm-2" align="right"> รหัสผ่าน : </div>
           <div class="col-sm-5" align="left">
             <input  name="mem_password" type="password" required class="form-control" id="mem_password" placeholder="password" pattern="^[a-zA-Z0-9]+$" value="<?php echo $row_editmem['mem_password']; ?>" minlength="2" />
           </div>
@@ -89,13 +89,13 @@ $totalRows_editmem = mysql_num_rows($editmem);
             <input  name="mem_name" type="text" required class="form-control" id="mem_name" placeholder="ชื่อ-สกุล" value="<?php echo $row_editmem['mem_name']; ?>"  value="<?php echo $row_editmem['mem_pass']; ?>" minlength="2"/>
           </div>
         </div>
-        
-  
+
+
 
         <div class="form-group">
         <div class="col-sm-2" align="right"> ที่อยู่ : </div>
           <div class="col-sm-7" align="left">
-            <input name="mem_address" type="text" required class="form-control" id="mem_address" placeholder="ที่อยู่"  value="<?php echo $row_editmem['mem_address']; ?>" minlength="2"></input> 
+            <input name="mem_address" type="text" required class="form-control" id="mem_address" placeholder="ที่อยู่"  value="<?php echo $row_editmem['mem_address']; ?>" minlength="2"></input>
           </div>
         </div>
 
@@ -112,25 +112,25 @@ $totalRows_editmem = mysql_num_rows($editmem);
             <input  name="mem_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="mem_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" value="<?php echo $row_editmem['mem_email']; ?>" minlength="2"/>
           </div>
         </div>
-        
+
       <div class="form-group">
       <div class="col-sm-2"> </div>
           <div class="col-sm-6">
           <button type="submit" class="btn btn-primary" id="btn"> บันทึก  </button>
           <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_editmem['mem_id']; ?>">
           </div>
-           
+
       </div>
       </form>
 </div>
-    
-    
+
+
 
   </body>
 </html>
 <?php
 mysql_free_result($editmem);
- 
+
 // include('f.php');?>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

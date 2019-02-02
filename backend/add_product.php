@@ -103,8 +103,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
                 <tr>
                   <td align="right" valign="middle">*หน่วยสินค้า</td>
-                  <td colspan="2"><label for="pro_qty"></label>
-                   :
+                  <td colspan="2"><label for="pro_qty"></label> :
                    <select name="p_unit" id="p_unit" required>
                     <option value="เล่ม">เล่ม</option>
                     <option value="แผ่น">แผ่น</option>
@@ -113,7 +112,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
                   </select></td>
                 </tr>
-                
+
                 <td align="right" valign="middle">&nbsp;</td>
                 <td colspan="2">&nbsp;</td>
               </tr>
@@ -161,9 +160,9 @@ $totalRows_prd = mysql_num_rows($prd);
                 </tr>
 
                 <tr>
-                  <td width="129" align="right" valign="middle">*น้ำหนัก</td>
+                  <td width="129" align="right" valign="middle">*น้ำหนัก :</td>
                   <td colspan="2"><label for="p_ems"></label>
-                    <input name="p_ems" type="number" required id="p_ems" size="5"/></td>
+                    <input name="p_ems" type="number" required id="p_ems" size="5"/> กรัม</td>
                   </tr>
 
                   <tr>
@@ -203,7 +202,7 @@ $totalRows_prd = mysql_num_rows($prd);
                     <td align="right" valign="middle">*ประเภทย่อยสินค้า :</td>
                     <td colspan="2">
 
-                     <?php 
+                     <?php
 
                      $query_typeprd1 = "SELECT * FROM tbl_type1 ";
                      $typeprd1 = mysql_query($query_typeprd1, $condb) or die(mysql_error());
@@ -242,7 +241,7 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td colspan="2"><label for="p_at"></label>
                     <input name="p_at" type="text" required size="50"/></td>
                   </tr>
-               
+
                   <tr>
                     <td align="right" valign="middle">&nbsp;</td>
                     <td colspan="2">&nbsp;</td>
@@ -252,7 +251,7 @@ $totalRows_prd = mysql_num_rows($prd);
                     <td colspan="2"><label for="p_pu"></label>
                       <input name="p_pu" type="text" required size="50"/></td>
                     </tr>
-                   
+
                     <tr>
                       <td align="right" valign="middle">&nbsp;</td>
                       <td colspan="2">&nbsp;</td>
@@ -270,7 +269,7 @@ $totalRows_prd = mysql_num_rows($prd);
                       <tr>
                         <td align="right" valign="top">*รายละเอียดสินค้า :</td>
                         <td colspan="2">
-                          <textarea name="p_detial" id="p_detial" class="ckeditor" cols="80" rows="5"></textarea>
+                           <textarea name="p_detial" id="p_detial" class="ckeditor" cols="80" rows="5"></textarea>
                         </td>
                       </tr>
                       <tr>

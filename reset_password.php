@@ -1,7 +1,7 @@
 <?php require_once('Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -12,7 +12,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -45,12 +45,12 @@ if (isset($_POST['mem_username'])) {
   $MM_redirectLoginFailed = "index.php";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_condb);
-  
+
   $LoginRS__query=sprintf("SELECT mem_username,mem_password ,mem_email FROM tbl_member WHERE mem_username=%s AND mem_email=%s  AND active='yes'",
-    GetSQLValueString($loginUsername, "text"), GetSQLValueString($email, "text")); 
+    GetSQLValueString($loginUsername, "text"), GetSQLValueString($email, "text"));
 
   $LoginRS = mysql_query($LoginRS__query, $condb) or die(mysql_error());
-  
+
   $objResult = mysql_fetch_array($LoginRS);
   if (!$objResult) {
 
@@ -70,12 +70,12 @@ if (isset($_POST['mem_username'])) {
       $strHeader = "Content-type: text/html; charset=UTF-8\n"; // or UTF-8 //
       $strMessage .= "Username และ Password สำหรับเข้าสู่ระบบ<br>";
       $strMessage .= "=================================<br>";
-      
+
       $strMessage .= "Username : ".$objResult["mem_username"]."<br>";
       $strMessage .= "Password : ".$objResult["mem_password"]."<br>";
       $strMessage .= "=================================<br>";
-      
-      $flgSend = mail($strTo,$strSubject,$strMessage,$strHeader); 
+
+      $flgSend = mail($strTo,$strSubject,$strMessage,$strHeader);
 
 
 }
@@ -91,13 +91,13 @@ if (isset($_POST['mem_username'])) {
     <?php include('h.php');?>
   </head>
   <body>
-    
+
    <div class="row" style="padding-top:100px">
     <div class="col-md-4"></div>
     <div class="col-md-4" style="background-color:#f4f4f4">
       <h3 align="center">
         <span class="glyphicon glyphicon-lock"> </span>
-      กรุณากรอก Username และ E-mail ! </h3>
+      กรุณากรอก <br>&nbsp;&nbsp;ชื่อผู้ใช้<br> &nbsp;&nbsp;&nbsp;และอีเมลล์ ! </h3>
       <form  name="formlogin" action="reset_password.php" method="POST" id="login" class="form-horizontal">
         <div class="form-group">
           <div class="col-sm-12">
@@ -113,7 +113,8 @@ if (isset($_POST['mem_username'])) {
           <div class="col-sm-12">
             <button type="submit" class="btn btn-primary" id="btn" >
               <span class="glyphicon glyphicon-log-in"> </span>
-            ลืมรหัสผ่าน </button>
+            &nbsp;&nbsp;ลืมรหัสผ่าน </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
           </div>
         </div>
       </form>

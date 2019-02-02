@@ -91,7 +91,7 @@ mysql_query($sql , $condb);
      <li>ประเภทของสินค้า : <?php echo $row_prdttt['t1_name']; ?> </li>
      <li>บาร์โค้ด : <?php echo $row_prdt['p_br']; ?> </li>
    </ul>
-   รายละเอียด : <?php echo $row_prdt['p_detial']; ?>
+   <br><B><h4>รายละเอียด</h4></B><?php echo $row_prdt['p_detial']; ?>
    <font color="#8B0000">
     <h3>
       <?php if ($row_prdt['promo'] != 0  && date('Y-m-d') >= date($row_prd['promo_start'])) {

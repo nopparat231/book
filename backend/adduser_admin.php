@@ -58,7 +58,10 @@
 							<il><p  class="list-group-item">จัดการรายการสั่งซื้อ</p></il>
 							<il><p  class="list-group-item">จัดการประเภทสินค้า</p></il>
 							<il><p  class="list-group-item">จัดการสินค้า</p></il>
-							<il><p  class="list-group-item">จัดการข้อมูลธนาคาร</p></il></h4>
+							<il><p  class="list-group-item">จัดการข้อมูลธนาคาร</p></il>
+							<il><p  class="list-group-item">จัดการภาพหน้าปก โลโก้</p></il>
+						  <il><p  class="list-group-item">จัดการข่าวสาร</p></il>
+				    	<il><p  class="list-group-item">จัดการเกี่ยวกับ</p></il></h4>
 							<br>
 							<a href="add_admin.php?staff" class="btn btn-info">เพิ่มพนักงาน</a>
 

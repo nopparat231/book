@@ -8,7 +8,7 @@ $row_ptypes = mysql_fetch_assoc($ptypes);
 $totalRows_ptypes = mysql_num_rows($ptypes);
 ?>
  <tr>
-  
+
       <td colspan="2">
       <label for=""></label>
         <select name="t_id" id="t_id" required="required">
@@ -28,4 +28,3 @@ do {
         </select>
         </td>
     </tr>
-    
