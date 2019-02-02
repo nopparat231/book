@@ -118,11 +118,12 @@ date_default_timezone_set('Asia/Bangkok');
           <td width="103" nowrap="nowrap" scope="row">ลำดับ</td>
           <td width="156" nowrap="nowrap">รหัสสินค้า</td>
           <td width="295" nowrap="nowrap">รายละเอียด</td>
-          <td width="47" nowrap="nowrap">ไซส์</td>
+          
           <td width="80" nowrap="nowrap">จำนวน</td>
           <td width="88" nowrap="nowrap">หน่วย</td>
           <td width="124" nowrap="nowrap">ราคา/หน่วย</td>
           <td width="170" nowrap="nowrap">จำนวนเงิน</td>
+          <td></td>
         </tr>
 
 
@@ -138,20 +139,20 @@ date_default_timezone_set('Asia/Bangkok');
           $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
           $totalp  += $sum;
           $total  += $sum;
-          $ems = $row_cartdone['p_ems'] * $row_cartdone['p_c_qty'];
-          $total += $ems;
-          $sumems +=$ems;
+          $sumems = $row_cartdone['pos_ems'];
+          
           ?>
 
 
           <td align="center" scope="row"><?php echo $i; ?></td>
           <td align="center"><?php echo $row_typeprd['t_type'];?><?php echo str_pad($row_cartdone['p_id'], 6, "0", STR_PAD_LEFT);?></td>
           <td align="center"><?php echo $row_cartdone['p_name'];?></td>
-          <td align="center"><?php echo $row_cartdone['p_size'];?></td>
+          
           <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
           <td align="center"><?php echo $row_cartdone['p_unit'];?></td>
           <td align="center"><?php echo number_format($row_cartdone['p_price'],2);?></td>
           <td align="right"><?php echo number_format($sum,2);?></td>
+          <td></td>
         </tr>
 
 
@@ -251,7 +252,7 @@ date_default_timezone_set('Asia/Bangkok');
     <?php
     $tax = $total*0.07;
     $total += $tax;
-
+    $total += $sumems;
     ?>
 
     <table width="1081" border="1" cellpadding="0" cellspacing="0">

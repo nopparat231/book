@@ -18,10 +18,11 @@ require_once('Connections/condb.php');
 	$pay_date = '';
 	$pay_amount = '';
 	$p_name = $_POST['p_name'];
+	$pos_ems = $_POST['ems'];
 	$postcode = '';
 
 	 mysql_query("BEGIN" ,$condb );
-	$sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address','$email','$phone','$status','$pay_slip','$b_name','$b_number','$pay_date','$pay_amount','$postcode','$order_date')";
+	$sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address','$email','$phone','$status','$pay_slip','$b_name','$b_number','$pay_date','$pay_amount','$postcode','$pos_ems','$order_date')";
 
 	$query1 = mysql_query($sql1,$condb ) or die ("Error in query : sql1 " . mysql_error());
 
@@ -36,7 +37,7 @@ require_once('Connections/condb.php');
 		$sql3 = "SELECT * FROM tbl_product where p_id=$p_id";
 		$query3 =mysql_query($sql3,$condb  )or die ("Error in query : sql3 " . mysql_error());
 		$row3 = mysql_fetch_array($query3)or die(mysql_error());
-		$total = $row3['p_price'] * $p_qty;
+		
 		$count = mysql_num_rows($query3)or die(mysql_error());
 
 

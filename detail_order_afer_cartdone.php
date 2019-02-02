@@ -97,7 +97,7 @@ input[type='radio']:checked:before {
   <p align="center"> <a class="btn btn-danger btn-sm" href="my_order.php?page=mycart" id="hp"> รายการสั่งซื้อทั้งหมด </a></p>
 
 
-<a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a> 
+  <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a> 
 
 
   <table width="700" border="0" align="center" class="table">
@@ -151,10 +151,10 @@ input[type='radio']:checked:before {
      <tr class="success">
       <td width="99" align="center">รหัส</td>
       <td width="200" align="center">สินค้า</td>
-     <!--  <td width="50" align="center">ไซส์</td> -->
+      <!--  <td width="50" align="center">ไซส์</td> -->
       <td width="118" align="center">ราคา</td>
       <td width="50" align="center">จำนวน</td>
-      <td width="70" align="center">ค่าจัดส่ง</td>
+      
       <td width="100" align="center">รวม</td>
     </tr>
     <?php do { ?>
@@ -162,9 +162,10 @@ input[type='radio']:checked:before {
       <?php 
       $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
       $total  += $sum;
-      $ems = 42;
-      $total += $ems;
-      $sumems +=$ems;
+      $sumw = $row_cartdone['pos_ems'];
+   
+      
+    
       ?>
       <tr>
         <td align="center">BK<?php echo  str_pad($row_cartdone['order_id'], 6, "0", STR_PAD_LEFT);?></td>
@@ -172,23 +173,27 @@ input[type='radio']:checked:before {
         
         <td align="center"><?php echo number_format($row_cartdone['p_price'],2);?></td>
         <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
-        <td align='center'><?php echo number_format($ems,2); ?></td>
+        
         <td align="center"><?php echo number_format($total,2);?></td>
       </tr> 
 
     <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone)); 
     $tax = $total*0.07;
     $total += $tax;
+    
+    $total += $sumw;
+
+    $total += $ems;
     echo "<tr>";
-    echo "<td  align='left' colspan='5'><b>จัดส่ง</b></td>";
-    echo "<td align='center'>"."<b>".number_format($sumems,2)."</b>"."</td>";
+    echo "<td  align='left' colspan='4'><b>จัดส่ง</b></td>";
+    echo "<td align='center'>"."<b>".number_format($sumw,2)."</b>"."</td>";
     echo "</tr>";
     echo "<tr>";
-    echo "<td  align='left' colspan='5'><b>ภาษี 7%</b></td>";
+    echo "<td  align='left' colspan='4'><b>ภาษี 7%</b></td>";
     echo "<td align='center'>"."<b>".number_format($tax,2)."</b>"."</td>";
     echo "</tr>";
     echo "<tr class='success'>";
-    echo "<td colspan='5' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
+    echo "<td colspan='4' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
     echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
     echo "</tr>";
     ?>

@@ -18,7 +18,7 @@ if ($status == 1) {
 
 }elseif ($status == 5) {
 	echo "<font color= #b36b00>";
-	echo "ยืนยันการชำระแล้ว";
+	echo "ตรวจสอบการชำระแล้ว";
 	echo "</font>";
 }
 ?>

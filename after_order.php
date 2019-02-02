@@ -99,7 +99,7 @@ $q = $p_qty;
       echo "<td align='center'>"."<b>".number_format($total,2)."</b>"."</td>";
       echo "</tr>";
 
-
+      
       $tax = $total*0.07;
       $total += $tax;
 
@@ -121,7 +121,7 @@ $q = $p_qty;
       
       <?php
       include 'class_ems.php';
-      
+      $total += $tems;
       echo "<td align='center'>"."<b>".number_format($tems)."</b>"."</td>";
       echo "</tr>";
 
@@ -144,7 +144,7 @@ $q = $p_qty;
 // echo $row["p_qty"];
      ?>
 
-<input type="number" name="sumems" hidden="hidden" value="<?php echo $tems ?>"/>
+     <input type="number" name="sumems" hidden="hidden" value="<?php echo $tems ?>"/>
      <script>alert('รายการสินค้า "<?php echo $row["p_name"] ?>" มีสินค้าเพียง "<?php echo $row["p_qty"] ?>" ชิ้น!'); </script>
      <tr >
 
