@@ -86,7 +86,7 @@ $totalRows_typeprd = mysql_num_rows($typeprd);
             ?>
 
 
-            <a href="index.php?t_id=<?php echo $row_typeprd1['t_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="list-group-item"">    <?php echo $row_typeprd1['t1_name']; ?><span class="list-group-item-action"></a>
+            <a href="index.php?t1_id=<?php echo $row_typeprd1['t1_id'];?>&type_name=<?php echo $row_typeprd1['t1_name'];?>" class="list-group-item"">    <?php echo $row_typeprd1['t1_name']; ?><span class="list-group-item-action"></a>
 
 
 
