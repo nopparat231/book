@@ -6,61 +6,51 @@
 <script type="text/javascript" src="./jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
 
 <div class="form-group">
-	<div class="col-sm-2" align="right" >ที่อยู่ </div>
-	<div class="col-sm-10" align="left">
+	<div class="col-sm-1" align="right" ></div>
+	<div class="col-sm-4" align="left">
 
 		<input type="text" name="a" class="form-control" placeholder="บ้านเลขที่, หมู่, หมู่บ้าน, ซอย" required autocomplete="off">
 
 	</div>
-</div>
 
-	<div class="form-group">
-	<div class="col-sm-2" align="right" >ตำบล </div>
-	<div class="col-sm-10" align="left">
+	<div class="col-sm-3" align="left">
 
-		<input type="text" id="district" name="t" class="form-control" required autocomplete="off">
+		<input type="text" id="district" name="t" class="form-control" required autocomplete="off" placeholder="ตำบล" >
 
 	</div>
-</div>
 
+	<div class="col-sm-3" align="left">
 
-	<div class="form-group">
-	<div class="col-sm-2" align="right">อำเภอ </div>
-	<div class="col-sm-10" align="left">
-
-		<input type="text" id="amphoe" name="o" class="form-control" required autocomplete="off">
+		<input type="text" id="amphoe" name="o" class="form-control" required autocomplete="off" placeholder="อำเภอ">
 
 	</div>
+
+
 </div>
 
+<div class="form-group">
+<div class="col-sm-1" align="right" ></div>
+	<div class="col-sm-4" align="left">
 
-	<div class="form-group">
-	<div class="col-sm-2" align="right">จังหวัด </div>
-	<div class="col-sm-10" align="left">
-
-		<input type="text" id="province" name="j" class="form-control" required autocomplete="off">
-
-	</div>
-</div>
-
-
-	<div class="form-group">
-	<div class="col-sm-2" align="right">ไปรษณีย์ </div>
-	<div class="col-sm-10" align="left">
-
-
-		<input type="text" id="zipcode" name="p" class="form-control" required autocomplete="off">
+		<input type="text" id="province" name="j" class="form-control" required autocomplete="off" placeholder="จังหวัด">
 
 	</div>
+
+
+	<div class="col-sm-3" align="left" >
+
+		<input type="text" id="zipcode" name="p" class="form-control" required autocomplete="off" placeholder="ไปรษณีย์">
+	</div>
+
 </div>
 <!--
-$mem_address = $_POST['a']." ตำบล ".$_POST['t']." อำเภอ ".$_POST['o']." จังหวัด ".$_POST['j']." รหัสไปรษณีย์ ".$_POST['p']; -->
+	$mem_address = $_POST['a']." ตำบล ".$_POST['t']." อำเภอ ".$_POST['o']." จังหวัด ".$_POST['j']." รหัสไปรษณีย์ ".$_POST['p']; -->
 
 
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
-	$.Thailand({
+		$.Thailand({
     database: './jquery.Thailand.js/database/db.json', // path หรือ url ไปยัง database
     $district: $('#district'), // input ของตำบล
     $amphoe: $('#amphoe'), // input ของอำเภอ
@@ -68,4 +58,4 @@ $mem_address = $_POST['a']." ตำบล ".$_POST['t']." อำเภอ ".$_PO
     $zipcode: $('#zipcode'), // input ของรหัสไปรษณีย์
 });
 </script>
- <!-- <textarea name="mem_address" type="textarea" required class="form-control" id="mem_address" placeholder="ที่อยู่" ></textarea>  -->
+<!-- <textarea name="mem_address" type="textarea" required class="form-control" id="mem_address" placeholder="ที่อยู่" ></textarea>  -->
