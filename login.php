@@ -119,7 +119,7 @@ else {
 
                 <br><br>
                 <a href='./admin/' class='animate'><span class='glyphicon glyphicon-user'>แอดมิน</span></a> &nbsp;&nbsp;
-                <a href='register.php' class='animate' data-target='#regis_view'' data-toggle='modal'><span class='glyphicon glyphicon-user'> สมัครสมาชิก</span></a> &nbsp;&nbsp;
+              
                 <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
 
 

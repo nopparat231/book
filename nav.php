@@ -222,23 +222,41 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     
-      
-      <ul class="nav navbar-nav navbar-right">
+<?php
+
+          $mm = ($_SESSION['MM_Username']);
+
+          if($mm != ''){?>
+<ul class="nav navbar-nav navbar-left">
+ <li><a >ยินดีต้อนรับคุณ<?php echo $_SESSION['MM_Username']; ?></a></li>
+ </ul>
+          <?php } ?>
+
+          <ul class="nav navbar-nav navbar-right">
         <form action="index.php" method="GET" role="search" class="navbar-form navbar-left">
-                <div class="form-group">
-                  <input type="text" name="q" class="form-control" required="required" placeholder="ค้นหา" />
-                  <select class="form-control" name="type" required="required">
-                    <option value="all">ทั้งหมด</option>
-                    <?php// include 'sub_q.php'; ?>
-                    <option value="p_at">ผู้เขียน</option>
-                    <option value="p_pu">สำนักพิมพ์</option>
-                    <option value="p_br">ISBN </option>
-                  </select>
-                </div>
-                <button type="submit" class="btn btn-default">ค้นหา</button>
-              </form>
+          <div class="form-group">
+            <select class="form-control" name="type" required="required">
+              <option value="all">ทั้งหมด</option>
+              <?php// include 'sub_q.php'; ?>
+              <option value="p_at">ผู้เขียน</option>
+              <option value="p_pu">สำนักพิมพ์</option>
+              <option value="p_br">ISBN </option>
+            </select>
+            <input type="text" name="q" class="form-control" required="required" placeholder="ค้นหา" />
+            
+          </div>
+          <button type="submit" class="btn btn-default">ค้นหา</button>
+        </form>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">หมวดหมู่ <span class="[ caret ]"></span></a>
+            <ul class="[ dropdown-menu ]" role="menu">
+              <?php include('category.php'); ?>
+            </ul>
+          </li>
+      </ul>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

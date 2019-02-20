@@ -14,7 +14,7 @@
 
     <div style="background-color:#f4f4f4">
 
-
+<br>
       <h3 align="center">  สมัครสมาชิก </h3>
 
       <form  name="register" action="register_db.php" method="POST" id="register" class="form-horizontal">

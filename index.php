@@ -114,54 +114,83 @@ input[type=number]{
 
      <?php }elseif($t1_id !=''){ ?>
 
-     <div class="col-md-12" ><br>
-       รายการสินค้า 
-       <a class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
-       <hr size="10" style="background-color: #0099CC; height: 5px;">
-     </div>
-     <?php  include('listprd_by_type1.php'); ?>
+       <div class="col-md-12" ><br>
+         รายการสินค้า 
+         <a class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
+         <hr size="10" style="background-color: #0099CC; height: 5px;">
+       </div>
+       <?php  include('listprd_by_type1.php'); ?>
 
-   <?php }else{?>
+     <?php }else{?>
 
       <div class="col-md-12" ><br>
        รายการสินค้า
-       <a class="btn btn-xs" style="background-color: #7FFFD4"> ล่าสุด </a>
-       <hr size="10" style="background-color: #0099CC; height: 5px;">
-       
-       <?php  include('listprd.php'); ?>
-     </div>
+       <a class="btn btn-xs" style="background-color: #7FFFD4"> ใหม่ ! </a>
 
-     <?php
-   }
-   ?>
+       <div class="dropdown pull-right">
 
-   <?php if ($q != '' or $type_name != ''){
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" OnChange="document.test.submit();" >
+          จัดเรียงตามคำนิยม
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="index.php?type=all&q=ราคาต่ำ-สูง">ราคาต่ำ-สูง</a></li>
+          <li><a href="index.php?type=all&q=ราคาสูง-ต่ำ">ราคาสูง-ต่ำ</a></li>
+          <li><a href="index.php?type=all&q=ตัวอักสร A-Z ก-ฮ">ตัวอักสร A-Z ก-ฮ</a></li>
+          <li><a href="index.php?type=all&q=ตัวอักสร Z-A ฮ-ก">ตัวอักสร Z-A ฮ-ก</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="index.php?type=all&q=new">สินค้าใหม่</a></li>
+        </ul>
 
-   }else{ ?>
+</div><!-- 
+<form name='test'  action='<?=$_SERVER[SCRIPT_NAME];?>'  >
+<select name="cars"  OnChange="document.test.submit();" class="dropdown pull-right"> 
+
+<option value="volvo">ราคาต่ำ-สูง</option>
+<option value="saab">ราคาสูง-ต่ำ</option>
+<option value="fiat">ตัวอักสร A-Z ก-ฮ</option>
+<option value="audi">ตัวอักสร Z-A ฮ-ก</option>
+<option value="audi">สินค้าใหม่</option>
+<option value="audi" selected="selected">จัดเรียงตามคำนิยม</option>
+</select>
+</form> -->
+
+<hr size="10" style="background-color: #0099CC; height: 5px;">
+
+<?php  include('listprd.php'); ?>
+</div>
+
+<?php
+}
+?>
+
+<?php if ($q != '' or $type_name != ''){
+
+}else{ ?>
 
 
-     <div class="col-md-12">
+ <div class="col-md-12">
 
-      รายการสินค้า
-      <a class="btn btn-danger btn-xs">ขายดี </a>
-      <hr size="10" style="background-color: #FF6666; height: 5px;">
+  รายการสินค้า
+  <a class="btn btn-danger btn-xs">ขายดี </a>
+  <hr size="10" style="background-color: #FF6666; height: 5px;">
 
-      <?php include('listprd_by_view.php'); ?>
-    </div>
+  <?php include('listprd_by_view.php'); ?>
+</div>
 
-    <div class="col-md-12">
+<div class="col-md-12">
 
-      รายการสินค้า
+  รายการสินค้า
 
-      <a class="btn btn-warning btn-xs">ทังหมด </a>
-      <hr size="10" style="background-color: #FF9933; height: 5px;">
+  <a class="btn btn-warning btn-xs">ทังหมด </a>
+  <hr size="10" style="background-color: #FF9933; height: 5px;">
 
-      <?php include('listprdall.php'); ?>
-    </div>
+  <?php include('listprdall.php'); ?>
+</div>
 
-  <?php } ?>
+<?php } ?>
 
-  
+
 </div>
 </div>
 <p id="back-top">

@@ -400,21 +400,16 @@ if (isset($_SESSION['shopping_cart'])) {
 					</li>
 					<li><a href="index.php" class="[ animate ]" >หน้าหลัก</span></a></li>
 					<li><a href="news.php" class="[ animate ]" >ข่าวสาร</span></a></li>
-					<li><a href="about.php" class="[ animate ]" >เกี่ยวกับ</span></a></li>
+					<li><a href="about.php" class="[ animate ]" >ติดต่อเรา</span></a></li>
 
 					<li>
 						
 
-						<a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate glyphicon glyphicon-shopping-cart ]" ><span class="badge"> <?php echo $meQty; ?></span></a>
+						<a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate ]" >ตระกล้าสินค้า<span class="badge glyphicon glyphicon-shopping-cart "> <?php echo $meQty; ?></span></a>
 
 						
 					</li>
-					<li>
-						<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">หมวดหมู่ <span class="[ caret ]"></span></a>
-						<ul class="[ dropdown-menu ]" role="menu">
-							<?php include('category.php'); ?>
-						</ul>
-					</li>
+				
 
 					<?php
 
@@ -438,7 +433,8 @@ if (isset($_SESSION['shopping_cart'])) {
 								</ul>
 							</li>
 						<?php }else{
-							echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-out'>เข้าสู่ระบบ</span></a></li>";
+							echo "<li><a href='' class='animate' data-target='#regis_view' data-toggle='modal'><span class='glyphicon glyphicon-user'>สมัครสมาชิก</span></a></li>";
+							echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-in'> เข้าสู่ระบบ</span></a></li>";
 
 
 						}?>
@@ -446,26 +442,10 @@ if (isset($_SESSION['shopping_cart'])) {
 
 						<li><a href="?howto_view" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
 
-						<li class="[ hidden-xs ]">
-							<form action="index.php" method="GET" role="search" class="navbar-form navbar-left">
-								<div class="form-group">
-									<input type="text" name="q" class="form-control" required="required" placeholder="ค้นหา" />
-									<select class="form-control" name="type" required="required">
-										<option value="all">ทั้งหมด</option>
-										<?php// include 'sub_q.php'; ?>
-										<option value="p_at">ผู้เขียน</option>
-										<option value="p_pu">สำนักพิมพ์</option>
-										<option value="p_br">ISBN </option>
-									</select>
-								</div>
-								<button type="submit" class="btn btn-default">ค้นหา</button>
-							</form></a></li>
+						
 						</ul>
 					</div>
 				</div>
-
-
-
 
 
 			</nav>
