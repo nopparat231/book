@@ -118,7 +118,7 @@ input[type=number]{
           <li><a href="index.php?tt=low&th=ราคาต่ำ-สูง">ราคาต่ำ-สูง</a></li>
           <li><a href="index.php?tt=high&th=ราคาสูง-ต่ำ">ราคาสูง-ต่ำ</a></li>
           <li><a href="index.php?tt=a-z&th=ตัวอักสร A-Z ก-ฮ">ตัวอักสร A-Z ก-ฮ</a></li>
-          <li><a href="index.php?tt=z-a&th=ตัวอักสร Z-A ฮ-ก">ตัวอักสร Z-A ฮ-ก</a></li>
+          <li><a href="index.php?tt=z-a&th=ตัวอักสร ฮ-ก Z-A">ตัวอักสร ฮ-ก Z-A</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="index.php">สินค้าใหม่</a></li>
         </ul>
@@ -183,7 +183,7 @@ input[type=number]{
           <li><a href="index.php?tt=low&th=ราคาต่ำ-สูง">ราคาต่ำ-สูง</a></li>
           <li><a href="index.php?tt=high&th=ราคาสูง-ต่ำ">ราคาสูง-ต่ำ</a></li>
           <li><a href="index.php?tt=a-z&th=ตัวอักสร A-Z ก-ฮ">ตัวอักสร A-Z ก-ฮ</a></li>
-          <li><a href="index.php?tt=z-a&th=ตัวอักสร Z-A ฮ-ก">ตัวอักสร Z-A ฮ-ก</a></li>
+          <li><a href="index.php?tt=z-a&th=ตัวอักสร ฮ-ก Z-A">ตัวอักสร ฮ-ก Z-A</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="index.php">สินค้าใหม่</a></li>
         </ul>
