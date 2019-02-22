@@ -22,7 +22,8 @@
   <div >
 
     <?php  include('test2navbar.php'); 
-    // include('navbar.php');?>
+    include 'nav.php';
+?>
   </div>
 
   <body class="col-md-12">

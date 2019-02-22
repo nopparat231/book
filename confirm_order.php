@@ -21,8 +21,12 @@
 
   <div>
 
-    <?php include('test2navbar.php') ?>
+    <?php include('test2navbar.php');
+include 'nav.php';
+     ?>
   </div>
+  <br>
+  <br>
   <!--start show  product-->
   <div class="container">
     <div class="row">

@@ -32,6 +32,8 @@ if (!function_exists("GetSQLValueString")) {
 }
 $q = $_GET['q'];
 $type = $_GET['type'];
+$tt = $_GET['tt'];
+
 
 mysql_select_db($database_condb);
 
@@ -59,8 +61,27 @@ if ($type == 'all') {
   $prd = mysql_query($query_prd, $condb) or die(mysql_error());
   $row_prd = mysql_fetch_assoc($prd);
   $totalRows_prd = mysql_num_rows($prd);
+}elseif ($tt == 'low') {
+  $query_prd = "SELECT * FROM tbl_product ORDER BY p_price ASC";
+  $prd = mysql_query($query_prd, $condb) or die(mysql_error());
+  $row_prd = mysql_fetch_assoc($prd);
+  $totalRows_prd = mysql_num_rows($prd);
+}elseif ($tt == 'high') {
+  $query_prd = "SELECT * FROM tbl_product ORDER BY p_price desc";
+  $prd = mysql_query($query_prd, $condb) or die(mysql_error());
+  $row_prd = mysql_fetch_assoc($prd);
+  $totalRows_prd = mysql_num_rows($prd);
+}elseif ($tt == 'a-z') {
+  $query_prd = "SELECT * FROM tbl_product ORDER BY p_name ASC";
+  $prd = mysql_query($query_prd, $condb) or die(mysql_error());
+  $row_prd = mysql_fetch_assoc($prd);
+  $totalRows_prd = mysql_num_rows($prd);
+}elseif ($tt == 'z-a') {
+  $query_prd = "SELECT * FROM tbl_product ORDER BY p_name desc";
+  $prd = mysql_query($query_prd, $condb) or die(mysql_error());
+  $row_prd = mysql_fetch_assoc($prd);
+  $totalRows_prd = mysql_num_rows($prd);
 }
-
 
 ?>
 

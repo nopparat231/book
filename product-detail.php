@@ -1,4 +1,4 @@
-
+<?php //include('h.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,13 @@
   </head>
   <body>
   <br>
- <?php include('test2navbar.php');?>
+ <?php 
+ include('test2navbar.php');
+include 'nav.php';
+
+
+ ?>
+ <br>
  <!--start show  product-->
  <div class="container">
  	<div class="row">

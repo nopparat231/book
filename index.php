@@ -90,6 +90,8 @@ input[type=number]{
       $t_id = $_GET['t_id'];
       $t1_id = $_GET['t1_id'];
       $q = $_GET['q'];
+      $tt = $_GET['tt'];
+      $th = $_GET['th'];
       if($t_id !=''){ ?>
 
         <div class="col-md-12" ><br>
@@ -100,12 +102,56 @@ input[type=number]{
        <?php  include('listprd_by_type.php'); ?>
        
 
+     <?php }elseif($tt != ''){ ?>
+
+       <div class="col-md-12">
+         <br>
+         รายการสินค้า
+         <a class="btn btn-primary btn-xs"><?php if($tt != ''){echo $th;}?> </a>
+            <div class="dropdown pull-right">
+
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" OnChange="document.test.submit();" >
+          เลือกการจัดเรียง
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="index.php?tt=low&th=ราคาต่ำ-สูง">ราคาต่ำ-สูง</a></li>
+          <li><a href="index.php?tt=high&th=ราคาสูง-ต่ำ">ราคาสูง-ต่ำ</a></li>
+          <li><a href="index.php?tt=a-z&th=ตัวอักสร A-Z ก-ฮ">ตัวอักสร A-Z ก-ฮ</a></li>
+          <li><a href="index.php?tt=z-a&th=ตัวอักสร Z-A ฮ-ก">ตัวอักสร Z-A ฮ-ก</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="index.php">สินค้าใหม่</a></li>
+        </ul>
+
+      </div>
+         <hr size="10" style="background-color: #D3D3D3; height: 5px;">
+       </div>
+
+       <?php include('listprd_by_q.php'); ?>
+
+
      <?php }elseif($q!=''){ ?>
 
        <div class="col-md-12">
          <br>
          รายการสินค้า
-         <a class="btn btn-primary btn-xs"><?php echo $q;?> </a>
+         <a class="btn btn-primary btn-xs"><?php echo $q; if($tt != ''){echo $th;}?> </a>
+            <div class="dropdown pull-right">
+
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" OnChange="document.test.submit();" >
+          เลือกการจัดเรียง
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="index.php?tt=low&th=ราคาต่ำ-สูง">ราคาต่ำ-สูง</a></li>
+          <li><a href="index.php?tt=high&th=ราคาสูง-ต่ำ">ราคาสูง-ต่ำ</a></li>
+          <li><a href="index.php?tt=a-z&th=ตัวอักสร A-Z ก-ฮ">ตัวอักสร A-Z ก-ฮ</a></li>
+          <li><a href="index.php?tt=z-a&th=ตัวอักสร ฮ-ก Z-A ">ตัวอักสร ฮ-ก Z-A</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="index.php">สินค้าใหม่</a></li>
+        </ul>
+
+      </div>
          <hr size="10" style="background-color: #D3D3D3; height: 5px;">
        </div>
 
@@ -130,63 +176,53 @@ input[type=number]{
        <div class="dropdown pull-right">
 
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" OnChange="document.test.submit();" >
-          จัดเรียงตามคำนิยม
+          เลือกการจัดเรียง
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="index.php?type=all&q=ราคาต่ำ-สูง">ราคาต่ำ-สูง</a></li>
-          <li><a href="index.php?type=all&q=ราคาสูง-ต่ำ">ราคาสูง-ต่ำ</a></li>
-          <li><a href="index.php?type=all&q=ตัวอักสร A-Z ก-ฮ">ตัวอักสร A-Z ก-ฮ</a></li>
-          <li><a href="index.php?type=all&q=ตัวอักสร Z-A ฮ-ก">ตัวอักสร Z-A ฮ-ก</a></li>
+          <li><a href="index.php?tt=low&th=ราคาต่ำ-สูง">ราคาต่ำ-สูง</a></li>
+          <li><a href="index.php?tt=high&th=ราคาสูง-ต่ำ">ราคาสูง-ต่ำ</a></li>
+          <li><a href="index.php?tt=a-z&th=ตัวอักสร A-Z ก-ฮ">ตัวอักสร A-Z ก-ฮ</a></li>
+          <li><a href="index.php?tt=z-a&th=ตัวอักสร Z-A ฮ-ก">ตัวอักสร Z-A ฮ-ก</a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="index.php?type=all&q=new">สินค้าใหม่</a></li>
+          <li><a href="index.php">สินค้าใหม่</a></li>
         </ul>
 
-</div><!-- 
-<form name='test'  action='<?=$_SERVER[SCRIPT_NAME];?>'  >
-<select name="cars"  OnChange="document.test.submit();" class="dropdown pull-right"> 
-
-<option value="volvo">ราคาต่ำ-สูง</option>
-<option value="saab">ราคาสูง-ต่ำ</option>
-<option value="fiat">ตัวอักสร A-Z ก-ฮ</option>
-<option value="audi">ตัวอักสร Z-A ฮ-ก</option>
-<option value="audi">สินค้าใหม่</option>
-<option value="audi" selected="selected">จัดเรียงตามคำนิยม</option>
-</select>
-</form> -->
-
-<hr size="10" style="background-color: #0099CC; height: 5px;">
-
-<?php  include('listprd.php'); ?>
-</div>
-
-<?php
-}
-?>
-
-<?php if ($q != '' or $type_name != ''){
-
-}else{ ?>
+      </div>
 
 
- <div class="col-md-12">
+      <hr size="10" style="background-color: #0099CC; height: 5px;">
 
-  รายการสินค้า
-  <a class="btn btn-danger btn-xs">ขายดี </a>
-  <hr size="10" style="background-color: #FF6666; height: 5px;">
+      <?php  include('listprd.php'); ?>
+    </div>
 
-  <?php include('listprd_by_view.php'); ?>
-</div>
+    <?php
+  }
+  ?>
 
-<div class="col-md-12">
+  <?php if ($q != '' or $type_name != '' or $tt != ''){
 
-  รายการสินค้า
+  }else{ ?>
 
-  <a class="btn btn-warning btn-xs">ทังหมด </a>
-  <hr size="10" style="background-color: #FF9933; height: 5px;">
 
-  <?php include('listprdall.php'); ?>
-</div>
+   <div class="col-md-12">
+
+    รายการสินค้า
+    <a class="btn btn-danger btn-xs">ขายดี </a>
+    <hr size="10" style="background-color: #FF6666; height: 5px;">
+
+    <?php include('listprd_by_view.php'); ?>
+  </div>
+
+  <div class="col-md-12">
+
+    รายการสินค้า
+
+    <a class="btn btn-warning btn-xs">ทังหมด </a>
+    <hr size="10" style="background-color: #FF9933; height: 5px;">
+
+    <?php include('listprdall.php'); ?>
+  </div>
 
 <?php } ?>
 
