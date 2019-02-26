@@ -30,12 +30,10 @@ if (!function_exists("GetSQLValueString")) {
     return $theValue;
   }
 }
-
-mysql_select_db($database_condb);
+$s_id = $_GET['sell_prd'];
+mysql_select_db($database_condb); 
 $query_prd = "
-SELECT * FROM tbl_product as p, tbl_type as t 
-WHERE p.t_id = t.t_id
-ORDER BY p.p_id ASC";
+SELECT * FROM tbl_product p, tbl_type as t WHERE p.s_id = '$s_id' AND p.t_id = t.t_id ORDER BY p.p_id ASC";
 $prd = mysql_query($query_prd, $condb) or die(mysql_error());
 $row_prd = mysql_fetch_assoc($prd);
 $totalRows_prd = mysql_num_rows($prd);

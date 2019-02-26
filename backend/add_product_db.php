@@ -26,6 +26,7 @@ $p_qty = $_POST['p_qty'];
 $p_size = $_POST['p_size'];
 $p_ems = $_POST['p_ems'];
 $p_unit = $_POST['p_unit'];
+$s_id = $_POST['s_id'];
 $p_img1 = (isset($_POST['p_img1']) ? $_POST['p_img1'] : '');
 $p_img2 = (isset($_POST['p_img2']) ? $_POST['p_img2'] : '');
 
@@ -153,7 +154,7 @@ $sql ="INSERT INTO tbl_product
 	promo_start,
 	promo_done,
 	p_qty,
-	
+	s_id,
 	p_ems,
 	p_unit,
 	p_img1,
@@ -175,7 +176,7 @@ $sql ="INSERT INTO tbl_product
 	'$promo_start',
 	'$promo_done',
 	'$p_qty',
-	
+	'$s_id',
 	'$p_ems',
 	'$p_unit',
 	'$newname',

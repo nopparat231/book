@@ -274,6 +274,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
                  <label for=""></label>
                  <select name="s_id" required="required">
+                  <option value="">กรุณาเลือกเลขที่ตรวจรับ</option>
 
                   <?php
                   do {

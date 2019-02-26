@@ -80,9 +80,12 @@ $totalRows_prd = mysql_num_rows($prd);
           </tr>
           </thead>
           <?php if($totalRows_prd>0){?>
-          <?php do { ?>
+          <?php 
+
+$i = 1;
+          do { ?>
             <tr>
-              <td align="center" valign="top"><?php echo $row_prd['p_id']; ?></td>
+              <td align="center" valign="top"><?php echo $i; ?></td>
               <td valign="top"><?php echo $row_prd['t_name']; ?></td>
               <td valign="top"><b> <?php echo $row_prd['p_name']; ?>
 
@@ -106,7 +109,9 @@ $totalRows_prd = mysql_num_rows($prd);
               </center></td>
               <td><center> <a href="del_product.php?p_id=<?php echo $row_prd['p_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');"> ลบ </a> </center></td>
             </tr>
-            <?php } while ($row_prd = mysql_fetch_assoc($prd)); ?>
+            <?php
+$i += 1;
+             } while ($row_prd = mysql_fetch_assoc($prd)); ?>
             <?php } ?>
         </table>
       </div>
