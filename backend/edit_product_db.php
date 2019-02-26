@@ -27,6 +27,8 @@ $p_qty = $_POST['p_qty'];
 $p_size = $_POST['p_size'];
 $p_ems = $_POST['p_ems'];
 $p_unit = $_POST['p_unit'];
+$s_id = $_POST['s_id'];
+
 $p_img11 = $_POST['p_img11'];
 $p_img22 = $_POST['p_img22'];
 $p_img33 = $_POST['p_img33'];
@@ -170,6 +172,7 @@ promo_done='$promo_done',
 p_qty='$p_qty',
 p_ems='$p_ems',
 p_unit='$p_unit',
+s_id='$s_id',
 p_img1='$newname',
 p_img2='$newname2'
 WHERE p_id=$p_id

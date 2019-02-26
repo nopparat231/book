@@ -56,10 +56,10 @@ $totalRows_lbk = mysql_num_rows($lbk);
 
       <div class="row">
 
-      <div class="col-md-2">
-       
-        <?php include('menu.php');?>
-      </div>
+        <div class="col-md-2">
+
+          <?php include('menu.php');?>
+        </div>
         <div class="col-md-10">
           <h3 align="center"> รายการตรวจรับสินค้า  <a href="add_sell.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
           <div class="table-responsive">
@@ -73,6 +73,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
                   <th>วันที่สั่งซื้อสินค้า</th>
                   <th>วันที่รับสินค้า</th>
                   <th>ใบเสร็จ</th>
+                  <th>ดูสินค้า</th>
                   <th>แก้ไข</th>
                   <th>ลบ</th>
 
@@ -90,9 +91,12 @@ $totalRows_lbk = mysql_num_rows($lbk);
                 <td><?php echo $row_lbk['s_date']; ?></td>
                 <td><?php echo $row_lbk['sn_date']; ?></td>
 
+
+
                 <td><center><a href="../bimg/<?php echo $row_lbk['s_bill'];?>" target="_blank"><img src="../bimg/<?php echo $row_lbk['s_bill'];?>" height="50px" ></a></center>
                 </td>
 
+                <td><center> <a href="list_sell_prd.php?sell_prd=<?php echo $row_lbk['s_id'];?>" class="btn btn-warning btn-xs"> สินค้า </a> </center> </td>
 
                 <td><center> <a href="edit_sell.php?bank_id=<?php echo $row_lbk['s_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
                 <td><center> <a href="del_sell.php?bank_id=<?php echo $row_lbk['s_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
