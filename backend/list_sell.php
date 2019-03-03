@@ -67,12 +67,13 @@ $totalRows_lbk = mysql_num_rows($lbk);
               <thead>
                 <tr align="center">
                   <th>ลำดับ</th>
-                  <th>รหัสสินค้า</th>
+                  <th>เลขที่ตรวจรับ</th>
                   <th>จำนวน</th>
                   <th>ราคา</th>
                   <th>วันที่สั่งซื้อสินค้า</th>
                   <th>วันที่รับสินค้า</th>
                   <th>ใบเสร็จ</th>
+                  <th>สถานะ</th>
                   <th>ดูสินค้า</th>
                   <th>แก้ไข</th>
                   <th>ลบ</th>
@@ -90,16 +91,21 @@ $totalRows_lbk = mysql_num_rows($lbk);
                 <td><?php echo $row_lbk['s_price']; ?></td>
                 <td><?php echo $row_lbk['s_date']; ?></td>
                 <td><?php echo $row_lbk['sn_date']; ?></td>
-
-
-
+                
                 <td><center><a href="../bimg/<?php echo $row_lbk['s_bill'];?>" target="_blank"><img src="../bimg/<?php echo $row_lbk['s_bill'];?>" height="50px" ></a></center>
                 </td>
 
+                <?php if ($row_lbk['s_status'] == '0'): ?>
+                  <td>ปกติ</td>
+                <?php endif ?>
+                <?php if ($row_lbk['s_status'] == '1'): ?>
+                  <td>ยกเลิก</td>
+                <?php endif ?>
+                
                 <td><center> <a href="list_sell_prd.php?sell_prd=<?php echo $row_lbk['s_id'];?>" class="btn btn-warning btn-xs"> สินค้า </a> </center> </td>
 
                 <td><center> <a href="edit_sell.php?bank_id=<?php echo $row_lbk['s_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
-                <td><center> <a href="del_sell.php?bank_id=<?php echo $row_lbk['s_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
+                <td><center> <a href="del_sell.php?bank_id=<?php echo $row_lbk['s_id'];?>" onClick="return confirm('ยืนยันการยกเลิก');" class="btn btn-danger btn-xs"> ยกเลิก </a> </center> </td>
               </tr>
               <?php 
               $i += 1;

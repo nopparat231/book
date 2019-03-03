@@ -1,6 +1,6 @@
 
 <?php include('mm.php');?>
-<b>  ADMIN : <?php echo $row_mm['admin_name'];?></b>
+<b>  ชื่อผู้ใช้ : <?php echo $row_mm['admin_name'];?></b>
 <br />
 <div class="list-group">
 	<a href="index.php" class="list-group-item active"  style="background-color: #2C3E50">หน้าหลัก</a>

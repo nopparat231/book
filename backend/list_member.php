@@ -143,7 +143,7 @@ $totalRows_mem = mysql_num_rows($mem);
 
            <?php }else{ ?>
              <td><center> <a href="edit_mem.php?mem_id=<?php echo $row_mem['mem_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
-             <td><center> <a href="del_mem.php?mem_id=<?php echo $row_mem['mem_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
+             <td><center> <a href="del_mem.php?mem_id=<?php echo $row_mem['mem_id'];?>" onClick="return confirm('ยืนยันการยกเลิกบัญชี');" class="btn btn-danger btn-xs"> ยกเลิก </a> </center> </td>
            <?php  } ?>
 
 

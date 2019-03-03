@@ -5,10 +5,9 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 error_reporting( error_reporting() & ~E_NOTICE );
 
 $mem_id = $_GET['mem_id'];
-
-
-
-$sql ="DELETE FROM tbl_member WHERE mem_id=$mem_id";
+$member_status = 'ex';
+mysql_select_db($database_condb);
+$sql ="UPDATE tbl_member SET status='ex' WHERE mem_id = '$member_id'";
 
 		$result = mysql_query($sql, $condb) or die("Error in query : $sql" .mysql_error());
 

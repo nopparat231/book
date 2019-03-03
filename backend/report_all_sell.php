@@ -108,12 +108,13 @@ $totalRows_lbk = mysql_num_rows($lbk);
             <thead>
               <tr align="center">
                 <th>ลำดับ</th>
-                <th>รหัสสินค้า</th>
+                <th>รหัสตรวจรับ</th>
                 <th>จำนวน</th>
                 <th>ราคา</th>
                 <th>วันที่สั่งซื้อสินค้า</th>
                 <th>วันที่รับสินค้า</th>
                 <th>ใบเสร็จ</th>
+                <th>สินค้า</th>
 
 
               </tr>
@@ -133,6 +134,8 @@ $totalRows_lbk = mysql_num_rows($lbk);
 
                 <td><center><a href="../bimg/<?php echo $row_lbk['s_bill'];?>" target="_blank"><img src="../bimg/<?php echo $row_lbk['s_bill'];?>" height="50px" ></a></center>
                 </td>
+                <td><center><a href="report_all_sell_prd.php?sell_prd=<?php echo $row_lbk['s_id'];?>" class="btn btn-warning btn-xs">ดูสินค้า</a></center>
+                </td>
 
 
 
@@ -141,7 +144,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
               $i += 1;
             }while ($row_lbk = mysql_fetch_assoc($lbk)); ?>
           <?php }?>
-         
+
         </table>
       </div>
     </div>

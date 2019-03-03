@@ -32,7 +32,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 mysql_select_db($database_condb);
-$query_rb = "SELECT * FROM tbl_bank";
+$query_rb = "SELECT * FROM tbl_bank WHERE b_status <> '1'";
 $rb = mysql_query($query_rb, $condb) or die(mysql_error());
 $row_rb = mysql_fetch_assoc($rb);
 $totalRows_rb = mysql_num_rows($rb);

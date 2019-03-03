@@ -73,6 +73,8 @@ $totalRows_prd = mysql_num_rows($prd);
               <th width="7%">จำนวน</th>
 
               <th width="10%">ภาพสินค้า</th>
+              <th>สถานะ</th>
+
               <th>แก้ไข</th>
               <th>ลบ</th>
             </tr>
@@ -89,7 +91,7 @@ $totalRows_prd = mysql_num_rows($prd);
                 <a href="product_detail.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-info btn-xs"> รายละเอียด </a>
               </b>
               <br>
-              <?php // echo $row_prd['p_detial']; ?>
+              
             </td>
             <td align="center" valign="top"><?php echo $row_prd['p_price']; ?></td>
             <td align="center" valign="top">
@@ -99,21 +101,36 @@ $totalRows_prd = mysql_num_rows($prd);
            </td>
 
            <td><img src="../pimg/<?php echo $row_prd['p_img1'];?>" width="100px"></td>
-           <td><center>
 
-            <a href="edit_product.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&t1_id=<?php echo $row_prd['t1_id'];?>&act=edit" class="btn btn-warning btn-xs">
-            แก้ไข  </a>
-          </center></td>
-          <td><center> <a href="del_product.php?p_id=<?php echo $row_prd['p_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');"> ลบ </a> </center></td>
-        </tr>
-        <?php 
-        $i += 1;
-      } while ($row_prd = mysql_fetch_assoc($prd)); ?>
-    <?php } ?>
-  </table>
-</div>
-</div>
-</div>
+           <?php if ($row_prd['p_status'] == '0' && $row_prd['p_qty'] != '0'): ?>
+            <td><center>พร้อมจำหน่าย</center></td>
+            
+            <?php elseif ($row_prd['p_status'] == '1' && $row_prd['p_qty'] == '0'): ?>
+              <td><center>หนังสือเลิกผลิต</center></td>
+
+              <?php elseif ($row_prd['p_status'] == '1' ): ?>
+                <td><center>หนังสือเลิกผลิต</center></td>
+
+
+                <?php elseif ($row_prd['p_qty'] == '0'): ?>
+                  <td><center>สินค้าหมด</center></td>
+                <?php endif ?>
+
+                <td><center>
+
+                  <a href="edit_product.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&t1_id=<?php echo $row_prd['t1_id'];?>&act=edit" class="btn btn-warning btn-xs">
+                  แก้ไข  </a>
+                </center></td>
+                <td><center> <a href="del_product.php?p_id=<?php echo $row_prd['p_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิก');"> ยกเลิก </a> </center></td>
+              </tr>
+              <?php 
+              $i += 1;
+            } while ($row_prd = mysql_fetch_assoc($prd)); ?>
+          <?php } ?>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
