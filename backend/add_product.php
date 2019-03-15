@@ -171,141 +171,39 @@ $totalRows_prd = mysql_num_rows($prd);
                   </tr>
 
 
+                  <?php include 'in.php'; ?>
                   <tr>
-                    <td align="right" valign="middle">*ประเภทหลักสินค้า :</td>
-                    <td colspan="2">
-                      <label for=""></label>
-                      <select name="t_id" id="t_id" required="required" onchange="get_cities(this.value)">
-                        <option value="">กรุณาเลือกประเภทหลัก</option>
-                        <?php
-                        do {
-                          ?>
-                          <option value="<?php echo $row_ptype['t_id']?>"><?php echo $row_ptype['t_name']?></option>
-                          <?php
-                        } while ($row_ptype = mysql_fetch_assoc($ptype));
-                        $rows = mysql_num_rows($ptype);
-                        if($rows > 0) {
-                          mysql_data_seek($ptype, 0);
-                          $row_ptype = mysql_fetch_assoc($ptype);
-                        }
-                        ?>
-                      </select>
-                    </td>
+                    <td align="right" valign="middle">&nbsp;</td>
+                    <td colspan="2">&nbsp;</td>
                   </tr>
-                  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 
-                  <script type="text/javascript"> 
-                    function get_cities($t_id){
-                     $.ajax({
-                      url : "add_product.php?t_id="+$t_id,
-                      cache : false,
-                      beforeSend : function (){
-              //Show a message
-            },
-            complete : function($response, $status){
-             if ($status != "error" && $status != "timeout") {
-               $('#t1_id').html($response.responseText);
-             }
-           },
-           error : function ($responseObj){
-             alert("Something went wrong while processing your request.\n\nError => "
-               + $responseObj.responseText);
-           }
-         }); 
-                   }
-                 </script>
+                  <tr>
+                    <td align="right" valign="middle">เลขที่ตรวจรับสินค้า :</td>
+                    <td colspan="2">
 
-                 <tr>
-                  <td align="right" valign="middle">&nbsp;</td>
-                  <td colspan="2">&nbsp;</td>
-                </tr>
-                <tr>
-                  <td align="right" valign="middle">*ประเภทย่อยสินค้า :</td>
-                  <td colspan="2">
+                     <?php 
 
-                   <?php
+                     $query_sell = "SELECT * FROM tbl_sell ";
+                     $sell = mysql_query($query_sell, $condb) or die(mysql_error());
+                     $row_sell = mysql_fetch_assoc($sell);
+                     $totalRows_sell = mysql_num_rows($sell);
 
-                   $query_typeprd1 = "SELECT * FROM tbl_type1 ";//WHERE t_id = ".$tid;
-                   $typeprd1 = mysql_query($query_typeprd1, $condb) or die(mysql_error());
-                   $row_typeprd1 = mysql_fetch_assoc($typeprd1);
-                   $totalRows_typeprd1 = mysql_num_rows($typeprd1);
+                     ?>
 
-                   ?>
+                     <label for=""></label>
+                     <select name="s_id" required="required">
+                      <option value="">กรุณาเลือกเลขที่ตรวจรับ</option>
 
-
-                   <label for=""></label>
-                   <select name="t1_id" required="required" id="mySelect" onchange="myFunction(this.value)">
-                     <option value="">กรุณาเลือกประเภทย่อย</option>
-
-
-                     <?php
-                     do {
-                      ?>
-                      <option value="<?php echo $row_typeprd1['t1_id']?>"><?php echo $row_typeprd1['t1_name']?></option>
                       <?php
-                    } while ($row_typeprd1 = mysql_fetch_assoc($typeprd1));
-                    $rows1 = mysql_num_rows($typeprd1);
-                    if($rows1 > 0) {
-                      mysql_data_seek($typeprd1, 0);
-                      $row_typeprd1 = mysql_fetch_assoc($typeprd1);
-                    }
-                    ?>
-                  </select>
-                </td>
-              </tr>
+                      do {
+                        ?>
+                        <option value="<?php echo $row_sell['s_id']?>"><?php echo $row_sell['s_number']?></option>
+                        <?php
+                      } while ($row_sell = mysql_fetch_assoc($sell));
 
-              <tr>
-                <td align="right" valign="middle">&nbsp;</td>
-                <td colspan="2">&nbsp;</td>
-              </tr>
-
-              <tr>
-                <td align="right" valign="middle">เลขที่ตรวจรับสินค้า :</td>
-                <td colspan="2">
-
-                 <?php 
-
-                 $query_sell = "SELECT * FROM tbl_sell ";
-                 $sell = mysql_query($query_sell, $condb) or die(mysql_error());
-                 $row_sell = mysql_fetch_assoc($sell);
-                 $totalRows_sell = mysql_num_rows($sell);
-
-                 ?>
-
-                 <label for=""></label>
-                 <select name="s_id" required="required">
-                  <option value="">กรุณาเลือกเลขที่ตรวจรับ</option>
-
-                  <?php
-                  do {
-                    ?>
-                    <option value="<?php echo $row_sell['s_id']?>"><?php echo $row_sell['s_number']?></option>
-                    <?php
-                  } while ($row_sell = mysql_fetch_assoc($sell));
-
-                  ?>
-                </select>
-              </td>
-            </tr>
-
-            <tr>
-              <td align="right" valign="middle">&nbsp;</td>
-              <td colspan="2">&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="129" align="right" valign="middle">ผู้เขียน :</td>
-              <td colspan="2"><label for="p_at"></label>
-                <input name="p_at" type="text" required size="50"/></td>
-              </tr>
-
-              <tr>
-                <td align="right" valign="middle">&nbsp;</td>
-                <td colspan="2">&nbsp;</td>
-              </tr>
-              <tr>
-                <td width="129" align="right" valign="middle">สำนักพิมพ์ :</td>
-                <td colspan="2"><label for="p_pu"></label>
-                  <input name="p_pu" type="text" required size="50"/></td>
+                      ?>
+                    </select>
+                  </td>
                 </tr>
 
                 <tr>
@@ -313,9 +211,9 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td width="129" align="right" valign="middle">บาร์โค้ด :</td>
-                  <td colspan="2"><label for="p_br"></label>
-                    <input name="p_br" type="number" required size="50"/></td>
+                  <td width="129" align="right" valign="middle">ผู้เขียน :</td>
+                  <td colspan="2"><label for="p_at"></label>
+                    <input name="p_at" type="text" required size="50"/></td>
                   </tr>
 
                   <tr>
@@ -323,54 +221,74 @@ $totalRows_prd = mysql_num_rows($prd);
                     <td colspan="2">&nbsp;</td>
                   </tr>
                   <tr>
-                    <td align="right" valign="top">*รายละเอียดสินค้า :</td>
-                    <td colspan="2">
-                     <textarea name="p_detial" id="p_detial" class="ckeditor" cols="80" rows="5"></textarea>
-                   </td>
-                 </tr>
-                 <tr>
-                  <td align="right" valign="middle">&nbsp;</td>
-                  <td colspan="2">&nbsp;</td>
-                </tr>
-
-
-                <tr>
-                  <td align="right" valign="middle">*รูปภาพสินค้า1 :</td>
-                  <td colspan="2"><label for="p_img1"></label>
-                    <input name="p_img1" type="file" required class="bg-warning" id="p_img1" size="40" /></td>
-                  </tr>
-                  <tr>
-                    <td align="right" valign="middle">&nbsp;</td>
-                    <td colspan="2">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td align="right" valign="middle">รูปภาพสินค้า2 :</td>
-                    <td colspan="2"><label for="p_img2"></label>
-                      <input name="p_img2" type="file"  class="bg-warning" id="p_img2" size="40" /></td>
+                    <td width="129" align="right" valign="middle">สำนักพิมพ์ :</td>
+                    <td colspan="2"><label for="p_pu"></label>
+                      <input name="p_pu" type="text" required size="50"/></td>
                     </tr>
+
                     <tr>
-                      <td>&nbsp;</td>
+                      <td align="right" valign="middle">&nbsp;</td>
                       <td colspan="2">&nbsp;</td>
                     </tr>
                     <tr>
-                      <td>&nbsp;</td>
+                      <td width="129" align="right" valign="middle">บาร์โค้ด :</td>
+                      <td colspan="2"><label for="p_br"></label>
+                        <input name="p_br" type="number" required size="50"/></td>
+                      </tr>
+
+                      <tr>
+                        <td align="right" valign="middle">&nbsp;</td>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="right" valign="top">*รายละเอียดสินค้า :</td>
+                        <td colspan="2">
+                         <textarea name="p_detial" id="p_detial" class="ckeditor" cols="80" rows="5"></textarea>
+                       </td>
+                     </tr>
+                     <tr>
+                      <td align="right" valign="middle">&nbsp;</td>
                       <td colspan="2">&nbsp;</td>
                     </tr>
+
+
                     <tr>
-                      <td>&nbsp;</td>
-                      <td colspan="2"><button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">เพิ่มสินค้า</button></td>
-                    </tr>
-                  </table>
-                </form>
+                      <td align="right" valign="middle">*รูปภาพสินค้า1 :</td>
+                      <td colspan="2"><label for="p_img1"></label>
+                        <input name="p_img1" type="file" required class="bg-warning" id="p_img1" size="40" /></td>
+                      </tr>
+                      <tr>
+                        <td align="right" valign="middle">&nbsp;</td>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="right" valign="middle">รูปภาพสินค้า2 :</td>
+                        <td colspan="2"><label for="p_img2"></label>
+                          <input name="p_img2" type="file"  class="bg-warning" id="p_img2" size="40" /></td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td colspan="2">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td colspan="2">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td colspan="2"><button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">เพิ่มสินค้า</button></td>
+                        </tr>
+                      </table>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </body>
-      </html>
-      <?php
-      mysql_free_result($ptype);
+          </body>
+          </html>
+          <?php
+          mysql_free_result($ptype);
 
-      mysql_free_result($prd);
-      ?>
-      <?php include('f.php');?>
+          mysql_free_result($prd);
+          ?>
+          <?php include('f.php');?>
