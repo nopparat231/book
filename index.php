@@ -229,8 +229,8 @@ input[type=number]{
 
 </div>
 </div>
-<p id="back-top">
-  <a href="#top"><font size="30"><span class="glyphicon glyphicon-arrow-up"></span></font> ขึ้นด้านบน</a>
+<p id="back-top" style="text-align: right;">
+  <a href="#top" ><font size="30"><span class="glyphicon glyphicon-arrow-up" ></span></font> ขึ้นด้านบน</a>
 </p>
 
 <!--end show  product-->

@@ -114,7 +114,7 @@ if ($type == 'all') {
 }
 ?>
 <div class="col-sm-2" align="center">
-  <br><br>  <br><br>  <br><br>  <br><br><br><br>  <br><br><br><br>  <br><br>
+  <br><br>  <br><br>  <br><br> 
 </div>
 <?php
 mysql_free_result($prd);
