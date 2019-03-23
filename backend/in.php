@@ -16,8 +16,8 @@ Website: https://www.allphptricks.com
 	<tr>
 		<td align="right" valign="middle"><font color="red">*</font>ประเภทหลัก :&nbsp;</td>
 		<td colspan="2">
-			<select  name="t_id" class="country" required>
-				<option value="0">กรุณาเลือกประเภทหลัก</option>
+			<select  name="t_id" class="country" required="required">
+				<option value="">กรุณาเลือกประเภทหลัก</option>
 				<?php
 				include('db.php');
 				$sql = mysqli_query($con,"select * from tbl_type");
@@ -36,8 +36,8 @@ Website: https://www.allphptricks.com
 	<tr>
 		<td align="right" valign="middle"><font color="red">*</font>ประเภทย่อย :&nbsp;</td>
 		<td colspan="2">
-			<select name="t1_id" class="city" required>
-				<option>กรุณาเลือกประเภทย่อย</option>
+			<select name="t1_id" class="city" required="required">
+				<option value="">กรุณาเลือกประเภทย่อย</option>
 			</select>
 
 		</td>
