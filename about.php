@@ -1,4 +1,4 @@
-<?php 
+<?php
 ob_start();
 include('h.php');?>
 <?php include('datatable.php');
@@ -21,7 +21,7 @@ include 'check_order_date.php';
 
   // hide #back-top first
   $("#back-top").hide();
-  
+
   // fade in #back-top
   $(function () {
     $(window).scroll(function () {
@@ -42,7 +42,7 @@ include 'check_order_date.php';
   });
 
 });
-</script> 
+</script>
 
 
 <style type="text/css">
@@ -65,10 +65,10 @@ input[type=number]{
 <body id="top">
   <div >
 
-    <?php  
+    <?php
 
-    
-    include('test2navbar.php'); 
+
+    include('test2navbar.php');
     include 'nav.php';
 
 
@@ -81,17 +81,17 @@ input[type=number]{
       <?php
       include('carousel.php');
 
-      
+
 
       ?>
-      <br><br> 
+      <br><br>
       <div class="col-md-6">
         <?php echo $row_cf['about']; ?>
 
       </div>
       <div class="col-md-6">
         <?php echo $row_cf['location']; ?>
-        
+
         <?php echo $row_cf['contact']; ?>
       </div>
 
@@ -99,10 +99,10 @@ input[type=number]{
 
     </div>
   </div>
-  
-  <br><br>  <br><br>  <br><br>  <br><br><br><br>  <br><br><br><br>  <br><br>
-  <p id="back-top">
-    <a href="#top"><font size="30"><span class="glyphicon glyphicon-arrow-up"></span></font> ขึ้นด้านบน</a>
+
+  <br><br>  <br><br> 
+  <p id="back-top" style="text-align: right;">
+    <a href="#top" ><font size="30"><span class="glyphicon glyphicon-arrow-up" ></span></font> </a>
   </p>
   <?php  include('f.php');?>
   <!--end show  product-->
@@ -112,4 +112,3 @@ input[type=number]{
 
 
 </html>
-

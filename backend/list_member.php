@@ -97,7 +97,7 @@ $totalRows_mem = mysql_num_rows($mem);
     <table id="example5" class="display" cellspacing="0" border="1">
       <thead>
         <tr align="center">
-          <th>ลำดับที่</th>
+          <th>ลำดับ</th>
           <th>รหัส</th>
           <th>ข้อมูล</th>
           <th>ที่อยู่</th>
@@ -107,7 +107,7 @@ $totalRows_mem = mysql_num_rows($mem);
 
           <?php }else{ ?>
             <th>แก้ไข </th>
-            <th>ลบ</th>
+            <th>ยกเลิก</th>
           <?php  } ?>
         </tr>
       </thead>

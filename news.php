@@ -1,4 +1,4 @@
-<?php 
+<?php
 ob_start();
 include('h.php');?>
 <?php include('datatable.php');
@@ -21,7 +21,7 @@ include 'check_order_date.php';
 
   // hide #back-top first
   $("#back-top").hide();
-  
+
   // fade in #back-top
   $(function () {
     $(window).scroll(function () {
@@ -42,7 +42,7 @@ include 'check_order_date.php';
   });
 
 });
-</script> 
+</script>
 
 
 <style type="text/css">
@@ -107,10 +107,10 @@ $totalRows_prd = mysql_num_rows($prd);
 <body id="top">
   <div >
 
-    <?php  
+    <?php
 
-    
-    include('test2navbar.php'); 
+
+    include('test2navbar.php');
     include 'nav.php';
 
 
@@ -132,7 +132,7 @@ $totalRows_prd = mysql_num_rows($prd);
       return "$strDay $strMonthThai $strYear, $strHour:$strMinute";
     }
 
-  
+
     ?>
   </script>
   <div class="container">
@@ -143,10 +143,10 @@ $totalRows_prd = mysql_num_rows($prd);
 
 
       ?>
-      <br><br> 
+      <br><br>
       <div class="col-md-12">
-        <h3><b>ข่าวสาร</b></h3>
-        <?php do { 
+        <h3><b>ข่าวสาร&กิจกรรม</b></h3>
+        <?php do {
 
           echo "<hr>";
           echo DateThai($row_prd['new_time']);
@@ -159,16 +159,16 @@ $totalRows_prd = mysql_num_rows($prd);
 
 
       </div>
-      
+
 
 
 
     </div>
   </div>
-  
-  <br><br>  <br><br>  <br><br>  <br><br><br><br>  <br><br><br><br>  <br><br>
-  <p id="back-top">
-    <a href="#top"><font size="30"><span class="glyphicon glyphicon-arrow-up"></span></font> ขึ้นด้านบน</a>
+
+  <br><br>  <br><br>
+  <p id="back-top" style="text-align: right;">
+    <a href="#top" ><font size="30"><span class="glyphicon glyphicon-arrow-up" ></span></font> </a>
   </p>
   <?php  include('f.php');?>
   <!--end show  product-->
@@ -178,4 +178,3 @@ $totalRows_prd = mysql_num_rows($prd);
 <?php mysql_free_result($cf); ?>
 
 </html>
-

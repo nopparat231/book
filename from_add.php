@@ -9,19 +9,19 @@
 	<div class="col-sm-1" align="right" ></div>
 	<div class="col-sm-4" align="left">
 
-		<input type="text" name="a" class="form-control" placeholder="บ้านเลขที่, หมู่, หมู่บ้าน, ซอย" required autocomplete="off">
+		ที่อยู่ :<input type="text" name="a" class="form-control" placeholder="บ้านเลขที่, หมู่, หมู่บ้าน, ซอย" required autocomplete="off">
 
 	</div>
 
 	<div class="col-sm-3" align="left">
 
-		<input type="text" id="district" name="t" class="form-control" required autocomplete="off" placeholder="ตำบล" >
+		แขวง/ตำบล :<input type="text" id="district" name="t" class="form-control" required autocomplete="off" placeholder="" >
 
 	</div>
 
 	<div class="col-sm-3" align="left">
 
-		<input type="text" id="amphoe" name="o" class="form-control" required autocomplete="off" placeholder="อำเภอ">
+		เขต/อำเภอ :<input type="text" id="amphoe" name="o" class="form-control" required autocomplete="off" placeholder="">
 
 	</div>
 
@@ -32,14 +32,14 @@
 <div class="col-sm-1" align="right" ></div>
 	<div class="col-sm-4" align="left">
 
-		<input type="text" id="province" name="j" class="form-control" required autocomplete="off" placeholder="จังหวัด">
+		จังหวัด :<input type="text" id="province" name="j" class="form-control" required autocomplete="off" placeholder="">
 
 	</div>
 
 
 	<div class="col-sm-3" align="left" >
 
-		<input type="text" id="zipcode" name="p" class="form-control" required autocomplete="off" placeholder="ไปรษณีย์">
+		รหัสไปรษณีย์ :<input type="text" id="zipcode" name="p" class="form-control" required autocomplete="off" placeholder="">
 	</div>
 
 </div>

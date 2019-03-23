@@ -14,6 +14,10 @@ error_reporting( error_reporting() & ~E_NOTICE );
 $s_number = $_POST['s_number'];
 $sn_number = $_POST['sn_number'];
 $s_price = $_POST['s_price'];
+$s_name = $_POST['s_name'];
+$s_address = $_POST['s_address'];
+$s_phone = $_POST['s_phone'];
+$s_email = $_POST['s_email'];
 $s_date = $_POST['s_date'];
 $sn_date = $_POST['sn_date'];
 
@@ -38,11 +42,11 @@ $upload=$_FILES['s_bill'];
 
 $sql ="INSERT INTO tbl_sell
 
-		(s_number,  sn_number,s_price, s_date,sn_date, s_bill)
+		(s_number,  sn_number,s_price,s_name,s_address,s_phone,s_email, s_date,sn_date, s_bill)
 
 		VALUES
 
-		('$s_number', '$sn_number','$s_price','$s_date','$sn_date', '$newname')";
+		('$s_number', '$sn_number','$s_price','$s_name','$s_address','$s_phone','$s_email','$s_date','$sn_date', '$newname')";
 
 		$result = mysql_query($sql, $condb) or die("Error in query : $sql" .mysql_error());
 

@@ -8,7 +8,7 @@ $admin_user = $_POST['admin_user'];
 $admin_pass = $_POST['admin_pass'];
 $admin_name = $_POST['admin_name'];
 $admin_tel = $_POST['admin_tel'];
-$admin_address = $_POST['a']." ตำบล ".$_POST['t']." อำเภอ ".$_POST['o']." จังหวัด ".$_POST['j']." รหัสไปรษณีย์ ".$_POST['p'];
+$admin_address = $_POST['a']." แขวง/ตำบล".$_POST['t']." เขต/อำเภอ".$_POST['o']." จังหวัด".$_POST['j']." รหัสไปรษณีย์ ".$_POST['p'];
 $admin_email = $_POST['admin_email'];
 $status = $_POST['status'];
 
@@ -42,7 +42,7 @@ $sql ="INSERT INTO tbl_admin
 
 		if($result){
 			echo "<script>";
-			echo "alert('เพิ่ม admin เรียบร้อยแล้ว');";
+			echo "alert('เพิ่มผู้ใช้งานระบบ เรียบร้อยแล้ว');";
 			echo "window.location ='list_admin.php'; ";
 			echo "</script>";
 		} else {

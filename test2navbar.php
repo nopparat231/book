@@ -377,7 +377,7 @@ if (isset($_SESSION['shopping_cart'])) {
 	<div class="[ container ]">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="[ navbar-header ]">
-			
+
 			<div class="[ animbrand ]" >
 				<a class="[ navbar-brand ][ animate ]" href="index.php">
 					<img alt="Brand" src="pimg/<?php echo $row_cf['logo']; ?>" width="70" ></a>
@@ -399,15 +399,14 @@ if (isset($_SESSION['shopping_cart'])) {
 						</form>
 					</li>
 					<li><a href="index.php" class="[ animate ]" >หน้าหลัก</span></a></li>
-					<li><a href="news.php" class="[ animate ]" >ข่าวสาร</span></a></li>
-					<li><a href="about.php" class="[ animate ]" >ติดต่อเรา</span></a></li>
+
 
 					<li>
-						
 
-						<a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate ]" >ตระกล้าสินค้า<span class="badge glyphicon glyphicon-shopping-cart "> <?php echo $meQty; ?></span></a>
 
-						
+						<a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate ]" >ตระกร้าสินค้า<span class="badge glyphicon glyphicon-shopping-cart "> <?php echo $meQty; ?></span></a>
+
+
 					</li>
 
 
@@ -420,7 +419,7 @@ if (isset($_SESSION['shopping_cart'])) {
 
 						<li><a href="my_order.php?mycart_ro=mycart_ro" class="[ animate ]" >แจ้งชำระเงิน</span></a></li>
 						<li>
-							<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">โปรไฟล์</a>
+							<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">ข้อมูลสมาชิก</a>
 							<ul class="[ dropdown-menu ]" role="menu">
 								<li>
 
@@ -439,11 +438,12 @@ if (isset($_SESSION['shopping_cart'])) {
 
 
 						}?>
-
+						<li><a href="news.php" class="[ animate ]" >ข่าวสาร&กิจกรรม</span></a></li>
+						<li><a href="about.php" class="[ animate ]" >เกี่ยวกับเรา&ติดต่อเรา</span></a></li>
 
 						<li><a href="?howto_view" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
 
-						
+
 					</ul>
 				</div>
 			</div>

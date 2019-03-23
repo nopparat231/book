@@ -47,7 +47,7 @@
 
           lengthMenu: [
           [ 10, 25, 50, -1 ],
-          [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ],
+          [ '10 รายการ', '25 รายการ', '50 รายการ', 'แสดงทั้งหมด' ],
           ],
 
 
@@ -56,12 +56,12 @@
           "language": {
              "lengthMenu": "Display _MENU_ records",
               "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
+              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 รายการ",
+              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกรายการ)",
               "sInfoPostFix":    "",
               "sInfoThousands":  ",",
-              "sLengthMenu":     "แสดง _MENU_ แถว",
+              "sLengthMenu":     "แสดง _MENU_ รายการ",
               "sLoadingRecords": "กำลังโหลดข้อมูล...",
               "sProcessing":     "กำลังดำเนินการ...",
               "sSearch":         "ค้นหา: ",
@@ -99,7 +99,7 @@
 
           lengthMenu: [
           [ 10, 25, 50, -1 ],
-          [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ],
+          [ '10 รายการ', '25 รายการ', '50 รายการ', 'แสดงทั้งหมด' ],
           ],
 
 
@@ -108,12 +108,12 @@
           "language": {
              "lengthMenu": "Display _MENU_ records",
               "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
+              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 รายการ",
+              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกรายการ)",
               "sInfoPostFix":    "",
               "sInfoThousands":  ",",
-              "sLengthMenu":     "แสดง _MENU_ แถว",
+              "sLengthMenu":     "แสดง _MENU_ รายการ",
               "sLoadingRecords": "กำลังโหลดข้อมูล...",
               "sProcessing":     "กำลังดำเนินการ...",
               "sSearch":         "ค้นหา: ",
@@ -151,7 +151,7 @@
 
           lengthMenu: [
           [ 10, 25, 50, -1 ],
-          [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ],
+          [ '10 รายการ', '25 รายการ', '50 รายการ', 'แสดงทั้งหมด' ],
           ],
 
 
@@ -160,12 +160,12 @@
           "language": {
              "lengthMenu": "Display _MENU_ records",
               "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
+              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 รายการ",
+              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกรายการ)",
               "sInfoPostFix":    "",
               "sInfoThousands":  ",",
-              "sLengthMenu":     "แสดง _MENU_ แถว",
+              "sLengthMenu":     "แสดง _MENU_ รายการ",
               "sLoadingRecords": "กำลังโหลดข้อมูล...",
               "sProcessing":     "กำลังดำเนินการ...",
               "sSearch":         "ค้นหา: ",
@@ -203,7 +203,7 @@
 
             lengthMenu: [
             [ 10, 25, 50, -1 ],
-            [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ]
+            [ '10 รายการ', '25 รายการ', '50 รายการ', 'แสดงทั้งหมด' ]
             ],
 
 
@@ -247,12 +247,12 @@
 
       "language": {
         "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
+        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 รายการ",
+        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกรายการ)",
         "sInfoPostFix":    "",
         "sInfoThousands":  ",",
-        "sLengthMenu":     "แสดง _MENU_ แถว",
+        "sLengthMenu":     "แสดง _MENU_ รายการ",
         "sLoadingRecords": "กำลังโหลดข้อมูล...",
         "sProcessing":     "กำลังดำเนินการ...",
         "sSearch":         "ค้นหา: ",
@@ -291,7 +291,7 @@
 
           lengthMenu: [
           [ 10, 25, 50, -1 ],
-          [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ],
+          [ '10 รายการ', '25 รายการ', '50 รายการ', 'แสดงทั้งหมด' ],
           ],
 
       "footerCallback": function ( row, data, start, end, display ) {
@@ -334,12 +334,12 @@
           "language": {
              "lengthMenu": "Display _MENU_ records",
               "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
+              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 รายการ",
+              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกรายการ)",
               "sInfoPostFix":    "",
               "sInfoThousands":  ",",
-              "sLengthMenu":     "แสดง _MENU_ แถว",
+              "sLengthMenu":     "แสดง _MENU_ รายการ",
               "sLoadingRecords": "กำลังโหลดข้อมูล...",
               "sProcessing":     "กำลังดำเนินการ...",
               "sSearch":         "ค้นหา: ",
@@ -378,7 +378,7 @@
 
           lengthMenu: [
           [ 10, 25, 50, -1 ],
-          [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ]
+          [ '10 รายการ', '25 รายการ', '50 รายการ', 'แสดงทั้งหมด' ]
           ],
 
 
@@ -422,12 +422,12 @@
 
       "language": {
         "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
+        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 รายการ",
+        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกรายการ)",
         "sInfoPostFix":    "",
         "sInfoThousands":  ",",
-        "sLengthMenu":     "แสดง _MENU_ แถว",
+        "sLengthMenu":     "แสดง _MENU_ รายการ",
         "sLoadingRecords": "กำลังโหลดข้อมูล...",
         "sProcessing":     "กำลังดำเนินการ...",
         "sSearch":         "ค้นหา: ",
@@ -464,7 +464,7 @@
 
             lengthMenu: [
             [ 10, 25, 50, -1 ],
-            [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ]
+            [ '10 รายการ', '25 รายการ', '50 รายการ', 'แสดงทั้งหมด' ]
             ],
 
 
@@ -508,12 +508,12 @@
 
       "language": {
         "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
+        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 รายการ",
+        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกรายการ)",
         "sInfoPostFix":    "",
         "sInfoThousands":  ",",
-        "sLengthMenu":     "แสดง _MENU_ แถว",
+        "sLengthMenu":     "แสดง _MENU_ รายการ",
         "sLoadingRecords": "กำลังโหลดข้อมูล...",
         "sProcessing":     "กำลังดำเนินการ...",
         "sSearch":         "ค้นหา: ",
@@ -550,7 +550,7 @@
 
             lengthMenu: [
             [ 10, 25, 50, -1 ],
-            [ '10 แถว', '25 แถว', '50 แถว', 'แสดงทั้งหมด' ]
+            [ '10 รายการ', '25 รายการ', '50 รายการ', 'แสดงทั้งหมด' ]
             ],
 
 
@@ -594,12 +594,12 @@
 
       "language": {
         "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
+        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 รายการ",
+        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกรายการ)",
         "sInfoPostFix":    "",
         "sInfoThousands":  ",",
-        "sLengthMenu":     "แสดง _MENU_ แถว",
+        "sLengthMenu":     "แสดง _MENU_ รายการ",
         "sLoadingRecords": "กำลังโหลดข้อมูล...",
         "sProcessing":     "กำลังดำเนินการ...",
         "sSearch":         "ค้นหา: ",

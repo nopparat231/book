@@ -62,7 +62,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
         <?php include('menu.php');?>
       </div>
         <div class="col-md-10">
-        <h3 align="center">  แก้ไข  Admin  <?php include('edit-ok.php');?> </h3>
+        <h3 align="center">  แก้ไขผู้ใช้งานระบบ  <?php include('edit-ok.php');?> </h3>
 <div class="table-responsive">
     <form  name="register" action="edit_admin_db.php" method="POST" id="register" class="form-horizontal">
        <div class="form-group">
@@ -87,7 +87,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
         <div class="form-group">
         <div class="col-sm-2" align="right"> ชื่อ-สกุล : </div>
           <div class="col-sm-7" align="left">
-            <input  name="admin_name" type="text" required class="form-control" id="admin_name" placeholder="ชื่อ-สกุล" value="<?php echo $row_editadmin['admin_name']; ?>" />
+            <input  name="admin_name" type="text" required class="form-control" id="admin_name" placeholder="" value="<?php echo $row_editadmin['admin_name']; ?>" />
           </div>
         </div>
 
@@ -102,14 +102,14 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
         <div class="form-group">
         <div class="col-sm-2" align="right"> เบอร์โทร : </div>
           <div class="col-sm-5" align="left">
-            <input  name="admin_tel" type="text" required class="form-control" id="admin_tel" placeholder="0912345678" pattern="[0-9]{10}" minlength="2" title="เบอร์โทร 0-9"  value="<?php echo $row_editadmin['admin_tel']; ?>" minlength="2"/>
+            <input  name="admin_tel" type="text" required class="form-control" id="admin_tel" placeholder="0912345678" pattern="[0-9]{10}" minlength="2" title="0912345678"  value="<?php echo $row_editadmin['admin_tel']; ?>" minlength="2"/>
           </div>
         </div>
 
         <div class="form-group">
-        <div class="col-sm-2" align="right"> E-mail : </div>
+        <div class="col-sm-2" align="right"> อีเมลล์ : </div>
           <div class="col-sm-5" align="left">
-            <input  name="admin_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="admin_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" value="<?php echo $row_editadmin['admin_email']; ?>" minlength="2"/>
+            <input  name="admin_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="admin_email" placeholder="" title="กรุณากรอก Email ให้ถูกต้อง" value="<?php echo $row_editadmin['admin_email']; ?>" minlength="2"/>
           </div>
         </div>
 
@@ -122,6 +122,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
 
              <option value="staff">staff</option>
              <option value="admin">admin</option>
+             <option value="superadmin">superadmin</option>
 
            </select>
          </div>

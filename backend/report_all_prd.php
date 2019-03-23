@@ -76,19 +76,19 @@ $totalRows_prd = mysql_num_rows($prd);
       th { white-space: nowrap; }
     </style>
 
-    <h3 align="center"> รายการสินค้า  </h3>
-   
+    <h3 align="center"> รายการ หนังสือ  </h3>
+
 <table width="100%" border="1" cellspacing="0" class="display" id="example3">
   <?php $r = '<h3 align="center">รายการสินค้า</h3>' ?>
   <thead>
     <tr>
 
-      <th width="5%">ลำดับที่</th>
+      <th width="5%">ลำดับ</th>
       <th width="15%">ประเภท</th>
       <th width="25%">ชื่อสินค้า</th>
 
       <th width="7%">จำนวน</th>
-      
+
       <th width="5%">น้ำหนัก</th>
       <th width="5%">การเข้าชม</th>
       <th width="7%">ราคา</th>
@@ -98,7 +98,7 @@ $totalRows_prd = mysql_num_rows($prd);
   <tbody>
     <?php if($totalRows_prd>0){?>
 
-      <?php 
+      <?php
       $i = 1;
 
       do { ?>
@@ -113,7 +113,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
            <?php echo $row_prd['p_unit'];?>
          </td>
-       
+
         <td align="center" valign="top">
           <?php echo $row_prd['p_ems'];?>
         </td>
@@ -134,7 +134,7 @@ $totalRows_prd = mysql_num_rows($prd);
     <th></th>
     <th></th>
     <th></th>
-    
+
     <th style="text-align:right">ราคารวม:</th>
     <th></th>
   </tr>

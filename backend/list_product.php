@@ -33,7 +33,7 @@ if (!function_exists("GetSQLValueString")) {
 
 mysql_select_db($database_condb);
 $query_prd = "
-SELECT * FROM tbl_product as p, tbl_type as t 
+SELECT * FROM tbl_product as p, tbl_type as t
 WHERE p.t_id = t.t_id
 ORDER BY p.p_id desc";
 $prd = mysql_query($query_prd, $condb) or die(mysql_error());
@@ -63,7 +63,7 @@ $totalRows_prd = mysql_num_rows($prd);
         <?php include('menu.php');?>
       </div>
       <div class="col-md-10">
-        <h3 align="center"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> เพิ่มสินค้า </a> </h3>
+        <h3 align="center"> รายการหนังสือ <a href="add_product.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
         <div class="table">
          <table width="100%" border="1" cellspacing="0" class="display" id="example">
           <thead>
@@ -73,7 +73,7 @@ $totalRows_prd = mysql_num_rows($prd);
               <th width="40%">รายละเอียด</th>
               <th width="7%">ราคา</th>
               <th width="7%">จำนวน</th>
-              
+
               <th width="10%">ภาพสินค้า</th>
               <th>สถานะ</th>
               <th>แก้ไข</th>
@@ -81,7 +81,7 @@ $totalRows_prd = mysql_num_rows($prd);
             </tr>
           </thead>
           <?php if($totalRows_prd>0){?>
-            <?php 
+            <?php
 
             $i = 1;
             do { ?>
@@ -98,15 +98,15 @@ $totalRows_prd = mysql_num_rows($prd);
             <td align="center" valign="top"><?php echo $row_prd['p_price']; ?></td>
             <td align="center" valign="top">
              <?php echo $row_prd['p_qty']; ?>
-             
+
              <?php echo $row_prd['p_unit'];?>
            </td>
-           
+
            <td><img src="../pimg/<?php echo $row_prd['p_img1'];?>" width="100px"></td>
 
            <?php if ($row_prd['p_status'] == '0' && $row_prd['p_qty'] != '0'): ?>
             <td><center>พร้อมจำหน่าย</center></td>
-            
+
             <?php elseif ($row_prd['p_status'] == '1' && $row_prd['p_qty'] == '0'): ?>
               <td><center>หนังสือเลิกผลิต</center></td>
 
@@ -118,7 +118,7 @@ $totalRows_prd = mysql_num_rows($prd);
                   <td><center>สินค้าหมด</center></td>
                 <?php endif ?>
 
-                
+
                 <td><center>
 
                   <a href="edit_product.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&t1_id=<?php echo $row_prd['t1_id'];?>&act=edit" class="btn btn-warning btn-xs">

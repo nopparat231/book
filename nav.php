@@ -217,18 +217,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <?php
 
-          $mm = ($_SESSION['MM_Username']);
+          $mm = ($_SESSION["User"]);
 
           if($mm != ''){?>
 <ul class="nav navbar-nav navbar-left">
- <li><a >ยินดีต้อนรับคุณ<?php echo $_SESSION['MM_Username']; ?></a></li>
+ <li><a >ยินดีต้อนรับ คุณ<?php echo $_SESSION["User"]; ?></a></li>
  </ul>
           <?php } ?>
 
@@ -242,8 +242,8 @@
               <option value="p_pu">สำนักพิมพ์</option>
               <option value="p_br">ISBN </option>
             </select>
-            <input type="text" name="q" class="form-control" required="required" placeholder="ค้นหา" />
-            
+            <input type="text" name="q" class="form-control" required="required" placeholder="" />
+
           </div>
           <button type="submit" class="btn btn-default">ค้นหา</button>
         </form>

@@ -77,24 +77,24 @@ $totalRows_lbk = mysql_num_rows($lbk);
           <?php include('menu.php');?>
         </div>
         <div class="col-md-10">
-          <h3 align="center"> รายการตรวจรับสินค้า  </h3>
+          <h3 align="center"> รายการ การตรวจรับหนังสือ  </h3>
 
           <form action="report_all_sell.php" method="post">
             <?php include 'thaidate.php'; ?>
             <div class="row">
 
              <div class="col-md-1">
-              <label><font size="2">จากวัน</font></label> 
+              <label><font size="2">จากวัน</font></label>
             </div>
             <div class="col-md-4">
               <input id="from" name="start_date" type="text"  autocomplete="off"  />
             </div>
             <div class="col-md-1">
-              <label><font size="2">ถึงวันที่</font></label>  
+              <label><font size="2">ถึงวันที่</font></label>
             </div>
             <div class="col-md-4">
               <input  id="to" name="end_date" type="text"  autocomplete="off"  />
-            </div>      
+            </div>
 
             <div class="col-md-2">
               <input type="submit" name="search" id="search" value="ค้นหา" class="btn btn-info" />
@@ -108,7 +108,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
             <thead>
               <tr align="center">
                 <th>ลำดับ</th>
-                <th>รหัสตรวจรับ</th>
+                <th>เลขที่ใบตรวจรับ</th>
                 <th>จำนวน</th>
                 <th>ราคา</th>
                 <th>วันที่สั่งซื้อสินค้า</th>
@@ -120,7 +120,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
               </tr>
             </thead>
             <?php if($totalRows_lbk > 0){?>
-              <?php 
+              <?php
               $i = 1;
               do { ?>
                <tr align="center">
@@ -140,7 +140,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
 
 
               </tr>
-              <?php 
+              <?php
               $i += 1;
             }while ($row_lbk = mysql_fetch_assoc($lbk)); ?>
           <?php }?>

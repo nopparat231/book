@@ -14,10 +14,10 @@ Website: https://www.allphptricks.com
 
 
 	<tr>
-		<td align="right" valign="middle">*ประเภทหลักสินค้า :</td>
+		<td align="right" valign="middle"><font color="red">*</font>ประเภทหลัก :&nbsp;</td>
 		<td colspan="2">
 			<select  name="t_id" class="country" required>
-				<option value="0">กรุณาเลือกประเภทหลักสินค้า</option>
+				<option value="0">กรุณาเลือกประเภทหลัก</option>
 				<?php
 				include('db.php');
 				$sql = mysqli_query($con,"select * from tbl_type");
@@ -34,10 +34,10 @@ Website: https://www.allphptricks.com
 		<td colspan="2">&nbsp;</td>
 	</tr>
 	<tr>
-		<td align="right" valign="middle">*ประเภทย่อยสินค้า :</td>
+		<td align="right" valign="middle"><font color="red">*</font>ประเภทย่อย :&nbsp;</td>
 		<td colspan="2">
 			<select name="t1_id" class="city" required>
-				<option>กรุณาเลือกประเภทย่อยสินค้า</option>
+				<option>กรุณาเลือกประเภทย่อย</option>
 			</select>
 
 		</td>
@@ -62,7 +62,7 @@ Website: https://www.allphptricks.com
 					success: function(cities)
 					{
 						$(".city").html(cities);
-					} 
+					}
 				});
 
 			});

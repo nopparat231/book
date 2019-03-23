@@ -14,10 +14,10 @@
     <div class="row">
     	<div class="col-md-2">
 
-        <?php include('menu.php');?>        	 
+        <?php include('menu.php');?>
       </div>
       <div class="col-md-10">
-        <h3 align="center">  เพิ่ม    
+        <h3 align="center">  เพิ่ม
           <?php if (isset($_GET['admin'])): ?>
             ผู้ดูแลระบบ
           <?php endif ?>
@@ -36,14 +36,14 @@
                </div>
              </div>
              <div class="form-group">
-              <div class="col-sm-2" align="right"> Username : </div>
+              <div class="col-sm-2" align="right"> ชื่อผู้ใช้ : </div>
               <div class="col-sm-5" align="left">
                 <input  name="admin_user" type="text" required class="form-control" id="admin_user" placeholder="username" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
               </div>
             </div>
 
             <div class="form-group">
-              <div class="col-sm-2" align="right"> Password : </div>
+              <div class="col-sm-2" align="right"> รหัสผ่าน : </div>
               <div class="col-sm-5" align="left">
                 <input  name="admin_pass" type="password" required class="form-control" id="admin_pass" placeholder="password" pattern="^[a-zA-Z0-9]+$" minlength="2" />
               </div>
@@ -67,14 +67,14 @@
             </div>
 
             <div class="form-group">
-              <div class="col-sm-2" align="right"> E-mail : </div>
+              <div class="col-sm-2" align="right"> อีเมลล์ : </div>
               <div class="col-sm-5" align="left">
                 <input  name="admin_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="admin_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" minlength="2"/>
               </div>
             </div>
 
             <div class="form-group">
-              <div class="col-sm-2" align="right"> เลือกสถานะ : </div>
+              <div class="col-sm-2" align="right"> ตำแหน่ง : </div>
               <div class="col-sm-7" align="left">
 
                 <select name="status">
@@ -107,7 +107,7 @@
   </div>
 </div>
 </div>
-</div> 
+</div>
 </body>
 </html>
 <?php  include('f.php');?>

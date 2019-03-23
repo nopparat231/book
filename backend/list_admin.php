@@ -77,17 +77,17 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
          <div class="row">
 
            <div class="col-md-1">
-            <label><font size="2">จากวัน</font></label> 
+            <label><font size="2">จากวัน</font></label>
           </div>
           <div class="col-md-4">
             <input id="inputdatepicker" class="datepicker" name="start_date" type="text"  autocomplete="off"  />
           </div>
           <div class="col-md-1">
-            <label><font size="2">ถึงวันที่</font></label>  
+            <label><font size="2">ถึงวันที่</font></label>
           </div>
           <div class="col-md-4">
            <input  id="inputdatepicker" class="datepicker" name="end_date" type="text"  autocomplete="off"  />
-         </div>      
+         </div>
 
          <div class="col-md-2">
           <input type="submit" name="search" id="search" value="ค้นหา" class="btn btn-info" />
@@ -99,7 +99,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
       <table id="example6" class="display" cellspacing="0" border="1">
         <thead>
           <tr align="center">
-            <th>ลำดับที่</th>
+            <th>ลำดับ</th>
             <th>รหัส</th>
             <th>ข้อมูล</th>
             <th>ที่อยู่</th>
@@ -109,17 +109,17 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
 
             <?php }else{ ?>
               <th>แก้ไข </th>
-              <th>ลบ</th>
+              <th>ยกเลิก</th>
             <?php  } ?>
           </tr>
         </thead>
-        <?php 
+        <?php
 
         $i = 1;
         do { ?>
           <tr>
             <td align="center" ><?php echo $i; ?></td>
-            <td align="center"><?php 
+            <td align="center"><?php
             if ($row_listadmin['status'] == 'staff') {
               $ida = 'ST';
             }elseif ($row_listadmin['status'] == 'admin') {
@@ -136,7 +136,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
                 <?php echo "เบอร์โทร : " ,$row_listadmin['admin_tel']; ?><br />
                 <?php echo "E-mail : " ,$row_listadmin['admin_email']; ?>
               </td>
-              <td align="center"><?php 
+              <td align="center"><?php
               if ($row_listadmin['status'] == 'staff') {
                 $stu = 'พนักงาน';
               }elseif ($row_listadmin['status'] == 'admin') {
@@ -173,5 +173,3 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
 mysql_free_result($listadmin);
 ?>
 <?php  include('f.php');?>
-
-

@@ -130,7 +130,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
   <table id="example7" class="display"  border="1">
     <thead>
       <tr>
-        <th>ลำดับที่</th>
+        <th>ลำดับ</th>
         <th>รหัสสั่งซื้อ</th>
         <th>ลูกค้า</th>
         <th>รายการ</th>

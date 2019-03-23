@@ -88,8 +88,8 @@ mysql_query($sql , $condb);
      <li>ผู้เขียน : <?php echo $row_prdt['p_at']; ?> </li>
      <li>สำนักพิมพ์ : <?php echo $row_prdt['p_pu']; ?> </li>
      <li>หมวดหมู่ : <?php echo $row_prdtt['t_name']; ?> </li>
-     <li>ประเภทของสินค้า : <?php echo $row_prdttt['t1_name']; ?> </li>
-     <li>บาร์โค้ด : <?php echo $row_prdt['p_br']; ?> </li>
+     <li>ประเภทของหนังสือ : <?php echo $row_prdttt['t1_name']; ?> </li>
+     <li>ISBN : <?php echo $row_prdt['p_br']; ?> </li>
    </ul>
    <br><B><h4>รายละเอียด</h4></B><?php echo $row_prdt['p_detial']; ?>
    <font color="#8B0000">

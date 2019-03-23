@@ -63,8 +63,8 @@ $totalRows_ptype = mysql_num_rows($ptype);
     <table id="example" class="display" cellspacing="0" border="1">
       <thead>
         <tr>
-          <th width="5%">id</th>
-          <th width="50%">name</th>
+          <th width="5%">ลำดับ</th>
+          <th width="50%">ประเภท</th>
           <th width="5%"> <center> สถานะ </center></th>
           <th width="5%"> <center> แก้ไข </center></th>
           <th width="5%"> <center> ลบ </center></th>

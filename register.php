@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <div class="row" style="padding-top:100px">
+  <div class="row" style="padding-top:72px">
 
     <div style="background-color:#f4f4f4">
 
@@ -29,15 +29,15 @@
         <div class="col-sm-1" align="left"></div>
 
         <div class="col-sm-4" align="left">
-          <input  name="mem_username" type="text" required class="form-control" id="mem_username"  placeholder="ชื่อผู้ใช้งาน" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลข 6-12 ตัว" minlength="6" maxlength = "12" autocomplete="off" />
+          ชื่อผู้ใช้งาน :<input  name="mem_username" type="text" required class="form-control" id="mem_username"  placeholder="" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลข 6-12 ตัว" minlength="6" maxlength = "12" autocomplete="off" />
         </div>
 
         <div class="col-sm-3" align="left">
-          <input  name="mem_password" type="password" required class="form-control" id="txtNewPassword"  placeholder="รหัสผ่าน 6-12 ตัว" pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength = "12" autocomplete="off" />
+          รหัสผ่าน :<input  name="mem_password" type="password" required class="form-control" id="txtNewPassword"  placeholder="6-12 ตัว" pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength = "12" autocomplete="off" />
         </div>
 
         <div class="col-sm-3" align="left">
-          <input  name="mem_password" type="password" id="txtConfirmPassword" onkeyup="checkPasswordMatch();" required class="form-control" id="mem_password" placeholder="ยืนยันรหัสผ่าน" pattern="^[a-zA-Z0-9]+$" minlength="2" />
+          ยืนยันรหัสผ่าน :<input  name="mem_password" type="password" id="txtConfirmPassword" onkeyup="checkPasswordMatch();" required class="form-control" id="mem_password" placeholder="" pattern="^[a-zA-Z0-9]+$" minlength="2" />
           <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
         </div>
 
@@ -47,24 +47,24 @@
       <div class="form-group">
         <div class="col-sm-1" align="right"> </div>
         <div class="col-sm-4" align="left">
-          <input  name="mem_name" type="text" required class="form-control" id="mem_name" placeholder="ชื่อ-สกุล" />
+          ชื่อ-สกุล :<input  name="mem_name" type="text" required class="form-control" id="mem_name" placeholder="" />
         </div>
 
         <div class="col-sm-3" align="left">
-          <input  name="mem_tel" required class="form-control" id="input-num" placeholder="เบอร์โทร" pattern="[0-9]{10}" size="10" title="เบอร์โทร 0-9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          เบอร์โทร :<input  name="mem_tel" required class="form-control" id="input-num" placeholder="" pattern="[0-9]{10}" size="10" title="เบอร์โทร 0-9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
           type="tel"
           maxlength = "10" onkeyup="num();"/>
         </div>
 
         <div class="col-sm-3" align="left">
-          <input  name="mem_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="mem_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" minlength="2"/>
+          อีเมลล์ :<input  name="mem_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="mem_email" placeholder="" title="กรุณากรอก Email ให้ถูกต้อง" minlength="2"/>
         </div>
 
       </div>
       <!-- ที่อยู่ -->
       <?php include 'from_add.php'; ?>
 
-      
+
 
       <div class="modal-footer">
         <div class="form-group">

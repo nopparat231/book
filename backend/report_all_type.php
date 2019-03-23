@@ -49,7 +49,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
   <?php include('h.php');?>
   <?php include('datatable.php');?>
   </head><?php //include('menu.php');?>  <?php include('navbar.php');?>
-  <body>  
+  <body>
     <div class="container">
 
      <div class="row">
@@ -58,11 +58,11 @@ $totalRows_ptype = mysql_num_rows($ptype);
         <?php include('menu.php');?>
       </div>
       <div class="col-md-9">
-        <h3 align="center"> ประเภทสินค้า </h3>
+        <h3 align="center"> รายการ ประเภทหนังสือ </h3>
         <table id="example1" class="display" cellspacing="0" border="1">
           <thead>
             <tr>
-             <th align="center">ลำดับที่</th>
+             <th align="center">ลำดับ</th>
              <th align="center">ประเภทหลัก</th>
              <th align="center">ประเภทย่อย</th>
 
@@ -70,7 +70,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
          </thead>
          <tbody>
           <?php if($totalRows_ptype>0){?>
-            <?php 
+            <?php
             $i = 1;
             do { ?>
               <tr>
@@ -78,7 +78,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
                <td  align="center" valign="top"><?php echo $row_ptype['t_name']; ?></td>
                <td  align="center" valign="top"><?php echo $row_ptype['t1_name']; ?></td>
              </tr>
-             <?php 
+             <?php
              $i += 1;
            } while ($row_ptype = mysql_fetch_assoc($ptype)); ?>
          <?php } ?>

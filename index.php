@@ -1,4 +1,4 @@
-<?php 
+<?php
 ob_start();
 include('h.php');?>
 <?php include('datatable.php');
@@ -21,7 +21,7 @@ include 'check_order_date.php';
 
   // hide #back-top first
   $("#back-top").hide();
-  
+
   // fade in #back-top
   $(function () {
     $(window).scroll(function () {
@@ -42,7 +42,7 @@ include 'check_order_date.php';
   });
 
 });
-</script> 
+</script>
 
 
 <style type="text/css">
@@ -65,10 +65,10 @@ input[type=number]{
 <body id="top">
   <div >
 
-    <?php  
+    <?php
 
-    
-    include('test2navbar.php'); 
+
+    include('test2navbar.php');
     include 'nav.php';
 
     ?>
@@ -85,7 +85,7 @@ input[type=number]{
       include('carousel.php');
 
 
-      
+
       $type_name = $_GET['type_name'];
       $t_id = $_GET['t_id'];
       $t1_id = $_GET['t1_id'];
@@ -95,12 +95,12 @@ input[type=number]{
       if($t_id !=''){ ?>
 
         <div class="col-md-12" ><br>
-         รายการสินค้า 
+         รายการสินค้า
          <a class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
          <hr size="10" style="background-color: #0099CC; height: 5px;">
        </div>
        <?php  include('listprd_by_type.php'); ?>
-       
+
 
      <?php }elseif($tt != ''){ ?>
 
@@ -161,7 +161,7 @@ input[type=number]{
      <?php }elseif($t1_id !=''){ ?>
 
        <div class="col-md-12" ><br>
-         รายการสินค้า 
+         รายการสินค้า
          <a class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
          <hr size="10" style="background-color: #0099CC; height: 5px;">
        </div>
@@ -230,7 +230,7 @@ input[type=number]{
 </div>
 </div>
 <p id="back-top" style="text-align: right;">
-  <a href="#top" ><font size="30"><span class="glyphicon glyphicon-arrow-up" ></span></font> ขึ้นด้านบน</a>
+  <a href="#top" ><font size="30"><span class="glyphicon glyphicon-arrow-up" ></span></font> </a>
 </p>
 
 <!--end show  product-->

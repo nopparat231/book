@@ -53,11 +53,14 @@ if (isset($_POST['mem_username'])) {
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_condb);
 
-  $LoginRS__query=sprintf("SELECT mem_username, mem_password FROM tbl_member WHERE mem_username=%s AND mem_password=%s AND active='yes' AND status='user'",
+  $LoginRS__query=sprintf("SELECT * FROM tbl_member WHERE mem_username=%s AND mem_password=%s AND active='yes' AND status='user'",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text"));
 
   $LoginRS = mysql_query($LoginRS__query, $condb) or die(mysql_error());
+
   $loginFoundUser = mysql_num_rows($LoginRS);
+  $objResultcheck = mysql_fetch_array($LoginRS);
+  
   if ($loginFoundUser) {
    $loginStrGroup = "";
 
@@ -65,6 +68,8 @@ if (isset($_POST['mem_username'])) {
     //declare two session variables and assign them
    $_SESSION['MM_Username'] = $loginUsername;
    $_SESSION['MM_UserGroup'] = $loginStrGroup;
+   $_SESSION['User'] = $objResultcheck['mem_name'];
+    
 
    if (isset($_SESSION['PrevUrl']) && false) {
     $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];
@@ -118,8 +123,8 @@ else {
 
 
                 <br><br>
-                <a href='./admin/' class='animate'><span class='glyphicon glyphicon-user'>แอดมิน</span></a> &nbsp;&nbsp;
-              
+                <a href='./admin/' class='animate'><span class='glyphicon glyphicon-user'>ผู้ใช้งานระบบ</span></a> &nbsp;&nbsp;
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
 
 

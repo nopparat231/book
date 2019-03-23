@@ -41,7 +41,7 @@
 						<il><p class="list-group-item">รายงานประเภทสินค้า</p></il>
 						<il><p class="list-group-item">รายงานข้อมูลธนาคาร</p></il> </h4>
 						<br>
-						<a href="add_admin.php?superadmin" class="btn btn-warning">เพิ่มผู้ดูแลระบบ</a>
+						<a href="add_admin.php?superadmin" class="btn btn-warning">เพิ่มผู้จัดการ</a>
 
 					<?php endif ?>
 
