@@ -77,7 +77,7 @@ $totalRows_mem = mysql_num_rows($mem);
         do { ?>
           <tr>
             <td align="center"><?php echo $i; ?></td>
-            <td><?php echo mb_substr($row_mem['new_v'], 0,30,'utf-8'); ?>...</td>
+            <td><?php echo mb_substr($row_mem['new_title'], 0,30,'utf-8'); ?>...</td>
             <td><?php echo $row_mem['new_time']; ?></td>
             <td><center> <a href="edit_news.php?new_id=<?php echo $row_mem['new_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
             <td><center> <a href="del_new.php?new_id=<?php echo $row_mem['new_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>

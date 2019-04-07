@@ -94,9 +94,12 @@ if (!function_exists("GetSQLValueString")) {
   }
 }
 
+if (isset($_GET['new_id'])) {
+  $new_id = $_GET['new_id'];
+}
 
 mysql_select_db($database_condb);
-$query_prd = "SELECT * FROM tbl_new order by new_id desc";
+$query_prd = "SELECT * FROM tbl_new where new_id =".$new_id;
 $prd = mysql_query( $query_prd,$condb) or die(mysql_error());
 $row_prd = mysql_fetch_assoc($prd);
 $totalRows_prd = mysql_num_rows($prd);
@@ -150,51 +153,49 @@ $totalRows_prd = mysql_num_rows($prd);
         <?php do {
 
          echo "<hr>";
-         
-         echo "<table >";
-         echo "<tr>";
+         echo DateThai($row_prd['new_time']);
          ?>
 
-         <th>
+         <center>
+           <p><h2><b><?php echo $row_prd['new_title']; ?></h2></b> </p>
+           <p><img src="<?php echo $row_prd['new_img']; ?>" style="height:331px; width:681px; " /></p>
 
-          <p><img src="<?php echo $row_prd['new_img']; ?>" style="height:231px; width:481px" /></p>
-
-        </th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-
-
-        <th>
-          <p ><h3><b><?php echo $row_prd['new_title']; ?></h3></b> </p>
-          <br>
-          <p > <?php echo mb_substr($row_prd['new_v'] , 0 , 250 , 'utf-8'); ?> <b>...</b></p>
+         </center>
 
 
 
-          <br>
-          <p><?php echo DateThai($row_prd['new_time']); ?></p>
-          <p><a href="new_re.php?new_id=<?php echo $row_prd['new_id']; ?>"><button>อ่านต่อ</button></a></p>
-          <?php
-          echo "</th>";
 
-          echo "</tr>";
-          echo "</table>";
-          echo "<br>";
-
-        } while ($row_prd = mysql_fetch_assoc($prd)); ?>
+         
+         <br>
+         <p ><h4> <?php echo $row_prd['new_v']; ?></h4></p>
 
 
-      </div>
+
+         <br>
+
+     
+         <?php
 
 
-    </div>
-  </div>
+         
 
-  <br><br>  <br><br>
-  <p id="back-top" style="text-align: right;">
-    <a href="#top" ><font size="30"><span class="glyphicon glyphicon-arrow-up" ></span></font> </a>
-  </p>
-  <?php  include('f.php');?>
-  <!--end show  product-->
+         echo "<br>";
+
+       } while ($row_prd = mysql_fetch_assoc($prd)); ?>
+
+
+     </div>
+
+
+   </div>
+ </div>
+
+ <br><br>  <br><br>
+ <p id="back-top" style="text-align: right;">
+  <a href="#top" ><font size="30"><span class="glyphicon glyphicon-arrow-up" ></span></font> </a>
+</p>
+<?php  include('f.php');?>
+<!--end show  product-->
 
 </body>
 

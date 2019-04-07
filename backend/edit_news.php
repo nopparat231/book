@@ -75,6 +75,17 @@
          </div>
          <tr>
 
+           <td colspan="2">
+            <input type="text" name="new_title" class="form-control" placeholder="กรุณากรอกหัวข้อข่าว" required value="<?php echo $row_editnew['new_title']; ?>" />
+          </td>
+          <br>
+
+          <td colspan="2">
+            <input type="text" name="new_img" class="form-control" placeholder="กรุณากรอก URL รูปภาพข่าว" required value="<?php echo $row_editnew['new_img']; ?>" />
+          </td>
+          <br>
+
+
           <td colspan="2">
 
             <textarea name="new_v" cols="100" class="ckeditor" rows="5"><?php echo $row_editnew['new_v']; ?></textarea>

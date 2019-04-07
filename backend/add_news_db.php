@@ -6,9 +6,13 @@ error_reporting( error_reporting() & ~E_NOTICE );
 
 
 $add_new = $_POST['add_new'];
+$new_title = $_POST['new_title'];
+$new_img = $_POST['new_img'];
 
 
-$sql ="INSERT INTO tbl_new (new_v) VALUES ('$add_new')";
+
+
+$sql ="INSERT INTO tbl_new (new_v , new_title , new_img) VALUES ('$add_new' , '$new_title' , '$new_img')";
 
 		$result = mysql_query($sql, $condb) or die("Error in query : $sql" .mysql_error());
 
