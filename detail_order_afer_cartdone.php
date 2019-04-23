@@ -43,7 +43,7 @@ $buyer = mysql_query($query_buyer, $condb) or die(mysql_error());
 $row_buyer = mysql_fetch_assoc($buyer);
 $totalRows_buyer = mysql_num_rows($buyer);
 mysql_select_db($database_condb);
-$query_rb = "SELECT * FROM tbl_bank";
+$query_rb = "SELECT * FROM tbl_bank WHERE b_status = 0";
 $rb = mysql_query($query_rb, $condb) or die(mysql_error());
 $row_rb = mysql_fetch_assoc($rb);
 $totalRows_rb = mysql_num_rows($rb);
@@ -55,7 +55,7 @@ mysql_select_db($database_condb);
 $query_cartdone = sprintf("
   SELECT * FROM 
   tbl_order as o, 
-  tbl_order_detail as d, 
+  tbl_order_detail as d,
   tbl_product as p,
   tbl_member  as m
   WHERE o.order_id = %s 

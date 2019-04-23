@@ -18,8 +18,9 @@ $q = $p_qty;
       <td><center></center></td>
       <td><center>ราคา</center></td>
       <td><center>จำนวน</center></td>
+      <td><center>น้ำหนัก(กรัม)</center></td>
       
-      <td align="right">รวม</td>
+      <td align="right">ราคารวม</td>
       <td><center></center></td>
     </tr>
     <script type="text/javascript">
@@ -57,8 +58,8 @@ $q = $p_qty;
 
         $total += $sum;
         
-        $sumw += $row['p_ems'];
-
+        $sumw = $row['p_ems'] * $p_qty;
+        //$ssum  += $row['p_ems'];
 
 
         $sumqyt += $p_qty;
@@ -76,13 +77,13 @@ $q = $p_qty;
         <input type='number' value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>
         <?php
 
-        
+        echo "<td width='10%' align='center'>".number_format($sumw). "</td>";
                 //echo "<input type='number' name='amount[$p_id]' value='$p_qty' size='2'/></td>";
         echo "<td width='10%' align='right'>".number_format($sum,2). "</td>";
         echo "<td width='2%'align='right'><a href='confirm_order.php?p_id=$p_id&act=remove&oct=after' ><span class='glyphicon glyphicon-remove'  style='color: red'></span></a></td>";
 
         echo "</tr>";
-
+        $sumww += $sumw;
 
       }
 
@@ -99,6 +100,10 @@ $q = $p_qty;
       echo "<td align='center'>"."<b>".number_format($total,2)."</b>"."</td>";
       echo "</tr>";
 
+      echo "<tr>";
+      echo "<td  align='left' colspan='5'><b>น้ำหนักสินค้ารวม</b></td>";
+      echo "<td align='center'>"."<b>".number_format($sumww,2)."(กรัม)</b>"."</td>";
+      echo "</tr>";
       
       $tax = $total*0.07;
       $total += $tax;

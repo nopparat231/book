@@ -64,7 +64,7 @@ if($_SESSION['MM_Username']!=''){
         <td align="center"></td>
         <td align="center">ราคา</td>
         <td align="center">จำนวน</td>
-        
+        <td align="center">น้ำหนัก(กรัม)</td>
         <td align="center">รวม/รายการ</td>
       </tr>
       <form  name="formlogin" action="saveorder.php" method="POST" id="login" class="form-horizontal">
@@ -88,7 +88,7 @@ if($_SESSION['MM_Username']!=''){
             $sum	= $row['p_price']*$p_qty;
 
             $total	+= $sum;
-
+            $sumw = $row['p_ems'] * $p_qty;
 
             echo "<tr class='success' align='center'> ";
             echo "<td align='center'>";
@@ -98,11 +98,11 @@ if($_SESSION['MM_Username']!=''){
             echo "<td align='center'>" . $row["p_size"] . "</td>";
             echo "<td align='center'>" .number_format($row['p_price'],2) ."</td>";
             echo "<td align='center'>$p_qty</td>";
-            
+            echo "<td width='10%' align='center'>".number_format($sumw). "</td>";
             echo "<td align='center'>".number_format($sum,2)."</td>";
             echo "</tr>";
             $i += 1;
-
+            $sumww += $sumw;
             ?>
             <input type="hidden" name="ems" value="<?php echo $ems; ?>">
             <input type="hidden"  name="p_name[]" value="<?php echo $row['p_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
@@ -117,17 +117,22 @@ if($_SESSION['MM_Username']!=''){
           $total += $ems;
           
           echo "<tr class='success'>";
-          echo "<td  align='left' colspan='5'><b>จัดส่ง</b></td>";
+          echo "<td  align='left' colspan='6'><b>น้ำหนักสินค้ารวม</b></td>";
+          echo "<td align='center'>"."<b>".number_format($sumww,2)."(กรัม)</b>"."</td>";
+          echo "</tr>";
+
+          echo "<tr class='success'>";
+          echo "<td  align='left' colspan='6'><b>ค่าจัดส่ง</b></td>";
           echo "<td align='center'>"."<b>".number_format($ems)."</b>"."</td>";
           echo "</tr>";
 
           echo "<tr class='success'>";
-          echo "<td  align='left' colspan='5'><b>ภาษี 7%</b></td>";
+          echo "<td  align='left' colspan='6'><b>ภาษี 7%</b></td>";
           echo "<td align='center'>"."<b>".number_format($tax,2)."</b>"."</td>";
           echo "</tr>";
 
           echo "<tr class='success'>";
-          echo "<td colspan='5' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
+          echo "<td colspan='6' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
           echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
 
           echo "</tr>";
