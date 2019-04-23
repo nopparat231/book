@@ -74,6 +74,7 @@ $totalRows_pf = mysql_num_rows($pf);
     $page = $_GET['page'];
     $mem_id = $_GET['mem_id'];
     $mycart_ro = $_GET['mycart_ro'];
+    $mycart_po = $_GET['mycart_po'];
 
     if ($page == 'mycart') {
        echo "<div class='col-md-8' >";
@@ -86,6 +87,10 @@ $totalRows_pf = mysql_num_rows($pf);
     }elseif ($mycart_ro == 'mycart_ro') {
     echo "<div class='col-md-8' >";
      include('mycart_ro.php');
+      echo "</div>";
+    }elseif ($mycart_po == 'mycart_po') {
+    echo "<div class='col-md-8' >";
+     include('mycart_po.php');
       echo "</div>";
     } else  {
       echo "<div class='col-md-8' >";

@@ -418,6 +418,7 @@ if (isset($_SESSION['shopping_cart'])) {
 					if($mm != ''){?>
 
 						<li><a href="my_order.php?mycart_ro=mycart_ro" class="[ animate ]" >แจ้งชำระเงิน</span></a></li>
+						<li><a href="my_order.php?mycart_po=mycart_po" class="[ animate ]" >ส่งของแล้ว</span></a></li>
 						<li>
 							<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">ข้อมูลสมาชิก</a>
 							<ul class="[ dropdown-menu ]" role="menu">
