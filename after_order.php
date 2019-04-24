@@ -74,7 +74,7 @@ $q = $p_qty;
         ?>
 
         <input type="hidden" name="ttems" value="<?php echo $ems; ?>">
-        <input type='number' value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>
+        <input type='number' min="0" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>
         <?php
 
         echo "<td width='10%' align='center'>".number_format($sumw). "</td>";
