@@ -33,10 +33,10 @@ include 'nav.php';
       <!-- categories-->
       <div class="col-md-3">
 
-        <?php include('category2.php') ?>
+        <?php //include('category2.php') ?>
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-12">
         <?php
 
         $oct = $_GET['oct'];

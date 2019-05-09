@@ -94,7 +94,10 @@ mysql_query($sql , $condb);
    <br><B><h4>รายละเอียด</h4></B><?php echo $row_prdt['p_detial']; ?>
    <font color="#8B0000">
     <h3>
-      <?php if ($row_prdt['promo'] != 0  && date('Y-m-d') >= date($row_prd['promo_start'])) {
+
+      <?php 
+      $da = date('Y-m-d');
+      if ($row_prdt['promo'] != 0  && $da <= $row_prdt['promo_done']) {
         echo " <font color='#FF9966'><strike>".number_format($row_prdt['promo'],2)."</strike></font>";
       } ?>
       ราคา <?php echo $row_prdt['p_price']; ?>  บาท </h3> </font>
@@ -145,27 +148,27 @@ mysql_query($sql , $condb);
   ?>
   <style type="text/css">
 
-  .button {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-  }
+    .button {
+      display: inline-block;
+      padding: 15px 25px;
+      font-size: 24px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
 
-  .button:hover {background-color: #3e8e41}
+    .button:hover {background-color: #3e8e41}
 
-  .button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
 
-</style>
+  </style>

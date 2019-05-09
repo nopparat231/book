@@ -43,7 +43,8 @@ $totalRows_prd = mysql_num_rows($prd);
 </a>
   <p align="center">
     <b><?php echo iconv_substr($row_prd['p_name'],0,20,'utf-8'); ?>... </b>
-<br /><?php if ($row_prd['promo'] != 0 && date('Y-m-d') >= date($row_prd['promo_start'])) {
+<br /><?php $da = date('Y-m-d');
+      if ($row_prd['promo'] != 0  && $da <= $row_prd['promo_done']) {
         echo " <font color='#8B0000'><strike>".number_format($row_prd['promo'],2)."</strike></font>";
       }else {
         echo "<br />";
