@@ -56,7 +56,7 @@ $totalRows_prd = mysql_num_rows($prd);
         } ?>
         <b ><font color="#FF8C00"><?php echo $row_prd['p_price']; ?>  บาท </font> </b>
         <br />
-        <?php  if ($row_prd['promo'] != 0 && date('Y-m-d') >= $row_prd['promo_start']) {
+        <?php if ($row_prd['promo'] != 0  && $da <= $row_prd['promo_done']) {
 
           echo  "<font color='#FF8C00'>ประหยัด " .number_format($row_prd['promo']-$row_prd['p_price'],2). " บาท </font>";
         }?>
