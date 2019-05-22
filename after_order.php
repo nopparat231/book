@@ -6,13 +6,14 @@ $act = $_GET['act'];
 error_reporting(E_ALL & ~E_NOTICE);
 
 $q = $p_qty;
+
 ?>
 <div class="col-md-9">
   <form id="frmcart" name="frmcart" method="post" action="?act=update&oct=after" >
     <table width="100%" border="0" aligh="center" class="table table-striped">
       <thead>
         <tr>
-          <th height="40" colspan="8" align="center"><h2>หนังสือในตะกร้า</h2></th>
+          <th height="40" colspan="8" align="center"><h2>หนังสือในตะกร้า <?php echo $meQty; ?> ชิ้น</h2></th>
         </tr>
       </thead>
       <tr >
@@ -93,7 +94,7 @@ $q = $p_qty;
           ?>
 
           <input type="hidden" name="ttems" value="<?php echo $ems; ?>">
-          <input type='number' min="0" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>
+          <input type='number' min="0" max= "<?php echo $row['p_qty']; ?>" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>
           <?php
 
           echo "<td width='10%' align='center'>".number_format($sumw). "</td>";
