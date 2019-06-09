@@ -169,6 +169,7 @@ $q = $p_qty;
         <?php
         include 'class_ems.php';
         $total += $tems;
+
         echo "<td align='right'>"."<b>".number_format($tems)." บาท</b>"."</td>";
         echo "</tr>";
 
@@ -185,8 +186,7 @@ $q = $p_qty;
         echo "</tr>";
 
       }
-
-
+      
       if ($p_qty > $row["p_qty"]) {
 // echo $p_qty;
 // echo $row["p_qty"];
