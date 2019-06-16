@@ -101,7 +101,7 @@ if($status > 1){ ?>
   <table border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td colspan="5" align="left" bgcolor="#FFFFFF">
-        <h4>รายการสั่งซื้อ </h4>
+        <h4>รายการสั่งซื้อ</h4>
         <hr style="border-radius: 5px;border: 2px solid #64CCF5;">
       </td>
 
@@ -215,6 +215,8 @@ if($status > 1){ ?>
 
 <div class="col-md-6">
 
+  
+  <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span></a> 
 
   <table border="1" align="left" class="table" style=" border-style: solid;
   border-color: coral;">
@@ -447,7 +449,8 @@ if($status > 1){ ?>
 
         <div class="col-md-6">
 
-
+          <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" ><span class="glyphicon glyphicon-print"></span></a> 
+          
           <table border="1" align="left" class="table" style=" border-style: solid;
           border-color: coral;">
           <tr>
