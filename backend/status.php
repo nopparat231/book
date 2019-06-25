@@ -1,6 +1,6 @@
 <?php
 if ($status == 1) {
-	echo "<font color='red'><span class='glyphicon glyphicon-certificate'></span> ";
+	echo "<font color='#8917BF'><span class='glyphicon glyphicon-certificate'></span> ";
 	echo "รอชำระเงิน";
 	echo "</font>";
 }elseif ($status == 2) {
@@ -12,7 +12,7 @@ if ($status == 1) {
 	echo "ส่งของแล้ว";
 	echo "</font>";
 }elseif ($status == 4) {
-	echo "<font color='black'><span class='glyphicon glyphicon-certificate'></span> ";
+	echo "<font color='red'><span class='glyphicon glyphicon-certificate'></span> ";
 	echo "ยกเลิกคำสั่งซื้อ";
 	echo "</font>";
 

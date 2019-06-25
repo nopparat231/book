@@ -36,7 +36,7 @@ include 'report_db.php';
 
 											<div id="menu11" class="tab-pane fade in active">
 												<br>
-												<table id="example" class="display table table-hover" cellspacing="0" border="1">
+												<table class="display table table-hover" cellspacing="0" border="1">
 													<?php if ($totalRows_mycart > 0) {?>
 													<thead >
 														<tr class="info">
@@ -72,7 +72,7 @@ include 'report_db.php';
 															<td align="left">
 
 																<?php $status = $row_mycart['order_status'];
-																include('backend/status.php');
+																include('status.php');
 																?>
 
 															</td>
@@ -115,7 +115,7 @@ include 'report_db.php';
 
 										<div id="menu1" class="tab-pane fade">
 											<br>
-											<table id="example" class="display table table-hover" cellspacing="0" border="1">
+											<table class="display table table-hover" cellspacing="0" border="1">
 												<?php if ($totalRows_mycart1 > 0) {?>
 												<thead >
 													<tr class="info">
@@ -151,7 +151,7 @@ include 'report_db.php';
 															<td align="left">
 
 																<?php $status = $row_mycart1['order_status'];
-																include('backend/status.php');
+																include('status.php');
 																?>
 
 															</td>
@@ -193,7 +193,7 @@ include 'report_db.php';
 
 										<div id="menu2" class="tab-pane fade">
 											<br>
-											<table id="example" class="display table table-hover" cellspacing="0" border="1">
+											<table class="display table table-hover" cellspacing="0" border="1">
 												<?php if ($totalRows_mycart2 > 0) {?>
 												<thead >
 													<tr class="info">
@@ -227,7 +227,7 @@ include 'report_db.php';
 															<td align="left">
 
 																<?php $status = $row_mycart2['order_status'];
-																include('backend/status.php');
+																include('status.php');
 																?>
 
 															</td>
@@ -268,7 +268,7 @@ include 'report_db.php';
 										</div>
 										<div id="menu3" class="tab-pane fade">
 											<br>
-											<table id="example" class="display table table-hover" cellspacing="0" border="1">
+											<table class="display table table-hover" cellspacing="0" border="1">
 
 												<?php if ($totalRows_mycart5 > 0) {?>
 													<thead >
@@ -305,7 +305,7 @@ include 'report_db.php';
 															<td align="left">
 
 																<?php $status = $row_mycart5['order_status'];
-																include('backend/status.php');
+																include('status.php');
 																?>
 
 															</td>
@@ -345,7 +345,7 @@ include 'report_db.php';
 										</div>
 										<div id="menu4" class="tab-pane fade">
 											<br>
-											<table id="example" class="display table table-hover" cellspacing="0" border="1">
+											<table class="display table table-hover" cellspacing="0" border="1">
 												<?php if ($totalRows_mycart3 > 0) {?>
 												<thead >
 													<tr class="info">
@@ -379,7 +379,7 @@ include 'report_db.php';
 															<td align="left">
 
 																<?php $status = $row_mycart3['order_status'];
-																include('backend/status.php');
+																include('status.php');
 																?>
 
 															</td>
@@ -419,7 +419,7 @@ include 'report_db.php';
 										</div>
 										<div id="menu5" class="tab-pane fade">
 											<br>
-											<table id="example" class="display table table-hover" cellspacing="0" border="1">
+											<table class="display table table-hover" cellspacing="0" border="1">
 												<?php if ($totalRows_mycart4 > 0) {?>
 												<thead >
 													<tr class="info">
@@ -453,7 +453,7 @@ include 'report_db.php';
 															<td align="left">
 
 																<?php $status = $row_mycart4['order_status'];
-																include('backend/status.php');
+																include('status.php');
 																?>
 
 															</td>
