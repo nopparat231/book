@@ -79,7 +79,7 @@ include 'report_db.php';
 
 															<td align="center"> 
 																<span id="hp">
-																	<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>act=show-order" class="btn-sm btn-info">
+																	<a href="index.php?order_id=<?php echo $row_mycart['oid'];?>&act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
 																		
 																	</a>
@@ -158,7 +158,7 @@ include 'report_db.php';
 
 															<td align="center"> 
 																<span id="hp">
-																	<a href="my_order.php?order_id=<?php echo $row_mycart1['oid'];?>act=show-order" class="btn-sm btn-info">
+																	<a href="index.php?order_id=<?php echo $row_mycart1['oid'];?>&act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
 																		
 																	</a>
@@ -234,7 +234,7 @@ include 'report_db.php';
 
 															<td align="center"> 
 																<span id="hp">
-																	<a href="my_order.php?order_id=<?php echo $row_mycart2['oid'];?>act=show-order" class="btn-sm btn-info">
+																	<a href="index.php?order_id=<?php echo $row_mycart2['oid'];?>&act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
 																		
 																	</a>
@@ -312,7 +312,7 @@ include 'report_db.php';
 
 															<td align="center"> 
 																<span id="hp">
-																	<a href="my_order.php?order_id=<?php echo $row_mycart5['oid'];?>act=show-order" class="btn-sm btn-info">
+																	<a href="index.php?order_id=<?php echo $row_mycart5['oid'];?>&act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
 																		
 																	</a>
@@ -386,7 +386,7 @@ include 'report_db.php';
 
 															<td align="center"> 
 																<span id="hp">
-																	<a href="my_order.php?order_id=<?php echo $row_mycart3['oid'];?>act=show-order" class="btn-sm btn-info">
+																	<a href="index.php?order_id=<?php echo $row_mycart3['oid'];?>&act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
 																		
 																	</a>
@@ -460,7 +460,7 @@ include 'report_db.php';
 
 															<td align="center"> 
 																<span id="hp">
-																	<a href="my_order.php?order_id=<?php echo $row_mycart4['oid'];?>act=show-order" class="btn-sm btn-info">
+																	<a href="index.php?order_id=<?php echo $row_mycart4['oid'];?>&act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
 																		
 																	</a>
