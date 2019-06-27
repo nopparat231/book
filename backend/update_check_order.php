@@ -19,13 +19,13 @@ mysql_close();
 
 if($result){
 	echo "<script>";
-	echo "window.location ='index.php?act=show-check'; ";
+	echo "window.location ='index.php'; ";
 	echo "</script>";
 } else {
 
 	echo "<script>";
 	echo "alert('ERROR!');";
-	echo "window.location ='index.php?act=show-check'; ";
+	echo "window.location ='index.php'; ";
 	echo "</script>";
 }
 

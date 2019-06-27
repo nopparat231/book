@@ -45,7 +45,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('datatable.php');?>
+ <?php include('./datatable2.php');?>
 </head>
 <body>
  <?php include('navbar.php');?>
@@ -72,33 +72,33 @@ $totalRows_ptype = mysql_num_rows($ptype);
       </thead>
       <?php if($totalRows_ptype>0){?>
         <?php
-$i = 1;
-         do { ?>
+        $i = 1;
+        do { ?>
           <tr>
-             <td align="center"><?php echo $i; ?></td>
-            <td><?php echo $row_ptype['t_name']; ?></td>
-            <?php if ($row_ptype['t_status'] == '0'): ?>
-              <td><center>ปกติ</center></td>
-            <?php endif ?>
-            <?php if ($row_ptype['t_status'] == '1'): ?>
-              <td><center>ยกเลิก</center></td>
-            <?php endif ?>
-            <td><center> <a href="edit_product_type.php?t_id=<?php echo $row_ptype['t_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center></td>
-            <td><center>
-              <a href="del_product_type.php?t_id=<?php echo $row_ptype['t_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');">
-              ลบ </a></center></td>
-            </tr>
+           <td align="center"><?php echo $i; ?></td>
+           <td><?php echo $row_ptype['t_name']; ?></td>
+           <?php if ($row_ptype['t_status'] == '0'): ?>
+            <td><center>ปกติ</center></td>
+          <?php endif ?>
+          <?php if ($row_ptype['t_status'] == '1'): ?>
+            <td><center>ยกเลิก</center></td>
+          <?php endif ?>
+          <td><center> <a href="edit_product_type.php?t_id=<?php echo $row_ptype['t_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center></td>
+          <td><center>
+            <a href="del_product_type.php?t_id=<?php echo $row_ptype['t_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');">
+            ลบ </a></center></td>
+          </tr>
           <?php
-$i +=1;
-           } while ($row_ptype = mysql_fetch_assoc($ptype)); ?>
-        <?php } ?>
-      </table>
-    </div>
+          $i +=1;
+        } while ($row_ptype = mysql_fetch_assoc($ptype)); ?>
+      <?php } ?>
+    </table>
   </div>
+</div>
 </div>
 </body>
 </html>
 <?php
 mysql_free_result($ptype);
 ?>
-<?php include('f.php');?>
+<?php //include('f.php');?>

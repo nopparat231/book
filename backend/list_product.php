@@ -48,7 +48,7 @@ $totalRows_prd = mysql_num_rows($prd);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('datatable.php');?>
+  <?php include('./datatable2.php');?>
 
 </head>
 <body>
@@ -140,4 +140,4 @@ $totalRows_prd = mysql_num_rows($prd);
 <?php
 mysql_free_result($prd);
 ?>
-<?php include('f.php');?>
+<?php //include('f.php');?>
