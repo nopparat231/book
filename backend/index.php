@@ -16,12 +16,12 @@
 
 
      <div class="row">
-       <div class="col-md-3">
+  
 
-         <?php include('menu.php');?>
+         <?php include('m.php');?>
 
-       </div>
-       <div class="col-md-9" >
+
+       <div class="col-md-12" >
 
         <?php
 

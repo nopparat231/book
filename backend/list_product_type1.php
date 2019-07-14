@@ -38,8 +38,6 @@ $row_ptype = mysql_fetch_assoc($ptype);
 $totalRows_ptype = mysql_num_rows($ptype);
 ?>
 
-
-
 <?php include('access.php');?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,20 +46,17 @@ $totalRows_ptype = mysql_num_rows($ptype);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('datatable.php');?>
+  <?php include('datatable2.php');?>
 </head>
 <body>
  <?php include('navbar.php');?>
  <div class="container">
 
-
+ <?php include('m.php');?>
 
   <div class="row">
-   <div class="col-md-2">
-
-    <?php include('menu.php');?>
-  </div>
-  <div class="col-md-10">
+  
+  <div class="col-md-12">
     <?php include 'list_product_type_show.php'; ?>
     <table id="example" class="display" cellspacing="0" border="1">
       <thead>

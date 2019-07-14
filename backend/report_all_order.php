@@ -91,7 +91,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
       <div class="col-md-3">
 <?php include('menu.php');?>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-12">
 
 
         <style type="text/css">
