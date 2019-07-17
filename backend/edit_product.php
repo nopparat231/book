@@ -91,23 +91,19 @@ $totalRows_ptype = mysql_num_rows($ptype);
     <div class="row">
      <?php include('navbar.php');?>
    </div>
-   <div class="row">
-     <div class="col-md-2">
 
-      <?php include('menu.php');?>
-    </div>
-    <div class="col-md-10">
+
+
+      <?php include('m.php');?>
+    <div class="row">
+    <div class="col-md-12">
       <h3 align="center"> แก้ไขข้อมูลหนังสือ
        <?php include('edit-ok.php');?>
      </h3>
      <div class="table-responsive">
       <form action="edit_product_db.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
-
-
         <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td colspan="3" align="center">&nbsp;</td>
-          </tr>
+
           <tr>
             <td width="129" align="right" valign="middle">ชื่อหนังสือ :</td>
             <td colspan="2"><label for="pro_name2"></label>

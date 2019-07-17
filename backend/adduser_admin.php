@@ -11,12 +11,11 @@
 	<body><?php //include('menu.php');?>
 	<div class="container">
 
-		<div class="row">
 
-			<div class="col-md-3">
-				<?php include('menu.php');?>
-			</div>
-			<div class="col-md-9">
+				<?php include('m.php');?>
+				<div class="row">
+
+					<div class="col-md-12">
 				<h3 align="center">  เพิ่ม ผู้ใช้งานระบบ </h3>
 				<div class="btn" data-toggle="buttons">
 					<label class="btn btn-primary">

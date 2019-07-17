@@ -70,14 +70,13 @@ $totalRows_lbk = mysql_num_rows($lbk);
 
 
 
-      <div class="row">
 
-        <div class="col-md-2">
 
-          <?php include('menu.php');?>
-        </div>
-        <div class="col-md-10">
-          <h3 align="center"> รายการ การตรวจรับหนังสือ  </h3>
+          <?php include('m.php');?>
+          <div class="row">
+
+            <div class="col-md-12">
+          <h3 align="center"> รายงานการตรวจรับหนังสือ  </h3>
 
           <form action="report_all_sell.php" method="post">
             <?php include 'thaidate.php'; ?>

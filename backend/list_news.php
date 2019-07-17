@@ -53,12 +53,12 @@ $totalRows_mem = mysql_num_rows($mem);
 
 
 
-  <div class="row">
-   <div class="col-md-2">
 
-    <?php include('menu.php');?>
-  </div>
-  <div class="col-md-10">
+
+
+    <?php include('m.php');?>
+  <div class="row">
+  <div class="col-md-12">
     <h3 align="center"> รายการข่าวสาร  <a href="add_news.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
     <div class="table ">
       <table id="example" class="display" cellspacing="0" border="1">

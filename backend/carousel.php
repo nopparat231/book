@@ -57,13 +57,13 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
 <body>
   <div class="container">
 
-   <div class="row">
 
-     <div class="col-md-2">
-      <?php include('menu.php');?>
-    </div>
 
-    <div class="col-md-9">
+
+      <?php include('m.php');?>
+    <div class="row">
+
+    <div class="col-md-12">
       <h3 align="center"> แก้ไขรูปภาพโลโก้ หน้าปก<?php include 'edit-ok.php'; ?> </h3>
       <div class="table">
         <form action="carousel_edit.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >

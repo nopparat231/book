@@ -57,15 +57,15 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
 <body>
   <div class="container">
 
-   <div class="row">
-     <?php include 'edit-ok.php'; ?>
-     <div class="col-md-2">
-      <?php include('menu.php');?> 
-    </div>
 
-    
+     <?php include 'edit-ok.php'; ?>
+
+      <?php include('m.php');?>
+    <div class="row">
+<div class="col-md-12">
+
             <!-- ------------------------------------------------------------------------------------- -->
-            <div class="col-md-9">
+            <div class="col-md-11">
               <h3 align="center"> แก้ไขเกี่ยวกับ </h3>
 
               <div class="table">

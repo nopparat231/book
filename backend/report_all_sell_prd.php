@@ -53,14 +53,12 @@ $totalRows_prd = mysql_num_rows($prd);
   <body>  <?php //include('menu.php');?>
   <div class="container">
 
-   <div class="row">
+
+<?php include('m.php');?>
+<div class="row">
 
 
-    <div class="col-md-3">
-<?php include('menu.php');?>
-    </div>
-    <div class="col-md-9">
-
+ <div class="col-md-12">
       <?php
 
       mysql_select_db($database_condb);

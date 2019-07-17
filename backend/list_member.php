@@ -66,12 +66,11 @@ $totalRows_mem = mysql_num_rows($mem);
     <div class="row">
 
     </div>
-    <div class="row">
 
-      <div class="col-md-3">
-        <?php include('menu.php');?>
-      </div>
-      <div class="col-md-9">
+        <?php include('m.php');?>
+        <div class="row">
+
+          <div class="col-md-12">
         <h3 align="center"> รายการ ข้อมูลสมาชิก </h3>
         <form action="list_member.php" method="post">
          <div class="row">

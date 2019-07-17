@@ -75,12 +75,12 @@ $totalRows_prd = mysql_num_rows($prd);
   <div class="row">
        <?php include('navbar.php');?>
           </div>
-  	<div class="row">
-    	<div class="col-md-2">
 
-        <?php include('menu.php');?>
-      </div>
-      <div class="col-md-10">
+
+
+        <?php include('m.php');?>
+      <div class="row">
+      <div class="col-md-12">
         <h3 align="center">
         <a href="list_product.php" class="btn btn-default"> < ย้อนกลับ</a>
         ข้อมูลสินค้า

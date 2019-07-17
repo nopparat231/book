@@ -57,12 +57,12 @@ $totalRows_prd = mysql_num_rows($prd);
 
 
 
-    <div class="row">
-    	<div class="col-md-2">
 
-        <?php include('menu.php');?>
-      </div>
-      <div class="col-md-10">
+    	
+
+        <?php include('m.php');?>
+      <div class="row">
+      <div class="col-md-12">
         <h3 align="center"> รายการหนังสือ <a href="add_product.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
         <div class="table">
          <table width="100%" border="1" cellspacing="0" class="display" id="example">

@@ -14,12 +14,11 @@
     <div class="row">
      <?php include('navbar.php');?>
    </div>
-   <div class="row">
-     <div class="col-md-2">
 
-      <?php include('menu.php');?>           
-    </div>
-    <div class="col-md-10">
+
+      <?php include('m.php');?>
+      <div class="row">
+        <div class="col-md-12">
       <h3 align="center">  เพิ่ม ข่าว </h3>
       <div class="table">
         <form  name="register" action="add_news_db.php" method="POST" id="register" class="form-horizontal">
@@ -60,7 +59,7 @@
 </div>
 </div>
 </div>
-</div> 
+</div>
 </body>
 </html>
 <?php  include('f.php');?>

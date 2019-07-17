@@ -14,12 +14,11 @@
     <div class="row">
      <?php include('navbar.php');?>
    </div>
-   <div class="row">
-     <div class="col-md-2">
 
-      <?php include('menu.php');?>           
-    </div>
 
+      <?php include('m.php');?>
+      <div class="row">
+        <div class="col-md-12">
 
     <?php require_once('../Connections/condb.php'); ?>
     <?php
@@ -66,7 +65,7 @@
     ?>
 
     <div class="col-md-10">
-      <h3 align="center">  เพิ่ม ข่าว </h3><?php include('edit-ok.php');?>
+      <h3 align="center">  แก้ไขข่าว </h3><?php include('edit-ok.php');?>
       <div class="table">
         <form  name="register" action="edit_news_db.php" method="POST" id="register" class="form-horizontal">
          <div class="form-group">
@@ -109,7 +108,7 @@
 </div>
 </div>
 </div>
-</div> 
+</div>
 </body>
 </html>
 <?php  include('f.php');?>

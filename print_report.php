@@ -115,15 +115,15 @@ date_default_timezone_set('Asia/Bangkok');
       </table>
       <table width="1081" border="1" cellpadding="0" cellspacing="0">
         <tr align="center" class="bg-primary">
-          <td width="103" nowrap="nowrap" scope="row">ลำดับ</td>
-          <td width="156" nowrap="nowrap">รหัสสินค้า</td>
-          <td width="295" nowrap="nowrap">รายละเอียด</td>
-          
+          <td width="70" nowrap="nowrap" scope="row">ลำดับ</td>
+          <td width="120" nowrap="nowrap">รหัสสินค้า</td>
+          <td width="370" nowrap="nowrap">รายละเอียด</td>
+
           <td width="80" nowrap="nowrap">จำนวน</td>
           <td width="88" nowrap="nowrap">หน่วย</td>
-          <td width="124" nowrap="nowrap">ราคา/หน่วย</td>
-          <td width="170" nowrap="nowrap">จำนวนเงิน</td>
-          <td></td>
+          <td width="110" nowrap="nowrap">ราคา/หน่วย</td>
+          <td width="100" nowrap="nowrap">จำนวนเงิน</td>
+
         </tr>
 
 
@@ -140,19 +140,19 @@ date_default_timezone_set('Asia/Bangkok');
           $totalp  += $sum;
           $total  += $sum;
           $sumems = $row_cartdone['pos_ems'];
-          
+
           ?>
 
 
           <td align="center" scope="row"><?php echo $i; ?></td>
           <td align="center"><?php echo $row_typeprd['t_type'];?><?php echo str_pad($row_cartdone['p_id'], 6, "0", STR_PAD_LEFT);?></td>
           <td align="center"><?php echo $row_cartdone['p_name'];?></td>
-          
+
           <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
           <td align="center"><?php echo $row_cartdone['p_unit'];?></td>
           <td align="center"><?php echo number_format($row_cartdone['p_price'],2);?></td>
           <td align="right"><?php echo number_format($sum,2);?></td>
-          <td></td>
+
         </tr>
 
 
@@ -172,7 +172,7 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
+
       </tr>
       <tr>
         <th align="center" scope="row">&nbsp;</th>
@@ -182,7 +182,7 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
+
       </tr>
       <tr>
         <th align="center" scope="row">&nbsp;</th>
@@ -192,7 +192,7 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
+
       </tr>
       <tr>
         <th align="center" scope="row">&nbsp;</th>
@@ -202,7 +202,7 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
+
       </tr>
       <tr>
         <th align="center" scope="row">&nbsp;</th>
@@ -212,7 +212,7 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
+
       </tr>
       <tr>
         <th align="center" scope="row">&nbsp;</th>
@@ -222,7 +222,7 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
+
       </tr>
       <tr>
         <th align="center" scope="row">&nbsp;</th>
@@ -232,7 +232,7 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
+
       </tr>
       <tr>
         <th align="center" scope="row">&nbsp;</th>
@@ -242,7 +242,7 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
         <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
+
       </tr>
     </table>
     <?php include 'detail_order_afer_cartdone_DB.php';
@@ -298,15 +298,13 @@ date_default_timezone_set('Asia/Bangkok');
     </table>
     <p>&nbsp;</p>
     <table width="691" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td width="943" colspan="22" align="center"><h4>กรณีชำระด้วยเช็ค ใบเสร็จฯ นี้จะสมบูรณ์ต่อเมื่อบริษัทฯ    ได้รับเงินแล้วเท่านั้น</h4></td>
-      </tr>
+
     </table>
     <table width="1081" border="1" cellpadding="0" cellspacing="0">
       <tr>
         <th height="53" align="center" valign="bottom" scope="row"> &nbsp;ผู้รับสินค้า ............................................................</th>
         <th align="center" valign="bottom"> &nbsp;ผู้ส่งสินค้า ............................................................</th>
-        <th align="center" valign="bottom"><p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ในนาม บริษัท CHATA จำกัด</p></th>
+        <th align="center" valign="bottom"><p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;ในนาม บริษัท BOOKSHOP จำกัด</p></th>
       </tr>
       <tr>
         <th height="63" valign="bottom" scope="row"> &nbsp;ลงวันที่  .................................................................</th>

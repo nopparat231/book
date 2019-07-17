@@ -15,15 +15,15 @@
 
     <div class="container">
 
-      <div class="row">
 
 
-       <div class="col-md-2">
 
-        <?php include('menu.php');?>
-      </div>
 
-    <div class="col-md-10">
+
+        <?php include('m.php');?>
+        <div class="row">
+
+    <div class="col-md-12">
       <h3 align="center"> เพิ่มรายการตรวจรับหนังสือ</h3>
       <div class="table-responsive">
         <form action="add_sell_db.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
@@ -99,7 +99,7 @@
                         <td width="471" colspan="2"><label for="b_type"></label>
                           <input name="s_email" type="text" required id="pro_name2" size="20"/></td>
                         </tr>
-                        
+
                 <tr>
                   <td align="right" valign="top">&nbsp;</td>
                   <td colspan="2">&nbsp;</td>

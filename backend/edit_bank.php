@@ -56,13 +56,13 @@ $totalRows_editbank = mysql_num_rows($editbank);
   <div class="row">
          <?php include('navbar.php');?>
    </div>
-  	<div class="row">
-    	<div class="col-md-2">
 
-        <?php include('menu.php');?>
-      </div>
-        <div class="col-md-10">
-        <h3 align="center">  แก้ไข  Admin  <?php include('edit-ok.php');?> </h3>
+
+
+        <?php include('m.php');?>
+      <div class="row">
+        <div class="col-md-12">
+        <h3 align="center">  แก้ไขข้อมูลธนาคาร  <?php include('edit-ok.php');?> </h3>
 <div class="table-responsive">
    <form action="edit_bank_db.php?bank_id=<?php echo $row_editbank['b_id']; ?> "  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 

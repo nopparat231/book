@@ -12,17 +12,16 @@
   <body>
   <div class="container">
  <?php include('navbar.php');?>
-  	<div class="row">
-    	<div class="col-md-2">
-       
-        <?php include('menu.php');?>        	 
-      </div>
-      <div class="col-md-10">
+
+
+        <?php include('m.php');?>
+      <div class="row">
+      <div class="col-md-12">
         <h3 align="center"> เพิ่มรายการธนาคาร</h3>
         <div class="table-responsive">
         		<form action="add_bank_db.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
 
-  
+
   <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td colspan="3" align="center">&nbsp;</td>
@@ -83,12 +82,12 @@
       <td colspan="2">
       <button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">เพิ่มข้อมูล</button></td>
     </tr>
-  </table> 
+  </table>
 </form>
             </div>
       </div>
     </div>
- </div> 
+ </div>
   </body>
 </html>
 

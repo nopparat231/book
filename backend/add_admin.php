@@ -11,12 +11,11 @@
 <body>
   <div class="container">
     <?php include('navbar.php');?>
-    <div class="row">
-    	<div class="col-md-2">
 
-        <?php include('menu.php');?>
-      </div>
-      <div class="col-md-10">
+
+        <?php include('m.php');?>
+        <div class="row">
+        	<div class="col-md-12">
         <h3 align="center">  เพิ่ม
           <?php if (isset($_GET['admin'])): ?>
             ผู้ดูแลระบบ

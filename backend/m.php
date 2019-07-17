@@ -62,6 +62,8 @@
 								<li>
 									<a href="index.php" class="font"><img src="../icon/admin/home.png" alt="หน้าหลัก">  หน้าหลัก</a>
 								</li>
+								<?php
+								if ($row_mm['status'] == 'staff') { ?>
 								<li>
 									<a href="list_product_type.php?list"  class="font"><img src="../icon/staff/edittype.png" alt="จัดการประเภทหนังสือ">  จัดการประเภทหนังสือ</a>
 								</li>
@@ -84,6 +86,42 @@
 									<a href="add_about.php" class="font"><img src="../icon/staff/info.png" alt="">  จัดการเกี่ยวกับ ติดต่อเรา</a>
 								</li>
 
+								<?php } elseif($row_mm['status'] == 'superadmin') { ?>
+
+									<li>
+										<a href="list_admin.php" class="font"><img src="../icon/manager/admin.png" alt="">  รายงานผู้ดูแลระบบ</a>
+									</li>
+									<li>
+										<a href="report_all_sell.php" class="font"><img src="../icon/manager/booksell.png" alt="">  รายงานตรวจรับหนังสือ</a>
+									</li>
+									<li>
+										<a href="report_all_type.php" class="font"><img src="../icon/manager/type.png" alt="">  รายงานประเภทหนังสือ</a>
+									</li>
+									<li>
+										<a href="report_all_prd.php" class="font"><img src="../icon/manager/book.png" alt="">  รายงานข้อมูลหนังสือ</a>
+									</li>
+									<li>
+										<a href="list_member.php" class="font"><img src="../icon/manager/member.png" alt="">  รายงานข้อมูลลูกค้า</a>
+									</li>
+									<li>
+										<a href="report_all_order.php" class="font"><img src="../icon/manager/bookbuy.png" alt="">  รายงานการสั่งซื้อ</a>
+									</li>
+									<li>
+										<a href="report_all_bank.php" class="font"><img src="../icon/manager/bank.png" alt="">  รายงานข้อมูลธนาคาร</a>
+									</li>
+
+								<?php }elseif($row_mm['status'] == 'admin') {	 ?>
+
+									<li>
+										<a href="adduser_admin.php" class="font"><img src="../icon/Admin/adduser.png" alt="">  เพิ่มผู้ใช้งานระบบ</a>
+									</li>
+									<li>
+										<a href="list_admin.php" class="font"><img src="../icon/Admin/editadmin.png" alt="">  จัดการผู้ดูแลระบบ</a>
+									</li>
+									<li>
+										<a href="list_member.php" class="font"><img src="../icon/Admin/edituser.png" alt="">  จัดการสมาชิก</a>
+									</li>
+								<?php } ?>
 							</ul>
 						</div>
 						<!-- /.navbar-collapse -->
@@ -94,8 +132,3 @@
 							<!-- Page Heading -->
 							<div class="row" id="main" >
 								<div class="col-sm-12 col-md-12 well" id="content">
-
-
-
-
-

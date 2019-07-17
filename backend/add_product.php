@@ -64,12 +64,12 @@ $totalRows_prd = mysql_num_rows($prd);
     <div class="row">
      <?php include('navbar.php');?>
    </div>
-   <div class="row">
-     <div class="col-md-2">
 
-      <?php include('menu.php');?>
-    </div>
-    <div class="col-md-10">
+
+
+      <?php include('m.php');?>
+    <div class="row">
+    <div class="col-md-12">
       <h3 align="center"> เพิ่มรายการหนังสือ </h3>
       <!--<h5><font color="red">*กรณีไม่ต้องการให้แสดงส่วนลด ไม่ต้องกรอกราคาก่อนลด และวันที่</font></h5>-->
 

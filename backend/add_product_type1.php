@@ -72,17 +72,17 @@ $totalRows_ptype = mysql_num_rows($ptype);
     <div class="row">
      <?php include('navbar.php');?>
    </div>
-   <div class="row">
-     <div class="col-md-2">
 
-      <?php include('menu.php');?>
-    </div>
-    <div class="col-md-6">
+
+
+      <?php include('m.php');?>
+    <div class="row">
+    <div class="col-md-12">
       <h3 align="center"> เพิ่มประเภทย่อยสินค้า </h3><p>
       <div class="table">
         <form action="<?php echo $editFormAction; ?>" method="POST" name="ptype" id="ptype" class="form-horizontal">
         	<div class="form-group">
-           <div class="col-sm-3" > ประเภทหลัก </div>
+           <div class="col-sm-3" > ประเภทหลัก <br></div>
            <div class="col-sm-7">
 
      <?php include 'tbl_type.php'; ?>

@@ -53,12 +53,12 @@ $totalRows_lbk = mysql_num_rows($lbk);
 
 
 
-    <div class="row">
-      <div class="col-md-2">
 
-        <?php include('menu.php');?>
-      </div>
-      <div class="col-md-10">
+
+
+        <?php include('m.php');?>
+      <div class="row">
+      <div class="col-md-12">
         <h3 align="center"> รายการข้อมูลธนาคาร  <a href="add_bank.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
         <div class="table">
           <table id="example" class="display" cellspacing="0" border="1">

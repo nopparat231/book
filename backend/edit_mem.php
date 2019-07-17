@@ -56,13 +56,12 @@ $totalRows_editmem = mysql_num_rows($editmem);
   <div class="row">
          <?php include('navbar.php');?>
    </div>
-    <div class="row">
-      <div class="col-md-2">
+
 
         <br>
-        <?php include('menu.php');?>
-      </div>
-        <div class="col-md-10">
+        <?php include('m.php');?>
+        <div class="row">
+          <div class="col-md-12">
         <h3 align="center">  แก้ไข  MEMBER  <?php include('edit-ok.php');?> </h3>
 <div class="table-responsive">
     <form  name="register" action="edit_mem_db.php" method="POST" id="register" class="form-horizontal">
@@ -96,7 +95,7 @@ $totalRows_editmem = mysql_num_rows($editmem);
 
         <div class="form-group">
         <div class="col-sm-2" align="right"> ที่อยู่ : </div>
-          <div class="col-sm-10" align="left">
+          <div class="col-sm-9" align="left">
             <input name="mem_address" type="text" required class="form-control" id="mem_address" placeholder="ที่อยู่"  value="<?php echo $row_editmem['mem_address']; ?>" minlength="2"></input>
           </div>
         </div>

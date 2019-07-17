@@ -85,14 +85,12 @@ $totalRows_mycart = mysql_num_rows($mycart);
     <div class="row">
 
     </div>
-    <div class="row">
+
+<?php include('m.php');?>
+<div class="row">
 
 
-      <div class="col-md-3">
-<?php include('menu.php');?>
-      </div>
-      <div class="col-md-12">
-
+  <div class="col-md-12">
 
         <style type="text/css">
 

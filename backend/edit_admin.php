@@ -56,12 +56,11 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
   <div class="row">
          <?php include('navbar.php');?>
    </div>
-  	<div class="row">
-    	<div class="col-md-2">
 
-        <?php include('menu.php');?>
-      </div>
-        <div class="col-md-10">
+
+        <?php include('m.php');?>
+        <div class="row">
+        	<div class="col-md-12">
         <h3 align="center">  แก้ไขผู้ใช้งานระบบ  <?php include('edit-ok.php');?> </h3>
 <div class="table-responsive">
     <form  name="register" action="edit_admin_db.php" method="POST" id="register" class="form-horizontal">
@@ -94,7 +93,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
 
         <div class="form-group">
         <div class="col-sm-2" align="right"> ที่อยู่ : </div>
-          <div class="col-sm-10" align="left">
+          <div class="col-sm-8" align="left">
             <input name="admin_address" type="text" required class="form-control" id="admin_address" placeholder="ที่อยู่"  value="<?php echo $row_editadmin['admin_address']; ?>" minlength="2"></input>
           </div>
         </div>
@@ -120,9 +119,9 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
             <select name="status">
              <option value="<?php echo $row_editadmin['status']; ?> "><?php echo $row_editadmin['status']; ?></option>
 
-             <option value="staff">staff</option>
-             <option value="admin">admin</option>
-             <option value="superadmin">superadmin</option>
+             <option value="staff">พนักงาน</option>
+             <option value="admin">ผู้ดูแลระบบ</option>
+             <option value="superadmin">ผู้จัดการ</option>
 
            </select>
          </div>

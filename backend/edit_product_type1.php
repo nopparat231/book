@@ -78,12 +78,12 @@ $totalRows_edittype = mysql_num_rows($edittype);
   <div class="row">
          <?php include('navbar.php');?>
    </div>
-  	<div class="row">
-    	<div class="col-md-2">
-       
-        <?php include('menu.php');?>
-      </div>
-      <div class="col-md-6">
+
+    
+
+        <?php include('m.php');?>
+      <div class="row">
+      <div class="col-md-12">
         <h3 align="center"> แก้ไขประเภทย่อย </h3>
         <div class="table">
         <form action="<?php echo $editFormAction; ?>" method="POST" name="ptype" id="ptype" class="form-horizontal">

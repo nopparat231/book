@@ -54,16 +54,16 @@ $totalRows_editbank = mysql_num_rows($editbank);
   <body><?php //include('menu.php');?>
   <div class="container">
 
-  	<div class="row">
 
 
 
 
-    <div class="col-md-2">
 
-        <?php include('menu.php');?>
-      </div>
-    <div class="col-md-10">
+
+
+        <?php include('m.php');?>
+      <div class="row">
+    <div class="col-md-12">
         <h3 align="center">  แก้ไขการตรวจรับสินค้า  <?php include('edit-ok.php');?> </h3>
 <div class="table-responsive">
    <form action="edit_sell_db.php?bank_id=<?php echo $row_editbank['s_id']; ?> "  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >

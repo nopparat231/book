@@ -31,7 +31,7 @@ if (!function_exists("GetSQLValueString")) {
   }
 }
 $s_id = $_GET['sell_prd'];
-mysql_select_db($database_condb); 
+mysql_select_db($database_condb);
 $query_prd = "
 SELECT * FROM tbl_product p, tbl_type as t WHERE p.s_id = '$s_id' AND p.t_id = t.t_id ORDER BY p.p_id ASC";
 $prd = mysql_query($query_prd, $condb) or die(mysql_error());
@@ -55,12 +55,12 @@ $totalRows_prd = mysql_num_rows($prd);
 
 
 
-    <div class="row">
-    	<div class="col-md-2">
 
-        <?php include('menu.php');?>
-      </div>
-      <div class="col-md-10">
+
+
+        <?php include('m.php');?>
+      <div class="row">
+      <div class="col-md-12">
         <h3 align="center"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> เพิ่มสินค้า </a> </h3>
         <div class="table">
          <table width="100%" border="1" cellspacing="0" class="display" id="example">
@@ -91,12 +91,12 @@ $totalRows_prd = mysql_num_rows($prd);
                 <a href="product_detail.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&act=edit" class="btn btn-info btn-xs"> รายละเอียด </a>
               </b>
               <br>
-              
+
             </td>
             <td align="center" valign="top"><?php echo $row_prd['p_price']; ?></td>
             <td align="center" valign="top">
              <?php echo $row_prd['p_qty']; ?>
-             
+
              <?php echo $row_prd['p_unit'];?>
            </td>
 
@@ -104,7 +104,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
            <?php if ($row_prd['p_status'] == '0' && $row_prd['p_qty'] != '0'): ?>
             <td><center>พร้อมจำหน่าย</center></td>
-            
+
             <?php elseif ($row_prd['p_status'] == '1' && $row_prd['p_qty'] == '0'): ?>
               <td><center>หนังสือเลิกผลิต</center></td>
 
@@ -123,7 +123,7 @@ $totalRows_prd = mysql_num_rows($prd);
                 </center></td>
                 <td><center> <a href="del_product.php?p_id=<?php echo $row_prd['p_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิก');"> ยกเลิก </a> </center></td>
               </tr>
-              <?php 
+              <?php
               $i += 1;
             } while ($row_prd = mysql_fetch_assoc($prd)); ?>
           <?php } ?>
