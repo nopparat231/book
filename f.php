@@ -51,9 +51,9 @@ footer iframe {
     <div class="footerHeader" ></div>
     <div class="container">
         <div class="col-md-12" >
-            <h3>หมวดหมู่ทั้งหมด</h3>
+            <center><h3>หมวดหมู่ทั้งหมด</h3></center>
 
-            <h3><?php include 'sub_f.php'; ?>
+            <?php include 'sub_f.php'; ?>
             <div class="col-sm-2" align="left" >
              <br><br>
             </div>

@@ -52,7 +52,7 @@ $totalRows_typeprd1 = mysql_num_rows($typeprd1);
 <?php do{ ?>
 
   <div class="col-sm-3" align="left" >
-   <li> <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>"><font color="white" size="5"><?php echo $row_typeprd['t_name']; ?></font></a></li>
+   <li> <a href="index.php?t_id=<?php echo $row_typeprd['t_id'];?>&type_name=<?php echo $row_typeprd['t_name'];?>"><font color="white" size="4"><?php echo $row_typeprd['t_name']; ?></font></a></li>
 
 
  </div>

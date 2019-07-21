@@ -7,8 +7,13 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 $q = $p_qty;
 
-?>
-<div class="col-md-9">
+if($q == 0){
+  echo "<br><br>";
+  echo "<font size=6><center>ไม่มีสินค้าในตระกร้า</center></font>";
+echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>";
+}
+else{?>
+<div class="col-md-8">
   <form id="frmcart" name="frmcart" method="post" action="?act=update&oct=after" >
     <table width="100%" border="0" aligh="center" class="table table-striped">
       <thead>
@@ -19,7 +24,7 @@ $q = $p_qty;
       <tr >
         <td>รูปหนังสือ</td>
         <td>รายละเอียด</td>
-        <td></td>
+
         <td><center>ราคา</center></td>
         <td><center>จำนวน</center></td>
         <td><center>น้ำหนัก</center></td>
@@ -61,11 +66,11 @@ $q = $p_qty;
           $query = mysql_query($sql, $condb );
           $row = mysql_fetch_array($query);
 
-          $sqlt = "select * from tbl_type  where t_id=".$row["t_id"];//ดึงข้อมูลประเภท t_id 
+          $sqlt = "select * from tbl_type  where t_id=".$row["t_id"];//ดึงข้อมูลประเภท t_id
           $queryt = mysql_query($sqlt, $condb );
           $rowt = mysql_fetch_array($queryt);
 
-          $sqlt1 = "select * from tbl_type1  where t1_id=".$row["t1_id"];//ดึงข้อมูลประเภทย่อย t1_id 
+          $sqlt1 = "select * from tbl_type1  where t1_id=".$row["t1_id"];//ดึงข้อมูลประเภทย่อย t1_id
           $queryt1 = mysql_query($sqlt1, $condb );
           $rowt1 = mysql_fetch_array($queryt1);
 
@@ -82,12 +87,11 @@ $q = $p_qty;
           echo "<tr>";
           echo "<td width='15%'><img src='pimg/" . $row["p_img1"] . "' width='100%''></img></td>";
           echo "<td ><u style='color: blue;'>" .$row["p_name"]. "</u><br><br>ผู้เขียน : " .$row["p_at"]. "<br>ประเภท : " .$rowt["t_name"]."<br>หมวดหมู่ : " .$rowt1["t1_name"]. "</td>";
-          echo "<td align='center' width='5%'>" .$row["p_size"]. "</td>";
           echo "<td width='15%' align='center'>";
           $da = date('Y-m-d');
           if ($row['promo'] != 0  && $da <= $row['promo_done']) {
             echo "<strike>" .number_format($row['promo'],2) . "</strike><br>";
-          } 
+          }
           echo number_format($row["p_price"],2)."</td>";
 
           echo "<td width='15%' align='center'>";
@@ -104,10 +108,10 @@ $q = $p_qty;
           if ($row['promo'] != 0  && $da <= $row['promo_done']) {
 
             echo  "<br><font color='#FF8C00'>ประหยัด <br> " .number_format($row['promo']-$row['p_price'],2). " บาท </font>";
-          } 
+          }
           echo "</td>";
 
-          
+
 
 
           echo "<td width='2%'align='right'><a href='confirm_order.php?p_id=$p_id&act=remove&oct=after' ><span class='glyphicon glyphicon-remove'  style='color: red'></span></a></td>";
@@ -122,7 +126,7 @@ $q = $p_qty;
       <input type="button" name="Submit2" value="< กลับหน้าหลัก" class="btn btn-info pull-left" onclick="window.location='index.php';" />
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <table width="100%" border="0" aligh="center" class="table">
         <thead>
           <tr>
@@ -130,12 +134,7 @@ $q = $p_qty;
           </tr>
         </thead>
         <?php
-        echo "<tr>";
-        echo "<td  align='left' colspan='5'><b>สิค้าในรถเข็น</b></td>";
-        echo "<td align='right'>"."<b>".number_format($sumqyt)." เล่ม</b>"."</td>";
 
-
-        echo "</tr>";
 
         echo "<tr>";
         echo "<td  align='left' colspan='5'><b>ราคาสินค้ารวม</b></td>";
@@ -144,7 +143,7 @@ $q = $p_qty;
 
         echo "<tr>";
         echo "<td  align='left' colspan='5'><b>น้ำหนักสินค้ารวม</b></td>";
-        echo "<td align='right'>"."<b>".number_format($sumww,2)."(กรัม)</b>"."</td>";
+        echo "<td align='right'>"."<b>".number_format($sumww,2)." กรัม</b>"."</td>";
         echo "</tr>";
 
         $tax = $total*0.07;
@@ -152,7 +151,7 @@ $q = $p_qty;
 
 
         echo "<tr>";?>
-        <td  align='left' colspan='4'><b>จัดส่ง </b>
+        <td  align='left' colspan='4'><b>จัดส่ง</b>
           <td align='left'>
 
             <select class="form-control" name="tems"  id="foo" onchange="this.form.submit()" required="required" style="width: 100px">
@@ -179,14 +178,14 @@ $q = $p_qty;
         echo "</tr>";
 //echo "<hr>";
         echo "<tr>";
-        
+
         echo "<td colspan='5' align='left'><h3>ราคาสุทธิ</h3></td>";
         echo "<td align='right'>"."<h3>".number_format($total,2)."</h3>"."</td>";
 
         echo "</tr>";
 
       }
-      
+
       if ($p_qty > $row["p_qty"]) {
 // echo $p_qty;
 // echo $row["p_qty"];
@@ -217,7 +216,7 @@ $q = $p_qty;
               <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning pull-left"  />
 
 
-            <?php } ?>
+            <?php }} ?>
 
           </td>
         </tr>

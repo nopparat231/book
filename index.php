@@ -95,7 +95,7 @@ input[type=number]{
       if($t_id !=''){ ?>
 
         <div class="col-md-12" ><br>
-         รายการสินค้า
+         รายการหนังสือ
          <a class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
          <hr size="10" style="background-color: #0099CC; height: 5px;">
        </div>
@@ -106,7 +106,7 @@ input[type=number]{
 
        <div class="col-md-12">
          <br>
-         รายการสินค้า
+         รายการหนังสือ
          <a class="btn btn-primary btn-xs"><?php if($tt != ''){echo $th;}?> </a>
             <div class="dropdown pull-right">
 
@@ -134,7 +134,7 @@ input[type=number]{
 
        <div class="col-md-12">
          <br>
-         รายการสินค้า
+         รายการหนังสือ
          <a class="btn btn-primary btn-xs"><?php echo $q; if($tt != ''){echo $th;}?> </a>
             <div class="dropdown pull-right">
 
@@ -161,7 +161,7 @@ input[type=number]{
      <?php }elseif($t1_id !=''){ ?>
 
        <div class="col-md-12" ><br>
-         รายการสินค้า
+         รายการหนังสือ
          <a class="btn btn-info btn-xs"> <?php echo $type_name;?> </a>
          <hr size="10" style="background-color: #0099CC; height: 5px;">
        </div>
@@ -170,7 +170,7 @@ input[type=number]{
      <?php }else{?>
 
       <div class="col-md-12" ><br>
-       รายการสินค้า
+       รายการหนังสือ
        <a class="btn btn-xs" style="background-color: #7FFFD4"> ใหม่ ! </a>
 
        <div class="dropdown pull-right">
@@ -207,7 +207,7 @@ input[type=number]{
 
    <div class="col-md-12">
 
-    รายการสินค้า
+    รายการหนังสือ
     <a class="btn btn-danger btn-xs">ขายดี </a>
     <hr size="10" style="background-color: #FF6666; height: 5px;">
 
@@ -216,9 +216,9 @@ input[type=number]{
 
   <div class="col-md-12">
 
-    รายการสินค้า
+    รายการหนังสือ
 
-    <a class="btn btn-warning btn-xs">ทังหมด </a>
+    <a class="btn btn-warning btn-xs">ทั้งหมด </a>
     <hr size="10" style="background-color: #FF9933; height: 5px;">
 
     <?php include('listprdall.php'); ?>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 //include('h.php');
 include 'report_db.php';
 ?>
@@ -9,8 +9,8 @@ include 'report_db.php';
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	
+
+
 </head>
 <body>
 	<div class="container">
@@ -18,17 +18,17 @@ include 'report_db.php';
 			<div class="col-md-9">
 				<h2>รายการสั่งซื้อ</h2>
 				<ul class="nav nav-tabs">
-					<li class="active"><a data-toggle="tab" href="#menu11">ทั้งหมด 
+					<li class="active"><a data-toggle="tab" href="#menu11">ทั้งหมด
 						<span class="badge"><?php echo $totalRows_mycart; ?></span></a></li>
-						<li><a data-toggle="tab" href="#menu1">รอชำระเงิน 
+						<li><a data-toggle="tab" href="#menu1">รอชำระเงิน
 							<span class="badge"><?php echo $totalRows_mycart1; ?></span></a></li>
-							<li><a data-toggle="tab" href="#menu2">ชำระเงินแล้ว 
+							<li><a data-toggle="tab" href="#menu2">ชำระเงินแล้ว
 								<span class="badge"><?php echo $totalRows_mycart2; ?></span></a></li>
-								<li><a data-toggle="tab" href="#menu3">ตรวจสอบการชำระแล้ว 
+								<li><a data-toggle="tab" href="#menu3">ตรวจสอบการชำระแล้ว
 									<span class="badge"><?php echo $totalRows_mycart5; ?></span></a></li>
-									<li><a data-toggle="tab" href="#menu4">ส่งของแล้ว 
+									<li><a data-toggle="tab" href="#menu4">ส่งของแล้ว
 										<span class="badge"><?php echo $totalRows_mycart3; ?></span></a></li>
-										<li><a data-toggle="tab" href="#menu5">ยกเลิกคำสั่งซื้อ 
+										<li><a data-toggle="tab" href="#menu5">ยกเลิกคำสั่งซื้อ
 											<span class="badge"><?php echo $totalRows_mycart4; ?></span></a></li>
 										</ul>
 
@@ -48,7 +48,7 @@ include 'report_db.php';
 															<th>ยกเลิกคำสั่งซื้อ</th>
 														</tr>
 													</thead>
-													
+
 
 
 														<?php do { ?>
@@ -77,11 +77,11 @@ include 'report_db.php';
 
 															</td>
 
-															<td align="center"> 
+															<td align="center">
 																<span id="hp">
 																	<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
-																		
+
 																	</a>
 																</span>
 
@@ -104,7 +104,7 @@ include 'report_db.php';
 
 															</td>
 														</tr>
-													<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
+													<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
 												<?php }else{ ?>
 													<center><h4>ไม่มีรายการ</h4></center>
 												<?php } ?>
@@ -127,7 +127,7 @@ include 'report_db.php';
 														<th>ยกเลิกคำสั่งซื้อ</th>
 													</tr>
 												</thead>
-												
+
 
 
 													<?php do { ?>
@@ -156,11 +156,11 @@ include 'report_db.php';
 
 															</td>
 
-															<td align="center"> 
+															<td align="center">
 																<span id="hp">
 																	<a href="my_order.php?order_id=<?php echo $row_mycart1['oid'];?>act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
-																		
+
 																	</a>
 																</span>
 
@@ -183,7 +183,7 @@ include 'report_db.php';
 
 															</td>
 														</tr>
-													<?php } while ($row_mycart1 = mysql_fetch_assoc($mycart1)); ?> 
+													<?php } while ($row_mycart1 = mysql_fetch_assoc($mycart1)); ?>
 												<?php }else{ ?>
 													<center><h4>ไม่มีรายการ</h4></center>
 												<?php } ?>
@@ -205,7 +205,7 @@ include 'report_db.php';
 														<th>ยกเลิกคำสั่งซื้อ</th>
 													</tr>
 												</thead>
-										
+
 													<?php do { ?>
 														<tr>
 															<td align="center">
@@ -232,11 +232,11 @@ include 'report_db.php';
 
 															</td>
 
-															<td align="center"> 
+															<td align="center">
 																<span id="hp">
 																	<a href="my_order.php?order_id=<?php echo $row_mycart2['oid'];?>act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
-																		
+
 																	</a>
 																</span>
 
@@ -259,7 +259,7 @@ include 'report_db.php';
 
 															</td>
 														</tr>
-													<?php } while ($row_mycart2 = mysql_fetch_assoc($mycart2)); ?> 
+													<?php } while ($row_mycart2 = mysql_fetch_assoc($mycart2)); ?>
 												<?php }else{ ?>
 													<center><h4>ไม่มีรายการ</h4></center>
 												<?php } ?>
@@ -310,11 +310,11 @@ include 'report_db.php';
 
 															</td>
 
-															<td align="center"> 
+															<td align="center">
 																<span id="hp">
 																	<a href="my_order.php?order_id=<?php echo $row_mycart5['oid'];?>act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
-																		
+
 																	</a>
 																</span>
 
@@ -337,7 +337,7 @@ include 'report_db.php';
 
 															</td>
 														</tr>
-													<?php } while ($row_mycart5 = mysql_fetch_assoc($mycart5)); ?> 
+													<?php } while ($row_mycart5 = mysql_fetch_assoc($mycart5)); ?>
 												<?php }else{ ?>
 													<center><h4>ไม่มีรายการ</h4></center>
 												<?php } ?>
@@ -357,7 +357,7 @@ include 'report_db.php';
 														<th>ยกเลิกคำสั่งซื้อ</th>
 													</tr>
 												</thead>
-										
+
 													<?php do { ?>
 														<tr>
 															<td align="center">
@@ -384,11 +384,11 @@ include 'report_db.php';
 
 															</td>
 
-															<td align="center"> 
+															<td align="center">
 																<span id="hp">
 																	<a href="my_order.php?order_id=<?php echo $row_mycart3['oid'];?>act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
-																		
+
 																	</a>
 																</span>
 
@@ -411,7 +411,7 @@ include 'report_db.php';
 
 															</td>
 														</tr>
-													<?php } while ($row_mycart3 = mysql_fetch_assoc($mycart3)); ?> 
+													<?php } while ($row_mycart3 = mysql_fetch_assoc($mycart3)); ?>
 												<?php }else{ ?>
 													<center><h4>ไม่มีรายการ</h4></center>
 												<?php } ?>
@@ -431,7 +431,7 @@ include 'report_db.php';
 														<th>ยกเลิกคำสั่งซื้อ</th>
 													</tr>
 												</thead>
-										
+
 													<?php do { ?>
 														<tr>
 															<td align="center">
@@ -458,11 +458,11 @@ include 'report_db.php';
 
 															</td>
 
-															<td align="center"> 
+															<td align="center">
 																<span id="hp">
 																	<a href="my_order.php?order_id=<?php echo $row_mycart4['oid'];?>act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
-																		
+
 																	</a>
 																</span>
 
@@ -485,7 +485,7 @@ include 'report_db.php';
 
 															</td>
 														</tr>
-													<?php } while ($row_mycart4 = mysql_fetch_assoc($mycart4)); ?> 
+													<?php } while ($row_mycart4 = mysql_fetch_assoc($mycart4)); ?>
 												<?php }else{ ?>
 													<center><h4>ไม่มีรายการ</h4></center>
 												<?php } ?>

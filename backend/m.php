@@ -19,7 +19,7 @@
 
 						<ul class="nav navbar-right top-nav">
 							<li>
-								<a  href="../logout_admin.php">  ออกจากระบบ</a>
+								<a  href="../logout_admin.php" class="list-group-item list-group-item-danger">ออกจากระบบ</a>
 							</li>
 						</ul>
 
@@ -31,7 +31,19 @@
 
 						<ul class="nav navbar-right top-nav">
 							<li>
-								<a  href="#">  ตำแหน่ง : <?php echo $row_mm['status'];?></a>
+								<a  href="#">  ตำแหน่ง : <?php if($row_mm['status'] == 'staff'){
+																					echo "พนักงาน";}
+																					elseif($row_mm['status'] == 'admin'){
+																					echo "ผู้ดูแลระบบ";}
+																					elseif($row_mm['status'] == 'superadmin'){
+																					echo "ผู้จัดการ";}
+																					elseif($row_mm['status'] == 'add'){
+																					echo "พนักงานตรวจรับ";}
+																					elseif($row_mm['status'] == 'sale'){
+																					echo "พนักงานขาย";}
+																					else{
+																					echo "พนักงานจัดส่ง";}
+								?></a>
 							</li>
 						</ul>
 
@@ -43,7 +55,7 @@
 
 						<ul class="nav navbar-right top-nav">
 							<li>
-								<a  href="#">  ชื่อผู้ใช้ : <?php echo $row_mm['admin_name'];?></a>
+								<a  href="#">  ชื่อผู้ใช้ : <?php echo $row_mm['admin_user'];?></a>
 							</li>
 
 						</ul>
@@ -76,6 +88,57 @@
 								<li>
 									<a href="list_bank.php" class="font"><img src="../icon/staff/bank.png" alt="">  จัดการข้อมูลธนาคาร</a>
 								</li>
+								<li>
+									<a href="carousel.php" class="font"><img src="../icon/staff/logo.png" alt="">  จัดการโลโก้ หน้าปก</a>
+								</li>
+								<li>
+									<a href="list_news.php" class="font"><img src="../icon/staff/news.png" alt="">  จัดการข่าวสาร</a>
+								</li>
+								<li>
+									<a href="add_about.php" class="font"><img src="../icon/staff/info.png" alt="">  จัดการเกี่ยวกับ ติดต่อเรา</a>
+								</li>
+
+								<?php
+								}elseif ($row_mm['status'] == 'add') { ?>
+								<li>
+									<a href="list_product_type.php?list"  class="font"><img src="../icon/staff/edittype.png" alt="จัดการประเภทหนังสือ">  จัดการประเภทหนังสือ</a>
+								</li>
+								<li>
+									<a  href="list_product.php" class="font"><img src="../icon/staff/edb.png" alt="">  จัดการหนังสือ</a>
+								</li>
+								<li>
+									<a href="list_sell.php" class="font"><img src="../icon/staff/addbook.png" alt="">  จัดการตรวจรับหนังสือ</a>
+								</li>
+								<li>
+									<a href="carousel.php" class="font"><img src="../icon/staff/logo.png" alt="">  จัดการโลโก้ หน้าปก</a>
+								</li>
+								<li>
+									<a href="list_news.php" class="font"><img src="../icon/staff/news.png" alt="">  จัดการข่าวสาร</a>
+								</li>
+								<li>
+									<a href="add_about.php" class="font"><img src="../icon/staff/info.png" alt="">  จัดการเกี่ยวกับ ติดต่อเรา</a>
+								</li>
+
+								<?php
+								}elseif ($row_mm['status'] == 'sale') { ?>
+								<li>
+									<a href="list_product_type.php?list"  class="font"><img src="../icon/staff/edittype.png" alt="จัดการประเภทหนังสือ">  จัดการประเภทหนังสือ</a>
+								</li>
+								<li>
+									<a href="list_bank.php" class="font"><img src="../icon/staff/bank.png" alt="">  จัดการข้อมูลธนาคาร</a>
+								</li>
+								<li>
+									<a href="carousel.php" class="font"><img src="../icon/staff/logo.png" alt="">  จัดการโลโก้ หน้าปก</a>
+								</li>
+								<li>
+									<a href="list_news.php" class="font"><img src="../icon/staff/news.png" alt="">  จัดการข่าวสาร</a>
+								</li>
+								<li>
+									<a href="add_about.php" class="font"><img src="../icon/staff/info.png" alt="">  จัดการเกี่ยวกับ ติดต่อเรา</a>
+								</li>
+
+								<?php
+								}elseif ($row_mm['status'] == 'confirm') { ?>
 								<li>
 									<a href="carousel.php" class="font"><img src="../icon/staff/logo.png" alt="">  จัดการโลโก้ หน้าปก</a>
 								</li>

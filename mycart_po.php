@@ -53,7 +53,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php include('h.php');?>
-	
+
 </head>
 <body>
 	<div class="container">
@@ -73,7 +73,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 									<th></th>
 								</tr>
 							</thead>
-							
+
 
 
 							<?php do { ?>
@@ -113,15 +113,15 @@ $totalRows_mycart = mysql_num_rows($mycart);
 											</center>
 
 										<?php } ?>
-										
+
 
 									</td>
 								</tr>
-							<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
+							<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
 						</table>
 					</div>
 				<?php }else{
-					echo "<center> <h3>ไม่มีรายการแจ้งชำระเงิน</h3></center>";
+					echo "<center> <h3>ไม่มีรายการส่งสินค้า</h3></center>";
 				} ?>
 			</div>
 		</div>

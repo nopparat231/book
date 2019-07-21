@@ -55,14 +55,14 @@ $totalRows_ptype = mysql_num_rows($ptype);
  <?php include('m.php');?>
 
   <div class="row">
-  
+
   <div class="col-md-12">
     <?php include 'list_product_type_show.php'; ?>
     <table id="example" class="display" cellspacing="0" border="1">
       <thead>
         <tr>
           <th width="5%">ลำดับ</th>
-          
+
           <th width="50%">ประเภทย่อย</th>
           <th width="5%"> <center> สถานะ </center></th>
           <th width="5%"> <center> แก้ไข </center></th>
@@ -71,27 +71,27 @@ $totalRows_ptype = mysql_num_rows($ptype);
       </thead>
       <?php if($totalRows_ptype>0){?>
 
-        <?php 
+        <?php
         $i = 1;
         do { ?>
           <tr>
 
             <td align="center"><?php echo $i; ?></td>
             <td><?php echo $row_ptype['t1_name']; ?></td>
-          
+
               <?php if ($row_ptype['t1_status'] == '0'): ?>
                 <td><center>ปกติ</center></td>
               <?php endif ?>
               <?php if ($row_ptype['t1_status'] == '1'): ?>
                 <td><center>ยกเลิก</center></td>
               <?php endif ?>
-            
+
             <td><center> <a href="edit_product_type1.php?t1_id=<?php echo $row_ptype['t1_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center></td>
             <td><center>
               <a href="del_product_type1.php?t1_id=<?php echo $row_ptype['t1_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิก');">
               ลบ </a></center></td>
             </tr>
-            <?php 
+            <?php
             $i +=1;
           } while ($row_ptype = mysql_fetch_assoc($ptype)); ?>
         <?php } ?>

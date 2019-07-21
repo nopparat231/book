@@ -82,6 +82,9 @@
                  <?php endif ?>
                  <?php if (isset($_GET['staff'])): ?>
                    <option value="staff">พนักงาน</option>
+                   <option value="add">พนักงานตรวจรับ</option>
+                   <option value="sale">พนักงานขาย</option>
+                   <option value="confirm">พนักงานจัดการข้อมูล</option>
                  <?php endif ?>
                  <?php if (isset($_GET['superadmin'])): ?>
                    <option value="superadmin">ผู้จัดการ</option>

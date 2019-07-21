@@ -52,7 +52,60 @@
 
 
 
-        <?php }  ?>
+        <?php }
+        elseif ($row_mm['status'] == 'sale') {
+
+
+          if ($act =='show-order') {
+            include('detail_order_after_cartdone_new.php');
+          }elseif ($act == 'show-payed'){
+            include('show_cart_pay.php');
+          }elseif ($act == 'show-post') {
+            include('show_cart_post.php');
+          }elseif ($act == 'show-cancel'){
+            include('show_cancel_cart.php');
+          }elseif ($act == 'show-check'){
+            include('show_check_cart.php');
+          }elseif ($act == 'show-new'){
+            include('show_new_cart.php');
+          }else{
+            include 'show_all_order.php';
+
+            include 'f.php';
+
+          }
+
+          ?>
+
+
+
+        <?php }elseif ($row_mm['status'] == 'confirm') {
+
+
+          if ($act =='show-order') {
+            include('detail_order_after_cartdone_new.php');
+          }elseif ($act == 'show-payed'){
+            include('show_cart_pay.php');
+          }elseif ($act == 'show-post') {
+            include('show_cart_post.php');
+          }elseif ($act == 'show-cancel'){
+            include('show_cancel_cart.php');
+          }elseif ($act == 'show-check'){
+            include('show_check_cart.php');
+          }elseif ($act == 'show-new'){
+            include('show_new_cart.php');
+          }else{
+            include 'show_all_order.php';
+
+            include 'f.php';
+
+          }
+
+          ?>
+
+
+
+        <?php }?>
 
 
       </div>

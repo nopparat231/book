@@ -6,7 +6,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 date_default_timezone_set('Asia/Bangkok');
   //print_r($_SESSION);
 if (!function_exists("GetSQLValueString")) {
-  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+  function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
   {
     if (PHP_VERSION < 6) {
       $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -15,7 +15,7 @@ if (!function_exists("GetSQLValueString")) {
     switch ($theType) {
       case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
       case "long":
       case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -53,15 +53,15 @@ if (isset($_GET['order_id'])) {
 }
 mysql_select_db($database_condb);
 $query_cartdone = sprintf("
-  SELECT * FROM 
-  tbl_order as o, 
+  SELECT * FROM
+  tbl_order as o,
   tbl_order_detail as d,
   tbl_product as p,
   tbl_member  as m
-  WHERE o.order_id = %s 
-  AND o.order_id=d.order_id 
+  WHERE o.order_id = %s
+  AND o.order_id=d.order_id
   AND d.p_id=p.p_id
-  AND o.mem_id = m.mem_id 
+  AND o.mem_id = m.mem_id
   ORDER BY o.order_date ASC", GetSQLValueString($colname_cartdone, "int"));
 $cartdone = mysql_query($query_cartdone, $condb) or die(mysql_error());
 $row_cartdone = mysql_fetch_assoc($cartdone);
@@ -93,7 +93,7 @@ $totalRows_cartdone = mysql_num_rows($cartdone);
   }
 </style>
 
-<?php 
+<?php
 $status =  $row_cartdone['order_status'];
 if($status > 1){ ?>
  <br /><br />
@@ -131,10 +131,10 @@ if($status > 1){ ?>
      <tr>
       <td >โอนเงินไปยังบัญชี : </td>
       <td colspan="5" align="left"><label for="pay_date"></label>
-        <?php echo $row_cartdone['b_name'];?> 
+        <?php echo $row_cartdone['b_name'];?>
       </td>
     </tr>
-    
+
     <tr>
       <td >เลขที่บัญชี : </td>
       <td colspan="5" align="left"><label for="pay_date"></label>
@@ -172,7 +172,7 @@ if($status > 1){ ?>
 
    <hr style="border-radius: 5px;border: 1px solid black;">
 
-   <center>หัลกฐานการโอน <br>
+   <center>หลักฐานการโอน <br>
 
 
 
@@ -185,12 +185,12 @@ if($status > 1){ ?>
  </center>
  <br>
 
- <?php 
+ <?php
 
- if ($row_cartdone['order_status'] == 5  ) {
+ if ($row_mm['status'] != 'sale' && $status == '5') {
 
   ?>
-  เลขพัสดุ : 
+  เลขพัสดุ :
   <form action="add_postcode.php" method="get" >
     <input type="number" hidden name="order_id" value="<?php echo $row_cartdone['order_id'];?>" />
     <input type="text" hidden name="mem_name" value="<?php echo $row_cartdone['mem_name'];?>" />
@@ -239,10 +239,10 @@ if($status > 1){ ?>
 <div class="col-md-6">
 
 
-  <a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"></span></a> 
+  <a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"></span></a>
 
-  <?php if ($row_cartdone['order_status'] == 2): ?>
-   <a href="update_check_order.php?order_id=<?php echo $colname_cartdone;?>&order_status=5" class="btn btn-warning btn-sm pull-right" onClick="return confirm('ยืนยันการตรวจสอบ');" id="hp" >  <span class="glyphicon glyphicon-ok"></span> ตรวจสอบแล้ว </a> 
+  <?php if ($row_cartdone['order_status'] == 2 && $row_mm['status'] != 'confirm' ): ?>
+   <a href="update_check_order.php?order_id=<?php echo $colname_cartdone;?>&order_status=5" class="btn btn-warning btn-sm pull-right" onClick="return confirm('ยืนยันการตรวจสอบ');" id="hp" >  <span class="glyphicon glyphicon-ok"></span> ตรวจสอบแล้ว </a>
 
 
  <?php endif ?>
@@ -269,7 +269,7 @@ if($status > 1){ ?>
             <hr style="border-radius: 15px;border: 1px solid black; ">
 
 
-          </strong> 
+          </strong>
         </td>
       </tr>
     </table>
@@ -287,7 +287,7 @@ if($status > 1){ ?>
 
       <?php do { ?>
 
-        <?php 
+        <?php
         $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
                   //$totalp += $sum;
                   //$total  += $sum;
@@ -301,9 +301,9 @@ if($status > 1){ ?>
           <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,35,'utf-8')." ...";?></td>
           <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
           <td  ><?php echo number_format($sum,2)." บาท";?></td>
-        </tr> 
+        </tr>
 
-      <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone)); 
+      <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone));
 
       $tax = $totalp*0.07;
 
@@ -372,7 +372,7 @@ if($status > 1){ ?>
 
 
 
-<?php }else{?> 
+<?php }else{?>
   <form action="add_payslip_db.php" method="post" enctype="multipart/form-data" name="formpay" id="formpay">
     <br /><br />
     <div class="col-md-6">
@@ -477,8 +477,8 @@ if($status > 1){ ?>
 
         <div class="col-md-6">
 
-          <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" ><span class="glyphicon glyphicon-print"></span></a> 
-          
+          <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" ><span class="glyphicon glyphicon-print"></span></a>
+
           <table border="1" align="left" class="table" style=" border-style: solid;
           border-color: coral;">
           <tr>
@@ -502,7 +502,7 @@ if($status > 1){ ?>
                       <hr style="border-radius: 15px;border: 1px solid black; ">
 
 
-                    </strong> 
+                    </strong>
                   </td>
                 </tr>
               </table>
@@ -520,7 +520,7 @@ if($status > 1){ ?>
 
                 <?php do { ?>
 
-                  <?php 
+                  <?php
                   $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
                   //$totalp += $sum;
                   //$total  += $sum;
@@ -534,9 +534,9 @@ if($status > 1){ ?>
                     <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,35,'utf-8')." ...";?></td>
                     <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
                     <td  ><?php echo number_format($sum,2)." บาท";?></td>
-                  </tr> 
+                  </tr>
 
-                <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone)); 
+                <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone));
 
                 $tax = $totalp*0.07;
 
@@ -603,7 +603,7 @@ if($status > 1){ ?>
 
 
 <p align="center"><br />
-  <button type="submit" name="add" class="btn btn-success"> บันทึก </button> 
+  <button type="submit" name="add" class="btn btn-success"> บันทึก </button>
 
 </p>
 
@@ -615,7 +615,7 @@ if($status > 1){ ?>
 </div>
 </div>
 
-<?php  
+<?php
 //unset($_SESSION['totalp']);
 mysql_free_result($buyer);
 mysql_free_result($rb);

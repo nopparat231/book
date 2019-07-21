@@ -121,6 +121,12 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
             <td align="center"><?php
             if ($row_listadmin['status'] == 'staff') {
               $ida = 'ST';
+            }elseif ($row_listadmin['status'] == 'add') {
+              $ida = 'SA';
+            }elseif ($row_listadmin['status'] == 'sale') {
+              $ida = 'SS';
+            }elseif ($row_listadmin['status'] == 'confirm') {
+              $ida = 'SC';
             }elseif ($row_listadmin['status'] == 'admin') {
               $ida = 'AD';
             }elseif ($row_listadmin['status'] == 'superadmin') {
@@ -138,6 +144,12 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
               <td align="center"><?php
               if ($row_listadmin['status'] == 'staff') {
                 $stu = 'พนักงาน';
+              }elseif ($row_listadmin['status'] == 'add') {
+                $stu = 'พนักงานตรวจรับ';
+              }elseif ($row_listadmin['status'] == 'sale') {
+                $stu = 'พนักงานขาย';
+              }elseif ($row_listadmin['status'] == 'confirm') {
+                $stu = 'พนักงานจัดการข้อมูล';
               }elseif ($row_listadmin['status'] == 'admin') {
                 $stu = 'ผู้ดูแลระบบ';
               }elseif ($row_listadmin['status'] == 'superadmin') {
