@@ -79,7 +79,7 @@ include 'report_db.php';
 
 															<td align="center">
 																<span id="hp">
-																	<a href="index.php?order_id=<?php echo $row_mycart['oid'];?>&act=show-order" class="btn-sm btn-info">
+																	<a href="index.php?order_id=<?php echo $row_mycart['oid'];?>&mem_id=<?php  echo $row_mycart['mem_id'];?>&act=show-order" class="btn-sm btn-info">
 																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
 
 																	</a>

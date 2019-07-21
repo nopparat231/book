@@ -33,12 +33,11 @@ if (!function_exists("GetSQLValueString")) {
     return $theValue;
   }
 }
-$colname_buyer = "-1";
-if (isset($_SESSION['MM_Username'])) {
-  $colname_buyer = $_SESSION['MM_Username'];
-}
+
+$colname_buyer = $_GET['mem_id'];
+
 mysql_select_db($database_condb);
-$query_buyer = sprintf("SELECT * FROM tbl_member WHERE mem_username = %s", GetSQLValueString($colname_buyer, "text"));
+$query_buyer = "SELECT * FROM tbl_member WHERE mem_id = '$colname_buyer'";
 $buyer = mysql_query($query_buyer, $condb) or die(mysql_error());
 $row_buyer = mysql_fetch_assoc($buyer);
 $totalRows_buyer = mysql_num_rows($buyer);
@@ -404,7 +403,7 @@ if($status > 1){ ?>
       <tr>
         <td >วันที่ชำระเงิน</td>
         <td colspan="5" align="left"><label for="pay_date"></label>
-          <input type="date" name="pay_date" id="pay_date" value="<?php echo date('Y-m-d');?>"/></td>
+          <input type="date" disabled name="pay_date" id="pay_date" value="<?php echo date('Y-m-d');?>"/></td>
         </tr>
         <tr>
           <td >&nbsp;</td>
@@ -417,7 +416,7 @@ if($status > 1){ ?>
         <tr>
           <td >วันที่ชำระเงิน</td>
           <td colspan="5" align="left"><label for="pay_date"></label>
-            <input type="time" id="pay_date" value="<?php echo date("H:i"); ?>"/></td>
+            <input type="time" disabled id="pay_date" value="<?php echo date("H:i"); ?>"/></td>
           </tr>
           <tr>
             <td >&nbsp;</td>
@@ -430,7 +429,7 @@ if($status > 1){ ?>
           <tr>
             <td >จำนวนเงิน</td>
             <td colspan="5" align="left"><label for="pay_amount"></label>
-              <input type="number" name="pay_amount" pattern="([0-9]{1,3}).([0-9]{1,3})" step='0.01' id="pay_amount" required="required"/></td>
+              <input type="number" disabled name="pay_amount" pattern="([0-9]{1,3}).([0-9]{1,3})" step='0.01' id="pay_amount" required="required"/></td>
             </tr>
             <tr>
               <td >&nbsp;</td>
@@ -459,7 +458,7 @@ if($status > 1){ ?>
               <tr>
 
                 <td align="center">
-                  <input <?php if (!(strcmp($row_rb['b_name'],"b_bank"))) {echo "checked=\"checked\"";} ?> type="radio" name="bank"  value="<?php echo $row_rb['b_name'].'_'.$row_rb['b_number'];?>" required="required" />
+                  <input <?php if (!(strcmp($row_rb['b_name'],"b_bank"))) {echo "checked=\"checked\"";} ?> disabled type="radio" name="bank"  value="<?php echo $row_rb['b_name'].'_'.$row_rb['b_number'];?>" required="required" />
                   <img src="../bimg/<?php echo $row_rb['b_logo']; ?>" width="50" />
                 </td>
 
@@ -602,10 +601,6 @@ if($status > 1){ ?>
 
 
 
-<p align="center"><br />
-  <button type="submit" name="add" class="btn btn-success"> บันทึก </button>
-
-</p>
 
 </form>
 <?php } ?>
