@@ -46,7 +46,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('datatable2.php');?>
+  <?php include('./datatable2.php');?>
 </head>
 <body>
  <?php include('navbar.php');?>
@@ -104,4 +104,4 @@ $totalRows_ptype = mysql_num_rows($ptype);
 <?php
 mysql_free_result($ptype);
 ?>
-<?php include('f.php');?>
+<?php //include('f.php');?>

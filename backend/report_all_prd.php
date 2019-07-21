@@ -47,7 +47,7 @@ $totalRows_prd = mysql_num_rows($prd);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('datatable.php');?>
+  <?php include('./datatable2.php');?>
 
   </head>  <?php include('navbar.php');?>
   <body>  <?php //include('menu.php');?>
@@ -76,7 +76,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
     <h3 align="center"> รายการ หนังสือ  </h3>
 
-<table width="100%" border="1" cellspacing="0" class="display" id="example3">
+<table width="100%" border="1" cellspacing="0" class="display" id="example">
   <?php $r = '<h3 align="center">รายการสินค้า</h3>' ?>
   <thead>
     <tr>
@@ -125,18 +125,7 @@ $totalRows_prd = mysql_num_rows($prd);
     } while ($row_prd = mysql_fetch_assoc($prd)); ?>
   <?php } ?>
 </tbody>
-<tfoot>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
 
-    <th style="text-align:right">ราคารวม:</th>
-    <th></th>
-  </tr>
-</tfoot>
 </table>
 </div>
 </div>
@@ -148,4 +137,4 @@ mysql_free_result($prd);
 mysql_free_result($view);
 
 ?>
-<?php include('f.php');?>
+<?php //include('f.php');?>

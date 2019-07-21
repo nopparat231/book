@@ -47,7 +47,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('datatable.php');?>
+  <?php include('./datatable2.php');?>
   </head><?php //include('menu.php');?>  <?php include('navbar.php');?>
   <body>
     <div class="container">
@@ -58,7 +58,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
 
          <div class="col-md-12">
         <h3 align="center"> รายการ ประเภทหนังสือ </h3>
-        <table id="example1" class="display" cellspacing="0" border="1">
+        <table id="example" class="display" cellspacing="0" border="1">
           <thead>
             <tr>
              <th align="center">ลำดับ</th>
@@ -91,4 +91,4 @@ $totalRows_ptype = mysql_num_rows($ptype);
 <?php
 mysql_free_result($ptype);
 ?>
-<?php include('f.php');?>
+<?php //include('f.php');?>

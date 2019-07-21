@@ -76,7 +76,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('datatable.php');?>
+<?php include('./datatable2.php');?>
   <?php include 'date.php'; ?>
 
   </head> <?php include('navbar.php');?>
@@ -125,7 +125,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
     </div>
   </form>
   <br />
-  <table id="example7" class="display"  border="1">
+  <table id="example" class="display"  border="1">
     <thead>
       <tr>
         <th>ลำดับ</th>
@@ -174,19 +174,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
           $i += 1;
         } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
       </tbody>
-      <tfoot>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-
-
-          <th style="text-align:right">ราคารวม:</th>
-          <th></th>
-        </tr>
-      </tfoot>
+     
     </table>
   </div>
 </div>
@@ -198,4 +186,4 @@ $totalRows_mycart = mysql_num_rows($mycart);
 mysql_free_result($mycart);
 
 ?>
-<?php include('f.php');?>
+<?php// include('f.php');?>

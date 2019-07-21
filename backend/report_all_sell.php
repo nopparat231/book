@@ -60,7 +60,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('datatable.php');?>
+  <?php include('./datatable2.php');?>
   <?php include 'date.php'; ?>
   </head>  <?php include('navbar.php');?>
   <body>
@@ -154,4 +154,4 @@ $totalRows_lbk = mysql_num_rows($lbk);
 <?php
 mysql_free_result($lbk);
 ?>
-<?php  include('f.php');?>
+<?php  //include('f.php');?>

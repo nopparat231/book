@@ -58,7 +58,7 @@ $totalRows_mem = mysql_num_rows($mem);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('datatable.php');?>
+  <?php include('./datatable2.php');?>
   <?php include 'date.php'; ?>
   </head>    <?php include('navbar.php');?>
   <body>  <?php //include('menu.php');?>
@@ -93,7 +93,7 @@ $totalRows_mem = mysql_num_rows($mem);
         </div>
       </div>
     </form><br>
-    <table id="example5" class="display" cellspacing="0" border="1">
+    <table id="example" class="display" cellspacing="0" border="1">
       <thead>
         <tr align="center">
           <th>ลำดับ</th>
@@ -159,4 +159,4 @@ $totalRows_mem = mysql_num_rows($mem);
 <?php
 mysql_free_result($mem);
 ?>
-<?php include('f.php');?>
+<?php //include('f.php');?>
