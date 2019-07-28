@@ -49,9 +49,15 @@ $totalRows_buyer = mysql_num_rows($buyer);
 	//echo 'ss'.$row_buyer;
 
 if($_SESSION['MM_Username']!=''){
+
+  // $sqlorder = "select address2 from tbl_order where p_id=$p_id";
+  // $queryorder = mysql_query($sqlorder,$condb);
+  // $roworder  = mysql_fetch_array($queryorder);
+
+
   ?>
 
-  <!-- <p id="hp"><button class="btn btn-info" ><a href="index.php">เลือกสินค้าเพิ่ม</a>  </button></p> -->
+
   
   <form  name="formlogin" action="saveorder.php" method="POST" id="login" class="form-horizontal">
     <div class="col-md-6"> 
@@ -68,135 +74,199 @@ if($_SESSION['MM_Username']!=''){
           <input type="text"  name="name" value="<?php echo $row_buyer['mem_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
         </div>
       </div>
-      <div class="form-group">
-        <div class="col-sm-12">
-          <textarea name="address" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea>
+
+
+      <div class="form-group" >
+        <div class="col-sm-11">
+          <textarea name="address" class="form-control" id="oldadd"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea>
+        </div>
+
+        <?php if ($row_buyer['mem_address_st'] == 0){
+          $sc = 'checked';
+        }
+          ?>
+
+          <div class="col-sm-1" id="cka">
+            <input type="radio" name="st" <?php echo $sc; ?> >
+          </div>
+
+
+
+        </div>
+        <!-- เพิ่มที่อยู่ที่สอง -->
+        <?php if ($row_buyer['mem_address2'] == '') { ?>
+
+         <div class="form-group" id="add" style="text-align: center;">
+          <button type="submit" class="btn btn-warning"  >เพิ่มที่อยู่</button>
+        </div>
+
+        <div class="form-group" id="add2">
+          <div class="col-sm-11">
+            <textarea name="address2" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"></textarea>
+          </div>
+          <div class="col-sm-1">
+            <input type="radio" name="st" checked >
+          </div>
+
+        </div>
+
+      <?php }else{ ?>
+        <div class="form-group">
+          <div class="col-sm-11">
+            <textarea name="address2" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address2']; ?></textarea>
+          </div>
+          <?php if ($row_buyer['mem_address_st'] == 1){
+            $sc1 = 'checked';
+          }
+            ?>
+
+            <div class="col-sm-1">
+              <input type="radio" name="st" <?php echo $sc1; ?> >
+            </div>
+
+
+          </div>
+
+        <?php } ?>
+        <!-- เพิ่มที่อยู่ที่สอง -->
+
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text"  name="phone" value="<?php echo $row_buyer['mem_tel']; ?>" class="form-control" required placeholder="เบอร์โทรศัพท์" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="email"  name="email" class="form-control" value="<?php echo $row_buyer['mem_email']; ?>" required placeholder="อีเมล์" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12" align="center">
+            <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_buyer['mem_id']; ?>">
+
+
+            <a href="confirm_order.php?act=up&oct=after&tems=ems" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
+
+            <button type="submit" class="btn btn-success" id="btn">
+            ยืนยันสั่งซื้อ </button>
+
+            <a href="crear_shoping.php" type="submit" class="btn btn-danger" >ยกเลิกการสั่งซื้อ</a>
+
+          </div>
         </div>
 
       </div>
-      <div class="form-group">
-        <div class="col-sm-12">
-          <input type="text"  name="phone" value="<?php echo $row_buyer['mem_tel']; ?>" class="form-control" required placeholder="เบอร์โทรศัพท์" />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-12">
-          <input type="email"  name="email" class="form-control" value="<?php echo $row_buyer['mem_email']; ?>" required placeholder="อีเมล์" />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-12" align="center">
-          <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_buyer['mem_id']; ?>">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+
+        <table border="1" cellspacing="20" cellpadding="20" align="left" class="table" style="border-style: solid;
+        border-color: coral; padding: 15px">
+
+        <td colspan="5" align="center"  bgcolor="#FF8D33"><strong>สรุปรายการสั่งซื้อ<br />
 
 
-          <a href="confirm_order.php?act=up&oct=after&tems=ems" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
+          <tr>
 
-          <button type="submit" class="btn btn-success" id="btn">
-          ยืนยันสั่งซื้อ </button>
+            <td colspan="6" >*ข้อมูลลูกค้า
+              <table border="0" cellspacing="20" cellpadding="20">
+                <tr>
+                  <td  align="left" valign="top"><br>
+                   <strong>
 
-          <a href="crear_shoping.php" type="submit" class="btn btn-danger" >ยกเลิกการสั่งซื้อ</a>
+                    ชื่อสกุล  : <?php echo $row_buyer['mem_name'];?> <br />
 
-        </div>
-      </div>
+                    เบอร์โทร : <?php echo $row_buyer['mem_tel'];?> <br />
 
-    </div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-
-      <table border="1" cellspacing="20" cellpadding="20" align="left" class="table" style="border-style: solid;
-      border-color: coral; padding: 15px">
-
-      <td colspan="5" align="center"  bgcolor="#FF8D33"><strong>สรุปรายการสั่งซื้อ<br />
+                    อีเมลล์ : <?php echo $row_buyer['mem_email'];?> <br />
+                    <hr style="border-radius: 15px;border: 1px solid black; width: 400px">
 
 
-        <tr>
+                  </strong> 
+                </td>
+              </tr>
+            </table>
 
-          <td colspan="6" >*ข้อมูลลูกค้า
+
+
             <table border="0" cellspacing="20" cellpadding="20">
+              <tr><td><strong>*รายการสั่งซื้อ <br><br></strong></td></tr>
+
               <tr>
-                <td  align="left" valign="top"><br>
-                 <strong>
 
-                  ชื่อสกุล  : <?php echo $row_buyer['mem_name'];?> <br />
+                <td><strong>รายการสินค้า</strong></td>
+                <td><strong>จำนวณ</strong></td>
+                <td style="text-align: center;"><strong>รวม</strong></td>
 
-                  เบอร์โทร : <?php echo $row_buyer['mem_tel'];?> <br />
-
-                  อีเมลล์ : <?php echo $row_buyer['mem_email'];?> <br />
-                  <hr style="border-radius: 15px;border: 1px solid black; width: 400px">
+              </tr>
 
 
-                </strong> 
-              </td>
-            </tr>
-          </table>
+              <?php
+              require_once('Connections/condb.php');
+              $total = 0;
+
+              if ($totalRows_buyer > 0) {
+                if ($_GET['sumems']) {
+                  $ems = $_GET['sumems'];
+                }else{
+                  $ems = $_POST['sumems'];
+                }
 
 
-
-          <table border="0" cellspacing="20" cellpadding="20">
-            <tr><td><strong>*รายการสั่งซื้อ <br><br></strong></td></tr>
-
-            <tr>
-
-              <td><strong>รายการสินค้า</strong></td>
-              <td><strong>จำนวณ</strong></td>
-              <td style="text-align: center;"><strong>รวม</strong></td>
-
-            </tr>
-
-
-            <?php
-            require_once('Connections/condb.php');
-            $total = 0;
-
-            if ($totalRows_buyer > 0) {
-              if ($_GET['sumems']) {
-                $ems = $_GET['sumems'];
-              }else{
-                $ems = $_POST['sumems'];
-              }
-
-
-              foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
-              {
-                $sql = "select * from tbl_product where p_id=$p_id";
-                $query = mysql_query($sql,$condb);
-                $row  = mysql_fetch_array($query);
-                $sum  = $row['p_price']*$p_qty;
+                foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
+                {
+                  $sql = "select * from tbl_product where p_id=$p_id";
+                  $query = mysql_query($sql,$condb);
+                  $row  = mysql_fetch_array($query);
+                  $sum  = $row['p_price']*$p_qty;
 
                 //$total  += $sum;
-                $totalp += $sum;
+                  $totalp += $sum;
 
 
-                $sumw = $ems;
+                  $sumw = $ems;
                 //$sumww += $sumw;
 
 
 
+                  ?>
+
+                  <tr>
+                    <td style="width: 250px"><?php echo iconv_substr($row['p_name'],0,45,'utf-8')." ...";?></td>
+                    <td align="center"><?php echo $p_qty;?></td>
+                    <td><?php echo number_format($sum,2)." บาท";?></td>
+                  </tr> 
+
+                  <input type="hidden" name="ems" value="<?php echo $ems; ?>">
+                  <input type="hidden"  name="p_name[]" value="<?php echo $row['p_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
+
+                <?php          } 
+
+
+                $tax = $totalp*0.07;
+
+                $totalp += $tax;
+                $totalp += $sumw;
                 ?>
 
-                <tr>
-                  <td style="width: 250px"><?php echo iconv_substr($row['p_name'],0,45,'utf-8')." ...";?></td>
-                  <td align="center"><?php echo $p_qty;?></td>
-                  <td><?php echo number_format($sum,2)." บาท";?></td>
-                </tr> 
+              </table>
+              <input type="hidden" name="total" value="<?php echo $totalp ?>">
 
-                <input type="hidden" name="ems" value="<?php echo $ems; ?>">
-                <input type="hidden"  name="p_name[]" value="<?php echo $row['p_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
+              <table border="0" cellspacing="20" cellpadding="20">
+               <hr style="border-radius: 15px;border: 1px solid black; ">
+               <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
 
-              <?php          } 
-
-
-              $tax = $totalp*0.07;
-
-              $totalp += $tax;
-              $totalp += $sumw;
-              ?>
-
-            </table>
-            <input type="hidden" name="total" value="<?php echo $totalp ?>">
-
-            <table border="0" cellspacing="20" cellpadding="20">
-             <hr style="border-radius: 15px;border: 1px solid black; ">
+              <tr>
+               <td style="width: 300px">จัดส่ง</td>
+               <td ></td>
+               <td ><?php echo number_format($sumw,2)." บาท"; ?></td>
+             </tr>
              <tr>
               <td></td>
               <td></td>
@@ -204,10 +274,15 @@ if($_SESSION['MM_Username']!=''){
             </tr>
 
             <tr>
-             <td style="width: 300px">จัดส่ง</td>
+             <td style="width: 300px">ภาษี 7%</td>
              <td ></td>
-             <td ><?php echo number_format($sumw,2)." บาท"; ?></td>
+             <td ><?php echo number_format($tax,2)." บาท"; ?></td>
            </tr>
+         </table>
+
+
+         <table border="0" cellspacing="20" cellpadding="20">
+           <hr style="border-radius: 15px;border: 1px solid black; ">
            <tr>
             <td></td>
             <td></td>
@@ -215,35 +290,19 @@ if($_SESSION['MM_Username']!=''){
           </tr>
 
           <tr>
-           <td style="width: 300px">ภาษี 7%</td>
+           <td style="width: 300px"><b>ยอดสุทธิ</b></td>
            <td ></td>
-           <td ><?php echo number_format($tax,2)." บาท"; ?></td>
+           <td ><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
+
          </tr>
+
        </table>
+       <br><br>
 
 
-       <table border="0" cellspacing="20" cellpadding="20">
-         <hr style="border-radius: 15px;border: 1px solid black; ">
-         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-         <td style="width: 300px"><b>ยอดสุทธิ</b></td>
-         <td ></td>
-         <td ><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
-
-       </tr>
-
-     </table>
-     <br><br>
-
-
-   </td>
- </tr>
-</table>
+     </td>
+   </tr>
+ </table>
 </div>
 
 
@@ -260,3 +319,18 @@ if($_SESSION['MM_Username']!=''){
  ?>
  <br>
  <br>
+
+ <style type="text/css">
+   #add2 {
+    display: none;
+  }
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#add').click(function() {
+      $(this).siblings("#add2").fadeToggle();
+     document.getElementById("cka").style.display = "none";
+   });
+  });
+</script>
