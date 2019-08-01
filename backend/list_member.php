@@ -71,7 +71,7 @@ $totalRows_mem = mysql_num_rows($mem);
         <div class="row">
 
           <div class="col-md-12">
-        <h3 align="center"> รายการ ข้อมูลสมาชิก </h3>
+        <h3 align="center"> รายการ ข้อมูลลูกค้า </h3>
         <form action="list_member.php" method="post">
          <div class="row">
 
@@ -97,16 +97,16 @@ $totalRows_mem = mysql_num_rows($mem);
       <thead>
         <tr align="center">
           <th>ลำดับ</th>
-          <th>รหัส</th>
-          <th>ข้อมูล</th>
-          <th>ที่อยู่</th>
-          <th>สถานะ</th>
-          <th>วันที่สมัคร</th>
+          <th width=5%>รหัส</th>
+          <th width=35%>ข้อมูล</th>
+          <th width=35%>ที่อยู่</th>
+          <th width=5%>สถานะ</th>
+          <th width=28%>วันที่สมัคร</th>
           <?php if ($row_mm['status'] == 'superadmin') { ?>
 
           <?php }else{ ?>
-            <th>แก้ไข </th>
-            <th>ยกเลิก</th>
+            <th width=5%>แก้ไข </th>
+            <th width=5%>ยกเลิก</th>
           <?php  } ?>
         </tr>
       </thead>
@@ -135,7 +135,7 @@ $totalRows_mem = mysql_num_rows($mem);
 
            } ?>
            <?php echo $ida; ?></td>
-           <td><?php echo date("d-m-Y",strtotime($row_mem['dateinsert'])); ?></td>
+           <td align="center"><?php echo date("d-m-Y",strtotime($row_mem['dateinsert'])); ?></td>
 
 
            <?php if ($row_mm['status'] == 'superadmin') { ?>

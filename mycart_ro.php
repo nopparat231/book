@@ -53,7 +53,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php include('h.php');?>
-	
+<h3>&nbsp;&nbsp;&nbsp;รายการแจ้งชำระ</h3><br>
 </head>
 <body>
 	<div class="container">
@@ -65,30 +65,25 @@ $totalRows_mycart = mysql_num_rows($mycart);
 
 							<thead >
 								<tr >
-									<th>รหัสสั่งซื้อ</th>
-									<th>จำนวนรายการ</th>
+									<th>เลขที่ใบสั่งซื้อ</th>
+
 									<th>ราคารวม</th>
 									<th>สถานะ</th>
 									<th>วันที่ทำรายการ</th>
-									<th></th>
+									<th>รายละเอียด</th>
+									<th>ยกเลิกคำสั่งซื้อ</th>
 								</tr>
 							</thead>
-							
+
 
 
 							<?php do { ?>
 								<tr>
-									<td>
-										<?php echo $row_mycart['oid'];?>
-										<span id="hp">
-											<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>act=show-order">
-												<span class="glyphicon glyphicon-zoom-in"></span>
-											</a>
-										</span>
-									</td>
 									<td align="center">
-										<?php echo $row_mycart['coid'];?>
+										BK<?php echo $row_mycart['oid'];?>
+
 									</td>
+
 									<td align="center">
 										<?php echo number_format($row_mycart['ctotal'],2);?>
 									</td>
@@ -99,9 +94,15 @@ $totalRows_mycart = mysql_num_rows($mycart);
 											?>
 										</font>
 									</td>
-									<td> <?php echo $row_mycart['order_date'];?></td>
-									<td>
-										<?php if ($status == 3 | $status == 4 | $status == 5) { ?>
+									<td align="center"> <?php echo $row_mycart['order_date'];?></td>
+
+										<td align="center"><span id="hp">
+											<a href="my_order.php?order_id=<?php echo $row_mycart['oid'];?>act=show-order"  class="btn-sm btn-info">
+												<span class="glyphicon glyphicon-zoom-in"></span>แจ้งชำระเงิน
+											</a>
+										</span>
+									</td>
+										<td><?php if ($status == 3 | $status == 4 | $status == 5) { ?>
 											<center>
 												<a class="btn btn-danger btn-xs" disabled>
 												ยกเลิก </a>
@@ -113,11 +114,11 @@ $totalRows_mycart = mysql_num_rows($mycart);
 											</center>
 
 										<?php } ?>
-										
+
 
 									</td>
 								</tr>
-							<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
+							<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
 						</table>
 					</div>
 				<?php }else{

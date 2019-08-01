@@ -400,16 +400,11 @@ if (isset($_SESSION['shopping_cart'])) {
 					</li>
 					<li><a href="index.php" class="[ animate ]" >หน้าหลัก</span></a></li>
 
-
-					<li>
-
-
-						<a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate ]" >ตระกร้าสินค้า<span class="badge glyphicon glyphicon-shopping-cart "> <?php echo $meQty; ?></span></a>
+<li><a href="?howto_view" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
 
 
-					</li>
-
-
+<li><a href="news.php" class="[ animate ]" >ข่าวสาร&กิจกรรม</span></a></li>
+<li><a href="about.php" class="[ animate ]" >เกี่ยวกับเรา&ติดต่อเรา</span></a></li>
 
 					<?php
 
@@ -417,8 +412,7 @@ if (isset($_SESSION['shopping_cart'])) {
 
 					if($mm != ''){?>
 
-						<li><a href="my_order.php?mycart_ro=mycart_ro" class="[ animate ]" >แจ้งชำระเงิน</span></a></li>
-						<li><a href="my_order.php?mycart_po=mycart_po" class="[ animate ]" >ส่งของแล้ว</span></a></li>
+
 						<li>
 							<a href="" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">ข้อมูลสมาชิก</a>
 							<ul class="[ dropdown-menu ]" role="menu">
@@ -433,16 +427,25 @@ if (isset($_SESSION['shopping_cart'])) {
 									</li>
 								</ul>
 							</li>
+							<li><a href="my_order.php?mycart_ro=mycart_ro" class="[ animate ]" >แจ้งชำระเงิน</span></a></li>
+							<li><a href="my_order.php?mycart_po=mycart_po" class="[ animate ]" >ส่งของแล้ว</span></a></li>
 						<?php }else{
-							echo "<li><a href='' class='animate' data-target='#regis_view' data-toggle='modal'><span class='glyphicon glyphicon-user'>สมัครสมาชิก</span></a></li>";
+
 							echo "<li><a href='login.php' class='animate' data-target='#login_user' data-toggle='modal'><span class='glyphicon glyphicon-log-in'> เข้าสู่ระบบ</span></a></li>";
 
-
+echo "<li><a href='' class='animate' data-target='#regis_view' data-toggle='modal'><span class='glyphicon glyphicon-user'>สมัครสมาชิก</span></a></li>";
 						}?>
-						<li><a href="news.php" class="[ animate ]" >ข่าวสาร&กิจกรรม</span></a></li>
-						<li><a href="about.php" class="[ animate ]" >เกี่ยวกับเรา&ติดต่อเรา</span></a></li>
 
-						<li><a href="?howto_view" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
+						<li>
+
+
+							<a href="confirm_order.php?p_id=<?php echo $row_prd['p_id'];?>&act=add&oct=after&tems=ems" class="[ animate ]" >ตระกร้าสินค้า<span class="badge glyphicon glyphicon-shopping-cart "> <?php echo $meQty; ?></span></a>
+
+
+						</li>
+
+
+
 
 
 					</ul>

@@ -56,7 +56,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
 
 
 
-        
+
 
           <?php include('m.php');?>
         <div class="row">
@@ -66,17 +66,17 @@ $totalRows_lbk = mysql_num_rows($lbk);
             <table id="example" class="display" cellspacing="0" border="1">
               <thead>
                 <tr align="center">
-                  <th>ลำดับ</th>
-                  <th>เลขที่ตรวจรับ</th>
-                  <th>จำนวน</th>
-                  <th>ราคา</th>
-                  <th>วันที่สั่งซื้อสินค้า</th>
-                  <th>วันที่รับสินค้า</th>
-                  <th>ใบเสร็จ</th>
-                  <th>สถานะ</th>
-                  <th>ดูสินค้า</th>
-                  <th>แก้ไข</th>
-                  <th>ลบ</th>
+                  <th width=3%>ลำดับ</th>
+                  <th width=5%>เลขที่ใบตรวจรับ</th>
+                  <th width=5%>จำนวน</th>
+                  <th width=5%>ราคา</th>
+                  <th width=10%>วันที่สั่งซื้อ</th>
+                  <th width=10%>วันที่รับสินค้า</th>
+                  <th width=5%>ใบเสร็จ</th>
+                  <th width=5%>สถานะ</th>
+                  <th width=5%>ดูสินค้า</th>
+                  <th width=5%>แก้ไข</th>
+                  <th width=5%>ลบ</th>
 
                 </tr>
               </thead>

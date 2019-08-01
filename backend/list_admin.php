@@ -70,7 +70,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
 <div class="row">
 
   <div class="col-md-12">
-        <h3 align="center"> รายการ ผู้ดูแลระบบ   </h3>
+        <h3 align="center"> รายการ ผู้ใช้งานระบบ   </h3>
 
         <form action="list_admin.php" method="post">
          <div class="row">
@@ -98,17 +98,17 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
       <table id="example" class="display" cellspacing="0" border="1">
         <thead>
           <tr align="center">
-            <th>ลำดับ</th>
-            <th>รหัส</th>
-            <th>ข้อมูล</th>
-            <th>ที่อยู่</th>
-            <th>สถานะ</th>
-            <th>วันที่สมัคร</th>
+            <th width=3%>ลำดับ</th>
+            <th width=5%>รหัส</th>
+            <th width=20%>ข้อมูล</th>
+            <th width=30%>ที่อยู่</th>
+            <th width=10%>สถานะ</th>
+            <th width=10%>วันที่สมัคร</th>
             <?php if ($row_mm['status'] == 'superadmin') { ?>
 
             <?php }else{ ?>
-              <th>แก้ไข </th>
-              <th>ยกเลิก</th>
+              <th width=7%>แก้ไข </th>
+              <th width=7%>ยกเลิก</th>
             <?php  } ?>
           </tr>
         </thead>
@@ -149,7 +149,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
               }elseif ($row_listadmin['status'] == 'sale') {
                 $stu = 'พนักงานขาย';
               }elseif ($row_listadmin['status'] == 'confirm') {
-                $stu = 'พนักงานจัดการข้อมูล';
+                $stu = 'พนักงานจัดส่ง';
               }elseif ($row_listadmin['status'] == 'admin') {
                 $stu = 'ผู้ดูแลระบบ';
               }elseif ($row_listadmin['status'] == 'superadmin') {

@@ -105,7 +105,30 @@
 
 
 
-        <?php }?>
+        <?php }elseif ($row_mm['status'] == 'superadmin'){
+                      echo "<font size = 4>ยินดีต้อนรับ คุณ</font>";
+                      echo "<font size = 4>";
+                      echo $row_mm['admin_name'];
+                      echo "</font>";
+      } elseif ($row_mm['status'] == 'admin'){
+                    echo "<font size = 4>ยินดีต้อนรับ คุณ</font>";
+                    echo "<font size = 4>";
+                    echo $row_mm['admin_name'];
+                    echo "</font>";
+      }
+
+      elseif ($row_mm['status'] == 'add'){
+                    echo "<font size = 4>ยินดีต้อนรับ คุณ</font>";
+                    echo "<font size = 4>";
+                    echo $row_mm['admin_name'];
+                    echo "</font>";
+      }
+      else {
+        echo "<font size = 4>คุณไม่ได้รับอนุญาติให้ใช้งานระบบ</font>";
+      }
+      ?>
+
+
 
 
       </div>

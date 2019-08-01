@@ -43,11 +43,11 @@ date_default_timezone_set('Asia/Bangkok');
             <tr>
 
              <?php if ($row_cartdone['b_name'] <> ''){
-              $chec ='ใบสั่งซื้อ / ใบจัดสั่ง';
-              $engc = 'ORIGINAL RECEIPT / TAX POST ';
+              $chec ='ใบเสร็จรับเงิน';
+              $engc = 'ORIGINAL RECEIPT';
             }else{
-              $chec ='ใบเสร็จรับเงิน / ใบกํากับภาษี';
-              $engc = 'ORIGINAL RECEIPT / TAX INVOICE ';
+              $chec ='ใบแจ้งหนี้';
+              $engc = 'ORIGINAL INVOICE';
             }?>
 
             <th width="406" align="center" scope="row"><h4 align="center"><strong><?php echo $chec; ?></strong></h4>

@@ -50,11 +50,11 @@ $result1 = mysql_query($sql,$condb) or die ("Error in query : $sql" .mysql_error
 		$strHeader = "Content-type: text/html; charset=UTF-8\n"; // or UTF-8 //
 
 		$strMessage = "";
-		$strMessage .= "Welcome : ".$mem_name."<br>";
-		$strMessage .= "=================================<br>";
-		$strMessage .= "Activate account click here.<br>";
+		$strMessage .= "ยินดีต้อนรับ : คุณ".$mem_name."<br>";
+		$strMessage .= "________________________________________<br>";
+		$strMessage .= "ยืนยันการสมัครสมาชิกโดยการคลิกที่ลิ้งค์ด้านล่าง<br>";
 		$strMessage .= "http://localhost/book/activate.php?sid=".$session_id."&mem_id=".$mem_id."<br>";
-		$strMessage .= "=================================<br>";
+		$strMessage .= "________________________________________<br>";
 		$strMessage .= "<br>";
 
 		$flgSend = mail($strTo,$strSubject,$strMessage,$strHeader);

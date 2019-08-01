@@ -66,7 +66,7 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
 
             <!-- ------------------------------------------------------------------------------------- -->
             <div class="col-md-11">
-              <h3 align="center"> แก้ไขเกี่ยวกับ </h3>
+              <h3 align="center"> แก้ไขเกี่ยวกับร้าน </h3>
 
               <div class="table">
                 <form action="carousel_edit_foot.php"  method="post" enctype="multipart/form-data" name="Add_Product" id="Add_Product" >
@@ -79,7 +79,7 @@ $row_eprd = mysql_fetch_assoc($row_eprdt);
 
                     </tr>
                     <tr>
-                      <td align="right">เกี่ยวกับ :</td>
+                      <td align="right">เกี่ยวกับ : &nbsp;</td>
                       <td colspan="2">
 
                         <textarea name="about" cols="70" class="ckeditor" rows="5"><?php echo $row_eprd['about']; ?></textarea>

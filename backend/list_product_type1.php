@@ -55,7 +55,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
  <?php include('m.php');?>
 
   <div class="row">
-
+<center><h3>จัดการประเภทย่อยหนังสือ</h3></center>
   <div class="col-md-12">
     <?php include 'list_product_type_show.php'; ?>
     <table id="example" class="display" cellspacing="0" border="1">

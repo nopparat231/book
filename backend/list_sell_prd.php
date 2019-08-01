@@ -137,4 +137,4 @@ $totalRows_prd = mysql_num_rows($prd);
 <?php
 mysql_free_result($prd);
 ?>
-<?php include('f.php');?>
+<?php //include('f.php');?>

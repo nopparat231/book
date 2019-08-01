@@ -90,7 +90,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
                     <td><center>ปกติ</center></td>
                   <?php endif ?>
                   <?php if ($row_lbk['b_status'] == '1'): ?>
-                    <td><center>ปิดบัญชี</center></td>
+                    <td><center><font color ="red">ปิดบัญชี</center></font></td>
                   <?php endif ?>
 
                   <td><center> <a href="edit_bank.php?bank_id=<?php echo $row_lbk['b_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
@@ -107,4 +107,4 @@ $totalRows_lbk = mysql_num_rows($lbk);
   <?php
   mysql_free_result($lbk);
   ?>
-  <?php  include('f.php');?>
+  <?php  //include('f.php');?>

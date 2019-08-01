@@ -20,8 +20,14 @@
           <?php if (isset($_GET['admin'])): ?>
             ผู้ดูแลระบบ
           <?php endif ?>
-          <?php if (isset($_GET['staff'])): ?>
-            พนักงาน
+          <?php if (isset($_GET['add'])): ?>
+            พนักงานตรวจรับ
+          <?php endif ?>
+          <?php if (isset($_GET['confirm'])): ?>
+            พนักงานจัดส่ง
+          <?php endif ?>
+          <?php if (isset($_GET['sale'])): ?>
+            พนักงานขาย
           <?php endif ?>
           <?php if (isset($_GET['superadmin'])): ?>
             ผู้จัดการ
@@ -80,14 +86,18 @@
                   <?php if (isset($_GET['admin'])): ?>
                    <option value="admin">ผู้ดูแลระบบ</option>
                  <?php endif ?>
-                 <?php if (isset($_GET['staff'])): ?>
-                   <option value="staff">พนักงาน</option>
+                 <?php if (isset($_GET['add'])): ?>
                    <option value="add">พนักงานตรวจรับ</option>
-                   <option value="sale">พนักงานขาย</option>
-                   <option value="confirm">พนักงานจัดการข้อมูล</option>
+
                  <?php endif ?>
                  <?php if (isset($_GET['superadmin'])): ?>
                    <option value="superadmin">ผู้จัดการ</option>
+                 <?php endif ?>
+                 <?php if (isset($_GET['sale'])): ?>
+                   <option value="sale">พนักงานขาย</option>
+                 <?php endif ?>
+                 <?php if (isset($_GET['confirm'])): ?>
+                   <option value="confirm">พนักงานจัดส่ง</option>
                  <?php endif ?>
                </select>
              </div>

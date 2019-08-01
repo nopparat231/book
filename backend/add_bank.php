@@ -27,7 +27,7 @@
       <td colspan="3" align="center">&nbsp;</td>
     </tr>
     <tr>
-      <td width="129" align="right" valign="middle">ธนาคาร :</td>
+      <td width="129" align="right" valign="middle">ธนาคาร : &nbsp;</td>
       <td width="471" colspan="2"><label for="b_type"></label>
         <input name="b_name" type="text" required id="pro_name2" size="60"/></td>
     </tr>
@@ -36,7 +36,7 @@
       <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
-      <td align="right" valign="middle">เลขบัญชี :</td>
+      <td align="right" valign="middle">เลขบัญชี : &nbsp;</td>
       <td colspan="2"><input name="b_number" type="text" required id="b_number" size="60"/></td>
     </tr>
     <tr>
@@ -44,7 +44,7 @@
       <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
-      <td align="right" valign="middle">ประเภท :</td>
+      <td align="right" valign="middle">ประเภท : &nbsp;</td>
       <td colspan="2"><input name="b_type" type="text" required id="pro_name3" size="40"/></td>
     </tr>
     <tr>
@@ -52,7 +52,7 @@
       <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
-      <td align="right" valign="middle">สาขา :</td>
+      <td align="right" valign="middle">สาขา : &nbsp;</td>
       <td colspan="2"><input name="bn_name" type="text" required id="pro_name4" size="60"/></td>
     </tr>
     <tr>
@@ -60,7 +60,7 @@
       <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
-      <td align="right" valign="middle">ชื่อเจ้าของ บ/ช :</td>
+      <td align="right" valign="middle">ชื่อเจ้าของบัญชี : &nbsp;</td>
       <td colspan="2"><input name="b_owner" type="text" required id="pro_name5" size="60"/></td>
     </tr>
     <tr>
@@ -69,7 +69,7 @@
     </tr>
 
     <tr>
-      <td align="right" valign="middle">Logo</td>
+      <td align="right" valign="middle">โลโก้ธนาคาร : &nbsp;</td>
       <td colspan="2"><label for="b_logo"></label>
         <input type="file" name="b_logo" id="b_logo" required></td>
     </tr>

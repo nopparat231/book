@@ -1,7 +1,7 @@
 <?php require_once('Connections/condb.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -12,7 +12,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -43,12 +43,12 @@ $totalRows_rb = mysql_num_rows($rb);
  	<div class="row">
   <?php include 'how_to_order.php'; ?>
     	<div class="col-md-8" style="background-color: #FFFFFF">
-        		<h3 align="center" > เลขบัญชีสำหรับชำระเงิน </h3><br>
+        		<h3 align="center" > เลขบัญชีสำหรับชำระเงิน </h3>
                 <!-- <font color="red"> *กรุณา Login เพื่อชำระเงิน </font> </h3> -->
-              
+
                   <div class="table-responsive">
                 <table border="0" align="center" class="table table-hover">
-             
+
                   <tr class="success">
                     <td></td>
                     <td>ธนาคาร</td>
@@ -70,10 +70,9 @@ $totalRows_rb = mysql_num_rows($rb);
                 </table>
         </div>
 
-        <p align="right" >
-<button type="button" class="btn btn-default" data-dismiss="modal"  >ปิด</button>
-                <br>
-             
+
+              
+
 </p>
       </div>
       </div>

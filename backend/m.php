@@ -41,15 +41,42 @@
 																					echo "พนักงานตรวจรับ";}
 																					elseif($row_mm['status'] == 'sale'){
 																					echo "พนักงานขาย";}
-																					else{
+																					elseif($row_mm['status'] == 'confirm'){
 																					echo "พนักงานจัดส่ง";}
+																					else {
+																						echo "<font color = 'red';>ยกเลิกบัญชี</font>";
+																					}
 								?></a>
 							</li>
 						</ul>
 
 						<ul class="nav navbar-right top-nav">
 							<li>
-								<a  href="#">  รหัสพนักงาน : BK00<?php echo $row_mm['admin_id'];?></a>
+								<a  href="#">  รหัสพนักงาน : <?php if($row_mm['status'] == 'admin'){
+									 																	echo "AD00";
+									 																	echo $row_mm['admin_id'];}
+																							elseif($row_mm['status'] == 'superadmin'){
+																										echo "MA00";
+																										echo $row_mm['admin_id'];}
+																							elseif($row_mm['status'] == 'staff'){
+																										echo "ST00";
+																										echo $row_mm['admin_id'];}
+																							elseif($row_mm['status'] == 'add'){
+																										echo "SA00";
+																										echo $row_mm['admin_id'];}
+																							elseif($row_mm['status'] == 'sale'){
+																										echo "SS00";
+																										echo $row_mm['admin_id'];}
+																							elseif($row_mm['status'] == 'confirm'){
+																								echo "SC00";
+																								echo $row_mm['admin_id'];}
+																								else{
+																									echo "EX00";
+																									echo $row_mm['admin_id'];}
+
+
+
+									?></a>
 							</li>
 						</ul>
 
@@ -62,6 +89,7 @@
 
 						<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 						<div class="collapse navbar-collapse navbar-ex1-collapse">
+
 							<ul class="nav navbar-nav side-nav">
 
 
@@ -70,6 +98,7 @@
 										font-size: 20px;
 									}
 								</style>
+
 
 								<li>
 									<a href="index.php" class="font"><img src="../icon/admin/home.png" alt="หน้าหลัก">  หน้าหลัก</a>
@@ -121,9 +150,7 @@
 
 								<?php
 								}elseif ($row_mm['status'] == 'sale') { ?>
-								<li>
-									<a href="list_product_type.php?list"  class="font"><img src="../icon/staff/edittype.png" alt="จัดการประเภทหนังสือ">  จัดการประเภทหนังสือ</a>
-								</li>
+
 								<li>
 									<a href="list_bank.php" class="font"><img src="../icon/staff/bank.png" alt="">  จัดการข้อมูลธนาคาร</a>
 								</li>
@@ -152,7 +179,10 @@
 								<?php } elseif($row_mm['status'] == 'superadmin') { ?>
 
 									<li>
-										<a href="list_admin.php" class="font"><img src="../icon/manager/admin.png" alt="">  รายงานผู้ดูแลระบบ</a>
+										<a href="list_admin.php" class="font"><img src="../icon/manager/admin.png" alt="">  รายงานผู้ใช้งานระบบ</a>
+									</li>
+									<li>
+										<a href="list_member.php" class="font"><img src="../icon/manager/member.png" alt="">  รายงานข้อมูลลูกค้า</a>
 									</li>
 									<li>
 										<a href="report_all_sell.php" class="font"><img src="../icon/manager/booksell.png" alt="">  รายงานตรวจรับหนังสือ</a>
@@ -163,11 +193,15 @@
 									<li>
 										<a href="report_all_prd.php" class="font"><img src="../icon/manager/book.png" alt="">  รายงานข้อมูลหนังสือ</a>
 									</li>
+
 									<li>
-										<a href="list_member.php" class="font"><img src="../icon/manager/member.png" alt="">  รายงานข้อมูลลูกค้า</a>
+										<a href="report_order.php" class="font"><img src="../icon/manager/bookbuy.png" alt="">  รายงานการสั่งซื้อ</a>
 									</li>
 									<li>
-										<a href="report_all_order.php" class="font"><img src="../icon/manager/bookbuy.png" alt="">  รายงานการสั่งซื้อ</a>
+										<a href="report_pay.php" class="font"><img src="../icon/manager/bookbuy.png" alt="">  รายงานการชำระเงิน</a>
+									</li>
+									<li>
+										<a href="report_sent.php" class="font"><img src="../icon/manager/bookbuy.png" alt="">  รายงานการจัดส่งสินค้า</a>
 									</li>
 									<li>
 										<a href="report_all_bank.php" class="font"><img src="../icon/manager/bank.png" alt="">  รายงานข้อมูลธนาคาร</a>
@@ -179,10 +213,10 @@
 										<a href="adduser_admin.php" class="font"><img src="../icon/Admin/adduser.png" alt="">  เพิ่มผู้ใช้งานระบบ</a>
 									</li>
 									<li>
-										<a href="list_admin.php" class="font"><img src="../icon/Admin/editadmin.png" alt="">  จัดการผู้ดูแลระบบ</a>
+										<a href="list_admin.php" class="font"><img src="../icon/Admin/editadmin.png" alt="">  จัดการผู้ใช้งานระบบ</a>
 									</li>
 									<li>
-										<a href="list_member.php" class="font"><img src="../icon/Admin/edituser.png" alt="">  จัดการสมาชิก</a>
+										<a href="list_member.php" class="font"><img src="../icon/Admin/edituser.png" alt="">  จัดการลูกค้า</a>
 									</li>
 								<?php } ?>
 							</ul>
