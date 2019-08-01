@@ -28,16 +28,25 @@ $sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address', '$addr
 
 $query1 = mysql_query($sql1,$condb ) or die ("Error in query : sql1 " . mysql_error());
 
-//เพิ่มที่อยู่ที่สอง
-$sqlorder ="UPDATE tbl_member SET mem_address2 = '$address' WHERE mem_id = '$mem_id'";
+if ($st == 1) {
+//เพิ่มที่อยู่ที่1
+	$sqlorder ="UPDATE tbl_member SET mem_address = '$address', mem_address_st = '1' WHERE mem_id = '$mem_id'";
 
-$sqlorderr = mysql_query($sqlorder,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
+	$sqlorderr = mysql_query($sqlorder,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
 
-if (isset($st) == 1) {
-	//เพิ่มที่อยู่ที่1
-	$sqlorder2 ="UPDATE tbl_member SET mem_address = '$address2' WHERE mem_id = '$mem_id'";
+	$sqlorder2 ="UPDATE tbl_member SET mem_address2 = '$address2' WHERE mem_id = '$mem_id'";
 
 	$sqlorderr2 = mysql_query($sqlorder2,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
+}
+if ($st == 2) {
+	//เพิ่มที่อยู่ที่2
+	$sqlorder2 ="UPDATE tbl_member SET mem_address = '$address2', mem_address_st = '1' WHERE mem_id = '$mem_id'";
+
+	$sqlorderr2 = mysql_query($sqlorder2,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
+
+	$sqlorder ="UPDATE tbl_member SET mem_address2 = '$address' WHERE mem_id = '$mem_id'";
+
+	$sqlorderr = mysql_query($sqlorder,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
 }
 
 

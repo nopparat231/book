@@ -79,13 +79,13 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
             <label><font size="2">จากวัน</font></label>
           </div>
           <div class="col-md-4">
-            <input id="inputdatepicker" class="datepicker" name="start_date" type="text"  autocomplete="off"  />
+            <input id="inputdatepicker" class="datepicker" name="start_date" type="date"  autocomplete="off"  />
           </div>
           <div class="col-md-1">
             <label><font size="2">ถึงวันที่</font></label>
           </div>
           <div class="col-md-4">
-           <input  id="inputdatepicker" class="datepicker" name="end_date" type="text"  autocomplete="off"  />
+           <input  id="inputdatepicker" class="datepicker" name="end_date" type="date"  autocomplete="off"  />
          </div>
 
          <div class="col-md-2">

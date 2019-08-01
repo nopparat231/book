@@ -58,7 +58,6 @@ if($_SESSION['MM_Username']!=''){
   ?>
 
 
-  
   <form  name="formlogin" action="saveorder.php" method="POST" id="login" class="form-horizontal">
     <div class="col-md-6"> 
 
@@ -75,19 +74,20 @@ if($_SESSION['MM_Username']!=''){
         </div>
       </div>
 
+    <?php if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
+          $sc = 'checked';
+          //$dd = 'dissable';
+        }
+          ?>
 
       <div class="form-group" >
         <div class="col-sm-11">
           <textarea name="address" class="form-control" id="oldadd"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea>
         </div>
 
-        <?php if ($row_buyer['mem_address_st'] == 0){
-          $sc = 'checked';
-        }
-          ?>
 
           <div class="col-sm-1" id="cka">
-            <input type="radio" name="st" value="0" <?php echo $sc; ?> >
+            <input type="radio" name="st" value="1" <?php echo $sc; ?> >
           </div>
 
 
@@ -105,7 +105,7 @@ if($_SESSION['MM_Username']!=''){
             <textarea name="address2" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"></textarea>
           </div>
           <div class="col-sm-1">
-            <input type="radio" name="st" value="1" checked >
+            <input type="radio" name="st" value="2" id="addre" >
           </div>
 
         </div>
@@ -115,13 +115,13 @@ if($_SESSION['MM_Username']!=''){
           <div class="col-sm-11">
             <textarea name="address2" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address2']; ?></textarea>
           </div>
-          <?php if ($row_buyer['mem_address_st'] == 1){
+          <?php if ($row_buyer['mem_address_st'] == 2){
             $sc1 = 'checked';
           }
             ?>
 
             <div class="col-sm-1">
-              <input type="radio" name="st" value="1" <?php echo $sc1; ?> >
+              <input type="radio" name="st" value="2" <?php echo $sc1; ?> >
             </div>
 
 
@@ -331,6 +331,7 @@ if($_SESSION['MM_Username']!=''){
     $('#add').click(function() {
       $(this).siblings("#add2").fadeToggle();
      document.getElementById("cka").style.display = "none";
+     document.getElementById("addre").checked = true;
    });
   });
 </script>
