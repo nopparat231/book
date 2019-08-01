@@ -87,7 +87,7 @@ if($_SESSION['MM_Username']!=''){
           ?>
 
           <div class="col-sm-1" id="cka">
-            <input type="radio" name="st" <?php echo $sc; ?> >
+            <input type="radio" name="st" value="0" <?php echo $sc; ?> >
           </div>
 
 
@@ -105,7 +105,7 @@ if($_SESSION['MM_Username']!=''){
             <textarea name="address2" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"></textarea>
           </div>
           <div class="col-sm-1">
-            <input type="radio" name="st" checked >
+            <input type="radio" name="st" value="1" checked >
           </div>
 
         </div>
@@ -121,7 +121,7 @@ if($_SESSION['MM_Username']!=''){
             ?>
 
             <div class="col-sm-1">
-              <input type="radio" name="st" <?php echo $sc1; ?> >
+              <input type="radio" name="st" value="1" <?php echo $sc1; ?> >
             </div>
 
 

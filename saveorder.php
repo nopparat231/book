@@ -21,16 +21,25 @@ $pay_amount = '';
 $p_name = $_POST['p_name'];
 $pos_ems = $_POST['ems'];
 $postcode = '';
-
+$st = $_POST['st'];
+mysql_select_db($database_condb);
 mysql_query("BEGIN" ,$condb );
 $sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address', '$address2','$email','$phone','$status','$pay_slip','$b_name','$b_number','$pay_date','$pay_amount','$postcode','$pos_ems','$order_date')";
 
 $query1 = mysql_query($sql1,$condb ) or die ("Error in query : sql1 " . mysql_error());
 
 //เพิ่มที่อยู่ที่สอง
-$sqlorder ="UPDATE tbl_member SET mem_address2 = '$address2' WHERE mem_id = '$mem_id'";
+$sqlorder ="UPDATE tbl_member SET mem_address2 = '$address' WHERE mem_id = '$mem_id'";
 
 $sqlorderr = mysql_query($sqlorder,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
+
+if (isset($st) == 1) {
+	//เพิ่มที่อยู่ที่1
+	$sqlorder2 ="UPDATE tbl_member SET mem_address = '$address2' WHERE mem_id = '$mem_id'";
+
+	$sqlorderr2 = mysql_query($sqlorder2,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
+}
+
 
 $sql2 = "SELECT MAX(order_id) AS order_id FROM tbl_order WHERE mem_id='$mem_id'";
 $query2 = mysql_query($sql2,$condb  )or die ("Error in query : sql2 " . mysql_error());
