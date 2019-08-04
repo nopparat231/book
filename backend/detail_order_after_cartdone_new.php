@@ -260,11 +260,20 @@ if($status > 1){ ?>
         <tr>
           <td  align="left" valign="top"><br>
            <strong>
-            ชื่อผู้รับ  : <?php echo $row_buyer['mem_name'];?> <br />
+            <?php                       
+            $sqlorder = "SELECT * FROM tbl_order WHERE order_id = '$colname_cartdone'";
+            $sqy = mysql_query($sqlorder , $condb);
+            $add = mysql_fetch_assoc($sqy); 
+            ?>
 
-            เบอร์โทร : <?php echo $row_buyer['mem_tel'];?> <br />
+            ชื่อผู้รับ  : <?php echo $add['name'];?> <br />
 
-            ที่อยู่จัดส่ง : <?php echo $row_buyer['mem_address'];?> <br />
+            เบอร์โทร : <?php echo $add['phone'];?> <br />
+
+            ที่อยู่จัดส่ง : <?php echo $add['address']; ?>
+
+
+            <br />
             <hr style="border-radius: 15px;border: 1px solid black; ">
 
 
@@ -493,11 +502,20 @@ if($status > 1){ ?>
                   <tr>
                     <td  align="left" valign="top"><br>
                      <strong>
-                      ชื่อผู้รับ  : <?php echo $row_buyer['mem_name'];?> <br />
+                      <?php                       
+                      $sqlorder = "SELECT * FROM tbl_order WHERE order_id = '$colname_cartdone'";
+                      $sqy = mysql_query($sqlorder , $condb);
+                      $add = mysql_fetch_assoc($sqy); 
+                      ?>
 
-                      เบอร์โทร : <?php echo $row_buyer['mem_tel'];?> <br />
+                      ชื่อผู้รับ  : <?php echo $add['name'];?> <br />
 
-                      ที่อยู่จัดส่ง : <?php echo $row_buyer['mem_address'];?> <br />
+                      เบอร์โทร : <?php echo $add['phone'];?> <br />
+
+                      ที่อยู่จัดส่ง : <?php echo $add['address']; ?>
+
+
+                      <br />
                       <hr style="border-radius: 15px;border: 1px solid black; ">
 
 

@@ -24,9 +24,14 @@ $postcode = '';
 $st = $_POST['st'];
 mysql_select_db($database_condb);
 mysql_query("BEGIN" ,$condb );
-$sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address', '$address2','$email','$phone','$status','$pay_slip','$b_name','$b_number','$pay_date','$pay_amount','$postcode','$pos_ems','$order_date')";
+$sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address','$email','$phone','$status','$pay_slip','$b_name','$b_number','$pay_date','$pay_amount','$postcode','$pos_ems','$order_date')";
 
 $query1 = mysql_query($sql1,$condb ) or die ("Error in query : sql1 " . mysql_error());
+
+$sql2 = "SELECT MAX(order_id) AS order_id FROM tbl_order WHERE mem_id='$mem_id'";
+$query2 = mysql_query($sql2,$condb  )or die ("Error in query : sql2 " . mysql_error());
+$row = mysql_fetch_array($query2)or die(mysql_error());
+$order_id = $row['order_id'];
 
 if ($st == 1) {
 //เพิ่มที่อยู่ที่1
@@ -34,26 +39,26 @@ if ($st == 1) {
 
 	$sqlorderr = mysql_query($sqlorder,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
 
-	$sqlorder2 ="UPDATE tbl_member SET mem_address2 = '$address2' WHERE mem_id = '$mem_id'";
 
-	$sqlorderr2 = mysql_query($sqlorder2,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
+	$sqlorder3 ="UPDATE tbl_order SET address = '$address' WHERE order_id = '$order_id'";
+
+	$sqlorderr3 = mysql_query($sqlorder3,$condb  )or die ("Error in query : sqlorderr3 " . mysql_error());
 }
 if ($st == 2) {
 	//เพิ่มที่อยู่ที่2
-	$sqlorder2 ="UPDATE tbl_member SET mem_address = '$address2', mem_address_st = '1' WHERE mem_id = '$mem_id'";
+	
+
+	$sqlorder2 ="UPDATE tbl_member SET mem_address2 = '$address2' , mem_address_st = '2' WHERE mem_id = '$mem_id'";
 
 	$sqlorderr2 = mysql_query($sqlorder2,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
 
-	$sqlorder ="UPDATE tbl_member SET mem_address2 = '$address' WHERE mem_id = '$mem_id'";
+	$sqlorder3 ="UPDATE tbl_order SET address = '$address2' WHERE order_id = '$order_id'";
+	$sqlorderr3 = mysql_query($sqlorder3,$condb  )or die ("Error in query : sqlorderr3 " . mysql_error());
 
-	$sqlorderr = mysql_query($sqlorder,$condb  )or die ("Error in query : sqlorderr " . mysql_error());
 }
 
 
-$sql2 = "SELECT MAX(order_id) AS order_id FROM tbl_order WHERE mem_id='$mem_id'";
-$query2 = mysql_query($sql2,$condb  )or die ("Error in query : sql2 " . mysql_error());
-$row = mysql_fetch_array($query2)or die(mysql_error());
-$order_id = $row['order_id'];
+
 
 foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
 {
@@ -62,7 +67,7 @@ foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
 	$row3 = mysql_fetch_array($query3)or die(mysql_error());
 
 	$count = mysql_num_rows($query3)or die(mysql_error());
-
+	//$sum  = $row3['p_price']*$p_qty;
 
 	$sql4 = "INSERT INTO tbl_order_detail VALUES(null , '$order_id','$p_id','$p_name','$p_qty','$total')";
 	$query4 = mysql_query($sql4,$condb  )or die ("Error in query : sql4 " . mysql_error());
