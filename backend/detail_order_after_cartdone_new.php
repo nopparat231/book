@@ -332,7 +332,7 @@ if($status > 1){ ?>
     </tr>
 
     <tr>
-     <td style="width: 300px">ค่าจัดส่ง</td>
+     <td style="width: 300px">ค่าจัดส่ง <?php echo $add['emss']; ?> </td>
      <td ></td>
      <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
    </tr>
@@ -579,7 +579,7 @@ if($status > 1){ ?>
               </tr>
 
               <tr>
-               <td style="width: 300px">ต่าจัดส่ง</td>
+               <td style="width: 300px">ค่าจัดส่ง <?php echo $add['emss']; ?> </td>
                <td ></td>
                <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
              </tr>

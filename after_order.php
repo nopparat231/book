@@ -10,61 +10,65 @@ $q = $p_qty;
 if($q == 0){
   echo "<br><br>";
   echo "<font size=6><center>ไม่มีสินค้าในตระกร้า</center></font>";
-echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>";
+  echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>";
 }
 else{?>
-<div class="col-md-8">
-  <form id="frmcart" name="frmcart" method="post" action="?act=update&oct=after" >
-    <table width="100%" border="0" aligh="center" class="table table-striped">
-      <thead>
-        <tr>
-          <th height="40" colspan="8" align="center"><h2>หนังสือในตะกร้า <?php echo $meQty; ?> ชิ้น</h2></th>
+  <div class="col-md-8">
+    <form id="frmcart" name="frmcart" method="post" action="?act=update&oct=after" >
+      <table width="100%" border="0" aligh="center" class="table table-striped">
+        <thead>
+          <tr>
+            <th height="40" colspan="8" align="center"><h2>หนังสือในตะกร้า <?php echo $meQty; ?> ชิ้น</h2></th>
+          </tr>
+        </thead>
+        <tr >
+          <td>รูปหนังสือ</td>
+          <td>รายละเอียด</td>
+
+          <td><center>ราคา</center></td>
+          <td><center>จำนวน</center></td>
+          <td><center>น้ำหนัก</center></td>
+
+          <td align="right">ราคารวม</td>
+          <td><center></center></td>
         </tr>
-      </thead>
-      <tr >
-        <td>รูปหนังสือ</td>
-        <td>รายละเอียด</td>
 
-        <td><center>ราคา</center></td>
-        <td><center>จำนวน</center></td>
-        <td><center>น้ำหนัก</center></td>
+        <script type="text/javascript">
 
-        <td align="right">ราคารวม</td>
-        <td><center></center></td>
-      </tr>
+          onunload = function()
+          {
+            var foo = document.getElementById('foo');
+            self.name = 'fooidx' + foo.selectedIndex;
+          }
 
-      <script type="text/javascript">
+          onload = function()
+          {
+            var idx, foo = document.getElementById('foo');
+            foo.selectedIndex = (idx = self.name.split('fooidx')) ? idx[1] : 0;
+          }
 
-        onunload = function()
+        </script>
+
+        <?php
+        $total=0;
+
+        if ($_GET['tems']) {
+          $ttems = $_GET['tems']; ?>
+
+          <input type="text" name="emss" hidden="hidden" value="<?php echo $emss; ?>"/>
+        <?php  }else{
+          $ttems = $_POST['tems']; ?>
+
+
+        <?php  }
+        if(!empty($_SESSION['shopping_cart']))
         {
-          var foo = document.getElementById('foo');
-          self.name = 'fooidx' + foo.selectedIndex;
-        }
-
-        onload = function()
-        {
-          var idx, foo = document.getElementById('foo');
-          foo.selectedIndex = (idx = self.name.split('fooidx')) ? idx[1] : 0;
-        }
-
-      </script>
-
-      <?php
-      $total=0;
-
-      if ($_GET['tems']) {
-        $ttems = $_GET['tems'];
-      }else{
-        $ttems = $_POST['tems'];
-      }
-      if(!empty($_SESSION['shopping_cart']))
-      {
-        require_once('Connections/condb.php');
-        foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
-        {
-          $sql = "select * from tbl_product  where p_id=$p_id";
-          $query = mysql_query($sql, $condb );
-          $row = mysql_fetch_array($query);
+          require_once('Connections/condb.php');
+          foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
+          {
+            $sql = "select * from tbl_product  where p_id=$p_id";
+            $query = mysql_query($sql, $condb );
+            $row = mysql_fetch_array($query);
 
           $sqlt = "select * from tbl_type  where t_id=".$row["t_id"];//ดึงข้อมูลประเภท t_id
           $queryt = mysql_query($sqlt, $condb );
@@ -97,7 +101,7 @@ else{?>
           echo "<td width='15%' align='center'>";
           ?>
 
-          <input type="hidden" name="ttems" value="<?php echo $ems; ?>">
+          <input type="hidden" name="ttems" value="<?php echo $ttems; ?>">
           <input type='number' min="0" max= "<?php echo $row['p_qty']; ?>" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>
           <?php
 
@@ -192,13 +196,14 @@ else{?>
        ?>
 
        <input type="number" name="sumems" hidden="hidden" value="<?php echo $tems ?>"/>
+
        <script>alert('รายการสินค้า "<?php echo $row["p_name"] ?>" มีสินค้าเพียง "<?php echo $row["p_qty"] ?>" ชิ้น!'); </script>
        <tr >
 
         <td colspan="6" >
 
 
-          <input type="button" name="Submit2" value="สั่งซื้อ" disabled class="btn btn-success pull-right" onclick="window.location='confirm_order.php?p_id=$p_id&oct=order&sumems=<?php echo $tems ?>';" />
+          <input type="button" name="Submit2" value="สั่งซื้อ" disabled class="btn btn-success pull-right" onclick="window.location='confirm_order.php?p_id=$p_id&oct=order&emss=<?php echo $ttems ?>&sumems=<?php echo $tems ?>';" />
 
           <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning pull-right"  />
 
@@ -211,16 +216,20 @@ else{?>
               <?php if ($sumems == 0): ?>
 
               <?php endif ?>
-              <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success pull-right" onclick="window.location='confirm_order.php?p_id=$p_id&oct=order&sumems=<?php echo $tems ?>';" />
 
-              <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning pull-left"  />
+              <?php if (isset($_GET['emss'])) {
+               $emss = $_GET['emss'];
+             } ?>
+             <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success pull-right" onclick="window.location='confirm_order.php?p_id=$p_id&oct=order&emss=<?php echo $ttems ?>&sumems=<?php echo $tems ?>';" />
 
+             <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning pull-left"  />
+             <input type="text" name="emss" hidden="hidden" value="<?php echo $emss;; ?>"/>
 
-            <?php }} ?>
+           <?php }} ?>
 
-          </td>
-        </tr>
-      </table>
-    </form>
-  </div>
-  <br><br><br><br><br><br><br><br><br>
+         </td>
+       </tr>
+     </table>
+   </form>
+ </div>
+ <br><br><br><br><br><br><br><br><br>

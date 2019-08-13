@@ -147,7 +147,10 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
 <div class="form-group">
   <div class="col-sm-12" align="center">
     <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_buyer['mem_id']; ?>">
-
+       <?php if (isset($_GET['emss'])) {
+         $emss = $_GET['emss'];
+       } ?>
+       <input type="text" name="emss" hidden="hidden" value="<?php echo $emss; ?>"/>
 
     <a href="confirm_order.php?act=up&oct=after&tems=ems" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
 
@@ -264,7 +267,7 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
         </tr>
 
         <tr>
-         <td style="width: 300px">จัดส่ง</td>
+         <td style="width: 300px">จัดส่ง <?php echo $emss; ?></td>
          <td ></td>
          <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
        </tr>
