@@ -218,7 +218,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
             <tr>
               <td width="129" align="right" valign="middle">จำนวนหนังสือ :</td>
               <td colspan="2"><label for="p_qty"></label>
-                <input name="p_qty" type="number" required id="p_qty" value="<?php echo $row_eprd['p_qty']; ?>" size="5"/></td>
+                <input name="p_qty" min="0"type="number" required id="p_qty" value="<?php echo $row_eprd['p_qty']; ?>" size="5"/></td>
               </tr>
 
               <tr>
@@ -244,7 +244,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
               <tr>
                 <td width="129" align="right" valign="middle">น้ำหนัก :</td>
                 <td colspan="2"><label for="p_ems"></label>
-                  <input name="p_ems" type="number" required id="p_ems" value="<?php echo $row_eprd['p_ems']; ?>" size="5"/> กรัม</td>
+                  <input name="p_ems" min="0" type="number" required id="p_ems" value="<?php echo $row_eprd['p_ems']; ?>" size="5"/> กรัม</td>
                 </tr>
                 <tr>
                   <td align="right" valign="middle">&nbsp;</td>
@@ -253,7 +253,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
                 <tr>
                   <td align="right" valign="middle">ราคาขาย :</td>
                   <td width="2"><label for="p_price"></label>
-                   <input name="p_price" type="number" required id="p_price" value="<?php echo $row_eprd['p_price']; ?>" size="5"/></td>
+                   <input name="p_price"min="0" type="number" required id="p_price" value="<?php echo $row_eprd['p_price']; ?>" size="5"/></td>
                  </tr>
 
 
@@ -264,7 +264,7 @@ $totalRows_ptype = mysql_num_rows($ptype);
               <tr>
                 <td align="right" valign="middle">ราคาก่อนลด :</td>
                 <td width="2"><label for="promo"></label>
-                 <input name="promo" type="number" required id="promo" value="<?php echo $row_eprd['promo']; ?>" size="5"/></td>
+                 <input name="promo" min="0"type="number" required id="promo" value="<?php echo $row_eprd['promo']; ?>" size="5"/></td>
                </tr>
                <?php $dd = date('Y-m-d'); ?>
                <tr>

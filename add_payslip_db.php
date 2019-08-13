@@ -5,7 +5,7 @@ include('Connections/condb.php');
 error_reporting(E_ALL ^ E_DEPRECATED);
 error_reporting( error_reporting());
 
-session_start(); 
+session_start();
   date_default_timezone_set('Asia/Bangkok');
   $date1 = date("Ymd_His");
   $numrand = (mt_rand()); //สุมชื่อไฟล์อัสุมชื่อไฟล์อัพโหลด
@@ -15,6 +15,7 @@ $result_explode = explode('_', $resultb);
 $b_name= $result_explode[0];
 $b_number = $result_explode[1];
 $pay_date = $_POST['pay_date'];
+$time_date = $_POST['time_date'];
 $pay_amount = $_POST['pay_amount'];
 $order_id = $_POST['order_id'];
 $order_status = 2;
@@ -38,7 +39,7 @@ print_r($_POST['bank']);
 }
 
 
-$sql = "UPDATE tbl_order SET order_status = '$order_status', pay_amount = '$pay_amount', pay_date = '$pay_date' , b_name = '$b_name',
+$sql = "UPDATE tbl_order SET order_status = '$order_status', pay_amount = '$pay_amount', pay_date = '$pay_date' , time_date = '$time_date' , b_name = '$b_name',
 b_number = '$b_number', pay_slip = '$newname' WHERE order_id = '$order_id'";
 
 $result = mysql_query($sql, $condb) or die("Error in query : sql" .mysql_error());

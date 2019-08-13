@@ -99,7 +99,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
                   <td>ปกติ</td>
                 <?php endif ?>
                 <?php if ($row_lbk['s_status'] == '1'): ?>
-                  <td>ยกเลิก</td>
+                  <td><font color="red">ยกเลิก</font></td>
                 <?php endif ?>
 
                 <td><center> <a href="list_sell_prd.php?sell_prd=<?php echo $row_lbk['s_id'];?>" class="btn btn-warning btn-xs"> สินค้า </a> </center> </td>

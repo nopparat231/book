@@ -151,7 +151,7 @@ if($status > 1){ ?>
  </tr>
 
  <tr>
-  <td >จำนวณเงิน : </td>
+  <td >จำนวนเงิน : </td>
   <td colspan="5" align="left"><label for="pay_date"></label>
     <?php echo  number_format($row_cartdone['pay_amount'],2);?> บาท
   </td>
@@ -168,7 +168,7 @@ if($status > 1){ ?>
 <tr>
   <td >เวลาที่ชำระเงิน : </td>
   <td colspan="5" align="left"><label for="pay_amount"></label>
-    <?php $old_startTime = date("H:i",strtotime($row_cartdone['order_date'])); ?>
+    <?php $old_startTime = date("H:i",strtotime($row_cartdone['time_date'])); ?>
     <?php echo date($old_startTime);?>
 
   </td>
@@ -223,7 +223,7 @@ if($status > 1){ ?>
 <div class="col-md-6">
 
 
-  <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"></span></a>
+  <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-success btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"></span> พิมพ์ใบเสร็จ</a>
 
   <table border="1" align="left" class="table" style=" border-style: solid;
   border-color: coral;">
@@ -234,16 +234,16 @@ if($status > 1){ ?>
     </tr>
     <tr>
 
-      <td colspan="6" align="left">*ข้อมูลการจัดส่ง
+      <td colspan="6" align="left"><b><font color="red">*</font>ข้อมูลการจัดส่ง</b>
 
         <table border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td  align="left" valign="top"><br>
              <strong>
-              <?php                       
+              <?php
               $sqlorder = "SELECT * FROM tbl_order WHERE order_id = '$colname_cartdone'";
               $sqy = mysql_query($sqlorder , $condb);
-              $add = mysql_fetch_assoc($sqy); 
+              $add = mysql_fetch_assoc($sqy);
               ?>
 
               ชื่อผู้รับ  : <?php echo $add['name'];?> <br />
@@ -263,13 +263,13 @@ if($status > 1){ ?>
       </table>
 
       <table border="0" cellspacing="0" cellpadding="0">
-        <tr><td><strong>*รายการสั่งซื้อ <br><br></strong></td></tr>
+        <tr><td><strong><font color="red">*</font>รายการสั่งซื้อ <br><br></strong></td></tr>
 
         <tr>
 
-          <td><strong>รายการสินค้า</strong></td>
-          <td><strong>จำนวณ</strong></td>
-          <td style="text-align: center;"><strong>รวม</strong></td>
+          <td width = 62%><strong>รายการหนังสือ</strong></td>
+          <td width = 10%><strong>จำนวน</strong></td>
+          <td width = 28% style="text-align: center;"><strong>รวม</strong></td>
 
         </tr>
 
@@ -286,9 +286,9 @@ if($status > 1){ ?>
 
 
           <tr>
-            <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,35,'utf-8')." ...";?></td>
+            <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,30,'utf-8')." ...";?></td>
             <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
-            <td  ><?php echo number_format($sum,2)." บาท";?></td>
+            <td align="right" ><?php echo number_format($sum,2)." บาท";?></td>
           </tr>
 
         <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone));
@@ -312,9 +312,9 @@ if($status > 1){ ?>
       </tr>
 
       <tr>
-       <td style="width: 300px">จัดส่ง</td>
+       <td style="width: 300px">ค่าจัดส่ง</td>
        <td ></td>
-       <td ><?php echo number_format($sumw,2)." บาท"; ?></td>
+       <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
      </tr>
      <tr>
       <td></td>
@@ -325,7 +325,7 @@ if($status > 1){ ?>
     <tr>
      <td style="width: 300px">ภาษี 7%</td>
      <td ></td>
-     <td ><?php echo number_format($tax,2)." บาท"; ?></td>
+     <td align = "right"style="width: 50%"><?php echo number_format($tax,2)." บาท"; ?></td>
    </tr>
  </table>
 
@@ -341,7 +341,7 @@ if($status > 1){ ?>
   <tr>
    <td style="width: 300px"><b>ยอดสุทธิ</b></td>
    <td ></td>
-   <td ><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
+   <td align = "right"style="width: 50%"><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
 
  </tr>
 
@@ -359,7 +359,6 @@ if($status > 1){ ?>
 </div>
 
 
-
 <?php }else{?>
   <form action="add_payslip_db.php" method="post" enctype="multipart/form-data" name="formpay" id="formpay">
     <br /><br />
@@ -368,6 +367,7 @@ if($status > 1){ ?>
         <tr>
           <td colspan="5" align="left" bgcolor="#FFFFFF">
            <h3>แจ้งชำระเงิน </h3>
+
 
 
            <h5 align="left" style="color: red;" >*รายการสั่งซื้อจะถูกยกเลิก ถ้าหากไม่ชำระเงินภายใน 3 วัน</h5>
@@ -403,9 +403,9 @@ if($status > 1){ ?>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td >วันที่ชำระเงิน</td>
-          <td colspan="5" align="left"><label for="pay_date"></label>
-            <input type="time" id="pay_date" value="<?php echo date("H:i"); ?>"/></td>
+          <td >เวลาชำระเงิน</td>
+          <td colspan="5" align="left"><label for="time_date"></label>
+            <input type="time" name="time_date" id="time_date" value="<?php echo date("H:i"); ?>"/></td>
           </tr>
           <tr>
             <td >&nbsp;</td>
@@ -415,11 +415,21 @@ if($status > 1){ ?>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
+
+          <?php
+          $sqlordertt = "SELECT * FROM tbl_order_detail WHERE order_id = '$colname_cartdone'";
+          $sqytt = mysql_query($sqlordertt , $condb);
+          $addtt = mysql_fetch_assoc($sqytt);
+          ?>
+
           <tr>
             <td >จำนวนเงิน</td>
             <td colspan="5" align="left"><label for="pay_amount"></label>
-              <input type="number" name="pay_amount" pattern="([0-9]{1,3}).([0-9]{1,3})" step='0.01' id="pay_amount" required="required"/></td>
+              <input type="number" step="0.01" name="pay_amount" pattern="([0-9]{1,3}).([0-9]{1,3})" value="<?php echo $addtt['total'] ?>" required="required" value="" /></td>
             </tr>
+
+
+
             <tr>
               <td >&nbsp;</td>
               <td >&nbsp;</td>
@@ -430,7 +440,7 @@ if($status > 1){ ?>
             </tr>
 
             <tr>
-              <td >หลักฐานการโอน</td>
+              <td >หลักฐานการโอน </td>
               <td colspan="5" align="left"><input name="pay_slip" id="pay_slip" type="file"  required="required" accept="image/jpeg"/>
               (ไฟล์ .jpg, gif, png, pdf&nbsp;ไม่เกิน 2mb)</td>
             </tr>
@@ -442,111 +452,122 @@ if($status > 1){ ?>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
             </tr>
-            <tr><td><strong>*โอนไปยังบัญชี<br></strong></td></tr>
-            <?php do { ?>
-              <tr>
-
-                <td align="center">
-                  <input <?php if (!(strcmp($row_rb['b_name'],"b_bank"))) {echo "checked=\"checked\"";} ?> type="radio" name="bank"  value="<?php echo $row_rb['b_name'].'_'.$row_rb['b_number'];?>" required="required" />
-                  <img src="bimg/<?php echo $row_rb['b_logo']; ?>" width="50" />
-                </td>
-
-                <td></td>
-                <td><?php echo $row_rb['b_name']; ?></td>
-                <td> <?php echo $row_rb['b_number']; ?></td>
-                <td><strong>สาขา</strong><?php echo $row_rb['bn_name']; ?></td>
-              </tr>
-            <?php } while ($row_rb = mysql_fetch_assoc($rb)); ?>
-
-          </table>
-
-        </div>
-
-
-        <div class="col-md-6">
-
-          <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" ><span class="glyphicon glyphicon-print"></span></a>
-
-          <table border="1" align="left" class="table" style=" border-style: solid;
-          border-color: coral;">
-          <tr>
-
-            <td colspan="7" align="center"  bgcolor="#FF8D33"><strong>สรุปรายการสั่งซื้อ<br />
-
-            </tr>
-            <tr>
-
-              <td colspan="6" align="left">*ข้อมูลการจัดส่ง
-
-                <table border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td  align="left" valign="top"><br>
-                     <strong>
-                      <?php                       
-                      $sqlorder = "SELECT * FROM tbl_order WHERE order_id = '$colname_cartdone'";
-                      $sqy = mysql_query($sqlorder , $condb);
-                      $add = mysql_fetch_assoc($sqy); 
-                      ?>
-
-                      ชื่อผู้รับ  : <?php echo $add['name'];?> <br />
-
-                      เบอร์โทร : <?php echo $add['phone'];?> <br />
-
-                      ที่อยู่จัดส่ง : <?php echo $add['address']; ?>
-
-
-                      <br />
-                      <hr style="border-radius: 15px;border: 1px solid black; ">
-
-
-                    </strong>
-                  </td>
-                </tr>
-              </table>
-
-              <table border="0" cellspacing="0" cellpadding="0">
-                <tr><td><strong>*รายการสั่งซื้อ <br><br></strong></td></tr>
-
+            <tr><td><strong><font color="red">*</font>โอนไปยังบัญชี<br><p></strong></td></tr>
+              <?php do { ?>
                 <tr>
 
-                  <td><strong>รายการสินค้า</strong></td>
-                  <td><strong>จำนวณ</strong></td>
-                  <td style="text-align: center;"><strong>รวม</strong></td>
+                  <td align="center">
+                    <input <?php if (!(strcmp($row_rb['b_name'],"b_bank"))) {echo "checked=\"checked\"";} ?> type="radio" name="bank"  value="<?php echo $row_rb['b_name'].'_'.$row_rb['b_number'];?>" required="required" />
+                    <img src="bimg/<?php echo $row_rb['b_logo']; ?>" width="50" />
+                  </td>
 
+                  <td></td>
+                  <td><?php echo $row_rb['b_name']; ?>&nbsp;&nbsp;&nbsp;</td>
+                  <td> <?php echo $row_rb['b_number']; ?>&nbsp;&nbsp;&nbsp;</td>
+                  <td><strong></strong><?php echo $row_rb['b_owner']; ?></td>
                 </tr>
+              <?php } while ($row_rb = mysql_fetch_assoc($rb)); ?>
 
-                <?php do { ?>
+            </table>
 
-                  <?php
-                  $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
+          </div>
+
+
+          <div class="col-md-6">
+
+            <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" ><span class="glyphicon glyphicon-print"></span> พิมพ์ใบแจ้งหนี้</a>
+
+            <table border="1" align="left" class="table" style=" border-style: solid;
+            border-color: coral;">
+            <tr>
+
+              <td colspan="7" align="center"  bgcolor="#FF8D33"><strong>สรุปรายการสั่งซื้อ<br />
+
+              </tr>
+              <tr>
+
+                <td colspan="6" align="left"><b><font color="red">*</font>ข้อมูลการจัดส่ง</b>
+
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td  align="left" valign="top"><br>
+                       <strong>
+                        <?php
+                        $sqlorder = "SELECT * FROM tbl_order WHERE order_id = '$colname_cartdone'";
+                        $sqy = mysql_query($sqlorder , $condb);
+                        $add = mysql_fetch_assoc($sqy);
+                        ?>
+
+                        ชื่อผู้รับ  : <?php echo $add['name'];?> <br />
+
+                        เบอร์โทร : <?php echo $add['phone'];?> <br />
+
+                        ที่อยู่จัดส่ง : <?php echo $add['address']; ?>
+
+
+                        <br />
+                        <hr style="border-radius: 15px;border: 1px solid black; ">
+
+
+                      </strong>
+                    </td>
+                  </tr>
+                </table>
+
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr><td><strong><font color="red">*</font>รายการสั่งซื้อ <br><br></strong></td></tr>
+
+                  <tr>
+
+                    <td width = 62%><strong>รายการหนังสือ</strong></td>
+                    <td width = 10%><strong>จำนวน</strong></td>
+                    <td width = 28% style="text-align: center;"><strong>รวม</strong></td>
+
+                  </tr>
+
+                  <?php do { ?>
+
+                    <?php
+                    $sum  = $row_cartdone['p_price']*$row_cartdone['p_c_qty'];
                   //$totalp += $sum;
                   //$total  += $sum;
-                  $totalp += $sum;
-                  $sumw = $row_cartdone['pos_ems'];
+                    $totalp += $sum;
+                    $sumw = $row_cartdone['pos_ems'];
+
+                    ?>
+
+
+                    <tr>
+                      <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,30,'utf-8')." ...";?></td>
+                      <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
+                      <td  align = "right"><?php echo number_format($sum,2)." บาท";?></td>
+                    </tr>
+
+                  <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone));
+
+                  $tax = $totalp*0.07;
+
+                  $totalp += $tax;
+                  $totalp += $sumw;
+                //$_SESSION["totalp"] = "$totalp";
 
                   ?>
 
+                </table>
 
-                  <tr>
-                    <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,35,'utf-8')." ...";?></td>
-                    <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
-                    <td  ><?php echo number_format($sum,2)." บาท";?></td>
-                  </tr>
+                <table border="0" cellspacing="0" cellpadding="0">
+                 <hr style="border-radius: 15px;border: 1px solid black; ">
+                 <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
 
-                <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone));
-
-                $tax = $totalp*0.07;
-
-                $totalp += $tax;
-                $totalp += $sumw;
-                //$_SESSION["totalp"] = "$totalp";
-
-                ?>
-
-              </table>
-
-              <table border="0" cellspacing="0" cellpadding="0">
-               <hr style="border-radius: 15px;border: 1px solid black; ">
+                <tr>
+                 <td style="width: 300px">ค่าจัดส่ง</td>
+                 <td ></td>
+                 <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
+               </tr>
                <tr>
                 <td></td>
                 <td></td>
@@ -554,10 +575,15 @@ if($status > 1){ ?>
               </tr>
 
               <tr>
-               <td style="width: 300px">จัดส่ง</td>
+               <td style="width: 300px">ภาษี 7%</td>
                <td ></td>
-               <td ><?php echo number_format($sumw,2)." บาท"; ?></td>
+               <td align = "right"style="width: 50%"><?php echo number_format($tax,2)." บาท"; ?></td>
              </tr>
+           </table>
+
+
+           <table border="0" cellspacing="0" cellpadding="0">
+             <hr style="border-radius: 15px;border: 1px solid black; ">
              <tr>
               <td></td>
               <td></td>
@@ -565,41 +591,25 @@ if($status > 1){ ?>
             </tr>
 
             <tr>
-             <td style="width: 300px">ภาษี 7%</td>
+             <td style="width: 300px"><b>ยอดสุทธิ</b></td>
              <td ></td>
-             <td ><?php echo number_format($tax,2)." บาท"; ?></td>
+             <td align = "right"style="width: 50%"><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
+
            </tr>
+
          </table>
+         <br><br>
+       </td>
+
+     </tr>
 
 
-         <table border="0" cellspacing="0" cellpadding="0">
-           <hr style="border-radius: 15px;border: 1px solid black; ">
-           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-           <td style="width: 300px"><b>ยอดสุทธิ</b></td>
-           <td ></td>
-           <td ><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
-
-         </tr>
-
-       </table>
-       <br><br>
-     </td>
-
-   </tr>
-
-
- </table>
-</div>
+   </table>
+ </div>
 
 
 
-<p align="center"><br />
+ <p align="center"><br />
   <button type="submit" name="add" class="btn btn-success"> บันทึก </button>
 
 </p>

@@ -58,7 +58,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
 
 
-    	
+
 
         <?php include('m.php');?>
       <div class="row">
@@ -108,14 +108,14 @@ $totalRows_prd = mysql_num_rows($prd);
             <td><center>พร้อมจำหน่าย</center></td>
 
             <?php elseif ($row_prd['p_status'] == '1' && $row_prd['p_qty'] == '0'): ?>
-              <td><center>หนังสือเลิกผลิต</center></td>
+              <td><center><font color="brown">หนังสือเลิกผลิต</font></center></td>
 
               <?php elseif ($row_prd['p_status'] == '1' ): ?>
-                <td><center>หนังสือเลิกผลิต</center></td>
+                <td><center><font color="brown">หนังสือเลิกผลิต</font></center></td>
 
 
                 <?php elseif ($row_prd['p_qty'] == '0'): ?>
-                  <td><center>สินค้าหมด</center></td>
+                  <td><center><font color="red">สินค้าหมด</font></center></td>
                 <?php endif ?>
 
 

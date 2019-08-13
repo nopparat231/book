@@ -21,7 +21,18 @@ date_default_timezone_set('Asia/Bangkok');
 <center>
   <br>
   <br>
-  <a href="" class="btn btn-primary btn-lg" target="_blank" id="hp" onclick="window.print();" >  <span class="glyphicon glyphicon-print"></span> พิมพ์ใบเสร็จ </a>
+	<?php
+
+  $status =  $row_cartdone['order_status'];
+  if ($status == 1) { ?>
+   <a href="" class="btn btn-primary " target="_blank" id="hp" onclick="window.print();" >  <span class="glyphicon glyphicon-print"></span> พิมพ์ใบแจ้งหนี้ </a>
+
+
+ <?php }else{ ?>
+   <a href="" class="btn btn-success " target="_blank" id="hp" onclick="window.print();" >  <span class="glyphicon glyphicon-print"></span> พิมพ์ใบเสร็จ </a>
+
+
+ <?php }  ?>
 
   <br>
   <br>
@@ -30,12 +41,12 @@ date_default_timezone_set('Asia/Bangkok');
     <table width="1081" height="499" border="0">
       <tr>
         <th width="21" height="298" scope="row" >&nbsp;</th>
-        <th width="493" scope="row" ><img src="pimg/<?php echo $row_cf['logo']; ?>" width="150" height="150" /></th>
+        <th width="493" scope="row" align="center"><img src="pimg/<?php echo $row_cf['logo']; ?>" width="350" height="150" /></th>
 
         <th width="553" align="center" nowrap="nowrap">
           <h3><strong>บริษัท BOOKSHOP จํากัด</strong></h3>
           <p> 435/124 ซอยประชาอุทิศ 90 ถนนประชาอุทิศ ตำบลบ้านคลองสวน อำเภอพระสมุทรเจดีย์ จังหวัดสมุทรปราการ กรุงเทพ 10290 </p>
-          <p>  414 Pachautid90 PachautidRd. Bankhongsuan Phasamutjdee SamutPrakran (Thailand) 10290</p>
+          <p>  435/124 Pachautid90 PachautidRd. Bankhongsuan Phasamutjdee SamutPrakran (Thailand) 10290</p>
           <p> โทร. 091-423-2511 เลขประจําตัวผู้เสียภาษอีากร 1234567890123 </p>
           <p>&nbsp;</p>
 
@@ -43,10 +54,10 @@ date_default_timezone_set('Asia/Bangkok');
             <tr>
 
              <?php if ($row_cartdone['b_name'] <> ''){
-              $chec ='ใบเสร็จรับเงิน';
+              $chec ='ต้นฉบับใบเสร็จรับเงิน';
               $engc = 'ORIGINAL RECEIPT';
             }else{
-              $chec ='ใบแจ้งหนี้';
+              $chec ='ต้นฉบับใบแจ้งหนี้';
               $engc = 'ORIGINAL INVOICE';
             }?>
 
@@ -59,6 +70,10 @@ date_default_timezone_set('Asia/Bangkok');
         <tr>
           <th scope="row">&nbsp;</th>
           <th height="195" scope="row"><table width="489" border="0" style="text-align: left;">
+					<tr>
+						<th width="186" style="text-align: left;" scope="row"><p>&nbsp; &nbsp; รหัสลูกค้า</p></th>
+						<td width="293" align="left" valign="bottom"><p>US<?php echo $row_cartdone['mem_id'];?></p></td>
+					</tr>
             <tr>
               <th width="186" style="text-align: left;" scope="row"><p>&nbsp; &nbsp; นามลูกค้า</p></th>
               <td width="293" align="left" valign="bottom"><p><?php echo $row_cartdone['mem_name'];?></p></td>
@@ -67,25 +82,26 @@ date_default_timezone_set('Asia/Bangkok');
               <th style="text-align: left;" scope="row"><p>&nbsp; &nbsp; ที่อยู่</p></th>
               <td style="text-align: left;" valign="bottom">
                 <p>
-                  <?php echo $row_cartdone['mem_address'];?>
+                  <?php echo $row_cartdone['address'];?>
                 </p>
               </td>
             </tr>
             <tr>
-              <th style="text-align: left;"scope="row"><p>&nbsp; &nbsp; เลขประจำตัวผู้เสียภาษี</p></th>
-              <td align="left" valign="bottom"> <p>.............................</p></td>
-            </tr>
-          </table>        <h3>&nbsp;</h3></th>
-          <td><table width="224" border="0" align="right">
-            <tr>
-              <th scope="row">เลขที่</th>
-              <td>BK<?php echo  str_pad($row_cartdone['order_id'], 6, "0", STR_PAD_LEFT);?></td>
-            </tr>
-            <tr>
-              <th scope="row">วันที่</th>
-              <td><?php echo date($row_cartdone['order_date']);?></td>
 
             </tr>
+          </table>        <h3>&nbsp;</h3></th>
+          <td><table width="300" border="0" align="right">
+					<tr>
+						<th scope="row">วันที<br><br></th>
+						<td><?php echo date($row_cartdone['order_date']);?><br><br></td>
+
+					</tr>
+            <tr>
+              <th scope="row">เลขที่ใบกำกับ</th>
+              <td>BK<?php echo  str_pad($row_cartdone['order_id'], 6, "0", STR_PAD_LEFT);?></td>
+            </tr>
+
+
           </table></td>
         </tr>
       </table>
@@ -257,7 +273,7 @@ date_default_timezone_set('Asia/Bangkok');
 
     <table width="1081" border="1" cellpadding="0" cellspacing="0">
       <tr>
-        <th width="70%" align="left" scope="row">&nbsp;ตัวอักษร : (<?php echo convert($total); ?>)</th>
+        <th width="70%" align="left" scope="row">&nbsp;จำนวนเงินรวมทั้งสิ้น (ตัวอักษร) : &nbsp;&nbsp;<?php echo convert($total); ?></th>
         <td width="20%"> &nbsp;รวมเงิน<br />
         &nbsp;TOTAL</td>
 
@@ -269,19 +285,15 @@ date_default_timezone_set('Asia/Bangkok');
           $checked ='checked';
         }else{}?>
         <th align="left" valign="bottom" scope="row"> &nbsp; &nbsp;
-          <input type="checkbox" name="checkbox2" id="checkbox2" <?php echo $checked; ?> />
-          <label for="checkbox2"></label>
-          เงินโอน .......<?php echo number_format($row_cartdone['pay_amount'],2);?>...... บาท ..... ธนาคาร <?php
-          echo $row_cartdone['b_name'];?> ..... เลขที่บัญชี <?php
-          echo $row_cartdone['b_number'];?></th>
+
+
+
           <td>&nbsp;ค่าจัดส่ง<br />
           &nbsp;SHIPPING CHARGE</td>
           <td align="right">&nbsp; <?php echo number_format($sumems,2); ?></td>
         </tr>
 
-        <tr> <th align="left" valign="bottom" scope="row"> &nbsp; &nbsp;<input type="checkbox" name="checkbox" id="checkbox" />
-          <label for="checkbox"></label>
-          เงินสด ................................................... บาท
+        <tr> <th align="left" valign="bottom" scope="row"> &nbsp; &nbsp;
         </th>
 
 
@@ -290,7 +302,21 @@ date_default_timezone_set('Asia/Bangkok');
         <td align="right"><?php echo number_format($tax,2);?></td>
       </tr>
       <tr>
-        <th align="left" scope="row">&nbsp;</th>
+        <th align="left" valign="bottom"scope="row">&nbsp;
+				<?php
+
+				$status =  $row_cartdone['order_status'];
+				if ($status == 1) { ?>
+
+
+
+				<?php }else{ ?>
+					เงินโอน :&nbsp;<?php echo number_format($row_cartdone['pay_amount'],2);?> บาท &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ธนาคาร :&nbsp;<?php
+ 				 echo $row_cartdone['b_name'];?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เลขที่บัญชี :&nbsp;<?php
+ 				 echo $row_cartdone['b_number'];?></th>
+
+
+				<?php }  ?></th>
         <td>&nbsp;ยอดรวมสุทธิ<br />
         &nbsp;GRAND TOTAL</td>
         <td align="right"><strong><?php echo number_format($total,2);?></strong></td>
@@ -304,7 +330,7 @@ date_default_timezone_set('Asia/Bangkok');
       <tr>
         <th height="53" align="center" valign="bottom" scope="row"> &nbsp;ผู้รับสินค้า ............................................................</th>
         <th align="center" valign="bottom"> &nbsp;ผู้ส่งสินค้า ............................................................</th>
-        <th align="center" valign="bottom"><p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;ในนาม บริษัท BOOKSHOP จำกัด</p></th>
+        <th align="center" valign="bottom"><p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ในนาม บริษัท BOOKSHOP จำกัด</p></th>
       </tr>
       <tr>
         <th height="63" valign="bottom" scope="row"> &nbsp;ลงวันที่  .................................................................</th>

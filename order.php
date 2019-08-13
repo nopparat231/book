@@ -59,7 +59,7 @@ if($_SESSION['MM_Username']!=''){
 
 
   <form  name="formlogin" action="saveorder.php" method="POST" id="login" class="form-horizontal">
-    <div class="col-md-6"> 
+    <div class="col-md-6">
 
 
 
@@ -84,7 +84,7 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
 
 <div class="form-group" >
   <div class="col-sm-11">
-    <textarea name="address" id="add1" class="form-control"  rows="3"  required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea>
+    <textarea name="address" id="add1" class="form-control"  rows="3"  readonly required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea>
   </div>
 
 
@@ -185,7 +185,7 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
               <hr style="border-radius: 15px;border: 1px solid black; width: 400px">
 
 
-            </strong> 
+            </strong>
           </td>
         </tr>
       </table>
@@ -197,9 +197,9 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
 
         <tr>
 
-          <td><strong>รายการสินค้า</strong></td>
-          <td><strong>จำนวณ</strong></td>
-          <td style="text-align: center;"><strong>รวม</strong></td>
+          <td width = 62%><strong>รายการหนังสือ</strong></td>
+          <td width = 10%><strong>จำนวน</strong></td>
+          <td width = 28% style="text-align: center;"><strong>รวม</strong></td>
 
         </tr>
 
@@ -235,15 +235,15 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
             ?>
 
             <tr>
-              <td style="width: 250px"><?php echo iconv_substr($row['p_name'],0,45,'utf-8')." ...";?></td>
+              <td style="width: 250px"><?php echo iconv_substr($row['p_name'],0,30,'utf-8')." ...";?></td>
               <td align="center"><?php echo $p_qty;?></td>
-              <td><?php echo number_format($sum,2)." บาท";?></td>
-            </tr> 
+              <td align="right"><?php echo number_format($sum,2)." บาท";?></td>
+            </tr>
 
             <input type="hidden" name="ems" value="<?php echo $ems; ?>">
             <input type="hidden"  name="p_name[]" value="<?php echo $row['p_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
 
-          <?php          } 
+          <?php          }
 
 
           $tax = $totalp*0.07;
@@ -266,7 +266,7 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
         <tr>
          <td style="width: 300px">จัดส่ง</td>
          <td ></td>
-         <td ><?php echo number_format($sumw,2)." บาท"; ?></td>
+         <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
        </tr>
        <tr>
         <td></td>
@@ -277,7 +277,7 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
       <tr>
        <td style="width: 300px">ภาษี 7%</td>
        <td ></td>
-       <td ><?php echo number_format($tax,2)." บาท"; ?></td>
+       <td align = "right"style="width: 50%"><?php echo number_format($tax,2)." บาท"; ?></td>
      </tr>
    </table>
 
@@ -293,7 +293,7 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
     <tr>
      <td style="width: 300px"><b>ยอดสุทธิ</b></td>
      <td ></td>
-     <td ><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
+     <td align = "right"style="width: 50%"><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
 
    </tr>
 
@@ -328,7 +328,7 @@ $(document).ready(function() {
     document.getElementById("add1").disabled = false;
     document.getElementById("add2").disabled = true;
      document.getElementById("add3").disabled = true;
-    
+
  });
 });
 

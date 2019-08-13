@@ -36,17 +36,18 @@ if (!function_exists("GetSQLValueString")) {
 
 $start_date = $_POST['start_date'];
 $end_date = $_POST['end_date'];
+
+
 if ($start_date != '') {
   $start_date = $_POST['start_date'];
   $end_date = $_POST['end_date'];
 }elseif ($start_date == '') {
   $start_date = '2012-01-01';
-  $end_date = date('Y/m/d');
+  $end_date = '2020-01-01';
 }else {
   $start_date = '2012-01-01';
-  $end_date = date('Y/m/d');
+  $end_date = '2020-01-01';
 }
-
 $colname_mm = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_mm = $_SESSION['MM_Username'];
@@ -61,7 +62,8 @@ $totalRows_mm = mysql_num_rows($mm);
 $mem_id = $row_mm['mem_id'];
 
 mysql_select_db($database_condb);
-$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id and o.order_status in (2,5) and o.order_date >= '$start_date' and o.order_date <= '$end_date' GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
+$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id and o.order_status in (2,5)
+and o.order_date >= '$start_date' and o.order_date <= '$end_date' GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
 $mycart = mysql_query($query_mycart , $condb) or die(mysql_error());
 $row_mycart = mysql_fetch_assoc($mycart);
 $totalRows_mycart = mysql_num_rows($mycart);
@@ -100,10 +102,10 @@ $totalRows_mycart = mysql_num_rows($mycart);
 
 
 
-      <h3 align="center">รายการ การสั่งซื้อ</h3>
+      <h3 align="center">รายการ การชำระเงิน</h3>
 
 
-      <form action="report_all_order.php" method="post">
+      <form action="report_pay.php" method="post">
        <div class="row">
 
          <div class="col-md-1">

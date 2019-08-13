@@ -137,12 +137,12 @@ else{?>
 
 
         echo "<tr>";
-        echo "<td  align='left' colspan='5'><b>ราคาสินค้ารวม</b></td>";
+        echo "<td  align='left' colspan='5'><b>ราคารวม</b></td>";
         echo "<td align='right'>"."<b>".number_format($total,2)." บาท</b>"."</td>";
         echo "</tr>";
 
         echo "<tr>";
-        echo "<td  align='left' colspan='5'><b>น้ำหนักสินค้ารวม</b></td>";
+        echo "<td  align='left' colspan='5'><b>น้ำหนักรวม</b></td>";
         echo "<td align='right'>"."<b>".number_format($sumww,2)." กรัม</b>"."</td>";
         echo "</tr>";
 
@@ -151,7 +151,7 @@ else{?>
 
 
         echo "<tr>";?>
-        <td  align='left' colspan='4'><b>จัดส่ง</b>
+        <td  align='left' colspan='4'><b>ค่าจัดส่ง</b>
           <td align='left'>
 
             <select class="form-control" name="tems"  id="foo" onchange="this.form.submit()" required="required" style="width: 100px">

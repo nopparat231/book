@@ -143,7 +143,7 @@ if($status > 1){ ?>
  </tr>
 
  <tr>
-  <td >จำนวณเงิน : </td>
+  <td >จำนวนเงิน : </td>
   <td colspan="5" align="left"><label for="pay_date"></label>
     <?php echo  number_format($row_cartdone['pay_amount'],2);?> บาท
   </td>
@@ -238,7 +238,7 @@ if($status > 1){ ?>
 <div class="col-md-6">
 
 
-  <a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"></span></a>
+  <a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-success btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"> พิมพ์ใบเสร็จ</span></a>
 
   <?php if ($row_cartdone['order_status'] == 2 && $row_mm['status'] != 'confirm' ): ?>
    <a href="update_check_order.php?order_id=<?php echo $colname_cartdone;?>&order_status=5" class="btn btn-warning btn-sm pull-right" onClick="return confirm('ยืนยันการตรวจสอบ');" id="hp" >  <span class="glyphicon glyphicon-ok"></span> ตรวจสอบแล้ว </a>
@@ -260,10 +260,10 @@ if($status > 1){ ?>
         <tr>
           <td  align="left" valign="top"><br>
            <strong>
-            <?php                       
+            <?php
             $sqlorder = "SELECT * FROM tbl_order WHERE order_id = '$colname_cartdone'";
             $sqy = mysql_query($sqlorder , $condb);
-            $add = mysql_fetch_assoc($sqy); 
+            $add = mysql_fetch_assoc($sqy);
             ?>
 
             ชื่อผู้รับ  : <?php echo $add['name'];?> <br />
@@ -287,9 +287,9 @@ if($status > 1){ ?>
 
       <tr>
 
-        <td><strong>รายการสินค้า</strong></td>
-        <td><strong>จำนวณ</strong></td>
-        <td style="text-align: center;"><strong>รวม</strong></td>
+        <td width = 62%><strong>รายการหนังสือ</strong></td>
+        <td width = 10%><strong>จำนวน</strong></td>
+        <td width = 28% style="text-align: center;"><strong>รวม</strong></td>
 
       </tr>
 
@@ -306,9 +306,9 @@ if($status > 1){ ?>
 
 
         <tr>
-          <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,35,'utf-8')." ...";?></td>
+          <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,30,'utf-8')." ...";?></td>
           <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
-          <td  ><?php echo number_format($sum,2)." บาท";?></td>
+          <td align = "right" ><?php echo number_format($sum,2)." บาท";?></td>
         </tr>
 
       <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone));
@@ -332,9 +332,9 @@ if($status > 1){ ?>
     </tr>
 
     <tr>
-     <td style="width: 300px">จัดส่ง</td>
+     <td style="width: 300px">ค่าจัดส่ง</td>
      <td ></td>
-     <td ><?php echo number_format($sumw,2)." บาท"; ?></td>
+     <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
    </tr>
    <tr>
     <td></td>
@@ -345,7 +345,7 @@ if($status > 1){ ?>
   <tr>
    <td style="width: 300px">ภาษี 7%</td>
    <td ></td>
-   <td ><?php echo number_format($tax,2)." บาท"; ?></td>
+   <td align = "right"style="width: 50%"><?php echo number_format($tax,2)." บาท"; ?></td>
  </tr>
 </table>
 
@@ -361,7 +361,7 @@ if($status > 1){ ?>
 <tr>
  <td style="width: 300px"><b>ยอดสุทธิ</b></td>
  <td ></td>
- <td ><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
+ <td align = "right"style="width: 50%"><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
 
 </tr>
 
@@ -387,7 +387,7 @@ if($status > 1){ ?>
       <table border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td colspan="5" align="left" bgcolor="#FFFFFF">
-           <h3>แจ้งชำระเงิน </h3>
+           <h3>รอการแจ้งชำระเงิน </h3>
 
 
            <h5 align="left" style="color: red;" >*รายการสั่งซื้อจะถูกยกเลิก ถ้าหากไม่ชำระเงินภายใน 3 วัน</h5>
@@ -412,7 +412,7 @@ if($status > 1){ ?>
       <tr>
         <td >วันที่ชำระเงิน</td>
         <td colspan="5" align="left"><label for="pay_date"></label>
-          <input type="date" disabled name="pay_date" id="pay_date" value="<?php echo date('Y-m-d');?>"/></td>
+          <input type="date" disabled name="pay_date" id="pay_date" value="<?php ?>"/></td>
         </tr>
         <tr>
           <td >&nbsp;</td>
@@ -425,7 +425,7 @@ if($status > 1){ ?>
         <tr>
           <td >วันที่ชำระเงิน</td>
           <td colspan="5" align="left"><label for="pay_date"></label>
-            <input type="time" disabled id="pay_date" value="<?php echo date("H:i"); ?>"/></td>
+            <input type="time" disabled id="pay_date" value="<?php  ?>"/></td>
           </tr>
           <tr>
             <td >&nbsp;</td>
@@ -451,8 +451,13 @@ if($status > 1){ ?>
 
             <tr>
               <td >หลักฐานการโอน</td>
-              <td colspan="5" align="left"><input name="pay_slip" id="pay_slip" type="file"  required="required" accept="../image/jpeg"/>
-              (ไฟล์ .jpg, gif, png, pdf&nbsp;ไม่เกิน 2mb)</td>
+              <?php if ($row_cartdone['pay_slip'] == '') { ?>
+
+                <td colspan="5" align="left"><label for="pay_amount"></label>
+                  <input type="text" disabled ></td>
+
+             <?php } ?>
+              </td>
             </tr>
             <tr>
               <td >&nbsp;</td>
@@ -485,7 +490,7 @@ if($status > 1){ ?>
 
         <div class="col-md-6">
 
-          <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" ><span class="glyphicon glyphicon-print"></span></a>
+          <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" ><span class="glyphicon glyphicon-print"> พิมพ์ใบแจ้งหนี้</span></a>
 
           <table border="1" align="left" class="table" style=" border-style: solid;
           border-color: coral;">
@@ -502,10 +507,10 @@ if($status > 1){ ?>
                   <tr>
                     <td  align="left" valign="top"><br>
                      <strong>
-                      <?php                       
+                      <?php
                       $sqlorder = "SELECT * FROM tbl_order WHERE order_id = '$colname_cartdone'";
                       $sqy = mysql_query($sqlorder , $condb);
-                      $add = mysql_fetch_assoc($sqy); 
+                      $add = mysql_fetch_assoc($sqy);
                       ?>
 
                       ชื่อผู้รับ  : <?php echo $add['name'];?> <br />
@@ -529,9 +534,9 @@ if($status > 1){ ?>
 
                 <tr>
 
-                  <td><strong>รายการสินค้า</strong></td>
-                  <td><strong>จำนวณ</strong></td>
-                  <td style="text-align: center;"><strong>รวม</strong></td>
+                  <td width = 62%><strong>รายการหนังสือ</strong></td>
+                  <td width = 10%><strong>จำนวน</strong></td>
+                  <td width = 28% style="text-align: center;"><strong>รวม</strong></td>
 
                 </tr>
 
@@ -548,9 +553,9 @@ if($status > 1){ ?>
 
 
                   <tr>
-                    <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,35,'utf-8')." ...";?></td>
+                    <td style="width: 250px"><?php echo iconv_substr($row_cartdone['p_name'],0,30,'utf-8')." ...";?></td>
                     <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
-                    <td  ><?php echo number_format($sum,2)." บาท";?></td>
+                    <td align = "right" ><?php echo number_format($sum,2)." บาท";?></td>
                   </tr>
 
                 <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone));
@@ -574,9 +579,9 @@ if($status > 1){ ?>
               </tr>
 
               <tr>
-               <td style="width: 300px">จัดส่ง</td>
+               <td style="width: 300px">ต่าจัดส่ง</td>
                <td ></td>
-               <td ><?php echo number_format($sumw,2)." บาท"; ?></td>
+               <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
              </tr>
              <tr>
               <td></td>
@@ -587,7 +592,7 @@ if($status > 1){ ?>
             <tr>
              <td style="width: 300px">ภาษี 7%</td>
              <td ></td>
-             <td ><?php echo number_format($tax,2)." บาท"; ?></td>
+             <td align = "right"style="width: 50%"><?php echo number_format($tax,2)." บาท"; ?></td>
            </tr>
          </table>
 
@@ -603,7 +608,7 @@ if($status > 1){ ?>
           <tr>
            <td style="width: 300px"><b>ยอดสุทธิ</b></td>
            <td ></td>
-           <td ><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
+           <td align = "right"style="width: 50%"><b><?php echo number_format($totalp,2)." บาท"; ?></b></td>
 
          </tr>
 

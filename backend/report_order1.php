@@ -36,17 +36,15 @@ if (!function_exists("GetSQLValueString")) {
 
 $start_date = $_POST['start_date'];
 $end_date = $_POST['end_date'];
-
-
 if ($start_date != '') {
   $start_date = $_POST['start_date'];
   $end_date = $_POST['end_date'];
 }elseif ($start_date == '') {
   $start_date = '2012-01-01';
-  $end_date = '2020-01-01';
+  $end_date = date('Y/m/d');
 }else {
   $start_date = '2012-01-01';
-  $end_date = '2020-01-01';
+  $end_date = date('Y/m/d');
 }
 
 $colname_mm = "-1";
@@ -63,8 +61,7 @@ $totalRows_mm = mysql_num_rows($mm);
 $mem_id = $row_mm['mem_id'];
 
 mysql_select_db($database_condb);
-$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id and o.order_status in (3)
-  GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
+$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id and o.order_status in (1,4)   GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
 $mycart = mysql_query($query_mycart , $condb) or die(mysql_error());
 $row_mycart = mysql_fetch_assoc($mycart);
 $totalRows_mycart = mysql_num_rows($mycart);
@@ -103,23 +100,23 @@ $totalRows_mycart = mysql_num_rows($mycart);
 
 
 
-      <h3 align="center">รายการ จัดส่ง</h3>
+      <h3 align="center">รายการ การสั่งซื้อ</h3>
 
 
-      <form action="report_sent.php" method="post">
+      <form action="report_all_order.php" method="post">
        <div class="row">
 
          <div class="col-md-1">
           <label><font size="2">จากวัน</font></label>
         </div>
         <div class="col-md-4">
-          <input id="inputdatepicker" class="datepicker" name="start_date" type="date"  autocomplete="off"  />
+          <input id="inputdatepicker" class="datepicker" name="start_date" type="text"  autocomplete="off"  />
         </div>
         <div class="col-md-1">
           <label><font size="2">ถึงวันที่</font></label>
         </div>
         <div class="col-md-4">
-         <input  id="inputdatepicker" class="datepicker" name="end_date" type="date"  autocomplete="off"  />
+         <input  id="inputdatepicker" class="datepicker" name="end_date" type="text"  autocomplete="off"  />
        </div>
 
        <div class="col-md-2">

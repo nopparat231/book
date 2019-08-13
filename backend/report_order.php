@@ -36,15 +36,17 @@ if (!function_exists("GetSQLValueString")) {
 
 $start_date = $_POST['start_date'];
 $end_date = $_POST['end_date'];
+
+
 if ($start_date != '') {
   $start_date = $_POST['start_date'];
   $end_date = $_POST['end_date'];
 }elseif ($start_date == '') {
   $start_date = '2012-01-01';
-  $end_date = date('Y/m/d');
+  $end_date = '2020-01-01';
 }else {
   $start_date = '2012-01-01';
-  $end_date = date('Y/m/d');
+  $end_date = '2020-01-01';
 }
 
 $colname_mm = "-1";
@@ -61,7 +63,8 @@ $totalRows_mm = mysql_num_rows($mm);
 $mem_id = $row_mm['mem_id'];
 
 mysql_select_db($database_condb);
-$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id and o.order_status in (1,4) and o.order_date >= '$start_date' and o.order_date <= '$end_date' GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
+$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id and o.order_status in (1,4)
+  and o.order_date >= '$start_date' and o.order_date <= '$end_date' GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
 $mycart = mysql_query($query_mycart , $condb) or die(mysql_error());
 $row_mycart = mysql_fetch_assoc($mycart);
 $totalRows_mycart = mysql_num_rows($mycart);
@@ -76,7 +79,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-<?php include('./datatable2.php');?>
+  <?php include('./datatable2.php');?>
   <?php include 'date.php'; ?>
 
   </head> <?php include('navbar.php');?>
@@ -86,98 +89,98 @@ $totalRows_mycart = mysql_num_rows($mycart);
 
     </div>
 
-<?php include('m.php');?>
-<div class="row">
+    <?php include('m.php');?>
+    <div class="row">
 
 
-  <div class="col-md-12">
+      <div class="col-md-12">
 
         <style type="text/css">
 
-        th { white-space: nowrap; }
-      </style>
+          th { white-space: nowrap; }
+        </style>
 
 
 
 
-      <h3 align="center">รายการ การสั่งซื้อ</h3>
+        <h3 align="center">รายการ การสั่งซื้อ</h3>
 
 
-      <form action="report_all_order.php" method="post">
-       <div class="row">
+        <form action="report_order.php" method="post">
+         <div class="row">
 
-         <div class="col-md-1">
-          <label><font size="2">จากวัน</font></label>
+           <div class="col-md-1">
+            <label><font size="2">จากวัน</font></label>
+          </div>
+          <div class="col-md-4">
+            <input id="inputdatepicker" class="datepicker" name="start_date" type="date"  autocomplete="off"  />
+          </div>
+          <div class="col-md-1">
+            <label><font size="2">ถึงวันที่</font></label>
+          </div>
+          <div class="col-md-4">
+           <input  id="inputdatepicker" class="datepicker" name="end_date" type="date"  autocomplete="off"  />
+         </div>
+
+         <div class="col-md-2">
+          <input type="submit" name="search" id="search" value="ค้นหา" class="btn btn-info" />
         </div>
-        <div class="col-md-4">
-          <input id="inputdatepicker" class="datepicker" name="start_date" type="date"  autocomplete="off"  />
-        </div>
-        <div class="col-md-1">
-          <label><font size="2">ถึงวันที่</font></label>
-        </div>
-        <div class="col-md-4">
-         <input  id="inputdatepicker" class="datepicker" name="end_date" type="date"  autocomplete="off"  />
-       </div>
-
-       <div class="col-md-2">
-        <input type="submit" name="search" id="search" value="ค้นหา" class="btn btn-info" />
       </div>
-    </div>
-  </form>
-  <br />
-  <table id="example" class="display"  border="1">
-    <thead>
-      <tr>
-        <th>ลำดับ</th>
-        <th>รหัสสั่งซื้อ</th>
-        <th>ลูกค้า</th>
-        <th>รายการ</th>
+    </form>
+    <br />
+    <table id="example" class="display"  border="1">
+      <thead>
+        <tr>
+          <th>ลำดับ</th>
+          <th>รหัสสั่งซื้อ</th>
+          <th>ลูกค้า</th>
+          <th>รายการ</th>
 
-        <th>สถานะ</th>
+          <th>สถานะ</th>
 
-        <th>วันที่ทำรายการ</th>
-        <th>ราคารวม</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php if ($totalRows_mycart > 0) { ?>
-        <?php
-        $i = 1;
-        do { ?>
-          <tr>
-            <td align="center" valign="top"><?php echo $i; ?></td>
-            <td align="center">
-              BK<?php echo $row_mycart['oid'];?>
-            </td>
-            <td align="center" >
-              <?php echo $row_mycart['name'];?>
-            </td>
-
-            <td align="center" >
-              <?php echo $row_mycart['coid'];?>
-            </td>
-
-            <td align="center" >
-              <font color="red">
-                <?php $status = $row_mycart['order_status'];
-                include('status.php');
-                ?>
-              </font>
-            </td>
-
-            <td align="center"> <?php echo date("d-m-Y",strtotime($row_mycart['order_date']));?></td>
-            <td align="center">
-              <?php echo number_format($row_mycart['ctotal'],2);?>
-            </td>
-          </tr>
+          <th>วันที่ทำรายการ</th>
+          <th>ราคารวม</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php if ($totalRows_mycart > 0) { ?>
           <?php
-          $i += 1;
-        } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
-      </tbody>
+          $i = 1;
+          do { ?>
+            <tr>
+              <td align="center" valign="top"><?php echo $i; ?></td>
+              <td align="center">
+                BK<?php echo $row_mycart['oid'];?>
+              </td>
+              <td align="center" >
+                <?php echo $row_mycart['name'];?>
+              </td>
 
-    </table>
+              <td align="center" >
+                <?php echo $row_mycart['coid'];?>
+              </td>
+
+              <td align="center" >
+                <font color="red">
+                  <?php $status = $row_mycart['order_status'];
+                  include('status.php');
+                  ?>
+                </font>
+              </td>
+
+              <td align="center"> <?php echo date("d-m-Y",strtotime($row_mycart['order_date']));?></td>
+              <td align="center">
+                <?php echo number_format($row_mycart['ctotal'],2);?>
+              </td>
+            </tr>
+            <?php
+            $i += 1;
+          } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
+        </tbody>
+
+      </table>
+    </div>
   </div>
-</div>
 </div>
 </body>
 </html>

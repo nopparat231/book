@@ -17,6 +17,7 @@ $pay_slip = '';
 $b_name = '';
 $b_number = '';
 $pay_date = '';
+$time_date = '';
 $pay_amount = '';
 $p_name = $_POST['p_name'];
 $pos_ems = $_POST['ems'];
@@ -24,7 +25,7 @@ $postcode = '';
 $st = $_POST['st'];
 mysql_select_db($database_condb);
 mysql_query("BEGIN" ,$condb );
-$sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address','$email','$phone','$status','$pay_slip','$b_name','$b_number','$pay_date','$pay_amount','$postcode','$pos_ems','$order_date')";
+$sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address','$email','$phone','$status','$pay_slip','$b_name','$b_number','$pay_date','$time_date','$pay_amount','$postcode','$pos_ems','$order_date')";
 
 $query1 = mysql_query($sql1,$condb ) or die ("Error in query : sql1 " . mysql_error());
 
@@ -46,7 +47,7 @@ if ($st == 1) {
 }
 if ($st == 2) {
 	//เพิ่มที่อยู่ที่2
-	
+
 
 	$sqlorder2 ="UPDATE tbl_member SET mem_address2 = '$address2' , mem_address_st = '2' WHERE mem_id = '$mem_id'";
 
@@ -91,7 +92,7 @@ foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
 		$query9 = mysql_query($sql9, $condb );
 	}
 
-	
+
 }
 
 	//exit

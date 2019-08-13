@@ -83,19 +83,19 @@ mysql_query($sql , $condb);
   </div>
 
   <div class="col-md-7">
-   <h4>  ชื่อสินค้า :  <?php echo $row_prdt['p_name']; ?> </h4>
+   <h4>  ชื่อหนังสือ :  <?php echo $row_prdt['p_name']; ?> </h4>
    <ul>
      <li>ผู้เขียน : <?php echo $row_prdt['p_at']; ?> </li>
      <li>สำนักพิมพ์ : <?php echo $row_prdt['p_pu']; ?> </li>
-     <li>หมวดหมู่ : <?php echo $row_prdtt['t_name']; ?> </li>
-     <li>ประเภทของหนังสือ : <?php echo $row_prdttt['t1_name']; ?> </li>
+     <li>ประเภท : <?php echo $row_prdtt['t_name']; ?> </li>
+     <li>หมวดหมู่ : <?php echo $row_prdttt['t1_name']; ?> </li>
      <li>ISBN : <?php echo $row_prdt['p_br']; ?> </li>
    </ul>
-   <br><B><h4>รายละเอียด</h4></B><?php echo $row_prdt['p_detial']; ?>
+   <br><B><h4>เนื้อหาโดยสังเขป</h4></B><?php echo $row_prdt['p_detial']; ?>
    <font color="#8B0000">
     <h3>
 
-      <?php 
+      <?php
       $da = date('Y-m-d');
       if ($row_prdt['promo'] != 0  && $da <= $row_prdt['promo_done']) {
         echo " <font color='#FF9966'><strike>".number_format($row_prdt['promo'],2)."</strike></font>";
@@ -106,10 +106,11 @@ mysql_query($sql , $condb);
         echo  "<font color='#FF8C00'>ประหยัด " .number_format($row_prdt['promo']-$row_prdt['p_price'],2). " บาท </font>";
       }?>
       <br />
-      จำนวนการเข้าชม <?php echo $row_prdt['p_view']; ?>  ครั้ง  <br />
-      จำนวนสินค้าคงเหลือ <?php echo $row_prdt['p_qty']; ?>  ชิ้น
 
-      <br /><br />
+      <h4>จำนวนสินค้าคงเหลือ <?php echo $row_prdt['p_qty']; ?>  ชิ้น</h4>
+
+
+
 
       <?php
       $qty = $row_prdt['p_qty'];
@@ -135,6 +136,7 @@ mysql_query($sql , $condb);
         <br />
         <br />
         <br />
+        จำนวนการเข้าชม <?php echo $row_prdt['p_view']; ?>  ครั้ง
         <br />
         <br />
 
