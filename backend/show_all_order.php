@@ -10,7 +10,6 @@ include 'report_db.php';
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 </head>
 <body>
 	<div class="container">
@@ -36,18 +35,18 @@ include 'report_db.php';
 
 											<div id="menu11" class="tab-pane fade in active">
 												<br>
-												<table class="display table table-hover" cellspacing="0" border="1">
+												<table class="display table table-hover" id="myTable" cellspacing="0" border="1">
 													<?php if ($totalRows_mycart > 0) {?>
-													<thead >
-														<tr class="info">
-															<th>เลขที่ใบสั่งซื้อ</th>
-															<th>วันที่สั่งซื้อ</th>
-															<th>ยอดสุทธิ</th>
-															<th>สถานะ</th>
-															<th>รายละเอียด</th>
-															<th>ยกเลิกคำสั่งซื้อ</th>
-														</tr>
-													</thead>
+														<thead >
+															<tr class="info">
+																<th>เลขที่ใบสั่งซื้อ</th>
+																<th>วันที่สั่งซื้อ</th>
+																<th>ยอดสุทธิ</th>
+																<th>สถานะ</th>
+																<th>รายละเอียด</th>
+																<th>ยกเลิกคำสั่งซื้อ</th>
+															</tr>
+														</thead>
 
 
 
@@ -60,90 +59,82 @@ include 'report_db.php';
 																<td align="center">
 																	<?php echo $row_mycart['order_date'];?>
 																</td>
-																<!-- <td align="center">
-																	<?php //echo $row_mycart['coid'];?>
+																
+																<td align="center">
+																	<?php echo number_format($row_mycart['ctotal'],2);?> บาท
 																</td>
-															-->
 
-															<td align="center">
-																<?php echo number_format($row_mycart['ctotal'],2);?> บาท
-															</td>
+																<td align="left">
 
-															<td align="left">
+																	<?php $status = $row_mycart['order_status'];
+																	include('status.php');
+																	?>
 
-																<?php $status = $row_mycart['order_status'];
-																include('status.php');
-																?>
-
-															</td>
-
-															<td align="center">
-																<span id="hp">
-																	<a href="index.php?order_id=<?php echo $row_mycart['oid'];?>&mem_id=<?php  echo $row_mycart['mem_id'];?>&act=show-order" class="btn-sm btn-info">
-																		<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
-
-																	</a>
-																</span>
-
-															</td>
-
-															<td>
-																<?php if ($status == 3 | $status == 4 | $status == 5) { ?>
-																	<center>
-																		<a class="btn btn-danger btn-xs" disabled>
-																		ยกเลิก </a>
-																	</center>
-																<?php }else{ ?>
-																	<center>
-																		<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>&order_status=4" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิกคำสั่งซื้อ');">
-																		ยกเลิก </a>
-																	</center>
-
-																<?php } ?>
-
-
-															</td>
-														</tr>
-													<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
-												<?php }else{ ?>
-													<center><h4>ไม่มีรายการ</h4></center>
-												<?php } ?>
-											</table>
-
-										</div>
-
-
-										<div id="menu1" class="tab-pane fade">
-											<br>
-											<table class="display table table-hover" cellspacing="0" border="1">
-												<?php if ($totalRows_mycart1 > 0) {?>
-												<thead >
-													<tr class="info">
-														<th>เลขที่ใบสั่งซื้อ</th>
-														<th>วันที่สั่งซื้อ</th>
-														<th>ยอดสุทธิ</th>
-														<th>สถานะ</th>
-														<th>รายละเอียด</th>
-														<th>ยกเลิกคำสั่งซื้อ</th>
-													</tr>
-												</thead>
-
-
-
-													<?php do { ?>
-														<tr>
-															<td align="center">
-																BK<?php echo $row_mycart1['oid'];?>
-
-															</td>
-															<td align="center">
-																<?php echo $row_mycart1['order_date'];?>
-															</td>
-																<!-- <td align="center">
-																	<?php //echo $row_mycart1['coid'];?>
 																</td>
-															-->
 
+																<td align="center">
+																	<span id="hp">
+																		<a href="index.php?order_id=<?php echo $row_mycart['oid'];?>&mem_id=<?php  echo $row_mycart['mem_id'];?>&act=show-order" class="btn-sm btn-info">
+																			<span class="glyphicon glyphicon-zoom-in"></span>รายละเอียด
+
+																		</a>
+																	</span>
+
+																</td>
+
+																<td>
+																	<?php if ($status == 3 | $status == 4 | $status == 5) { ?>
+																		<center>
+																			<a class="btn btn-danger btn-xs" disabled>
+																			ยกเลิก </a>
+																		</center>
+																	<?php }else{ ?>
+																		<center>
+																			<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>&order_status=4" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิกคำสั่งซื้อ');">
+																			ยกเลิก </a>
+																		</center>
+
+																	<?php } ?>
+
+
+																</td>
+															</tr>
+														<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
+													<?php }else{ ?>
+														<center><h4>ไม่มีรายการ</h4></center>
+													<?php } ?>
+												</table>
+
+											</div>
+
+
+											<div id="menu1" class="tab-pane fade">
+												<br>
+												<table class="display table table-hover" id="myTable1" cellspacing="0" border="1">
+													<?php if ($totalRows_mycart1 > 0) {?>
+														<thead >
+															<tr class="info">
+																<th>เลขที่ใบสั่งซื้อ</th>
+																<th>วันที่สั่งซื้อ</th>
+																<th>ยอดสุทธิ</th>
+																<th>สถานะ</th>
+																<th>รายละเอียด</th>
+																<th>ยกเลิกคำสั่งซื้อ</th>
+															</tr>
+														</thead>
+
+
+
+														<?php do { ?>
+															<tr>
+																<td align="center">
+																	BK<?php echo $row_mycart1['oid'];?>
+
+																</td>
+																<td align="center">
+																	<?php echo $row_mycart1['order_date'];?>
+																</td>
+															
 															<td align="center">
 																<?php echo number_format($row_mycart1['ctotal'],2);?> บาท
 															</td>
@@ -193,18 +184,19 @@ include 'report_db.php';
 
 										<div id="menu2" class="tab-pane fade">
 											<br>
-											<table class="display table table-hover" cellspacing="0" border="1">
+											<table class="display table table-hover" id="myTable2" cellspacing="0" border="1">
 												<?php if ($totalRows_mycart2 > 0) {?>
-												<thead >
-													<tr class="info">
-														<th>เลขที่ใบสั่งซื้อ</th>
-														<th>วันที่สั่งซื้อ</th>
-														<th>ยอดสุทธิ</th>
-														<th>สถานะ</th>
-														<th>รายละเอียด</th>
-														<th>ยกเลิกคำสั่งซื้อ</th>
-													</tr>
-												</thead>
+													<thead >
+														<tr class="info">
+															<th>เลขที่ใบสั่งซื้อ</th>
+															<th>วันที่สั่งซื้อ</th>
+															<th>ยอดสุทธิ</th>
+															<th>สถานะ</th>
+															<th>ธนาคาร</th>
+															<th>รายละเอียด</th>
+															<th>ยกเลิกคำสั่งซื้อ</th>
+														</tr>
+													</thead>
 
 													<?php do { ?>
 														<tr>
@@ -215,11 +207,7 @@ include 'report_db.php';
 															<td align="center">
 																<?php echo $row_mycart2['order_date'];?>
 															</td>
-																<!-- <td align="center">
-																	<?php //echo $row_mycart2['coid'];?>
-																</td>
-															-->
-
+																
 															<td align="center">
 																<?php echo number_format($row_mycart2['ctotal'],2);?> บาท
 															</td>
@@ -229,6 +217,10 @@ include 'report_db.php';
 																<?php $status = $row_mycart2['order_status'];
 																include('status.php');
 																?>
+
+																<td align="center">
+																	<b><?php echo $row_mycart2['b_name'];?></b>
+																</td>
 
 															</td>
 
@@ -268,7 +260,7 @@ include 'report_db.php';
 										</div>
 										<div id="menu3" class="tab-pane fade">
 											<br>
-											<table class="display table table-hover" cellspacing="0" border="1">
+											<table class="display table table-hover" id="myTable3" cellspacing="0" border="1">
 
 												<?php if ($totalRows_mycart5 > 0) {?>
 													<thead >
@@ -277,6 +269,7 @@ include 'report_db.php';
 															<th>วันที่สั่งซื้อ</th>
 															<th>ยอดสุทธิ</th>
 															<th>สถานะ</th>
+															<th>จัดส่ง</th>
 															<th>รายละเอียด</th>
 															<th>ยกเลิกคำสั่งซื้อ</th>
 														</tr>
@@ -293,11 +286,7 @@ include 'report_db.php';
 															<td align="center">
 																<?php echo $row_mycart5['order_date'];?>
 															</td>
-																<!-- <td align="center">
-																	<?php //echo $row_mycart5['coid'];?>
-																</td>
-															-->
-
+																
 															<td align="center">
 																<?php echo number_format($row_mycart5['ctotal'],2);?> บาท
 															</td>
@@ -307,6 +296,9 @@ include 'report_db.php';
 																<?php $status = $row_mycart5['order_status'];
 																include('status.php');
 																?>
+																<td align="center">
+																	<b><?php echo ucfirst($row_mycart5['emss']);?></b>
+																</td>
 
 															</td>
 
@@ -345,18 +337,18 @@ include 'report_db.php';
 										</div>
 										<div id="menu4" class="tab-pane fade">
 											<br>
-											<table class="display table table-hover" cellspacing="0" border="1">
+											<table class="display table table-hover" id="myTable4" cellspacing="0" border="1">
 												<?php if ($totalRows_mycart3 > 0) {?>
-												<thead >
-													<tr class="info">
-														<th>เลขที่ใบสั่งซื้อ</th>
-														<th>วันที่สั่งซื้อ</th>
-														<th>ยอดสุทธิ</th>
-														<th>สถานะ</th>
-														<th>รายละเอียด</th>
-														<th>ยกเลิกคำสั่งซื้อ</th>
-													</tr>
-												</thead>
+													<thead >
+														<tr class="info">
+															<th>เลขที่ใบสั่งซื้อ</th>
+															<th>วันที่สั่งซื้อ</th>
+															<th>ยอดสุทธิ</th>
+															<th>สถานะ</th>
+															<th>รายละเอียด</th>
+															<th>ยกเลิกคำสั่งซื้อ</th>
+														</tr>
+													</thead>
 
 													<?php do { ?>
 														<tr>
@@ -367,10 +359,6 @@ include 'report_db.php';
 															<td align="center">
 																<?php echo $row_mycart3['order_date'];?>
 															</td>
-																<!-- <td align="center">
-																	<?php //echo $row_mycart3['coid'];?>
-																</td>
-															-->
 
 															<td align="center">
 																<?php echo number_format($row_mycart3['ctotal'],2);?> บาท
@@ -419,18 +407,18 @@ include 'report_db.php';
 										</div>
 										<div id="menu5" class="tab-pane fade">
 											<br>
-											<table class="display table table-hover" cellspacing="0" border="1">
+											<table class="display table table-hover" id="data" cellspacing="0" border="1">
 												<?php if ($totalRows_mycart4 > 0) {?>
-												<thead >
-													<tr class="info">
-														<th>เลขที่ใบสั่งซื้อ</th>
-														<th>วันที่สั่งซื้อ</th>
-														<th>ยอดสุทธิ</th>
-														<th>สถานะ</th>
-														<th>รายละเอียด</th>
-														<th>ยกเลิกคำสั่งซื้อ</th>
-													</tr>
-												</thead>
+													<thead >
+														<tr class="info">
+															<th>เลขที่ใบสั่งซื้อ</th>
+															<th>วันที่สั่งซื้อ</th>
+															<th>ยอดสุทธิ</th>
+															<th>สถานะ</th>
+															<th>รายละเอียด</th>
+															<th>ยกเลิกคำสั่งซื้อ</th>
+														</tr>
+													</thead>
 
 													<?php do { ?>
 														<tr>
@@ -441,10 +429,6 @@ include 'report_db.php';
 															<td align="center">
 																<?php echo $row_mycart4['order_date'];?>
 															</td>
-																<!-- <td align="center">
-																	<?php //echo $row_mycart4['coid'];?>
-																</td>
-															-->
 
 															<td align="center">
 																<?php echo number_format($row_mycart4['ctotal'],2);?> บาท

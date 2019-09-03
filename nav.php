@@ -18,7 +18,7 @@
   z-index: 100;
 }
 .navbar-bootsnipp:nth-of-type(2) {
-  border-top-width: 50px;
+  border-top-width: 154px;
   z-index: 50
 }
 
@@ -237,6 +237,7 @@
           <div class="form-group">
             <select class="form-control" name="type" required="required">
               <option value="all">ทั้งหมด</option>
+              <option value="p_name">ชื่อหนังสือ</option>
               <?php// include 'sub_q.php'; ?>
               <option value="p_at">ผู้เขียน</option>
               <option value="p_pu">สำนักพิมพ์</option>
@@ -260,3 +261,5 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<br><br><br><br><br>

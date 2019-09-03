@@ -62,7 +62,8 @@ $totalRows_mm = mysql_num_rows($mm);
 $mem_id = $row_mm['mem_id'];
 
 mysql_select_db($database_condb);
-$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id and o.order_status in (2,5)
+$query_mycart = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, o.name , d.order_id , o.check_id ,
+count(d.order_id) as coid , SUM(d.total) as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_id = d.order_id and o.order_status in (2,5)
 and o.order_date >= '$start_date' and o.order_date <= '$end_date' GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
 $mycart = mysql_query($query_mycart , $condb) or die(mysql_error());
 $row_mycart = mysql_fetch_assoc($mycart);
@@ -135,10 +136,11 @@ $totalRows_mycart = mysql_num_rows($mycart);
         <th>ลูกค้า</th>
         <th>รายการ</th>
 
-        <th>สถานะ</th>
+        <th width ="15%">สถานะ</th>
 
-        <th>วันที่ทำรายการ</th>
+        <th width = "12%">วันที่ทำรายการ</th>
         <th>ราคารวม</th>
+        <th>ผู้ตรวจสอบ</th>
       </tr>
     </thead>
     <tbody>
@@ -171,6 +173,16 @@ $totalRows_mycart = mysql_num_rows($mycart);
             <td align="center">
               <?php echo number_format($row_mycart['ctotal'],2);?>
             </td>
+
+            <td><center><?php
+
+            $query_check = "SELECT * FROM tbl_admin WHERE admin_id =".$row_mycart['check_id'];
+            $check = mysql_query($query_check, $condb) or die(mysql_error());
+            $row_check = mysql_fetch_assoc($check);
+            $totalRows_check = mysql_num_rows($check);
+            echo $row_check['admin_name'];  ?></center></td>
+
+
           </tr>
           <?php
           $i += 1;

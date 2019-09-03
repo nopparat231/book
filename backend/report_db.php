@@ -47,7 +47,7 @@ $row_mycart1 = mysql_fetch_assoc($mycart1);
 $totalRows_mycart1 = mysql_num_rows($mycart1);
 
 mysql_select_db($database_condb);
-$query_mycart2 = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, d.order_id , count(d.order_id) as coid , d.total as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_status = 2 AND o.order_id = d.order_id GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
+$query_mycart2 = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.b_name, o.order_date, d.order_id , count(d.order_id) as coid , d.total as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_status = 2 AND o.order_id = d.order_id GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
 $mycart2 = mysql_query($query_mycart2 , $condb) or die(mysql_error());
 $row_mycart2 = mysql_fetch_assoc($mycart2);
 $totalRows_mycart2 = mysql_num_rows($mycart2);
@@ -65,7 +65,7 @@ $row_mycart4 = mysql_fetch_assoc($mycart4);
 $totalRows_mycart4 = mysql_num_rows($mycart4);
 
 mysql_select_db($database_condb);
-$query_mycart5 = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.order_date, d.order_id , count(d.order_id) as coid , d.total as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_status = 5 AND o.order_id = d.order_id GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
+$query_mycart5 = sprintf("SELECT o.order_id as oid, o.mem_id, o.order_status, o.emss, o.order_date, d.order_id , count(d.order_id) as coid , d.total as ctotal FROM tbl_order as o, tbl_order_detail as d WHERE o.order_status = 5 AND o.order_id = d.order_id GROUP BY o.order_id ORDER BY o.order_id DESC " , GetSQLValueString($colname_mycart , "int"));
 $mycart5 = mysql_query($query_mycart5 , $condb) or die(mysql_error());
 $row_mycart5 = mysql_fetch_assoc($mycart5);
 $totalRows_mycart5 = mysql_num_rows($mycart5);

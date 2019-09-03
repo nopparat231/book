@@ -70,7 +70,7 @@ if($_SESSION['MM_Username']!=''){
 
       <div class="form-group">
         <div class="col-sm-12">
-          <input type="text"  name="name" value="<?php echo $row_buyer['mem_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
+           ชื่อ-สกุล :<input type="text"  name="name" value="<?php echo $row_buyer['mem_name']; ?>" class="form-control" required placeholder="ชื่อ-สกุล" />
         </div>
       </div>
 
@@ -84,12 +84,13 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
 
 <div class="form-group" >
   <div class="col-sm-11">
+      <input type="radio" name="st" id="ra1" value="1" id="addre1" <?php echo $sc; ?> > ใช้ที่อยู่ลูกค้า
     <textarea name="address" id="add1" class="form-control"  rows="3"  readonly required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address']; ?></textarea>
   </div>
 
 
   <div class="col-sm-1" id="cka">
-    <input type="radio" name="st" id="ra1" value="1" id="addre1" <?php echo $sc; ?> >
+
   </div>
 
 
@@ -100,10 +101,11 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
 
   <div class="form-group" >
     <div class="col-sm-11">
+      <input type="radio" name="st" value="2" id="ra2" > ใช้ที่อยู่อื่น
       <textarea name="address2" class="form-control" id="add2" rows="3"  disabled required placeholder="ที่อยู่ในการส่งสินค้า"></textarea>
     </div>
     <div class="col-sm-1">
-      <input type="radio" name="st" value="2" id="ra2" >
+
     </div>
 
   </div>
@@ -117,12 +119,13 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
     ?>
 
     <div class="col-sm-11">
+      <input type="radio" name="st" value="2" <?php echo $sc1; ?> > ใช้ที่อยู่อื่น
       <textarea name="address2" class="form-control" id="add3" rows="3" required placeholder="ที่อยู่ในการส่งสินค้า"><?php echo $row_buyer['mem_address2']; ?></textarea>
     </div>
 
 
     <div class="col-sm-1">
-      <input type="radio" name="st" value="2" <?php echo $sc1; ?> >
+
     </div>
 
 
@@ -134,13 +137,13 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
 
 <div class="form-group">
   <div class="col-sm-12">
-    <input type="text"  name="phone" value="<?php echo $row_buyer['mem_tel']; ?>" class="form-control" required placeholder="เบอร์โทรศัพท์" />
+    เบอร์โทร :<input type="text"  name="phone" value="<?php echo $row_buyer['mem_tel']; ?>" class="form-control" required placeholder="เบอร์โทรศัพท์" />
   </div>
 </div>
 
 <div class="form-group">
   <div class="col-sm-12">
-    <input type="email"  name="email" class="form-control" value="<?php echo $row_buyer['mem_email']; ?>" required placeholder="อีเมล์" />
+    อีเมลล์ :<input type="email"  name="email" class="form-control" value="<?php echo $row_buyer['mem_email']; ?>" required placeholder="อีเมล์" />
   </div>
 </div>
 
@@ -164,17 +167,19 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
 
 </div>
 <div class="col-md-4"></div>
+
 <div class="col-md-4">
 
   <table border="1" cellspacing="20" cellpadding="20" align="left" class="table" style="border-style: solid;
   border-color: coral; padding: 15px">
+
 
   <td colspan="5" align="center"  bgcolor="#FF8D33"><strong>สรุปรายการสั่งซื้อ<br />
 
 
     <tr>
 
-      <td colspan="6" >*ข้อมูลลูกค้า
+      <td colspan="6" ><font color = "red">*</font>ข้อมูลลูกค้า
         <table border="0" cellspacing="20" cellpadding="20">
           <tr>
             <td  align="left" valign="top"><br>
@@ -196,7 +201,7 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
 
 
       <table border="0" cellspacing="20" cellpadding="20">
-        <tr><td><strong>*รายการสั่งซื้อ <br><br></strong></td></tr>
+        <tr><td><strong><font color = "red">*</font>รายการสั่งซื้อ <br><br></strong></td></tr>
 
         <tr>
 
@@ -267,7 +272,7 @@ if ($row_buyer['mem_address_st'] == 0 or $row_buyer['mem_address_st'] == 1){
         </tr>
 
         <tr>
-         <td style="width: 300px">จัดส่ง <?php echo $emss; ?></td>
+         <td style="width: 300px">ค่าจัดส่ง <b><?php echo ucfirst($emss); ?></b></td>
          <td ></td>
          <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
        </tr>

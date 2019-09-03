@@ -50,6 +50,12 @@ if ($type == 'all') {
   $row_prd = mysql_fetch_assoc($prd);
   $totalRows_prd = mysql_num_rows($prd);
 
+}elseif ($type == 'p_name') {
+  $query_prd = "SELECT * FROM tbl_product WHERE p_name LIKE '%$q%' ORDER BY p_id ASC";
+  $prd = mysql_query($query_prd, $condb) or die(mysql_error());
+  $row_prd = mysql_fetch_assoc($prd);
+  $totalRows_prd = mysql_num_rows($prd);
+
 }elseif ($type == 'p_pu') {
   $query_prd = "SELECT * FROM tbl_product WHERE p_pu LIKE '%$q%' ORDER BY p_id ASC";
   $prd = mysql_query($query_prd, $condb) or die(mysql_error());
@@ -115,7 +121,7 @@ if ($type == 'all') {
 }
 ?>
 <div class="col-sm-2" align="center">
-  <br><br>  <br><br>  <br><br> 
+  <br><br>  <br><br>  <br><br>
 </div>
 <?php
 mysql_free_result($prd);

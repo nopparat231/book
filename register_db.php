@@ -46,7 +46,7 @@ $result1 = mysql_query($sql,$condb) or die ("Error in query : $sql" .mysql_error
 		$mem_id = mysql_insert_id($condb);
 
 		$strTo = $mem_email;
-		$strSubject = "Activate Member Account";
+		$strSubject = "ยืนยันการสมัครสมาชิก เว็บจำหน่ายหนังสือออนไลน์ BOOKSHOP";
 		$strHeader = "Content-type: text/html; charset=UTF-8\n"; // or UTF-8 //
 
 		$strMessage = "";

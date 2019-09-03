@@ -139,7 +139,7 @@ $totalRows_prd = mysql_num_rows($prd);
     <div class="row" >
 
       <?php
-      include('carousel.php');
+      //include('carousel.php');
 
 
       ?>

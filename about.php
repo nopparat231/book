@@ -79,7 +79,7 @@ input[type=number]{
     <div class="row">
 
       <?php
-      include('carousel.php');
+      //include('carousel.php');
 
 
 

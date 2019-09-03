@@ -59,7 +59,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
         <?php include('m.php');?>
       <div class="row">
       <div class="col-md-12">
-        <h3 align="center"> รายการข้อมูลธนาคาร  <a href="add_bank.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+        <h3 align="center"> รายการข้อมูลธนาคาร   </h3>
         <div class="table">
           <table id="example" class="display" cellspacing="0" border="1">
             <thead>
@@ -68,7 +68,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
                 <th width="15%">ข้อมูล</th>
                 <th width="10%">โลโก้</th>
                 <th width="5%">สถานะ</th>
-                <th width="5%">แก้ไข </th>
+
                 <th width="5%">ลบ</th>
               </tr>
             </thead>
@@ -93,7 +93,7 @@ $totalRows_lbk = mysql_num_rows($lbk);
                     <td><center><font color ="red">ปิดบัญชี</center></font></td>
                   <?php endif ?>
 
-                  <td><center> <a href="edit_bank.php?bank_id=<?php echo $row_lbk['b_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
+                  
                   <td><center> <a href="del_bank.php?bank_id=<?php echo $row_lbk['b_id'];?>" onClick="return confirm('ยืนยันการปิดบัญชี');" class="btn btn-danger btn-xs"> ปิดบัญชี </a> </center> </td>
                 </tr>
               <?php } while ($row_lbk = mysql_fetch_assoc($lbk)); ?>

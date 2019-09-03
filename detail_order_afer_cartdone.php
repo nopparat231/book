@@ -179,7 +179,7 @@ if($status > 1){ ?>
 
    <hr style="border-radius: 5px;border: 1px solid black;">
 
-   <center>หลักฐานการโอน <br>
+   <center><b>หลักฐานการโอน</b><br><p><p>
 
     <?php if ($row_cartdone['pay_slip'] != '') { ?>
 
@@ -222,9 +222,9 @@ if($status > 1){ ?>
 
 <div class="col-md-6">
 
-
-  <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-success btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"></span> พิมพ์ใบเสร็จ</a>
-
+  <?php if($status != '4') { ?>
+     <a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-success btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"> พิมพ์ใบเสร็จ</span></a>
+  <?php } ?>
   <table border="1" align="left" class="table" style=" border-style: solid;
   border-color: coral;">
   <tr>
@@ -312,7 +312,7 @@ if($status > 1){ ?>
       </tr>
 
       <tr>
-       <td style="width: 300px">ค่าจัดส่ง <?php echo $add['emss']; ?></td>
+       <td style="width: 300px">ค่าจัดส่ง <b><?php echo ucfirst($add['emss']); ?></b></td>
        <td ></td>
        <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
      </tr>
@@ -388,6 +388,20 @@ if($status > 1){ ?>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
+
+      <tr>
+        <td >เลขที่ใบสั่งซื้อ</td>
+        <td colspan="5" align="left"><label for="pay_date"></label>
+          <?php echo "BK00000".$row_cartdone['order_id']; ?>
+        </tr>
+        <tr>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
 
       <tr>
         <td >วันที่ชำระเงิน</td>
@@ -564,7 +578,7 @@ if($status > 1){ ?>
                 </tr>
 
                 <tr>
-                  <td style="width: 300px">ค่าจัดส่ง <?php echo $add['emss']; ?></td>
+                  <td style="width: 300px">ค่าจัดส่ง <b><?php echo ucfirst($add['emss']); ?></b></td>
                  <td ></td>
                  <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
                </tr>

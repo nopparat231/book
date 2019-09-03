@@ -141,12 +141,7 @@
 								<li>
 									<a href="carousel.php" class="font"><img src="../icon/staff/logo.png" alt="">  จัดการโลโก้ หน้าปก</a>
 								</li>
-								<li>
-									<a href="list_news.php" class="font"><img src="../icon/staff/news.png" alt="">  จัดการข่าวสาร</a>
-								</li>
-								<li>
-									<a href="add_about.php" class="font"><img src="../icon/staff/info.png" alt="">  จัดการเกี่ยวกับ ติดต่อเรา</a>
-								</li>
+
 
 								<?php
 								}elseif ($row_mm['status'] == 'sale') { ?>
@@ -154,24 +149,15 @@
 								<li>
 									<a href="list_bank.php" class="font"><img src="../icon/staff/bank.png" alt="">  จัดการข้อมูลธนาคาร</a>
 								</li>
-								<li>
-									<a href="carousel.php" class="font"><img src="../icon/staff/logo.png" alt="">  จัดการโลโก้ หน้าปก</a>
-								</li>
+
 								<li>
 									<a href="list_news.php" class="font"><img src="../icon/staff/news.png" alt="">  จัดการข่าวสาร</a>
 								</li>
-								<li>
-									<a href="add_about.php" class="font"><img src="../icon/staff/info.png" alt="">  จัดการเกี่ยวกับ ติดต่อเรา</a>
-								</li>
+
 
 								<?php
 								}elseif ($row_mm['status'] == 'confirm') { ?>
-								<li>
-									<a href="carousel.php" class="font"><img src="../icon/staff/logo.png" alt="">  จัดการโลโก้ หน้าปก</a>
-								</li>
-								<li>
-									<a href="list_news.php" class="font"><img src="../icon/staff/news.png" alt="">  จัดการข่าวสาร</a>
-								</li>
+
 								<li>
 									<a href="add_about.php" class="font"><img src="../icon/staff/info.png" alt="">  จัดการเกี่ยวกับ ติดต่อเรา</a>
 								</li>

@@ -107,13 +107,14 @@ $totalRows_lbk = mysql_num_rows($lbk);
             <thead>
               <tr align="center">
                 <th>ลำดับ</th>
-                <th>เลขที่ใบตรวจรับ</th>
+                <th width = "12%">เลขที่ใบตรวจรับ</th>
                 <th>จำนวน</th>
                 <th>ราคา</th>
                 <th>วันที่สั่งซื้อสินค้า</th>
                 <th>วันที่รับสินค้า</th>
-                <th>ใบเสร็จ</th>
+                <th width = "12%">ใบเสร็จ</th>
                 <th>สินค้า</th>
+                <th width = "15%">ผู้ตรวจรับ</th>
 
 
               </tr>
@@ -136,7 +137,13 @@ $totalRows_lbk = mysql_num_rows($lbk);
                 <td><center><a href="report_all_sell_prd.php?sell_prd=<?php echo $row_lbk['s_id'];?>" class="btn btn-warning btn-xs">ดูสินค้า</a></center>
                 </td>
 
+                <td><center><?php
 
+                $query_add = "SELECT * FROM tbl_admin WHERE admin_id =".$row_lbk['add_id'];
+                $add = mysql_query($query_add, $condb) or die(mysql_error());
+                $row_add = mysql_fetch_assoc($add);
+                $totalRows_add = mysql_num_rows($add);
+                echo $row_add['admin_name'];  ?></center></td>
 
               </tr>
               <?php

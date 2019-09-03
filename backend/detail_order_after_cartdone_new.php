@@ -111,13 +111,13 @@ if($status > 1){ ?>
     ?>
 
     <tr>
-      <td >เลขที่ใบสั่งซื้อ : </td>
+      <td >เลขที่ใบสั่งซื้อ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
       <td colspan="5" align="left"><label for="pay_date"></label>
         <?php echo "BK00000".$row_cartdone['order_id']; ?>
       </tr>
 
       <tr>
-        <td >สถานะ : </td>
+        <td >สถานะ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
         <td colspan="5" align="left"><label for="pay_date"></label>
          <?php
          $status =  $row_cartdone['order_status'];
@@ -135,7 +135,7 @@ if($status > 1){ ?>
     </tr>
 
     <tr>
-      <td >เลขที่บัญชี : </td>
+      <td >เลขที่บัญชี &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
       <td colspan="5" align="left"><label for="pay_date"></label>
        <?php echo $row_cartdone['b_number'];?>
      </td>
@@ -143,25 +143,26 @@ if($status > 1){ ?>
  </tr>
 
  <tr>
-  <td >จำนวนเงิน : </td>
+  <td >จำนวนเงิน &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
   <td colspan="5" align="left"><label for="pay_date"></label>
     <?php echo  number_format($row_cartdone['pay_amount'],2);?> บาท
   </td>
 </tr>
 
 <tr>
-  <td >วันที่ชำระเงิน : </td>
-  <td colspan="5" align="left"><label for="pay_date"></label>
+  <td >วันที่ชำระเงิน &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
+  <td colspan="5" align="left"><label for="pay_date"></label> <?php if($status != '4') {?>
    <?php $old_startDate = date("d-m-Y",strtotime($row_cartdone['pay_date'])); ?>
-   <?php echo date($old_startDate);?>
+   <?php echo date($old_startDate);?> <?php } ?>
+
  </td>
 </tr>
 
 <tr>
-  <td >เวลาที่ชำระเงิน : </td>
-  <td colspan="5" align="left"><label for="pay_amount"></label>
+  <td >เวลาที่ชำระเงิน &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
+  <td colspan="5" align="left"><label for="pay_amount"></label> <?php if($status != '4') {?>
     <?php $old_startTime = date("H:i",strtotime($row_cartdone['order_date'])); ?>
-    <?php echo date($old_startTime);?>
+    <?php echo date($old_startTime);?> <?php } ?>
 
   </td>
 </tr>
@@ -171,13 +172,21 @@ if($status > 1){ ?>
 
    <hr style="border-radius: 5px;border: 1px solid black;">
 
-   <center>หลักฐานการโอน <br>
+   <?php if($status != '4') {?>
 
+   <center><b>หลักฐานการโอน</b><br><p><p>
+<?php } ?>
 
 
     <?php if ($row_cartdone['pay_slip'] != '') { ?>
 
      <img src="../pimg/<?php echo $row_cartdone['pay_slip'];?>"  width="300px"/>
+
+   <?php } ?>
+
+   <?php if ($row_cartdone['pay_slip'] == '') { ?>
+
+     <img src="W.jpg"  width="250px"/>
 
    <?php } ?>
 
@@ -188,61 +197,72 @@ if($status > 1){ ?>
 
  if ($row_mm['status'] != 'sale' && $status == '5') {
 
-  ?>
-  เลขพัสดุ :
-  <form action="add_postcode.php" method="get" >
-    <input type="number" hidden name="order_id" value="<?php echo $row_cartdone['order_id'];?>" />
-    <input type="text" hidden name="mem_name" value="<?php echo $row_cartdone['mem_name'];?>" />
-    <input type="text" hidden name="mem_email" value="<?php echo $row_cartdone['mem_email'];?>" />
-    <input type="text" name="postcode" />
-    <input type="number" name="status" value="3" hidden />
-    <button type="submit" name="submit" value="เพิ่มเลขพัสดุ" class="btn-sm btn-success glyphicon glyphicon-floppy-saved btn-lm "  />
-  </form>
+   ?>
+   เลขพัสดุ :
+   <form action="add_postcode.php" method="get" >
+     <input type="number" hidden name="order_id" value="<?php echo $row_cartdone['order_id'];?>" />
+     <input type="text" hidden name="mem_name" value="<?php echo $row_cartdone['mem_name'];?>" />
+     <input type="text" hidden name="mem_email" value="<?php echo $row_cartdone['mem_email'];?>" />
+     <input type="text" hidden name="sent_id" value="<?php echo $row_mm['admin_id'];?>" />
+     <input type="text" name="postcode" />
+     <input type="number" name="status" value="3" hidden />
+     <button type="submit" name="submit" value="เพิ่มเลขพัสดุ" class="btn-sm btn-success glyphicon glyphicon-floppy-saved btn-lm "/>บันทึก
+   </form>
+   <?php
 
-  <?php
+ }
+ ?>
 
-}
-?>
+ <?php if ($row_cartdone['postcode'] != '') { ?>
 
-<?php if ($row_cartdone['postcode'] != '') { ?>
+  <h4>เลขที่ใบส่งของ :  <?php echo $row_cartdone['postcode'];?></h4>
 
- <h4>เลขที่ใบส่งของ :  <?php echo $row_cartdone['postcode'];?></h4>
+ <?php } ?>
 
+ </td>
+
+ </tr>
+
+ <tr>
+   <td >&nbsp;</td>
+   <td >&nbsp;</td>
+   <td >&nbsp;</td>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+ </tr>
+ <tr>
+   <td >&nbsp;</td>
+   <td >&nbsp;</td>
+   <td >&nbsp;</td>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+ </tr>
+
+ </table>
+
+ </div>
+
+ <div class="col-md-6">
+
+<?php if($status != '4') { ?>
+   <a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-success btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"> พิมพ์ใบเสร็จ</span></a>
 <?php } ?>
-
-</td>
-
-</tr>
-
-<tr>
-  <td >&nbsp;</td>
-  <td >&nbsp;</td>
-  <td >&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-<tr>
-  <td >&nbsp;</td>
-  <td >&nbsp;</td>
-  <td >&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-</tr>
-
-</table>
-
-</div>
-
-<div class="col-md-6">
+   <?php if ($row_cartdone['order_status'] == 2 && $row_mm['status'] != 'confirm' ): ?>
+   <div class= col-md-8>
 
 
-  <a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-success btn-sm pull-right" target="_blank" id="hp" >  <span class="glyphicon glyphicon-print"> พิมพ์ใบเสร็จ</span></a>
+     <form action="update_check_order.php" method="get" >
+           <input type="number" hidden name="order_id" value="<?php echo $row_cartdone['order_id'];?>" />
+           <input type="text" hidden name="check_id" value="<?php echo $row_mm['admin_id'];?>" />
+           <input type="number" name="status" value="5" hidden />
+           <button type="submit" name="submit2" value="ยืนยันการชำระเงิน" class="btn btn-primary btn-sm pull-right glyphicon glyphicon-ok"onClick="return confirm('ยืนยันการตรวจสอบ');" id="hp"/>ยืนยันการชำระเงิน
+         </form>
 
-  <?php if ($row_cartdone['order_status'] == 2 && $row_mm['status'] != 'confirm' ): ?>
-   <a href="update_check_order.php?order_id=<?php echo $colname_cartdone;?>&order_status=5" class="btn btn-warning btn-sm pull-right" onClick="return confirm('ยืนยันการตรวจสอบ');" id="hp" >  <span class="glyphicon glyphicon-ok"></span> ตรวจสอบแล้ว </a>
-
+   </div>
+   <br>
+   <p>
 
  <?php endif ?>
  <table border="1" align="left" class="table" style=" border-style: solid;
@@ -254,7 +274,7 @@ if($status > 1){ ?>
   </tr>
   <tr>
 
-    <td colspan="6" align="left">*ข้อมูลการจัดส่ง
+    <td colspan="6" align="left"><font color = "red">*</font>ข้อมูลการจัดส่ง
 
       <table border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -283,7 +303,7 @@ if($status > 1){ ?>
     </table>
 
     <table border="0" cellspacing="0" cellpadding="0">
-      <tr><td><strong>*รายการสั่งซื้อ <br><br></strong></td></tr>
+      <tr><td><strong><font color="red">*</font>รายการสั่งซื้อ <br><br></strong></td></tr>
 
       <tr>
 
@@ -332,7 +352,7 @@ if($status > 1){ ?>
     </tr>
 
     <tr>
-     <td style="width: 300px">ค่าจัดส่ง <?php echo $add['emss']; ?> </td>
+     <td style="width: 300px">ค่าจัดส่ง <b><?php echo ucfirst($add['emss']); ?></b> </td>
      <td ></td>
      <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
    </tr>
@@ -408,6 +428,20 @@ if($status > 1){ ?>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
+
+      <tr>
+        <td >เลขที่ใบสั่งซื้อ</td>
+        <td colspan="5" align="left"><label for="pay_date"></label>
+          <?php echo "BK00000".$row_cartdone['order_id']; ?>
+        </tr>
+        <tr>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
 
       <tr>
         <td >วันที่ชำระเงิน</td>
@@ -501,7 +535,7 @@ if($status > 1){ ?>
             </tr>
             <tr>
 
-              <td colspan="6" align="left">*ข้อมูลการจัดส่ง
+              <td colspan="6" align="left"><font color = "red">*</font>ข้อมูลการจัดส่ง
 
                 <table border="0" cellspacing="0" cellpadding="0">
                   <tr>
@@ -530,7 +564,7 @@ if($status > 1){ ?>
               </table>
 
               <table border="0" cellspacing="0" cellpadding="0">
-                <tr><td><strong>*รายการสั่งซื้อ <br><br></strong></td></tr>
+                <tr><td><strong><font color="red">*</font>รายการสั่งซื้อ <br><br></strong></td></tr>
 
                 <tr>
 
@@ -579,7 +613,7 @@ if($status > 1){ ?>
               </tr>
 
               <tr>
-               <td style="width: 300px">ค่าจัดส่ง <?php echo $add['emss']; ?> </td>
+               <td style="width: 300px">ค่าจัดส่ง <b><?php echo ucfirst($add['emss']); ?></b> </td>
                <td ></td>
                <td align = "right"style="width: 50%"><?php echo number_format($sumw,2)." บาท"; ?></td>
              </tr>

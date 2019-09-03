@@ -117,7 +117,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
           <div class="col-sm-7" align="left">
 
             <select name="status">
-             <option value="<?php echo $row_editadmin['status']; ?> "><?php echo $row_editadmin['status']; ?></option>
+             <option value="<?php echo $row_editadmin['status'];?>"><?php echo $row_editadmin['status'];?></option>
 
              <option value="add">พนักงานตรวจรับ</option>
              <option value="sale">พนักงานขาย</option>

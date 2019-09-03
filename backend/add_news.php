@@ -42,6 +42,7 @@
             <textarea name="add_new" cols="100" class="ckeditor" rows="5" placeholder="กรุณากรอกลายละเอียดข่าว" required></textarea>
 
           </td>
+
         </tr>
         <br>
         <div class="form-group">

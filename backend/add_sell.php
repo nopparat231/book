@@ -132,7 +132,7 @@
                     <td colspan="2">&nbsp;</td>
                   </tr>
                   <tr>
-                    <td>&nbsp;</td>
+                    <td>&nbsp;<input type="number" hidden name="add_id" value="<?php echo $row_mm['admin_id'];?>" /></td>
                     <td colspan="2">
                       <button type="submit" name="button" id="button" value="ตกลง" class="btn btn-primary">เพิ่มข้อมูล</button></td>
                     </tr>
