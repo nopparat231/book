@@ -1,5 +1,6 @@
 <?php
 ob_start();
+date_default_timezone_set("Asia/Bangkok");
 include('h.php');?>
 <?php include('datatable.php');
 include 'check_order_date.php';
@@ -69,7 +70,7 @@ include 'check_order_date.php';
 
 
     include('test2navbar.php');
-    include 'nav.php';
+    //include 'nav.php';
 
     ?>
   </div>
