@@ -374,7 +374,7 @@ if (isset($_SESSION['shopping_cart'])) {
 <!-- เมนูบาร์ -->
 <br>
 <nav class="[ navbar navbar-inverse navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation" style="background-color: #2C3E50">
-<?php include('carousel.php'); ?>
+<?php //include('carousel.php'); ?>
 	<!-- <img src="img/gg.png" alt="" height="70px"  width="10%"><img src="img/ggg.jpg" alt="" height="70px" width="90%"> -->
 	<div class="[ container ]">
 		<!-- Brand and toggle get grouped for better mobile display -->
