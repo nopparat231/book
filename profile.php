@@ -22,7 +22,7 @@
   <div >
 
     <?php  include('test2navbar.php'); 
-    include 'nav.php';
+    
 ?>
   </div>
 

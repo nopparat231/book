@@ -43,28 +43,28 @@ $sql ="INSERT INTO tbl_member (mem_username , mem_password , mem_name , mem_emai
 $result1 = mysql_query($sql,$condb) or die ("Error in query : $sql" .mysql_error());
 
 
-		$mem_id = mysql_insert_id($condb);
+		// $mem_id = mysql_insert_id($condb);
 
-		$strTo = $mem_email;
-		$strSubject = "ยืนยันการสมัครสมาชิก เว็บจำหน่ายหนังสือออนไลน์ BOOKSHOP";
-		$strHeader = "Content-type: text/html; charset=UTF-8\n"; // or UTF-8 //
+		// $strTo = $mem_email;
+		// $strSubject = "ยืนยันการสมัครสมาชิก เว็บจำหน่ายหนังสือออนไลน์ BOOKSHOP";
+		// $strHeader = "Content-type: text/html; charset=UTF-8\n"; // or UTF-8 //
 
-		$strMessage = "";
-		$strMessage .= "ยินดีต้อนรับ : คุณ".$mem_name."<br>";
-		$strMessage .= "________________________________________<br>";
-		$strMessage .= "ยืนยันการสมัครสมาชิกโดยการคลิกที่ลิ้งค์ด้านล่าง<br>";
-		$strMessage .= "http://localhost/book/activate.php?sid=".$session_id."&mem_id=".$mem_id."<br>";
-		$strMessage .= "________________________________________<br>";
-		$strMessage .= "<br>";
+		// $strMessage = "";
+		// $strMessage .= "ยินดีต้อนรับ : คุณ".$mem_name."<br>";
+		// $strMessage .= "________________________________________<br>";
+		// $strMessage .= "ยืนยันการสมัครสมาชิกโดยการคลิกที่ลิ้งค์ด้านล่าง<br>";
+		// $strMessage .= "http://localhost/book/activate.php?sid=".$session_id."&mem_id=".$mem_id."<br>";
+		// $strMessage .= "________________________________________<br>";
+		// $strMessage .= "<br>";
 
-		$flgSend = mail($strTo,$strSubject,$strMessage,$strHeader);
+		// $flgSend = mail($strTo,$strSubject,$strMessage,$strHeader);
 
-}
+
 
 mysql_close();
 if($result1){
 	echo"<script>";
-	echo"alert('สมัครสมาชิกเรียบร้อยแล้ว กรุณายืนยันที่ E-mail !');";
+	echo"alert('สมัครสมาชิกเรียบร้อยแล้ว' );";
 	echo"window.location = 'index.php';";
 	echo"</script>";
 }else{
@@ -73,5 +73,6 @@ if($result1){
 	echo"window.location = 'index.php';";
 	echo"</script>";
 	}
-
+}
 ?>
+ <script src="js/jquery-1.11.1.min.js" rel="stylesheet"></script> 

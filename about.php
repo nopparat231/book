@@ -69,7 +69,7 @@ input[type=number]{
 
 
     include('test2navbar.php');
-    include 'nav.php';
+    
 
 
     ?>

@@ -53,7 +53,7 @@ if (isset($_POST['mem_username'])) {
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_condb);
 
-  $LoginRS__query=sprintf("SELECT * FROM tbl_member WHERE mem_username=%s AND mem_password=%s AND active='yes' AND status='user'",
+  $LoginRS__query=sprintf("SELECT * FROM tbl_member WHERE mem_username=%s AND mem_password=%s AND status='user'",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text"));
 
   $LoginRS = mysql_query($LoginRS__query, $condb) or die(mysql_error());

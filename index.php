@@ -70,7 +70,7 @@ include 'check_order_date.php';
 
 
     include('test2navbar.php');
-    //include 'nav.php';
+    //
 
     ?>
   </div>

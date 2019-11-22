@@ -33,11 +33,11 @@
         </div>
 
         <div class="col-sm-3" align="left">
-          รหัสผ่าน :<input  name="mem_password" type="password" required class="form-control" id="txtNewPassword"  placeholder="6-12 ตัว" pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength = "12" autocomplete="off" />
+          รหัสผ่าน :<input  name="mem_password" type="password" required class="form-control" id="txtNewPassword"  placeholder="6-12 ตัว"  minlength="2" maxlength = "12" autocomplete="off" />
         </div>
 
         <div class="col-sm-3" align="left">
-          ยืนยันรหัสผ่าน :<input  name="mem_password" type="password" id="txtConfirmPassword" onkeyup="checkPasswordMatch();" required class="form-control" id="mem_password" placeholder="" pattern="^[a-zA-Z0-9]+$" minlength="2" />
+          ยืนยันรหัสผ่าน :<input  name="mem_password" type="password" id="txtConfirmPassword" onkeyup="checkPasswordMatch();" required class="form-control" id="mem_password" placeholder=""  minlength="2" />
           <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
         </div>
 

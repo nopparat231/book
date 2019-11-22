@@ -114,7 +114,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
 
     include('test2navbar.php');
-    include 'nav.php';
+    
 
 
     ?>
