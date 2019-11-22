@@ -67,7 +67,7 @@
             <div class="form-group">
               <div class="col-sm-2" align="right"> เบอร์โทร : </div>
               <div class="col-sm-5" align="left">
-                <input  name="admin_tel" type="text" required class="form-control" id="admin_tel" placeholder="0912345678" pattern="[0-9]{10}" minlength="2" title="เบอร์โทร 0-9" minlength="2"/>
+                <input  name="admin_tel" type="number" required class="form-control" id="admin_tel" placeholder="0912345678" pattern="[0-9]{10}" minlength="10" maxlength="10" title="เบอร์โทร 0-9"/>
               </div>
             </div>
 
@@ -83,22 +83,9 @@
               <div class="col-sm-7" align="left">
 
                 <select name="status">
-                  <?php if (isset($_GET['admin'])): ?>
+                  
                    <option value="admin">ผู้ดูแลระบบ</option>
-                 <?php endif ?>
-                 <?php if (isset($_GET['add'])): ?>
-                   <option value="add">พนักงานตรวจรับ</option>
-
-                 <?php endif ?>
-                 <?php if (isset($_GET['superadmin'])): ?>
-                   <option value="superadmin">ผู้จัดการ</option>
-                 <?php endif ?>
-                 <?php if (isset($_GET['sale'])): ?>
-                   <option value="sale">พนักงานขาย</option>
-                 <?php endif ?>
-                 <?php if (isset($_GET['confirm'])): ?>
-                   <option value="confirm">พนักงานจัดส่ง</option>
-                 <?php endif ?>
+                
                </select>
              </div>
            </div>

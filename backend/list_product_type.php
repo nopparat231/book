@@ -55,11 +55,11 @@ $totalRows_ptype = mysql_num_rows($ptype);
  <?php include('m.php');?>
 
   <div class="row">
-<center><h3>จัดการประเภทหนังสือ</h3></center>
+<center><h3>จัดการประเภทสินค้า</h3></center>
   <div class="col-md-12">
     <?php include 'list_product_type_show.php'; ?>
 
-    <table id="example" class="display" cellspacing="0" border="1">
+    <table id="myTable" class="display" cellspacing="0" border="1">
       <thead>
         <tr>
           <th width="5%">ลำดับ</th>

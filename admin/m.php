@@ -13,7 +13,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<a class="navbar-brand" href="#">
-								<img src="../img/logo42.png" alt="LOGO" >
+							<b>Admin</b>
 							</a>
 						</div>
 

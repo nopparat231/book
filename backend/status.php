@@ -5,7 +5,7 @@ if ($status == 1) {
 	echo "</font>";
 }elseif ($status == 2) {
 	echo "<font color='#b36b00'><span class='glyphicon glyphicon-certificate'></span> ";
-	echo "รอตรวจสอบการชำระเงิน";
+	echo "รอตรวจสอบ";
 	echo "</font>";
 }elseif ($status == 3) {
 	echo "<font color='blue'><span class='glyphicon glyphicon-certificate'></span> ";
@@ -18,7 +18,7 @@ if ($status == 1) {
 
 }elseif ($status == 5) {
 	echo "<font color='green'><span class='glyphicon glyphicon-certificate'></span> ";
-	echo "ตรวจสอบการชำระแล้ว";
+	echo "ตรวจสอบแล้ว";
 	echo "</font>";
 }
 ?>

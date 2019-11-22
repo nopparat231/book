@@ -13,7 +13,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<a class="navbar-brand" href="#">
-								<img src="../img/logo42.png" alt="LOGO">
+								
 							</a>
 						</div>
 
@@ -104,25 +104,39 @@
 									<a href="index.php" class="font"><img src="../icon/admin/home.png" alt="หน้าหลัก">  หน้าหลัก</a>
 								</li>
 								<?php
-								if ($row_mm['status'] == 'staff') { ?>
+								if ($row_mm['status'] == 'admin') { ?>
+								
 								<li>
-									<a href="list_product_type.php?list"  class="font"><img src="../icon/staff/edittype.png" alt="จัดการประเภทหนังสือ">  จัดการประเภทหนังสือ</a>
+									<a  href="list_product.php" class="font"><img src="../icon/staff/edb.png" alt="">  จัดการสินค้า</a>
 								</li>
 								<li>
-									<a  href="list_product.php" class="font"><img src="../icon/staff/edb.png" alt="">  จัดการหนังสือ</a>
+									<a href="list_product_type.php?list"  class="font"><img src="../icon/staff/edittype.png" alt="จัดการประเภท">  จัดการประเภทสินค้า</a>
 								</li>
-								<li>
-									<a href="list_sell.php" class="font"><img src="../icon/staff/addbook.png" alt="">  จัดการตรวจรับหนังสือ</a>
-								</li>
+							<!-- 	<li>
+									<a href="list_sell.php" class="font"><img src="../icon/staff/addbook.png" alt="">  จัดการตรวจรับ</a>
+								</li> -->
+
+									<li>
+										<a href="add_admin.php" class="font"><img src="../icon/Admin/adduser.png" alt="">  เพิ่มผู้ใช้งานระบบ</a>
+									</li>
+									<li>
+										<a href="list_admin.php" class="font"><img src="../icon/Admin/editadmin.png" alt="">  จัดการผู้ใช้งานระบบ</a>
+									</li>
+									<li>
+										<a href="list_member.php" class="font"><img src="../icon/Admin/edituser.png" alt="">  จัดการลูกค้า</a>
+									</li>
+
+
+
 								<li>
 									<a href="list_bank.php" class="font"><img src="../icon/staff/bank.png" alt="">  จัดการข้อมูลธนาคาร</a>
 								</li>
-								<li>
+								<!-- <li>
 									<a href="carousel.php" class="font"><img src="../icon/staff/logo.png" alt="">  จัดการโลโก้ หน้าปก</a>
-								</li>
-								<li>
+								</li> -->
+								<!-- <li>
 									<a href="list_news.php" class="font"><img src="../icon/staff/news.png" alt="">  จัดการข่าวสาร</a>
-								</li>
+								</li> -->
 								<li>
 									<a href="add_about.php" class="font"><img src="../icon/staff/info.png" alt="">  จัดการเกี่ยวกับ ติดต่อเรา</a>
 								</li>
@@ -130,17 +144,17 @@
 								<?php
 								}elseif ($row_mm['status'] == 'add') { ?>
 								<li>
-									<a href="list_product_type.php?list"  class="font"><img src="../icon/staff/edittype.png" alt="จัดการประเภทหนังสือ">  จัดการประเภทหนังสือ</a>
+									<a href="list_product_type.php?list"  class="font"><img src="../icon/staff/edittype.png" alt="จัดการประเภท">  จัดการประเภท</a>
 								</li>
 								<li>
-									<a  href="list_product.php" class="font"><img src="../icon/staff/edb.png" alt="">  จัดการหนังสือ</a>
+									<a  href="list_product.php" class="font"><img src="../icon/staff/edb.png" alt="">  จัดการสินค้า</a>
 								</li>
-								<li>
-									<a href="list_sell.php" class="font"><img src="../icon/staff/addbook.png" alt="">  จัดการตรวจรับหนังสือ</a>
-								</li>
-								<li>
+							<!-- 	<li>
+									<a href="list_sell.php" class="font"><img src="../icon/staff/addbook.png" alt="">  จัดการตรวจรับ</a>
+								</li> -->
+								<!-- <li>
 									<a href="carousel.php" class="font"><img src="../icon/staff/logo.png" alt="">  จัดการโลโก้ หน้าปก</a>
-								</li>
+								</li> -->
 
 
 								<?php
@@ -150,10 +164,10 @@
 									<a href="list_bank.php" class="font"><img src="../icon/staff/bank.png" alt="">  จัดการข้อมูลธนาคาร</a>
 								</li>
 
-								<li>
+								<!-- <li>
 									<a href="list_news.php" class="font"><img src="../icon/staff/news.png" alt="">  จัดการข่าวสาร</a>
 								</li>
-
+ -->
 
 								<?php
 								}elseif ($row_mm['status'] == 'confirm') { ?>
@@ -171,13 +185,13 @@
 										<a href="list_member.php" class="font"><img src="../icon/manager/member.png" alt="">  รายงานข้อมูลลูกค้า</a>
 									</li>
 									<li>
-										<a href="report_all_sell.php" class="font"><img src="../icon/manager/booksell.png" alt="">  รายงานตรวจรับหนังสือ</a>
+										<a href="report_all_sell.php" class="font"><img src="../icon/manager/booksell.png" alt="">  รายงานตรวจรับ</a>
 									</li>
 									<li>
-										<a href="report_all_type.php" class="font"><img src="../icon/manager/type.png" alt="">  รายงานประเภทหนังสือ</a>
+										<a href="report_all_type.php" class="font"><img src="../icon/manager/type.png" alt="">  รายงานประเภท</a>
 									</li>
 									<li>
-										<a href="report_all_prd.php" class="font"><img src="../icon/manager/book.png" alt="">  รายงานข้อมูลหนังสือ</a>
+										<a href="report_all_prd.php" class="font"><img src="../icon/manager/book.png" alt="">  รายงานข้อมูล</a>
 									</li>
 
 									<li>

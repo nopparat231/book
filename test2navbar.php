@@ -382,7 +382,7 @@ if (isset($_SESSION['shopping_cart'])) {
 
 			<div class="[ animbrand ]" >
 				<a class="[ navbar-brand ][ animate ]" href="index.php">
-					<img alt="Brand" src="pimg/<?php echo $row_cf['logo']; ?>" width="70" ></a>
+					<b>หน้าหลัก</b></a>
 				</div>
 			</div>
 
@@ -400,7 +400,7 @@ if (isset($_SESSION['shopping_cart'])) {
 							</div>
 						</form>
 					</li>
-					<li><a href="index.php" class="[ animate ]" >หน้าหลัก</span></a></li>
+				<!-- 	<li><a href="index.php" class="[ animate ]" >หน้าหลัก</span></a></li> -->
 
 <li><a href="?howto_view" class="[ animate glyphicon glyphicon-bitcoin ]" data-target="#howto_view" data-toggle="modal" >วิธีการสั่งซื้อ</a></li>
 

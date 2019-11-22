@@ -48,7 +48,7 @@ $totalRows_prd = mysql_num_rows($prd);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include('h.php');?>
-  <?php include('./datatable2.php');?>
+  <?php include('datatable2.php');?>
 
 </head>
 <body>
@@ -63,9 +63,9 @@ $totalRows_prd = mysql_num_rows($prd);
         <?php include('m.php');?>
       <div class="row">
       <div class="col-md-12">
-        <h3 align="center"> รายการหนังสือ <a href="add_product.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+        <h3 align="center"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
         <div class="table">
-         <table width="100%" border="1" cellspacing="0" class="display" id="example">
+         <table width="100%" border="1" cellspacing="0" class="display" id="myTable">
           <thead>
             <tr>
               <th width="5%">ลำดับ</th>
@@ -108,10 +108,10 @@ $totalRows_prd = mysql_num_rows($prd);
             <td><center>พร้อมจำหน่าย</center></td>
 
             <?php elseif ($row_prd['p_status'] == '1' && $row_prd['p_qty'] == '0'): ?>
-              <td><center><font color="brown">หนังสือเลิกผลิต</font></center></td>
+              <td><center><font color="brown">เลิกผลิต</font></center></td>
 
               <?php elseif ($row_prd['p_status'] == '1' ): ?>
-                <td><center><font color="brown">หนังสือเลิกผลิต</font></center></td>
+                <td><center><font color="brown">เลิกผลิต</font></center></td>
 
 
                 <?php elseif ($row_prd['p_qty'] == '0'): ?>
@@ -124,7 +124,7 @@ $totalRows_prd = mysql_num_rows($prd);
                   <a href="edit_product.php?p_id=<?php echo $row_prd['p_id'];?>&t_id=<?php echo $row_prd['t_id'];?>&t1_id=<?php echo $row_prd['t1_id'];?>&act=edit" class="btn btn-warning btn-xs">
                   แก้ไข  </a>
                 </center></td>
-                <td><center> <a href="del_product.php?p_id=<?php echo $row_prd['p_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิกหนังสือเลิกผลิต');"> ยกเลิก </a> </center></td>
+                <td><center> <a href="del_product.php?p_id=<?php echo $row_prd['p_id'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิกเลิกผลิต');"> ยกเลิก </a> </center></td>
               </tr>
               <?php
               $i += 1;

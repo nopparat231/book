@@ -95,7 +95,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
     </form>
     <br />
     <div class="table">
-      <table id="example" class="display" cellspacing="0" border="1">
+      <table id="myTable" class="display" cellspacing="0" border="1">
         <thead>
           <tr align="center">
             <th width=3%>ลำดับ</th>

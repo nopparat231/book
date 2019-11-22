@@ -141,7 +141,7 @@ else {
           <div class="col-xs-8">
             <div class="checkbox icheck">
               <label>
-                &nbsp;&nbsp;<a href="../" class="glyphicon"><font color = "#3366FF"><u> BOOKSHOP</u></font></a>
+                &nbsp;&nbsp;<a href="../" class="glyphicon"><font color = "#3366FF"><u> หน้าหลัก</u></font></a>
               </label>
             </div>
           </div>

@@ -56,12 +56,12 @@ $totalRows_lbk = mysql_num_rows($lbk);
 
 
 
-        <?php include('m.php');?>
-      <div class="row">
+    <?php include('m.php');?>
+    <div class="row">
       <div class="col-md-12">
         <h3 align="center"> รายการข้อมูลธนาคาร   </h3>
         <div class="table">
-          <table id="example" class="display" cellspacing="0" border="1">
+          <table id="myTable" class="display" cellspacing="0" border="1">
             <thead>
               <tr align="center">
 
@@ -90,21 +90,22 @@ $totalRows_lbk = mysql_num_rows($lbk);
                     <td><center>ปกติ</center></td>
                   <?php endif ?>
                   <?php if ($row_lbk['b_status'] == '1'): ?>
-                    <td><center><font color ="red">ปิดบัญชี</center></font></td>
+                    <td><center><font color ="red">ปิดบัญชี</font></center></td>
                   <?php endif ?>
 
                   
                   <td><center> <a href="del_bank.php?bank_id=<?php echo $row_lbk['b_id'];?>" onClick="return confirm('ยืนยันการปิดบัญชี');" class="btn btn-danger btn-xs"> ปิดบัญชี </a> </center> </td>
-                </tr>
-              <?php } while ($row_lbk = mysql_fetch_assoc($lbk)); ?>
-            </table>
-          </div>
+                </td>
+              </tr>
+            <?php } while ($row_lbk = mysql_fetch_assoc($lbk)); ?>
+          </table>
         </div>
       </div>
-    </div>
-  </body>
-  </html>
-  <?php
-  mysql_free_result($lbk);
-  ?>
-  <?php  //include('f.php');?>
+  
+
+</body>
+</html>
+<?php
+mysql_free_result($lbk);
+?>
+<?php  //include('f.php');?>

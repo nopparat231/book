@@ -93,7 +93,7 @@ $totalRows_mem = mysql_num_rows($mem);
         </div>
       </div>
     </form><br>
-    <table id="example" class="display" cellspacing="0" border="1">
+    <table id="myTable" class="display" cellspacing="0" border="1">
       <thead>
         <tr align="center">
           <th>ลำดับ</th>

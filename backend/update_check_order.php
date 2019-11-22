@@ -8,7 +8,7 @@ $order_id = $_GET['order_id'];
 $status = $_GET['status'];
 $check_id = $_GET['check_id'];
 
-$sql ="UPDATE tbl_order SET order_status='$status', check_id='$check_id' WHERE order_id='$order_id'";
+$sql ="UPDATE tbl_order SET order_status='$status' WHERE order_id='$order_id'";
 
 
 $result = mysql_query($sql, $condb) or die("Error in query : $sql" .mysql_error());
