@@ -29,7 +29,7 @@ $st = $_POST['st'];
 mysql_select_db($database_condb);
 mysql_query("BEGIN" ,$condb );
 $sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address','$email','$phone','$status','$pay_slip',
-				'$b_name','$b_number','$pay_date','$time_date','$pay_amount','$postcode','$pos_ems','$emss','$check_id','$sent_id','$order_date')";
+				'$b_name','$b_number','$pay_date','$time_date','$pay_amount','$postcode','$pos_ems','$emss','$order_date')";
 
 $query1 = mysql_query($sql1,$condb ) or die ("Error in query : sql1 " . mysql_error());
 
